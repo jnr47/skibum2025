@@ -179,16 +179,33 @@
                 map.current.addControl(new mapboxgl.NavigationControl());
             }, []);
 
-            const fetchSnowfallData = async () => {
-                // This would call your Cloudflare Worker
-                // For now, simulating API response
-                const mockData = {};
-                resorts.forEach(resort => {
-                    mockData[resort.id] = Math.floor(Math.random() * 25);
-                });
-                setSnowfallData(mockData);
-                updateMarkers(mockData);
-            };
+        const fetchSnowfallData = async () => {
+    try {
+        const response = await fetch('https://skibum-worker.jnrubens.workers.dev/api/snowfall/batch', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ resorts: resorts.map(r => ({ id: r.id, lat: r.lat, lng: r.lng })) })
+        });
+        const data = await response.json();
+        
+        const snowfallData = {};
+        Object.keys(data).forEach(id => {
+            snowfallData[id] = data[id].snowfall24h || 0;
+        });
+        
+        setSnowfallData(snowfallData);
+        updateMarkers(snowfallData);
+    } catch (error) {
+        console.error('Failed to fetch snowfall data:', error);
+        // Fallback to mock data if API fails
+        const mockData = {};
+        resorts.forEach(resort => {
+            mockData[resort.id] = Math.floor(Math.random() * 25);
+        });
+        setSnowfallData(mockData);
+        updateMarkers(mockData);
+    }
+};
 
             const updateMarkers = (data) => {
                 resorts.forEach(resort => {
