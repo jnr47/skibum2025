@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkiBum - Live Snowfall Tracking</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; }
+        .mapboxgl-popup-content { padding: 0; border-radius: 12px; }
+        .marker { cursor: pointer; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s; }
+        .marker:hover { transform: scale(1.2); }
+        .marker-glow { position: absolute; width: 100%; height: 100%; border-radius: 50%; opacity: 0.6; filter: blur(20px); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.2); } }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-type="module">
+        const { useState, useEffect, useRef } = React;
+
+        // Mapbox token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
+
+        // Top 100 North American Ski Resorts Database
+        const resorts = [
+            { id: 1, name: "Whistler Blackcomb", lat: 50.1163, lng: -122.9574, state: "British Columbia", country: "Canada" },
+            { id: 2, name: "Vail", lat: 39.6403, lng: -106.3742, state: "Colorado", country: "USA" },
+            { id: 3, name: "Park City", lat: 40.6514, lng: -111.5079, state: "Utah", country: "USA" },
+            { id: 4, name: "Breckenridge", lat: 39.4817, lng: -106.0384, state: "Colorado", country: "USA" },
+            { id: 5, name: "Heavenly", lat: 38.9350, lng: -119.9403, state: "California", country: "USA" },
+            { id: 6, name: "Aspen Snowmass", lat: 39.1911, lng: -106.8175, state: "Colorado", country: "USA" },
+            { id: 7, name: "Jackson Hole", lat: 43.5875, lng: -110.8278, state: "Wyoming", country: "USA" },
+            { id: 8, name: "Banff Sunshine", lat: 51.1158, lng: -115.7631, state: "Alberta", country: "Canada" },
+            { id: 9, name: "Lake Louise", lat: 51.4254, lng: -116.1773, state: "Alberta", country: "Canada" },
+            { id: 10, name: "Big Sky", lat: 45.2846, lng: -111.4008, state: "Montana", country: "USA" },
+            { id: 11, name: "Steamboat", lat: 40.4580, lng: -106.8047, state: "Colorado", country: "USA" },
+            { id: 12, name: "Mammoth Mountain", lat: 37.6308, lng: -119.0326, state: "California", country: "USA" },
+            { id: 13, name: "Squaw Valley", lat: 39.1970, lng: -120.2356, state: "California", country: "USA" },
+            { id: 14, name: "Telluride", lat: 37.9375, lng: -107.8123, state: "Colorado", country: "USA" },
+            { id: 15, name: "Sun Valley", lat: 43.6966, lng: -114.3553, state: "Idaho", country: "USA" },
+            { id: 16, name: "Deer Valley", lat: 40.6374, lng: -111.4783, state: "Utah", country: "USA" },
+            { id: 17, name: "Killington", lat: 43.6046, lng: -72.8220, state: "Vermont", country: "USA" },
+            { id: 18, name: "Stowe", lat: 44.5303, lng: -72.7817, state: "Vermont", country: "USA" },
+            { id: 19, name: "Alta", lat: 40.5885, lng: -111.6376, state: "Utah", country: "USA" },
+            { id: 20, name: "Snowbird", lat: 40.5803, lng: -111.6573, state: "Utah", country: "USA" },
+            { id: 21, name: "Taos", lat: 36.5924, lng: -105.4467, state: "New Mexico", country: "USA" },
+            { id: 22, name: "Copper Mountain", lat: 39.5022, lng: -106.1506, state: "Colorado", country: "USA" },
+            { id: 23, name: "Winter Park", lat: 39.8868, lng: -105.7625, state: "Colorado", country: "USA" },
+            { id: 24, name: "Keystone", lat: 39.6050, lng: -105.9347, state: "Colorado", country: "USA" },
+            { id: 25, name: "Arapahoe Basin", lat: 39.6426, lng: -105.8717, state: "Colorado", country: "USA" },
+            { id: 26, name: "Crested Butte", lat: 38.8997, lng: -106.9653, state: "Colorado", country: "USA" },
+            { id: 27, name: "Loveland", lat: 39.6803, lng: -105.8978, state: "Colorado", country: "USA" },
+            { id: 28, name: "Mt. Bachelor", lat: 43.9790, lng: -121.6880, state: "Oregon", country: "USA" },
+            { id: 29, name: "Crystal Mountain", lat: 46.9358, lng: -121.4742, state: "Washington", country: "USA" },
+            { id: 30, name: "Stevens Pass", lat: 47.7453, lng: -121.0892, state: "Washington", country: "USA" },
+            { id: 31, name: "Mt. Baker", lat: 48.8597, lng: -121.6686, state: "Washington", country: "USA" },
+            { id: 32, name: "Schweitzer", lat: 48.3642, lng: -116.6228, state: "Idaho", country: "USA" },
+            { id: 33, name: "Sun Peaks", lat: 50.8817, lng: -119.8847, state: "British Columbia", country: "Canada" },
+            { id: 34, name: "Revelstoke", lat: 50.9981, lng: -118.1956, state: "British Columbia", country: "Canada" },
+            { id: 35, name: "Fernie", lat: 49.4653, lng: -115.0636, state: "British Columbia", country: "Canada" },
+            { id: 36, name: "Big White", lat: 49.7311, lng: -118.9350, state: "British Columbia", country: "Canada" },
+            { id: 37, name: "Kicking Horse", lat: 51.2514, lng: -117.0492, state: "British Columbia", country: "Canada" },
+            { id: 38, name: "Mont Tremblant", lat: 46.2094, lng: -74.5847, state: "Quebec", country: "Canada" },
+            { id: 39, name: "Blue Mountain", lat: 44.5075, lng: -80.3231, state: "Ontario", country: "Canada" },
+            { id: 40, name: "Sugarloaf", lat: 45.0314, lng: -70.3139, state: "Maine", country: "USA" },
+            { id: 41, name: "Sunday River", lat: 44.4697, lng: -70.8561, state: "Maine", country: "USA" },
+            { id: 42, name: "Sugarbush", lat: 44.1350, lng: -72.9017, state: "Vermont", country: "USA" },
+            { id: 43, name: "Stratton", lat: 43.1133, lng: -72.9083, state: "Vermont", country: "USA" },
+            { id: 44, name: "Okemo", lat: 43.4017, lng: -72.7167, state: "Vermont", country: "USA" },
+            { id: 45, name: "Jay Peak", lat: 44.9378, lng: -72.5036, state: "Vermont", country: "USA" },
+            { id: 46, name: "Smugglers' Notch", lat: 44.5458, lng: -72.7872, state: "Vermont", country: "USA" },
+            { id: 47, name: "Loon Mountain", lat: 44.0369, lng: -71.6206, state: "New Hampshire", country: "USA" },
+            { id: 48, name: "Cannon Mountain", lat: 44.1572, lng: -71.6978, state: "New Hampshire", country: "USA" },
+            { id: 49, name: "Wildcat Mountain", lat: 44.2636, lng: -71.2328, state: "New Hampshire", country: "USA" },
+            { id: 50, name: "Bretton Woods", lat: 44.2633, lng: -71.4439, state: "New Hampshire", country: "USA" },
+            { id: 51, name: "Snowbasin", lat: 41.2156, lng: -111.8567, state: "Utah", country: "USA" },
+            { id: 52, name: "Powder Mountain", lat: 41.3814, lng: -111.7806, state: "Utah", country: "USA" },
+            { id: 53, name: "Solitude", lat: 40.6200, lng: -111.5917, state: "Utah", country: "USA" },
+            { id: 54, name: "Brighton", lat: 40.5981, lng: -111.5831, state: "Utah", country: "USA" },
+            { id: 55, name: "Snowmass", lat: 39.2133, lng: -106.9378, state: "Colorado", country: "USA" },
+            { id: 56, name: "Aspen Highlands", lat: 39.1825, lng: -106.8553, state: "Colorado", country: "USA" },
+            { id: 57, name: "Buttermilk", lat: 39.2078, lng: -106.8608, state: "Colorado", country: "USA" },
+            { id: 58, name: "Beaver Creek", lat: 39.6042, lng: -106.5164, state: "Colorado", country: "USA" },
+            { id: 59, name: "Purgatory", lat: 37.6303, lng: -107.8139, state: "Colorado", country: "USA" },
+            { id: 60, name: "Wolf Creek", lat: 37.4722, lng: -106.7931, state: "Colorado", country: "USA" },
+            { id: 61, name: "Monarch Mountain", lat: 38.5117, lng: -106.3317, state: "Colorado", country: "USA" },
+            { id: 62, name: "Eldora", lat: 39.9372, lng: -105.5828, state: "Colorado", country: "USA" },
+            { id: 63, name: "Grand Targhee", lat: 43.7886, lng: -110.9586, state: "Wyoming", country: "USA" },
+            { id: 64, name: "Snow King", lat: 43.4783, lng: -110.7628, state: "Wyoming", country: "USA" },
+            { id: 65, name: "Bridger Bowl", lat: 45.8167, lng: -110.8969, state: "Montana", country: "USA" },
+            { id: 66, name: "Big Mountain", lat: 48.4928, lng: -114.3483, state: "Montana", country: "USA" },
+            { id: 67, name: "Snowbowl", lat: 46.9417, lng: -113.9492, state: "Montana", country: "USA" },
+            { id: 68, name: "Grand Valira", lat: 42.5397, lng: 1.7350, state: "Andorra", country: "Andorra" },
+            { id: 69, name: "Bogus Basin", lat: 43.7725, lng: -116.0939, state: "Idaho", country: "USA" },
+            { id: 70, name: "Tamarack", lat: 44.6922, lng: -116.1344, state: "Idaho", country: "USA" },
+            { id: 71, name: "Silver Mountain", lat: 47.6764, lng: -116.0703, state: "Idaho", country: "USA" },
+            { id: 72, name: "Mt. Hood Meadows", lat: 45.3319, lng: -121.6653, state: "Oregon", country: "USA" },
+            { id: 73, name: "Timberline", lat: 45.3306, lng: -121.7108, state: "Oregon", country: "USA" },
+            { id: 74, name: "Willamette Pass", lat: 43.6006, lng: -122.0336, state: "Oregon", country: "USA" },
+            { id: 75, name: "Mission Ridge", lat: 47.2917, lng: -120.3997, state: "Washington", country: "USA" },
+            { id: 76, name: "Snoqualmie", lat: 47.4219, lng: -121.4136, state: "Washington", country: "USA" },
+            { id: 77, name: "Mt. Spokane", lat: 47.9208, lng: -117.0856, state: "Washington", country: "USA" },
+            { id: 78, name: "White Pass", lat: 46.6394, lng: -121.3908, state: "Washington", country: "USA" },
+            { id: 79, name: "49 Degrees North", lat: 48.7511, lng: -117.6369, state: "Washington", country: "USA" },
+            { id: 80, name: "Red Mountain", lat: 49.0917, lng: -117.8233, state: "British Columbia", country: "Canada" },
+            { id: 81, name: "Whitewater", lat: 49.5394, lng: -117.2717, state: "British Columbia", country: "Canada" },
+            { id: 82, name: "Panorama", lat: 50.8036, lng: -116.0533, state: "British Columbia", country: "Canada" },
+            { id: 83, name: "Marmot Basin", lat: 52.8236, lng: -118.0747, state: "Alberta", country: "Canada" },
+            { id: 84, name: "Nakiska", lat: 50.9800, lng: -115.0733, state: "Alberta", country: "Canada" },
+            { id: 85, name: "Castle Mountain", lat: 49.4058, lng: -114.5169, state: "Alberta", country: "Canada" },
+            { id: 86, name: "Norquay", lat: 51.1967, lng: -115.5531, state: "Alberta", country: "Canada" },
+            { id: 87, name: "Le Massif", lat: 47.3136, lng: -70.6358, state: "Quebec", country: "Canada" },
+            { id: 88, name: "Calabogie", lat: 45.2906, lng: -76.7019, state: "Ontario", country: "Canada" },
+            { id: 89, name: "Sierra-at-Tahoe", lat: 38.7986, lng: -120.0828, state: "California", country: "USA" },
+            { id: 90, name: "Kirkwood", lat: 38.6867, lng: -120.0656, state: "California", country: "USA" },
+            { id: 91, name: "Northstar", lat: 39.2733, lng: -120.1211, state: "California", country: "USA" },
+            { id: 92, name: "Homewood", lat: 39.0833, lng: -120.1667, state: "California", country: "USA" },
+            { id: 93, name: "Mt. Rose", lat: 39.3397, lng: -119.8894, state: "Nevada", country: "USA" },
+            { id: 94, name: "Diamond Peak", lat: 39.2525, lng: -119.9169, state: "Nevada", country: "USA" },
+            { id: 95, name: "June Mountain", lat: 37.7853, lng: -119.0781, state: "California", country: "USA" },
+            { id: 96, name: "Bear Mountain", lat: 34.2350, lng: -116.8650, state: "California", country: "USA" },
+            { id: 97, name: "Snow Summit", lat: 34.2306, lng: -116.8886, state: "California", country: "USA" },
+            { id: 98, name: "Mountain High", lat: 34.3811, lng: -117.6881, state: "California", country: "USA" },
+            { id: 99, name: "Ski Santa Fe", lat: 35.7869, lng: -105.7961, state: "New Mexico", country: "USA" },
+            { id: 100, name: "Angel Fire", lat: 36.3975, lng: -105.2886, state: "New Mexico", country: "USA" }
+        ];
+
+        const SkiBumApp = () => {
+            const mapContainer = useRef(null);
+            const map = useRef(null);
+            const [selectedResort, setSelectedResort] = useState(null);
+            const [snowfallData, setSnowfallData] = useState({});
+            const [loading, setLoading] = useState(true);
+
+            useEffect(() => {
+                if (map.current) return;
+
+                map.current = new mapboxgl.Map({
+                    container: mapContainer.current,
+                    style: 'mapbox://styles/mapbox/dark-v11',
+                    center: [-106, 45],
+                    zoom: 3.5,
+                    projection: 'globe'
+                });
+
+                map.current.on('load', () => {
+                    setLoading(false);
+                    fetchSnowfallData();
+                    
+                    // Add resort markers
+                    resorts.forEach(resort => {
+                        const color = getSnowfallColor(0);
+                        
+                        const el = document.createElement('div');
+                        el.className = 'marker';
+                        el.style.backgroundColor = color;
+                        el.innerHTML = `<div class="marker-glow" style="background-color: ${color};"></div>`;
+                        
+                        const marker = new mapboxgl.Marker(el)
+                            .setLngLat([resort.lng, resort.lat])
+                            .addTo(map.current);
+                        
+                        el.addEventListener('click', () => {
+                            setSelectedResort(resort);
+                        });
+                        
+                        // Store marker reference for updates
+                        resort.marker = marker;
+                        resort.markerEl = el;
+                    });
+                });
+
+                map.current.addControl(new mapboxgl.NavigationControl());
+            }, []);
+
+            const fetchSnowfallData = async () => {
+                // This would call your Cloudflare Worker
+                // For now, simulating API response
+                const mockData = {};
+                resorts.forEach(resort => {
+                    mockData[resort.id] = Math.floor(Math.random() * 25);
+                });
+                setSnowfallData(mockData);
+                updateMarkers(mockData);
+            };
+
+            const updateMarkers = (data) => {
+                resorts.forEach(resort => {
+                    if (resort.markerEl && data[resort.id] !== undefined) {
+                        const snowfall = data[resort.id];
+                        const color = getSnowfallColor(snowfall);
+                        resort.markerEl.style.backgroundColor = color;
+                        resort.markerEl.querySelector('.marker-glow').style.backgroundColor = color;
+                    }
+                });
+            };
+
+            const getSnowfallColor = (inches) => {
+                if (inches >= 20) return '#0066ff';
+                if (inches >= 15) return '#3399ff';
+                if (inches >= 10) return '#66ccff';
+                if (inches >= 5) return '#99ddff';
+                return '#ccf0ff';
+            };
+
+            if (selectedResort) {
+                return <ResortDetail resort={selectedResort} snowfall={snowfallData[selectedResort.id] || 0} onBack={() => setSelectedResort(null)} />;
+            }
+
+            return (
+                <div className="w-full h-screen relative">
+                    <div ref={mapContainer} className="w-full h-full" />
+                    
+                    {/* Header */}
+                    <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-6">
+                        <div className="flex items-center gap-3">
+                            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
+                            </svg>
+                            <div>
+                                <h1 className="text-4xl font-bold text-white">SkiBum</h1>
+                                <p className="text-blue-300 text-sm">Live Snowfall Tracking</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Legend */}
+                    <div className="absolute top-24 right-6 z-10 bg-slate-800/90 backdrop-blur-sm rounded-lg p-4 shadow-xl border border-slate-700">
+                        <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
+                            </svg>
+                            24hr Snowfall
+                        </h3>
+                        <div className="space-y-2">
+                            {[
+                                { label: '20"+ Epic', color: '#0066ff' },
+                                { label: '15-19" Heavy', color: '#3399ff' },
+                                { label: '10-14" Significant', color: '#66ccff' },
+                                { label: '5-9" Moderate', color: '#99ddff' },
+                                { label: '0-4" Light', color: '#ccf0ff' },
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                    <div className="w-6 h-4 rounded" style={{ backgroundColor: item.color }}></div>
+                                    <span className="text-sm text-slate-300">{item.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {loading && (
+                        <div className="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-20">
+                            <div className="text-white text-xl">Loading SkiBum...</div>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const ResortDetail = ({ resort, snowfall, onBack }) => {
+            return (
+                <div className="w-full min-h-screen bg-slate-900 text-white overflow-y-auto">
+                    {/* Hero */}
+                    <div className="relative h-96 bg-gradient-to-br from-blue-600 to-slate-800">
+                        <button
+                            onClick={onBack}
+                            className="absolute top-6 left-6 bg-slate-800/80 hover:bg-slate-700 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors z-10"
+                        >
+                            ← Back to Map
+                        </button>
+                        
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                                <svg className="w-20 h-20 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
+                                </svg>
+                                <h1 className="text-5xl font-bold mb-2">{resort.name}</h1>
+                                <p className="text-xl text-blue-200">{resort.state}, {resort.country}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Snowfall Stats */}
+                    <div className="max-w-6xl mx-auto px-6 -mt-16 relative z-10">
+                        <div className="bg-slate-800 rounded-xl shadow-2xl p-8 border border-slate-700">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="text-center">
+                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                    <div className="text-4xl font-bold text-white mb-1">{snowfall}"</div>
+                                    <div className="text-slate-400">24 Hour Snowfall</div>
+                                </div>
+                                <div className="text-center">
+                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                    <div className="text-4xl font-bold text-white mb-1">{snowfall * 7}"</div>
+                                    <div className="text-slate-400">7 Day Snowfall</div>
+                                </div>
+                                <div className="text-center">
+                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                    <div className="text-4xl font-bold text-white mb-1">{snowfall * 30}"</div>
+                                    <div className="text-slate-400">Season Total</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content Sections */}
+                    <div className="max-w-6xl mx-auto px-6 py-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {/* Top 10 Runs */}
+                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
+                                    </svg>
+                                    <h2 className="text-xl font-bold">Top 10 Ski Runs</h2>
+                                </div>
+                                <ol className="space-y-3">
+                                    {[
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3">
+                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
+                                            <span className="text-slate-300">{item}</span>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+
+                            {/* Top 10 Restaurants */}
+                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    <h2 className="text-xl font-bold">Top 10 Restaurants</h2>
+                                </div>
+                                <ol className="space-y-3">
+                                    {[
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3">
+                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
+                                            <span className="text-slate-300">{item}</span>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+
+                            {/* Top 10 Places to Stay */}
+                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                    <h2 className="text-xl font-bold">Top 10 Places to Stay</h2>
+                                </div>
+                                <ol className="space-y-3">
+                                    {[
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon",
+                                        "Content coming soon"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3">
+                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
+                                            <span className="text-slate-300">{item}</span>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<SkiBumApp />, document.getElementById('root'));
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>
