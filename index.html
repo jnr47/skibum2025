@@ -257,12 +257,14 @@
                         </h3>
                         <div className="space-y-2">
                             {[
-                                { label: '20"+ Epic', color: '#0066ff' },
-                                { label: '15-19" Heavy', color: '#3399ff' },
-                                { label: '10-14" Significant', color: '#66ccff' },
-                                { label: '5-9" Moderate', color: '#99ddff' },
-                                { label: '0-4" Light', color: '#ccf0ff' },
-                            ].map((item, idx) => (
+                                {[
+    { label: '10"+ Epic', color: '#ef4444' },
+    { label: '6-10" Great', color: '#f97316' },
+    { label: '3-6" Good', color: '#eab308' },
+    { label: '1-3" Moderate', color: '#22c55e' },
+    { label: '<1" Light', color: '#3b82f6' },
+    { label: 'None', color: '#64748b' },
+].map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
                                     <div className="w-6 h-4 rounded" style={{ backgroundColor: item.color }}></div>
                                     <span className="text-sm text-slate-300">{item.label}</span>
@@ -286,7 +288,7 @@
                     {/* Hero */}
                     <div className="relative h-96 bg-gradient-to-br from-blue-600 to-slate-800">
                         <button
-                            onClick={onBack}
+                            onClick={() => window.location.reload()}
                             className="absolute top-6 left-6 bg-slate-800/80 hover:bg-slate-700 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors z-10"
                         >
                             ← Back to Map
