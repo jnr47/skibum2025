@@ -237,14 +237,16 @@
                     {/* Header */}
                     <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-6">
                         <div className="flex items-center gap-3">
-                            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
-                            </svg>
-                            <div>
-                                <h1 className="text-4xl font-bold text-white">SkiBum</h1>
-                                <p className="text-blue-300 text-sm">Live Snowfall Tracking</p>
-                            </div>
-                        </div>
+    <img 
+        src="skibum_logo_blacktype_small.png" 
+        alt="SkiBum Logo" 
+        className="w-16 h-16"
+    />
+    <div>
+        <h1 className="text-4xl font-bold text-white">SkiBum</h1>
+        <p className="text-blue-300 text-sm">Live Snowfall Tracking</p>
+    </div>
+</div>
                     </div>
 
                     {/* Legend */}
@@ -295,9 +297,11 @@
                         
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="text-center">
-                                <svg className="w-20 h-20 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
-                                </svg>
+                              <img 
+    src="skibum_logo_blacktype_small.png" 
+    alt="SkiBum Logo" 
+    className="w-24 h-24 mx-auto mb-4"
+/>
                                 <h1 className="text-5xl font-bold mb-2">{resort.name}</h1>
                                 <p className="text-xl text-blue-200">{resort.state}, {resort.country}</p>
                             </div>
