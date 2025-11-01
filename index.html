@@ -234,8 +234,7 @@
                         const el = document.createElement('div');
                         el.className = 'marker';
                         el.style.backgroundColor = color;
-                        el.style.opacity = '0';  // START COMPLETELY HIDDEN
-                        el.style.pointerEvents = 'none';  // START WITH CLICKS DISABLED
+                        el.style.display = 'none';  // START COMPLETELY HIDDEN
                         el.innerHTML = `<div class="marker-glow" style="background-color: ${color};"></div>`;
                         
                         const marker = new mapboxgl.Marker(el)
@@ -256,21 +255,33 @@
                         const zoom = map.current.getZoom();
                         
                         // Markers completely hidden below zoom 6, fade in 6-7, fully visible 7+
-                        let opacity;
                         if (zoom < 6) {
-                            opacity = 0;  // COMPLETELY HIDDEN
+                            // COMPLETELY HIDDEN
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'none';
+                                }
+                            });
                         } else if (zoom < 7) {
-                            opacity = (zoom - 6);  // Fade in from 6 to 7
+                            // Fade in from 6 to 7
+                            const opacity = (zoom - 6);
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'block';
+                                    resort.markerEl.style.opacity = opacity;
+                                    resort.markerEl.style.pointerEvents = 'auto';
+                                }
+                            });
                         } else {
-                            opacity = 1;  // FULLY VISIBLE
+                            // FULLY VISIBLE
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'block';
+                                    resort.markerEl.style.opacity = 1;
+                                    resort.markerEl.style.pointerEvents = 'auto';
+                                }
+                            });
                         }
-                        
-                        resorts.forEach(resort => {
-                            if (resort.markerEl) {
-                                resort.markerEl.style.opacity = opacity;
-                                resort.markerEl.style.pointerEvents = opacity > 0 ? 'auto' : 'none';  // Disable clicks when hidden
-                            }
-                        });
                     };
 
                     // Run immediately to set initial state
