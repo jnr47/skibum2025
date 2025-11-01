@@ -252,7 +252,7 @@
                     });
 
                     // Add zoom-based marker visibility - COMPLETE HIDE at low zoom
-                    map.current.on('zoom', () => {
+                    const updateMarkerVisibility = () => {
                         const zoom = map.current.getZoom();
                         
                         // Markers completely hidden below zoom 6, fade in 6-7, fully visible 7+
@@ -271,7 +271,13 @@
                                 resort.markerEl.style.pointerEvents = opacity > 0 ? 'auto' : 'none';  // Disable clicks when hidden
                             }
                         });
-                    });
+                    };
+
+                    // Run immediately to set initial state
+                    updateMarkerVisibility();
+                    
+                    // Run on every zoom change
+                    map.current.on('zoom', updateMarkerVisibility);
                 });
 
                 map.current.addControl(new mapboxgl.NavigationControl());
