@@ -161,68 +161,81 @@
                         }
                     });
 
-                    // Add heatmap layer with Arctic Chill colors
+                    // Add heatmap layer with Arctic Chill colors - DRAMATIC VERSION
                     map.current.addLayer({
                         id: 'snowfall-heatmap',
                         type: 'heatmap',
                         source: 'snowfall-heat',
                         maxzoom: 15,
                         paint: {
-                            // Increase weight as snowfall increases
+                            // Increase weight as snowfall increases - MORE AGGRESSIVE
                             'heatmap-weight': [
                                 'interpolate',
                                 ['linear'],
                                 ['get', 'snowfall'],
                                 0, 0,
-                                1, 0.2,
-                                5, 0.5,
-                                10, 0.8,
-                                20, 1
+                                1, 0.5,
+                                5, 0.8,
+                                10, 1,
+                                20, 1.5
                             ],
                             // Arctic Chill gradient: pale blue → bright blue → purple → magenta → pink
+                            // MUCH MORE OPAQUE
                             'heatmap-color': [
                                 'interpolate',
                                 ['linear'],
                                 ['heatmap-density'],
                                 0, 'rgba(224, 242, 254, 0)',     // Transparent
-                                0.1, 'rgba(224, 242, 254, 0.4)', // Pale blue (dusting)
-                                0.3, 'rgba(125, 211, 252, 0.6)', // Sky blue (light)
-                                0.5, 'rgba(59, 130, 246, 0.7)',  // Bright blue (moderate)
-                                0.7, 'rgba(124, 58, 237, 0.8)',  // Purple (heavy)
-                                0.85, 'rgba(236, 72, 153, 0.9)', // Magenta (epic)
-                                1, 'rgba(240, 171, 252, 1)'      // Pink (legendary)
+                                0.1, 'rgba(224, 242, 254, 0.8)', // Pale blue (dusting) - MORE OPAQUE
+                                0.3, 'rgba(125, 211, 252, 0.9)', // Sky blue (light) - MORE OPAQUE
+                                0.5, 'rgba(59, 130, 246, 0.95)', // Bright blue (moderate) - MORE OPAQUE
+                                0.7, 'rgba(124, 58, 237, 0.95)', // Purple (heavy) - MORE OPAQUE
+                                0.85, 'rgba(236, 72, 153, 1)',   // Magenta (epic) - FULLY OPAQUE
+                                1, 'rgba(240, 171, 252, 1)'      // Pink (legendary) - FULLY OPAQUE
                             ],
-                            // Increase radius as zoom increases
+                            // MUCH LARGER radius for dramatic glow effect
                             'heatmap-radius': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 15,
-                                5, 30,
-                                10, 50
+                                0, 80,    // TRIPLED from 15 to 80
+                                3, 120,   // Large glow at continent view
+                                5, 150,   // Maximum glow
+                                6, 100    // Start shrinking
                             ],
-                            // Fade out heatmap as we zoom in
+                            // COMPLETE fade out at zoom 6
                             'heatmap-opacity': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 0.9,
-                                5, 0.7,
-                                6, 0.3,
-                                7, 0
+                                0, 1,      // FULLY visible when zoomed out
+                                5, 0.95,   // Still very visible
+                                5.5, 0.5,  // Start fading
+                                6, 0       // COMPLETELY gone at zoom 6
+                            ],
+                            // Increase intensity for more glow
+                            'heatmap-intensity': [
+                                'interpolate',
+                                ['linear'],
+                                ['zoom'],
+                                0, 1.5,    // High intensity at wide view
+                                5, 2,      // Maximum intensity
+                                6, 1       // Normal intensity before fade
                             ]
                         }
                     }, 'waterway-label');
 
                     fetchSnowfallData();
                     
-                    // Add resort markers
+                    // Add resort markers - START HIDDEN
                     resorts.forEach(resort => {
                         const color = getSnowfallColor(0);
                         
                         const el = document.createElement('div');
                         el.className = 'marker';
                         el.style.backgroundColor = color;
+                        el.style.opacity = '0';  // START COMPLETELY HIDDEN
+                        el.style.pointerEvents = 'none';  // START WITH CLICKS DISABLED
                         el.innerHTML = `<div class="marker-glow" style="background-color: ${color};"></div>`;
                         
                         const marker = new mapboxgl.Marker(el)
@@ -238,14 +251,24 @@
                         resort.markerEl = el;
                     });
 
-                    // Add zoom-based marker opacity
+                    // Add zoom-based marker visibility - COMPLETE HIDE at low zoom
                     map.current.on('zoom', () => {
                         const zoom = map.current.getZoom();
-                        const opacity = zoom < 6 ? Math.max(0, (zoom - 3) / 3) : 1;
+                        
+                        // Markers completely hidden below zoom 6, fade in 6-7, fully visible 7+
+                        let opacity;
+                        if (zoom < 6) {
+                            opacity = 0;  // COMPLETELY HIDDEN
+                        } else if (zoom < 7) {
+                            opacity = (zoom - 6);  // Fade in from 6 to 7
+                        } else {
+                            opacity = 1;  // FULLY VISIBLE
+                        }
                         
                         resorts.forEach(resort => {
                             if (resort.markerEl) {
                                 resort.markerEl.style.opacity = opacity;
+                                resort.markerEl.style.pointerEvents = opacity > 0 ? 'auto' : 'none';  // Disable clicks when hidden
                             }
                         });
                     });
