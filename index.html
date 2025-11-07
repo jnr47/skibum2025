@@ -356,42 +356,6 @@ try {
     console.error('Error fetching batch data:', error);
 };
 
-                            // Add to heatmap data (use 24hr forecast for intensity)
-                            const snowfall = data.snowfall.forecast24hr || 0;
-                            if (snowfall > 0) {
-                                heatmapFeatures.push({
-                                    type: 'Feature',
-                                    properties: {
-                                        snowfall: snowfall
-                                    },
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: [resort.lng, resort.lat]
-                                    }
-                                });
-                            }
-                        } else {
-                            newData[resort.id] = {
-                                forecast24hr: 0,
-                                forecast48hr: 0,
-                                forecast7day: 0,
-                                currentDepth: 0
-                            };
-                        }
-                    } catch (error) {
-                        console.error(`Error fetching data for ${resort.name}:`, error);
-                        newData[resort.id] = {
-                            forecast24hr: 0,
-                            forecast48hr: 0,
-                            forecast7day: 0,
-                            currentDepth: 0
-                        };
-                    }
-                    
-                    // Small delay to avoid overwhelming NOAA
-                    await new Promise(resolve => setTimeout(resolve, 200));
-                }
-                
                 setSnowfallData(newData);
                 updateMarkers(newData);
 
