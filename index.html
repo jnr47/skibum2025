@@ -308,19 +308,53 @@
                 const heatmapFeatures = [];
                 
                 // Fetch data for each resort from your worker
-                for (const resort of resorts) {
-                    try {
-                        const response = await fetch(`https://skibum-worker.jnrubens.workers.dev/api/snowfall/${resort.lat}/${resort.lng}`);
-                        const data = await response.json();
-                        
-                        if (data.success) {
-                            // Store the FULL data object
-                            newData[resort.id] = {
-                                forecast24hr: data.snowfall.forecast24hr || 0,
-                                forecast48hr: data.snowfall.forecast48hr || 0,
-                                forecast7day: data.snowfall.forecast7day || 0,
-                                currentDepth: data.snowfall.currentDepth || 0
-                            };
+               // Fetch all resorts in ONE batch request
+try {
+    const locations = resorts.map(r => ({ lat: r.lat, lng: r.lng }));
+    
+    const response = await fetch('https://skibum-worker.jnrubens.workers.dev/api/snowfall/batch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locations })
+    });
+    
+    const batchData = await response.json();
+    
+    // Process results
+    batchData.results.forEach((data, index) => {
+        const resort = resorts[index];
+        
+        if (data.success) {
+            newData[resort.id] = {
+                forecast24hr: data.snowfall.forecast24hr || 0,
+                forecast48hr: data.snowfall.forecast48hr || 0,
+                forecast7day: data.snowfall.forecast7day || 0,
+                currentDepth: data.snowfall.currentDepth || 0
+            };
+            
+            const snowfall = data.snowfall.forecast24hr || 0;
+            if (snowfall > 0) {
+                heatmapFeatures.push({
+                    type: 'Feature',
+                    properties: { snowfall: snowfall },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [resort.lng, resort.lat]
+                    }
+                });
+            }
+        } else {
+            newData[resort.id] = {
+                forecast24hr: 0,
+                forecast48hr: 0,
+                forecast7day: 0,
+                currentDepth: 0
+            };
+        }
+    });
+} catch (error) {
+    console.error('Error fetching batch data:', error);
+};
 
                             // Add to heatmap data (use 24hr forecast for intensity)
                             const snowfall = data.snowfall.forecast24hr || 0;
