@@ -318,7 +318,6 @@ const snowData = await response.json();
     // Process results
     resorts.forEach((resort, index) => {
     const data = snowData.resorts[index];
-        const resort = resorts[index];
         
         if (data && !data.error) {
     newData[resort.id] = {
