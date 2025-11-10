@@ -316,8 +316,11 @@ try {
 const snowData = await response.json();
     
     // Process results
-    resorts.forEach((resort, index) => {
-    const data = snowData.resorts[index];
+    resorts.forEach((resort) => {
+    const data = snowData.resorts.find(r => 
+        Math.abs(r.lat - resort.lat) < 0.01 && 
+        Math.abs(r.lng - resort.lng) < 0.01
+    );
         
         if (data && !data.error) {
     newData[resort.id] = {
