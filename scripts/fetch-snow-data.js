@@ -43,7 +43,7 @@ async function fetchNOAAForecast(lat, lng) {
       const text = (period.detailedForecast || '').toLowerCase();
       
       // Look for snow measurements in the text
-      const snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(?:inch|"|in)/i);
+     const snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
       
       if (snowMatch) {
         const low = parseFloat(snowMatch[1]);
