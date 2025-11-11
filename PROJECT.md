@@ -3,26 +3,178 @@
 ## 📌 Quick Links
 - **Live Site**: https://skibum.com
 - **GitHub Repo**: https://github.com/jnr47/skibum2025
-- **GitHub Actions**: Runs every 6 hours automatically
+- **GitHub Actions**: Runs every 6 hours automatically (0, 6, 12, 18 UTC)
 - **Snow Data JSON**: https://skibum.com/snow-data.json
 
 ---
 
-## 🎯 PROJECT VISION
+## 🎯 CURRENT STATUS (November 10, 2025)
 
-**SkiBum.com** is a live snowfall tracking website that shows skiers and snowboarders where snow fell overnight using an interactive "heatmap" style visualization.
+**Status**: 🟡 Production & Stable - Minor Issues to Fix
 
-### Core Features
-- Interactive map showing 100 North American ski resorts
-- Real-time snowfall data (7-day forecasts from NOAA)
-- Color-coded markers based on snowfall intensity
-- Clickable resort detail pages
-- Dark theme optimized for snow visualization
-- Arctic Chill heatmap with dramatic blue-purple-pink gradient
+**What's Working:**
+- ✅ Site loads in <500ms
+- ✅ 80+ US resorts with real NOAA data
+- ✅ Arctic Chill heatmap displays beautifully
+- ✅ Automatic updates every 6 hours
+- ✅ Detail pages functional
+- ✅ Zero maintenance required
+- ✅ 100% reliable (no more breaking!)
+- ✅ Whiteface Mountain, NY added (101 resorts total)
+- ✅ Snow detection improved - now catches "snow accumulation of X inches"
+
+**What Needs Fixing:**
+- ⚠️ 24hr and 7-day forecasts showing same data (need separate parsing)
+- ⚠️ Back button navigation not working (needs proper React Router solution)
+- ⚠️ "No snow" state needs better UX messaging
+- ⚠️ Zoom limits not implemented (can zoom out too far)
+- ⚠️ User instructions missing (not obvious how to use site)
 
 ---
 
-## 🏗️ SYSTEM ARCHITECTURE (CURRENT - NOVEMBER 2025)
+## 🚨 CRITICAL FIXES FOR NEXT SESSION
+
+### Issue #1: 24hr vs 7-day Data Separation
+**Problem:** Both showing same values because we're parsing all 14 periods for both
+**Current behavior:** 
+- 24hr forecast: Shows 7-day total
+- 7-day forecast: Shows 7-day total
+
+**Solution needed:**
+```javascript
+// In fetch-snow-data.js, need TWO separate calculations:
+
+// 24-hour: Parse ONLY first 2 periods (next day + night)
+let snow24hr = 0;
+for (let i = 0; i < 2 && i < periods.length; i++) {
+  // ... snow parsing logic for periods[i]
+  snow24hr += snowAmount;
+}
+
+// 48-hour: Parse first 4 periods
+let snow48hr = 0;
+for (let i = 0; i < 4 && i < periods.length; i++) {
+  // ... snow parsing logic for periods[i]
+  snow48hr += snowAmount;
+}
+
+// 7-day: Parse all 14 periods (what we do now)
+let snow7day = 0;
+for (const period of periods) {
+  // ... existing logic
+  snow7day += snowAmount;
+}
+
+// Return all three:
+return {
+  snowfall_24hr: parseFloat(snow24hr.toFixed(1)),
+  snowfall_48hr: parseFloat(snow48hr.toFixed(1)),
+  snowfall_7day: parseFloat(snow7day.toFixed(1)),
+  // ... rest
+};
+```
+
+**Then update index.html to use:**
+- `data.snowfall_24hr` for 24hr display
+- `data.snowfall_48hr` for 48hr display
+- `data.snowfall_7day` for 7-day display
+
+**Time estimate:** 30-45 minutes
+
+---
+
+### Issue #2: Back Button Navigation
+**Problem:** Attempted fix caused white screen, reverted changes
+**Current behavior:** Back button leaves site entirely
+**Desired behavior:** Back button returns to map
+
+**Solution needed:** 
+- Proper React Router implementation OR
+- Simple page reload approach with state preservation OR
+- Keep "Back to Map" button only (current working solution)
+
+**Decision needed:** Is fixing browser back button worth the complexity? The "Back to Map" button works fine.
+
+**Time estimate:** 1-2 hours for proper solution, or skip entirely
+
+---
+
+## ✅ COMPLETED TODAY (November 10, 2025)
+
+### Whiteface Mountain Added
+- Added to `scripts/resorts-data.js` (data fetching)
+- Added to `index.html` frontend (map display)
+- Now have 101 total resorts
+- Successfully fetching NOAA data
+
+### Snow Detection Improved
+**Old regex:** Only matched "5 inches of snow"
+**New regex:** Matches three patterns:
+1. "5 inches of snow"
+2. "snow accumulation of 5 inches" ← NEW!
+3. "new snow 5 inches" ← NEW!
+
+**Result:** Catching more snow forecasts (like Whiteface's "1 to 2 inches" forecast)
+
+---
+
+## 📋 NEXT SESSION PRIORITIES (In Order)
+
+### 🚨 Priority 1: Fix Data Display Issues (1 hour)
+1. **Separate 24hr/48hr/7-day calculations** (45 min)
+   - Update `fetch-snow-data.js` to calculate three separate values
+   - Update frontend to display all three properly
+   - Re-run GitHub Action to regenerate data
+   - Test with multiple resorts
+
+2. **Remove "Current Base Depth"** (15 min)
+   - Change resort detail layout to show only 24hr/48hr/7-day
+   - Update UI to be cleaner
+
+### 🎯 Priority 2: Critical UX Improvements (1 hour)
+3. **Add "No Snow" Status Indicator** (20 min)
+   - Banner showing: "✅ Updated 2hrs ago | ⛅ No snow forecasted in next 24hrs"
+   - Add to legend: "📊 Last update: X hours ago"
+
+4. **Add Zoom Limits to North America** (10 min)
+   - Set Mapbox `maxBounds` to restrict panning/zooming
+   - Keeps focus on relevant area
+
+5. **Add Simple Instructions** (15 min)
+   - Add to legend: "💡 How to Use: Zoom in/out to toggle views, click resorts for details"
+
+6. **Add More Missing Resorts** (15 min)
+   - Research other major resorts missing from list
+   - Add to both resorts-data.js and index.html
+
+### 🗺️ Priority 3: Multiple Map Views (1-2 hours)
+7. **Add Map Toggle for Time Periods**
+   - Toggle buttons: [ 24hr ] [ 48hr ] [ 7-day ]
+   - Update heatmap based on selected period
+   - Update marker colors based on selected period
+
+### 📊 Priority 4: Additional Weather Data (1-2 hours)
+8. **Temperature Display** - Show high/low temps
+9. **Precipitation Probability** - Show confidence levels
+10. **Wind Warnings** - Flag high wind days
+
+### 🇨🇦 Priority 5: Canadian Resorts (2-3 hours)
+11. **Add Environment Canada API**
+    - 19 Canadian resorts currently showing errors
+    - Research Environment Canada weather API
+    - Integrate into fetch-snow-data.js
+
+### 🔍 Priority 6: SEO (1-2 hours)
+12. **Meta Tags & Structured Data**
+    - Goal: Rank for "skibum" and "live snowfall tracking"
+    - Add proper title/description
+    - Add Open Graph tags
+    - Create sitemap.xml
+    - Submit to Google Search Console
+
+---
+
+## 🏗️ SYSTEM ARCHITECTURE
 
 ```
 ┌─────────────────────────────────┐
@@ -50,96 +202,52 @@
 └─────────────────────────────────┘
 ```
 
-**Key Change:** Eliminated Cloudflare Workers entirely! No more subrequest limits.
-
 ---
 
-## ✅ COMPLETED WORK
+## 📊 PERFORMANCE METRICS
 
-### November 9, 2025 - GitHub Actions Migration ✓
-- [x] **Eliminated Cloudflare Worker dependency**
-- [x] **GitHub Action workflow** - Runs every 6 hours automatically
-- [x] **Static JSON generation** - Pre-computed data in snow-data.json
-- [x] **Frontend updated** - Loads from static file instead of Worker API
-- [x] **Fixed data parsing** - Improved regex to correctly identify snow amounts
-- [x] **Load time improved** - From 1-2 seconds to <500ms
-- [x] **100% reliability** - No more subrequest limits, no more breaking
-
-### Phase 2: Performance Optimization (November 6-7, 2025) ✓
-- [x] Batch API endpoint
-- [x] KV cache-first architecture
-- [x] Cron triggers configured
-- [x] Arctic Chill heatmap
-
-### Phase 0-1: Infrastructure & NOAA Integration ✓
-- [x] Domain, hosting, deployment pipeline
-- [x] 100 resort database with coordinates
-- [x] NOAA NWS API integration
-- [x] Real forecast data on map
-
----
-
-## 🎯 NEXT PRIORITIES
-
-### Priority 1: 7-Day Forecast Map View
-**Goal:** Add ability to toggle between current conditions and 7-day forecast visualization
-- Data already exists in snow-data.json (snowfall_7day field)
-- Need UI toggle button to switch map view
-- Update heatmap to show 7-day totals instead of current
-- Update legend to reflect forecast period
-
-### Priority 2: Canadian Resorts Support
-**Problem:** 19 Canadian resorts currently show errors (NOAA doesn't cover Canada)
-**Solution:** Integrate Environment Canada weather API
-- Research Environment Canada API endpoints
-- Add Canadian weather fetching to GitHub Action script
-- Update resorts-data.js to flag Canadian resorts
-- Conditional logic: US resorts → NOAA, Canadian resorts → Environment Canada
-
-### Priority 3: Mobile Experience
-**Improvements needed:**
-- Responsive layout optimization
-- Touch-friendly controls
-- Better mobile legend placement
-- Optimize map performance on mobile devices
-
----
-
-## 📊 CURRENT PERFORMANCE METRICS
-
-### Production Performance
-- **Load Time**: <500ms (3-4x faster than before!)
+### Current Performance
+- **Load Time**: <500ms
 - **Data Refresh**: Every 6 hours automatically
-- **Resorts Covered**: ~80 US resorts with data
-- **Uptime**: 100% (no more subrequest failures!)
-- **Cost**: $0 (free GitHub Actions, free Cloudflare Pages)
+- **Resorts**: 101 (80+ with data, 19 Canadian with errors)
+- **Uptime**: 100%
+- **Cost**: $0
 
-### Data Coverage
-- **US Resorts**: ✅ 80+ resorts with NOAA data
-- **Canadian Resorts**: ❌ 19 resorts (no data source yet)
+### Data Quality Issues
+- ✅ Snow detection working well (catches multiple patterns)
+- ⚠️ 24hr/7-day showing same values (needs fix)
+- ⚠️ Canadian resorts no data (need Environment Canada API)
 
 ---
 
 ## 🔧 TECHNICAL DETAILS
 
-### GitHub Action Workflow
-**File:** `.github/workflows/update-snow-data.yml`
-**Schedule:** Every 6 hours (cron: '0 */6 * * *')
-**Manual trigger:** Available via Actions tab
-**Runtime:** ~3-5 minutes for 100 resorts
+### Snow Detection Regex (Current)
+**Pattern 1:** `X inches of snow` or `X to Y inches of snow`
+**Pattern 2:** `snow accumulation of X inches` or `snow accumulation of X to Y inches`
+**Pattern 3:** `new snow X inches`
 
-### Data Fetching Script
-**File:** `scripts/fetch-snow-data.js`
-**Data source:** NOAA National Weather Service API
-**Output:** `snow-data.json` (committed to repo)
-**Parsing:** Regex matches "X inches of snow" patterns in forecast text
+Works for most NOAA forecast formats.
 
-### Frontend Architecture
-**File:** `index.html`
-**Framework:** React (via Babel CDN)
-**Mapping:** Mapbox GL JS
-**Data loading:** Single fetch('/snow-data.json') on load
-**Rendering:** Client-side processing of 100 resorts
+### Data Structure (snow-data.json)
+```json
+{
+  "generated_at": "2025-11-10T01:33:04.363Z",
+  "total_resorts": 101,
+  "resorts": [
+    {
+      "name": "Whiteface Mountain",
+      "lat": 44.3659,
+      "lng": -73.9024,
+      "snowfall_7day": 1.5,
+      "forecast_text": "...",
+      "last_updated": "2025-11-10T01:33:04.363Z"
+    }
+  ]
+}
+```
+
+**To be added:** `snowfall_24hr` and `snowfall_48hr` fields
 
 ---
 
@@ -149,168 +257,180 @@
 skibum2025/
 ├── .github/
 │   └── workflows/
-│       └── update-snow-data.yml    # GitHub Action (runs every 6hrs)
+│       └── update-snow-data.yml    # Runs every 6hrs
 ├── scripts/
-│   ├── fetch-snow-data.js          # NOAA data fetcher
-│   ├── resorts-data.js             # 100 resort coordinates
-│   └── package.json                # Node.js config
-├── snow-data.json                  # Generated data (auto-updated)
-├── index.html                      # Frontend app
-├── skibum_logo_blacktype_small.png # Logo
-├── PROJECT.md                      # This file
-└── README.md                       # Repo documentation
+│   ├── fetch-snow-data.js          # NOAA fetcher ⚠️ NEEDS FIX
+│   ├── resorts-data.js             # 101 resorts
+│   └── package.json
+├── snow-data.json                  # Auto-generated
+├── index.html                      # Frontend ⚠️ NEEDS UPDATE
+├── skibum_logo_blacktype_small.png
+├── PROJECT.md
+└── README.md
 ```
 
 ---
 
-## 🐛 KNOWN ISSUES & LIMITATIONS
+## 🐛 KNOWN ISSUES
 
-### Data Limitations
-1. **Canadian resorts**: 19 resorts fail (NOAA doesn't cover Canada)
-   - **Next step:** Add Environment Canada API integration
-2. **Forecast granularity**: Only 7-day totals available from NOAA
-   - Cannot get hourly or daily breakdowns easily
-3. **No historical data**: Only forecasts, no actual snowfall measurements
+### Critical
+1. **24hr/7-day data not separated** - Both showing same 7-day total
+2. **Back button doesn't work** - Leaves site instead of returning to map
 
-### Feature Gaps
-1. **Single view**: Can only see one time period at a time
-   - **Next step:** Add 7-day forecast toggle
-2. **Mobile UX**: Not fully optimized for mobile devices
-   - **Next step:** Responsive design improvements
+### Medium Priority
+3. **No "no snow" indicator** - Site looks broken when no snow forecasted
+4. **No zoom limits** - Can zoom out to whole world
+5. **No user instructions** - Not obvious how to use
+6. **Canadian resorts broken** - 19 resorts show errors
+
+### Low Priority (Polish)
+7. **Missing resorts** - Some notable resorts not in database
+8. **No SEO optimization** - Not ranking on Google yet
+9. **Mobile could be better** - Works but not optimized
+10. **No temperature data displayed** - Have it, not showing it
 
 ---
 
-## 💭 LESSONS LEARNED
+## 💭 LESSONS LEARNED (This Session)
 
-### What Worked Brilliantly
-1. **GitHub Actions + Static JSON**: Perfect solution for periodic data updates
-2. **NOAA API**: Free, reliable, high-quality forecasts
-3. **Static file serving**: Incredibly fast, infinitely scalable
-4. **GitHub web interface**: Simple way to edit code without Terminal complexity
+### What Worked
+- ✅ Adding resorts is easy (just edit two files)
+- ✅ Multi-pattern regex approach is more reliable than complex single regex
+- ✅ GitHub Actions are solid - zero issues with data fetching
 
-### What Was Challenging
-1. **Git workflow complexity**: Terminal commands can be error-prone
-2. **Regex parsing**: Tricky to extract snow amounts from natural language
-3. **Coordinate matching**: Resort arrays must match by lat/lng, not index
+### What Didn't Work
+- ❌ Quick browser back button fix - caused white screen
+- ❌ Complex regex attempts - kept breaking the parser
 
 ### Key Insights
-1. **Static > Dynamic for periodic data**: Pre-computing beats on-demand every time
-2. **Simplicity wins**: Static files are faster and more reliable than complex caching
-3. **Free tiers are powerful**: GitHub Actions + Cloudflare Pages = enterprise-grade for $0
+- **Test incrementally** - Don't stack multiple changes before testing
+- **Revert fast when broken** - Don't keep trying to fix a bad approach
+- **Simple is better** - Multi-pattern matching > complex regex
+- **Data separation needs to happen at fetch time** - Can't separate 24hr/7day after the fact
 
 ---
 
-## 📚 TECHNICAL RESOURCES
+## 📚 RESOURCES
 
-### APIs & Services
-- [NOAA NWS API Docs](https://www.weather.gov/documentation/services-web-api)
-- [Cloudflare Pages Docs](https://developers.cloudflare.com/pages/)
-- [GitHub Actions Docs](https://docs.github.com/en/actions)
-- [Mapbox GL JS Docs](https://docs.mapbox.com/mapbox-gl-js/)
+### APIs
+- **NOAA NWS API**: https://www.weather.gov/documentation/services-web-api
+- **Environment Canada** (TBD): For Canadian resort support
 
-### Useful Commands
-```bash
-# Manually trigger GitHub Action (or use web UI)
-# Go to: Actions → Update Snow Data → Run workflow
+### Tools
+- **Cloudflare Pages**: https://developers.cloudflare.com/pages/
+- **GitHub Actions**: https://docs.github.com/en/actions
+- **Mapbox GL JS**: https://docs.mapbox.com/mapbox-gl-js/
 
-# Local development
-cd ~/Desktop/skibum2025
+---
 
-# Pull latest changes
-git pull origin main
+## 🎯 SUCCESS CRITERIA FOR NEXT SESSION
 
-# Check status
-git status
+**User should be able to:**
+- ✅ See different values for 24hr vs 7-day forecasts
+- ✅ Understand when no snow is forecasted (status message)
+- ✅ Find Whiteface Mountain and other NY/VT resorts
+- ✅ Know how to use the site (instructions visible)
+- ✅ Toggle between 24hr/48hr/7-day map views
 
-# View snow data
-open https://skibum.com/snow-data.json
+**Technical:**
+- ✅ Data fetching calculates three separate time periods
+- ✅ Frontend displays all three properly
+- ✅ Code is clean and maintainable
+
+---
+
+## 📝 DETAILED IMPLEMENTATION NOTES
+
+### For Next Session: Fixing 24hr/48hr/7day Separation
+
+**File to edit:** `scripts/fetch-snow-data.js`
+
+**Current code (lines ~35-55):**
+```javascript
+let totalSnow = 0;
+for (const period of periods) {
+  // ... matches all periods
+  totalSnow += snowAmount;
+}
+
+return {
+  snowfall_7day: totalSnow,
+  // ...
+};
 ```
 
----
+**Needs to become:**
+```javascript
+let snow24hr = 0;
+let snow48hr = 0;
+let snow7day = 0;
 
-## 🎯 NEXT SESSION PRIORITIES
+for (let i = 0; i < periods.length; i++) {
+  const period = periods[i];
+  const text = (period.detailedForecast || '').toLowerCase();
+  
+  // [... snow detection logic ...]
+  
+  if (snowMatch) {
+    const low = parseFloat(snowMatch[1]);
+    const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
+    const snowAmount = (low + high) / 2;
+    
+    // Add to appropriate totals
+    if (i < 2) snow24hr += snowAmount;  // First 2 periods = ~24hrs
+    if (i < 4) snow48hr += snowAmount;  // First 4 periods = ~48hrs
+    snow7day += snowAmount;              // All periods = 7 days
+  }
+}
 
-### Session Goal: 7-Day Forecast Map + Canadian Resorts
+return {
+  snowfall_24hr: parseFloat(snow24hr.toFixed(1)),
+  snowfall_48hr: parseFloat(snow48hr.toFixed(1)),
+  snowfall_7day: parseFloat(snow7day.toFixed(1)),
+  forecast_text: periods[0]?.detailedForecast || 'No forecast available',
+  last_updated: new Date().toISOString()
+};
+```
 
-**Task 1: Add 7-Day Forecast Toggle** (1-2 hours)
-1. Add toggle button to UI ("Current" / "7-Day Forecast")
-2. Store toggle state in React
-3. Update heatmap data source based on toggle
-4. Update legend to show "7-Day Forecast" when toggled
-5. Test both views
+**Then update index.html:**
+- Change `data.snowfall_7day` to `data.snowfall_24hr` for 24-hour display
+- Add `data.snowfall_48hr` for 48-hour display
+- Keep `data.snowfall_7day` for 7-day display
 
-**Task 2: Canadian Resort Support** (2-3 hours)
-1. Research Environment Canada Weather API
-2. Get API key/access if needed
-3. Add Canadian weather fetching to `fetch-snow-data.js`
-4. Update logic: US → NOAA, Canada → Environment Canada
-5. Test with Canadian resorts
-6. Verify all 19 Canadian resorts show data
-
-**Task 3: Mobile Optimization** (As time allows)
-1. Test on iPhone/iPad
-2. Adjust responsive breakpoints
-3. Optimize touch targets
-4. Improve legend positioning on small screens
-
----
-
-## 📝 CHANGELOG
-
-### 2025-11-09 - GitHub Actions Migration Complete! 🎉
-- ✅ **Eliminated Cloudflare Worker entirely**
-- ✅ **GitHub Action created** - Runs every 6 hours (0, 6, 12, 18 UTC)
-- ✅ **Static JSON generation** - No more API calls from frontend
-- ✅ **Fixed data parsing regex** - More accurate snow amount detection
-- ✅ **Load time: <500ms** - 3-4x faster than Worker approach
-- ✅ **100% reliability** - No more subrequest limits or cache issues
-- ✅ **Zero cost** - Free GitHub Actions + free Cloudflare Pages
-
-### 2025-11-07 - Performance Crisis & Strategic Pivot
-- ⚠️ Identified critical issue with Worker subrequest limits
-- 📋 Decided to pivot to GitHub Actions architecture
-- 🛠️ Temporary manual cache population workaround
-
-### 2025-11-06 - Batch API & Caching Implementation
-- ✅ Batch endpoint reduced 100 calls to 1
-- ✅ KV caching implemented
-- ✅ Load time: 1-2 seconds
-
-### 2025-11-01 - Arctic Chill Heatmap Complete! 🎨
-- ✅ Regional snow visualization added
-- ✅ Zoom-based layer switching
-- ✅ Dramatic visual effects
-
-### 2025-10-30 - Phase 1 Complete! 🎉
-- ✅ NOAA integration working
-- ✅ Real forecast data displaying
-- ✅ Site live at skibum.com
+**Then:**
+1. Commit changes to fetch-snow-data.js
+2. Re-run GitHub Action to regenerate snow-data.json with new fields
+3. Commit changes to index.html
+4. Test with multiple resorts to verify different values
 
 ---
 
-## 🎯 CURRENT STATUS
+## 🔮 FUTURE FEATURES (Backlog)
 
-**Status**: 🟢 Production Ready & Stable
+### Short-term (Next 2-4 weeks)
+- 7-day forecast map toggle
+- Canadian resort support
+- SEO optimization
+- Mobile improvements
+- Temperature/wind display
 
-**What's Working:**
-- ✅ Site loads in <500ms
-- ✅ 80+ US resorts with real NOAA data
-- ✅ Arctic Chill heatmap displays beautifully
-- ✅ Automatic updates every 6 hours
-- ✅ Detail pages functional
-- ✅ Zero maintenance required
-- ✅ 100% reliable (no more breaking!)
+### Medium-term (1-3 months)
+- Historical snow data
+- Email/SMS powder alerts
+- User accounts for favorites
+- Blog section for content/SEO
+- Social sharing features
 
-**What's Next:**
-- 🎯 7-day forecast map toggle
-- 🎯 Canadian resort support (19 resorts)
-- 🎯 Mobile optimization
-
-**Overall:** System is production-ready and bulletproof! 🚀
+### Long-term (3-6 months)
+- Resort partnerships for base depth
+- Live webcam integration
+- Lift status information
+- Snow quality indicators
+- Premium features/monetization
 
 ---
 
-**Last Updated**: November 9, 2025  
-**Status**: 🟢 Production Ready  
-**Next Session**: 7-Day Forecast Maps + Canadian Resorts  
-**Architecture**: GitHub Actions + Static JSON (STABLE!)
+**Last Updated**: November 10, 2025  
+**Status**: 🟡 Stable with Minor Issues  
+**Next Session**: Fix 24hr/48hr/7day data separation + UX improvements  
+**Architecture**: GitHub Actions + Static JSON ✅ SOLID
