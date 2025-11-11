@@ -141,8 +141,7 @@
 // Handle browser back button
 useEffect(() => {
     const handlePopState = () => {
-        setSelectedResort(null);
-        window.history.replaceState(null, '', window.location.pathname);
+        window.location.reload();
     };
     
     window.addEventListener('popstate', handlePopState);
