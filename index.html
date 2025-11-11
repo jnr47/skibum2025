@@ -137,7 +137,19 @@
             const [selectedResort, setSelectedResort] = useState(null);
             const [snowfallData, setSnowfallData] = useState({});
             const [loading, setLoading] = useState(true);
-
+            
+// Handle browser back button
+useEffect(() => {
+    const handlePopState = () => {
+        setSelectedResort(null);
+    };
+    
+    window.addEventListener('popstate', handlePopState);
+    
+    return () => {
+        window.removeEventListener('popstate', handlePopState);
+    };
+}, []);
             useEffect(() => {
                 if (map.current) return;
 
@@ -241,9 +253,10 @@
                             .setLngLat([resort.lng, resort.lat])
                             .addTo(map.current);
                         
-                        el.addEventListener('click', () => {
-                            setSelectedResort(resort);
-                        });
+                       el.addEventListener('click', () => {
+    setSelectedResort(resort);
+    window.history.pushState({ resort: resort.id }, '', `#${resort.name.toLowerCase().replace(/\s+/g, '-')}`);
+});
                         
                         // Store marker reference for updates
                         resort.marker = marker;
