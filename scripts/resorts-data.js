@@ -97,5 +97,9 @@ module.exports = [
     { name: "Snow Summit", lat: 34.2306, lng: -116.8886 },
     { name: "Mountain High", lat: 34.3811, lng: -117.6881 },
     { name: "Ski Santa Fe", lat: 35.7869, lng: -105.7961 },
-    { name: "Angel Fire", lat: 36.3975, lng: -105.2886 }
+    { name: "Angel Fire", lat: 36.3975, lng: -105.2886 },
+    { name: "Whiteface Mountain",lat: 44.3659,lng: -73.9024,
+    state: "New York",
+    country: "USA"
+  }
 ];
