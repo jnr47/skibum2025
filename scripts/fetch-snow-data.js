@@ -42,15 +42,27 @@ async function fetchNOAAForecast(lat, lng) {
     for (const period of periods) {
       const text = (period.detailedForecast || '').toLowerCase();
       
-      // Look for snow measurements in the text// Match both "X inches of snow" and "snow accumulation of X inches"
-const snowMatch = text.match(/(?:snow.*?accumulation.*?of\s+)?(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")(?:\s+(?:of\s+)?snow|\s+possible|\s+expected)?/i); const snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
-      
-      if (snowMatch) {
-        const low = parseFloat(snowMatch[1]);
-        const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
-        totalSnow += (low + high) / 2;
-      }
-    }
+    // Look for snow measurements in the text - try multiple patterns
+let snowMatch = null;
+
+// Pattern 1: "5 inches of snow" or "5 to 8 inches of snow"
+snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
+
+// Pattern 2: "snow accumulation of 5 inches" or "snow accumulation of 1 to 2 inches"
+if (!snowMatch) {
+  snowMatch = text.match(/snow.*?accumulation.*?of\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
+}
+
+// Pattern 3: "new snow 5 inches"
+if (!snowMatch) {
+  snowMatch = text.match(/new snow\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
+}
+
+if (snowMatch) {
+  const low = parseFloat(snowMatch[1]);
+  const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
+  totalSnow += (low + high) / 2;
+}
     
     return {
       snowfall_7day: parseFloat(totalSnow.toFixed(1)),
