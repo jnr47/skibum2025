@@ -213,15 +213,15 @@
                                 0.85, 'rgba(236, 72, 153, 1)',   // Magenta (epic) - FULLY OPAQUE
                                 1, 'rgba(240, 171, 252, 1)'      // Pink (legendary) - FULLY OPAQUE
                             ],
-                            // MUCH LARGER radius for dramatic glow effect
+                            // Tighter radius for realistic weather map appearance
                             'heatmap-radius': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 80,    // TRIPLED from 15 to 80
-                                3, 120,   // Large glow at continent view
-                                5, 150,   // Maximum glow
-                                6, 100    // Start shrinking
+                                0, 20,    // Smaller at continent view
+                                3, 30,    // Moderate at regional view
+                                5, 40,    // Localized zones visible
+                                6, 30     // Shrink as markers appear
                             ],
                             // COMPLETE fade out at zoom 6
                             'heatmap-opacity': [
@@ -233,14 +233,14 @@
                                 5.5, 0.5,  // Start fading
                                 6, 0       // COMPLETELY gone at zoom 6
                             ],
-                            // Increase intensity for more glow
+                            // Intensity for localized snow zones
                             'heatmap-intensity': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 1.5,    // High intensity at wide view
-                                5, 2,      // Maximum intensity
-                                6, 1       // Normal intensity before fade
+                                0, 1,      // Normal intensity at wide view
+                                5, 1.2,    // Slightly higher as you zoom
+                                6, 1       // Normal before fade
                             ]
                         }
                     }, 'waterway-label');
