@@ -35,37 +35,49 @@ async function fetchNOAAForecast(lat, lng) {
     
     const forecastData = await forecastResponse.json();
     
-    // Step 3: Calculate total snowfall from forecast
-    let totalSnow = 0;
+    // Step 3: Calculate snowfall for different time periods
+    let snow24hr = 0;  // First 2 periods (~24 hours)
+    let snow48hr = 0;  // First 4 periods (~48 hours)
+    let snow7day = 0;  // All 14 periods (~7 days)
+    
     const periods = forecastData.properties.periods || [];
     
-for (const period of periods) {
-  const text = (period.detailedForecast || '').toLowerCase();
-  
-  // Look for snow measurements in the text - try multiple patterns
-  let snowMatch = null;
+    for (let i = 0; i < periods.length; i++) {
+      const period = periods[i];
+      const text = (period.detailedForecast || '').toLowerCase();
+      
+      // Look for snow measurements in the text - try multiple patterns
+      let snowMatch = null;
 
-  // Pattern 1: "5 inches of snow" or "5 to 8 inches of snow"
-  snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
+      // Pattern 1: "5 inches of snow" or "5 to 8 inches of snow"
+      snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
 
-  // Pattern 2: "snow accumulation of 5 inches"
-  if (!snowMatch) {
-    snowMatch = text.match(/snow.*?accumulation.*?of\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
-  }
+      // Pattern 2: "snow accumulation of 5 inches"
+      if (!snowMatch) {
+        snowMatch = text.match(/snow.*?accumulation.*?of\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
+      }
 
-  // Pattern 3: "new snow 5 inches"
-  if (!snowMatch) {
-    snowMatch = text.match(/new snow\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
-  }
+      // Pattern 3: "new snow 5 inches"
+      if (!snowMatch) {
+        snowMatch = text.match(/new snow\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
+      }
 
-  if (snowMatch) {
-    const low = parseFloat(snowMatch[1]);
-    const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
-    totalSnow += (low + high) / 2;
-  }
-}
+      if (snowMatch) {
+        const low = parseFloat(snowMatch[1]);
+        const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
+        const snowAmount = (low + high) / 2;
+        
+        // Add to appropriate time period totals
+        if (i < 2) snow24hr += snowAmount;  // First 2 periods = ~24hrs
+        if (i < 4) snow48hr += snowAmount;  // First 4 periods = ~48hrs
+        snow7day += snowAmount;              // All periods = 7 days
+      }
+    }
+    
     return {
-      snowfall_7day: parseFloat(totalSnow.toFixed(1)),
+      snowfall_24hr: parseFloat(snow24hr.toFixed(1)),
+      snowfall_48hr: parseFloat(snow48hr.toFixed(1)),
+      snowfall_7day: parseFloat(snow7day.toFixed(1)),
       forecast_text: periods[0]?.detailedForecast || 'No forecast available',
       last_updated: new Date().toISOString()
     };
@@ -73,6 +85,8 @@ for (const period of periods) {
   } catch (error) {
     console.error(`Error fetching NOAA data for ${lat},${lng}:`, error.message);
     return {
+      snowfall_24hr: 0,
+      snowfall_48hr: 0,
       snowfall_7day: 0,
       forecast_text: 'Data unavailable',
       last_updated: new Date().toISOString(),
