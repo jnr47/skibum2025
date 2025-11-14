@@ -26,6 +26,12 @@ jobs:
           cd scripts
           npm install
       
+      - name: Pull latest changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git pull origin main
+      
       - name: Fetch snow data
         run: |
           cd scripts
@@ -33,9 +39,6 @@ jobs:
       
       - name: Commit and push changes
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git pull --rebase origin main
           git add snow-data.json
           git diff --staged --quiet || git commit -m "Update snow data: $(date)"
           git push
