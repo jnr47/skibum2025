@@ -166,7 +166,9 @@
                     style: 'mapbox://styles/mapbox/dark-v11',
                     center: [-106, 45],
                     zoom: 3.5,
-                    projection: 'globe'
+                    projection: 'globe',
+                    maxBounds: [[-170, 15], [-50, 72]], // Restrict to North America
+                    minZoom: 2.5
                 });
 
                 map.current.on('load', () => {
@@ -452,8 +454,14 @@ try {
                             ))}
                         </div>
                         <div className="mt-4 pt-4 border-t border-slate-700">
+                            <p className="text-xs text-slate-400 mb-2">
+                                💡 <strong>How to Use:</strong>
+                            </p>
+                            <p className="text-xs text-slate-400 mb-1">
+                                • Zoom in/out to toggle heatmap/markers
+                            </p>
                             <p className="text-xs text-slate-400">
-                                🔍 Zoom out for regional heatmap
+                                • Click resorts for detailed forecasts
                             </p>
                         </div>
                     </div>
