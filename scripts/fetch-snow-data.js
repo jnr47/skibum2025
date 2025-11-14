@@ -1,17 +1,20 @@
 /**
  * Fetch NOAA snow data for all ski resorts and generate static JSON
  * This script runs in GitHub Actions every 6 hours
+ * 
+ * UPDATED: Now uses NOAA gridded forecast API for accurate numerical data
+ * instead of parsing text forecasts
  */
 
 // Import resort data
 const RESORTS = require('./resorts-data.js');
 
 /**
- * Fetch NOAA 7-day forecast for a location
+ * Fetch NOAA 7-day forecast using gridded data (NUMERICAL, not text)
  */
 async function fetchNOAAForecast(lat, lng) {
   try {
-    // Step 1: Get the grid point
+    // Step 1: Get the grid point information
     const pointUrl = `https://api.weather.gov/points/${lat},${lng}`;
     const pointResponse = await fetch(pointUrl, {
       headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
@@ -22,63 +25,101 @@ async function fetchNOAAForecast(lat, lng) {
     }
     
     const pointData = await pointResponse.json();
-    const forecastUrl = pointData.properties.forecast;
     
-    // Step 2: Get the forecast
-    const forecastResponse = await fetch(forecastUrl, {
+    // Step 2: Get the gridded forecast URL (this has the numerical data)
+    const gridId = pointData.properties.gridId;
+    const gridX = pointData.properties.gridX;
+    const gridY = pointData.properties.gridY;
+    
+    // This is the KEY CHANGE - we're using gridpoints, not forecast
+    const gridUrl = `https://api.weather.gov/gridpoints/${gridId}/${gridX},${gridY}`;
+    
+    const gridResponse = await fetch(gridUrl, {
       headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
     });
     
-    if (!forecastResponse.ok) {
-      throw new Error(`Forecast API failed: ${forecastResponse.status}`);
+    if (!gridResponse.ok) {
+      throw new Error(`Grid API failed: ${gridResponse.status}`);
     }
     
-    const forecastData = await forecastResponse.json();
+    const gridData = await gridResponse.json();
     
-    // Step 3: Calculate snowfall for different time periods
-    let snow24hr = 0;  // First 2 periods (~24 hours)
-    let snow48hr = 0;  // First 4 periods (~48 hours)
-    let snow7day = 0;  // All 14 periods (~7 days)
+    // Step 3: Extract snowfall data (actual numbers, not text!)
+    const snowfallData = gridData.properties.snowfallAmount;
     
-    const periods = forecastData.properties.periods || [];
+    if (!snowfallData || !snowfallData.values || snowfallData.values.length === 0) {
+      // No snow in forecast
+      return {
+        snowfall_24hr: 0,
+        snowfall_48hr: 0,
+        snowfall_7day: 0,
+        forecast_text: 'No snow expected',
+        last_updated: new Date().toISOString()
+      };
+    }
     
-    for (let i = 0; i < periods.length; i++) {
-      const period = periods[i];
-      const text = (period.detailedForecast || '').toLowerCase();
+    // Step 4: Calculate snowfall for different time periods
+    // snowfallData.values is an array of {validTime, value} objects
+    // validTime is in ISO 8601 duration format like "2024-11-14T18:00:00+00:00/PT1H"
+    
+    const now = new Date();
+    const hour24 = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    const hour48 = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+    const day7 = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    
+    let snow24hr = 0;
+    let snow48hr = 0;
+    let snow7day = 0;
+    
+    for (const entry of snowfallData.values) {
+      // Parse the time period
+      const timeParts = entry.validTime.split('/');
+      const startTime = new Date(timeParts[0]);
       
-      // Look for snow measurements in the text - try multiple patterns
-      let snowMatch = null;
-
-      // Pattern 1: "5 inches of snow" or "5 to 8 inches of snow"
-      snowMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")\s+(?:of\s+)?snow/i);
-
-      // Pattern 2: "snow accumulation of 5 inches"
-      if (!snowMatch) {
-        snowMatch = text.match(/snow.*?accumulation.*?of\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
-      }
-
-      // Pattern 3: "new snow 5 inches"
-      if (!snowMatch) {
-        snowMatch = text.match(/new snow\s+(\d+(?:\.\d+)?)\s*(?:to\s*(\d+(?:\.\d+)?)\s*)?(inch|inches|")/i);
-      }
-
-      if (snowMatch) {
-        const low = parseFloat(snowMatch[1]);
-        const high = snowMatch[2] ? parseFloat(snowMatch[2]) : low;
-        const snowAmount = (low + high) / 2;
+      // Convert value from millimeters to inches
+      // NOAA returns values in millimeters, we want inches
+      const snowMM = entry.value || 0;
+      const snowInches = snowMM * 0.0393701; // 1mm = 0.0393701 inches
+      
+      // Add to appropriate time buckets
+      if (startTime <= day7) {
+        snow7day += snowInches;
         
-        // Add to appropriate time period totals
-        if (i < 2) snow24hr += snowAmount;  // First 2 periods = ~24hrs
-        if (i < 4) snow48hr += snowAmount;  // First 4 periods = ~48hrs
-        snow7day += snowAmount;              // All periods = 7 days
+        if (startTime <= hour48) {
+          snow48hr += snowInches;
+          
+          if (startTime <= hour24) {
+            snow24hr += snowInches;
+          }
+        }
       }
+    }
+    
+    // Get forecast text from the regular forecast endpoint (for display purposes)
+    let forecastText = 'No forecast available';
+    try {
+      const forecastUrl = pointData.properties.forecast;
+      const forecastResponse = await fetch(forecastUrl, {
+        headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
+      });
+      
+      if (forecastResponse.ok) {
+        const forecastData = await forecastResponse.json();
+        const periods = forecastData.properties.periods || [];
+        if (periods.length > 0) {
+          forecastText = periods[0].detailedForecast;
+        }
+      }
+    } catch (e) {
+      // If forecast text fetch fails, that's okay - we have the numerical data
+      console.log(`Could not fetch forecast text for ${lat},${lng}`);
     }
     
     return {
       snowfall_24hr: parseFloat(snow24hr.toFixed(1)),
       snowfall_48hr: parseFloat(snow48hr.toFixed(1)),
       snowfall_7day: parseFloat(snow7day.toFixed(1)),
-      forecast_text: periods[0]?.detailedForecast || 'No forecast available',
+      forecast_text: forecastText,
       last_updated: new Date().toISOString()
     };
     
