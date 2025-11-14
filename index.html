@@ -140,6 +140,30 @@
             const [snowfallData, setSnowfallData] = useState({});
             const [loading, setLoading] = useState(true);
 
+            // Handle URL hash for browser back button
+            useEffect(() => {
+                const handleHashChange = () => {
+                    const hash = window.location.hash;
+                    if (hash.startsWith('#resort-')) {
+                        const resortId = parseInt(hash.replace('#resort-', ''));
+                        const resort = resorts.find(r => r.id === resortId);
+                        if (resort) {
+                            setSelectedResort(resort);
+                        }
+                    } else {
+                        setSelectedResort(null);
+                    }
+                };
+
+                // Handle initial hash on page load
+                handleHashChange();
+
+                // Listen for hash changes (back/forward buttons)
+                window.addEventListener('hashchange', handleHashChange);
+                
+                return () => window.removeEventListener('hashchange', handleHashChange);
+            }, []);
+
             useEffect(() => {
                 if (map.current) return;
 
@@ -244,7 +268,7 @@
                             .addTo(map.current);
                         
                         el.addEventListener('click', () => {
-                            setSelectedResort(resort);
+                            window.location.hash = `#resort-${resort.id}`;
                         });
                         
                         // Store marker reference for updates
@@ -392,7 +416,7 @@ try {
                 return <ResortDetail 
                     resort={selectedResort} 
                     snowfallData={snowfallData[selectedResort.id] || {forecast24hr: 0, forecast48hr: 0, forecast7day: 0}} 
-                    onBack={() => window.location.reload()} 
+                    onBack={() => window.history.back()} 
                 />;
             }
 
