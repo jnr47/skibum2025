@@ -102,6 +102,11 @@ module.exports = [
     state: "New York",
     country: "USA"
   }
+    {
+  name: "Bristol Mountain",
+  lat: 42.7455,
+  lng: -77.4016
+}
     /**
  * Canadian Ski Resorts Data
  * Coordinates for major ski resorts across Canada
