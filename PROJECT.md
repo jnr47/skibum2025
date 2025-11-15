@@ -392,3 +392,181 @@ Shows live NOAA data for Stowe with parsed snow amounts
 **Status**: 🟢 Production & Stable  
 **Next Session**: Add "no snow" indicator + Canadian resorts  
 **Architecture**: GitHub Actions + Static JSON ✅ SOLID
+
+
+# SkiBum.com Project Documentation
+
+**Last Updated:** November 15, 2025
+
+## 🎿 Project Overview
+Live snowfall tracking website for ski resorts worldwide using real-time weather data from Open-Meteo API.
+
+**Live Site:** https://skibum.com  
+**GitHub Repo:** skibum2025
+
+---
+
+## 📊 Current Status
+
+### Resorts
+- **Total:** 117 resorts
+- **Coverage:** North America (USA & Canada) + capability for worldwide expansion
+- **Latest Addition:** Bristol Mountain (NY) - November 15, 2025
+
+### Data Source
+- **Provider:** Open-Meteo API
+- **Update Frequency:** Every 6 hours via GitHub Actions
+- **Data Points:** 24hr, 48hr, and 7-day snowfall forecasts
+- **Units:** Inches (converted from cm)
+
+### Technology Stack
+- **Frontend:** Cloudflare Pages (static hosting)
+- **Map:** Mapbox GL JS
+- **Data Processing:** GitHub Actions + Node.js
+- **Weather API:** Open-Meteo (free, global coverage)
+
+---
+
+## ⚠️ CRITICAL: Adding New Resorts
+
+**YOU MUST UPDATE TWO FILES FOR A RESORT TO APPEAR ON THE MAP:**
+
+### File 1: `scripts/resorts-data.js` (Backend - Data Fetching)
+Located in your GitHub repository. Controls which resorts get weather data.
+
+**Format:**
+```javascript
+{ name: "Resort Name", lat: XX.XXXX, lng: -XX.XXXX },
+```
+
+**Rules:**
+- Use decimal degrees (not degrees/minutes/seconds)
+- Add comma after each entry (except the last one)
+- Consistent formatting
+
+### File 2: `index.html` (Frontend - Map Display)
+Located in Cloudflare Pages. Controls which markers appear on the map.
+
+**Format:**
+```javascript
+{ id: 102, name: "Resort Name", lat: XX.XXXX, lng: -XX.XXXX, state: "State/Province", country: "Country" }
+```
+
+**Rules:**
+- Sequential ID numbers
+- Must match EXACT coordinates from resorts-data.js
+- Include state and country fields
+
+**BOTH files must be updated or the resort won't appear properly!**
+
+---
+
+## 🔧 Recent Changes (November 15, 2025)
+
+### Major Updates
+1. ✅ **Switched from NOAA to Open-Meteo API**
+   - Reason: More accurate data, global coverage
+   - Performance: 10x faster (1 min vs 10 min processing)
+   - Coverage: Now supports worldwide resorts
+
+2. ✅ **Added Canadian Resorts**
+   - 16 major Canadian ski areas added
+   - Whistler, Revelstoke, Lake Louise, etc.
+
+3. ✅ **Added Bristol Mountain**
+   - Jeff's local ski hill in western NY
+   - Coordinates: 42.7455, -77.4016
+   - Fixed coordinate conversion from degrees/minutes format
+
+### Code Improvements
+- Cleaned up resorts-data.js syntax
+- Consistent formatting across all resort entries
+- Removed duplicate/broken code sections
+
+---
+
+## 🐛 Known Issues & Solutions
+
+### Issue: Resort appears in JSON but not on map
+**Cause:** Resort only added to `resorts-data.js` but not `index.html`  
+**Solution:** Add resort to BOTH files with matching coordinates
+
+### Issue: Coordinate conversion from degrees/minutes
+**Formula:**
+- Decimal Degrees = Degrees + (Minutes / 60)
+- Example: 42°44'43.8"N = 42 + (44.732/60) = 42.7455°
+- Don't forget the negative sign for West longitude!
+
+### Issue: GitHub Action fails with syntax error
+**Cause:** Missing comma or incorrect formatting in resorts-data.js  
+**Solution:** Check for commas between ALL resort entries
+
+---
+
+## 📈 Future Expansion Ideas
+
+### Potential Additions
+- European resorts (Alps, Pyrenees)
+- Japanese resorts (Niseko, Hakuba)
+- South American resorts (Chile, Argentina)
+- New Zealand resorts
+
+### Feature Ideas
+- Historical snowfall data
+- Resort comparison tool
+- Snow alerts/notifications
+- Detailed trail information
+- Restaurant/lodging recommendations
+
+---
+
+## 🔑 Key Files & Locations
+
+### GitHub Repository (skibum2025)
+- `/scripts/resorts-data.js` - Resort coordinates for weather data
+- `/scripts/fetch-snow-data.js` - Open-Meteo API integration
+- `/.github/workflows/fetch-snow.yml` - Scheduled data updates
+- `/snow-data.json` - Generated weather data (auto-updated)
+
+### Cloudflare Pages
+- `index.html` - Frontend map and UI
+- `skibum_logo_blacktype_small.png` - Logo file
+
+---
+
+## 💡 Developer Notes
+
+### Adding a Resort Checklist
+1. [ ] Get accurate coordinates in decimal degrees
+2. [ ] Add to `scripts/resorts-data.js` in GitHub
+3. [ ] Add to `index.html` resorts array (with ID, state, country)
+4. [ ] Commit and push to GitHub
+5. [ ] Trigger GitHub Action manually or wait for scheduled run
+6. [ ] Verify resort appears in snow-data.json
+7. [ ] Check map displays marker correctly
+8. [ ] Zoom in to test marker visibility
+
+### Coordinate Resources
+- Google Maps: Right-click → "What's here?" → Copy coordinates
+- Format in degrees/minutes? Use conversion formula above
+- Always verify location on map before committing
+
+### GitHub Actions
+- Runs every 6 hours automatically
+- Can trigger manually from Actions tab
+- Processing time: ~1-2 minutes for 117 resorts
+- Rate limit: 100ms delay between requests (respectful to Open-Meteo)
+
+---
+
+## 📞 Support & Resources
+
+- **Open-Meteo Docs:** https://open-meteo.com/en/docs
+- **Mapbox GL JS Docs:** https://docs.mapbox.com/mapbox-gl-js/
+- **Cloudflare Pages:** https://pages.cloudflare.com/
+
+---
+
+**Project Owner:** Jeff  
+**Domain:** SkiBum.com  
+**Status:** ✅ Production - Live and operational
