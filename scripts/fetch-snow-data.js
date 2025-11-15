@@ -1,118 +1,91 @@
 /**
- * Fetch NOAA snow data for all ski resorts and generate static JSON
+ * Fetch Open-Meteo snow data for all ski resorts and generate static JSON
  * This script runs in GitHub Actions every 6 hours
  * 
- * UPDATED: Now uses NOAA gridded forecast API for accurate numerical data
- * instead of parsing text forecasts
+ * UPDATED: Now uses Open-Meteo API for accurate worldwide snow forecasts
+ * Open-Meteo provides better accuracy and global coverage compared to NOAA
  */
 
 // Import resort data
 const RESORTS = require('./resorts-data.js');
 
 /**
- * Fetch NOAA 7-day forecast using gridded data (NUMERICAL, not text)
+ * Fetch Open-Meteo 7-day forecast
+ * Open-Meteo provides hourly snowfall data globally
  */
-async function fetchNOAAForecast(lat, lng) {
+async function fetchOpenMeteoForecast(lat, lng) {
   try {
-    // Step 1: Get the grid point information
-    const pointUrl = `https://api.weather.gov/points/${lat},${lng}`;
-    const pointResponse = await fetch(pointUrl, {
-      headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
-    });
+    // Open-Meteo API endpoint
+    // Parameters:
+    // - latitude, longitude: resort coordinates
+    // - hourly=snowfall: get hourly snowfall amounts
+    // - forecast_days=7: get 7 days of forecast
+    // - timezone=auto: use local timezone for the location
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=snowfall&forecast_days=7&timezone=auto`;
     
-    if (!pointResponse.ok) {
-      throw new Error(`Point API failed: ${pointResponse.status}`);
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Open-Meteo API failed: ${response.status}`);
     }
     
-    const pointData = await pointResponse.json();
+    const data = await response.json();
     
-    // Step 2: Get the gridded forecast URL (this has the numerical data)
-    const gridId = pointData.properties.gridId;
-    const gridX = pointData.properties.gridX;
-    const gridY = pointData.properties.gridY;
-    
-    // This is the KEY CHANGE - we're using gridpoints, not forecast
-    const gridUrl = `https://api.weather.gov/gridpoints/${gridId}/${gridX},${gridY}`;
-    
-    const gridResponse = await fetch(gridUrl, {
-      headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
-    });
-    
-    if (!gridResponse.ok) {
-      throw new Error(`Grid API failed: ${gridResponse.status}`);
-    }
-    
-    const gridData = await gridResponse.json();
-    
-    // Step 3: Extract snowfall data (actual numbers, not text!)
-    const snowfallData = gridData.properties.snowfallAmount;
-    
-    if (!snowfallData || !snowfallData.values || snowfallData.values.length === 0) {
-      // No snow in forecast
+    // Check if we have snowfall data
+    if (!data.hourly || !data.hourly.snowfall) {
       return {
         snowfall_24hr: 0,
         snowfall_48hr: 0,
         snowfall_7day: 0,
-        forecast_text: 'No snow expected',
+        forecast_text: 'No forecast data available',
         last_updated: new Date().toISOString()
       };
     }
     
-    // Step 4: Calculate snowfall for different time periods
-    // snowfallData.values is an array of {validTime, value} objects
-    // validTime is in ISO 8601 duration format like "2024-11-14T18:00:00+00:00/PT1H"
+    // Open-Meteo returns hourly snowfall in cm
+    // We need to:
+    // 1. Sum the hourly values for 24hr, 48hr, and 7-day periods
+    // 2. Convert from cm to inches (1 cm = 0.393701 inches)
     
-    const now = new Date();
-    const hour24 = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-    const hour48 = new Date(now.getTime() + 48 * 60 * 60 * 1000);
-    const day7 = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const snowfallHourly = data.hourly.snowfall; // Array of hourly values in cm
+    const times = data.hourly.time; // Array of ISO timestamps
     
-    let snow24hr = 0;
-    let snow48hr = 0;
-    let snow7day = 0;
+    // Calculate how many hours we need for each period
+    // Open-Meteo gives us 168 hours (7 days) of data
+    const hours24 = Math.min(24, snowfallHourly.length);
+    const hours48 = Math.min(48, snowfallHourly.length);
+    const hours168 = snowfallHourly.length; // Full 7 days
     
-    for (const entry of snowfallData.values) {
-      // Parse the time period
-      const timeParts = entry.validTime.split('/');
-      const startTime = new Date(timeParts[0]);
+    // Sum snowfall for each period (values are in cm)
+    let snowCm24hr = 0;
+    let snowCm48hr = 0;
+    let snowCm7day = 0;
+    
+    for (let i = 0; i < snowfallHourly.length; i++) {
+      const snowfall = snowfallHourly[i] || 0; // Some values might be null
       
-      // Convert value from millimeters to inches
-      // NOAA returns values in millimeters, we want inches
-      const snowMM = entry.value || 0;
-      const snowInches = snowMM * 0.0393701; // 1mm = 0.0393701 inches
-      
-      // Add to appropriate time buckets
-      if (startTime <= day7) {
-        snow7day += snowInches;
-        
-        if (startTime <= hour48) {
-          snow48hr += snowInches;
-          
-          if (startTime <= hour24) {
-            snow24hr += snowInches;
-          }
-        }
+      if (i < hours24) {
+        snowCm24hr += snowfall;
       }
+      if (i < hours48) {
+        snowCm48hr += snowfall;
+      }
+      snowCm7day += snowfall;
     }
     
-    // Get forecast text from the regular forecast endpoint (for display purposes)
-    let forecastText = 'No forecast available';
-    try {
-      const forecastUrl = pointData.properties.forecast;
-      const forecastResponse = await fetch(forecastUrl, {
-        headers: { 'User-Agent': 'SkiBum.com Snow Tracker' }
-      });
-      
-      if (forecastResponse.ok) {
-        const forecastData = await forecastResponse.json();
-        const periods = forecastData.properties.periods || [];
-        if (periods.length > 0) {
-          forecastText = periods[0].detailedForecast;
-        }
-      }
-    } catch (e) {
-      // If forecast text fetch fails, that's okay - we have the numerical data
-      console.log(`Could not fetch forecast text for ${lat},${lng}`);
+    // Convert cm to inches (1 cm = 0.393701 inches)
+    const snow24hr = snowCm24hr * 0.393701;
+    const snow48hr = snowCm48hr * 0.393701;
+    const snow7day = snowCm7day * 0.393701;
+    
+    // Create a simple forecast text based on the data
+    let forecastText = 'No snow expected';
+    if (snow24hr > 0) {
+      forecastText = `${snow24hr.toFixed(1)}" expected in next 24 hours`;
+    } else if (snow48hr > 0) {
+      forecastText = `${snow48hr.toFixed(1)}" expected in next 48 hours`;
+    } else if (snow7day > 0) {
+      forecastText = `${snow7day.toFixed(1)}" expected in next 7 days`;
     }
     
     return {
@@ -124,7 +97,7 @@ async function fetchNOAAForecast(lat, lng) {
     };
     
   } catch (error) {
-    console.error(`Error fetching NOAA data for ${lat},${lng}:`, error.message);
+    console.error(`Error fetching Open-Meteo data for ${lat},${lng}:`, error.message);
     return {
       snowfall_24hr: 0,
       snowfall_48hr: 0,
@@ -137,7 +110,7 @@ async function fetchNOAAForecast(lat, lng) {
 }
 
 /**
- * Add delay between requests to be nice to NOAA servers
+ * Add delay between requests to be respectful to Open-Meteo servers
  */
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -147,14 +120,14 @@ function delay(ms) {
  * Main function to fetch all data
  */
 async function generateSnowData() {
-  console.log(`Starting data fetch for ${RESORTS.length} resorts...`);
+  console.log(`Starting Open-Meteo data fetch for ${RESORTS.length} resorts...`);
   const results = [];
   
   for (let i = 0; i < RESORTS.length; i++) {
     const resort = RESORTS[i];
     console.log(`[${i + 1}/${RESORTS.length}] Fetching ${resort.name}...`);
     
-    const data = await fetchNOAAForecast(resort.lat, resort.lng);
+    const data = await fetchOpenMeteoForecast(resort.lat, resort.lng);
     
     results.push({
       name: resort.name,
@@ -163,13 +136,15 @@ async function generateSnowData() {
       ...data
     });
     
-    // Add a small delay to avoid overwhelming NOAA servers
-    await delay(200);
+    // Add a small delay to avoid overwhelming servers
+    // Open-Meteo is generous but we should still be respectful
+    await delay(100);
   }
   
   const output = {
     generated_at: new Date().toISOString(),
     total_resorts: results.length,
+    data_source: 'Open-Meteo',
     resorts: results
   };
   
@@ -177,6 +152,10 @@ async function generateSnowData() {
   console.log(`- Total resorts: ${results.length}`);
   console.log(`- Successful: ${results.filter(r => !r.error).length}`);
   console.log(`- Failed: ${results.filter(r => r.error).length}`);
+  
+  // Log some stats
+  const resortsWithSnow = results.filter(r => r.snowfall_7day > 0).length;
+  console.log(`- Resorts with snow in 7-day forecast: ${resortsWithSnow}`);
   
   return output;
 }
@@ -197,6 +176,7 @@ async function main() {
     
     console.log(`\n✅ Snow data written to: ${outputPath}`);
     console.log(`📦 File size: ${(fs.statSync(outputPath).size / 1024).toFixed(2)} KB`);
+    console.log(`🌍 Data source: Open-Meteo API (https://open-meteo.com)`);
     
   } catch (error) {
     console.error('❌ Error generating snow data:', error);
