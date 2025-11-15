@@ -98,156 +98,22 @@ module.exports = [
     { name: "Mountain High", lat: 34.3811, lng: -117.6881 },
     { name: "Ski Santa Fe", lat: 35.7869, lng: -105.7961 },
     { name: "Angel Fire", lat: 36.3975, lng: -105.2886 },
-    { name: "Whiteface Mountain",lat: 44.3659,lng: -73.9024,
-    state: "New York",
-    country: "USA"
-  }
-    {
-  name: "Bristol Mountain",
-  lat: 42.7455,
-  lng: -77.4016
-}
-    /**
- * Canadian Ski Resorts Data
- * Coordinates for major ski resorts across Canada
- * Organized by Province/Region
- */
-
-const CANADIAN_RESORTS = [
-  
-  // ========================================
-  // BRITISH COLUMBIA - West Coast
-  // ========================================
-  
-  {
-    name: "Whistler Blackcomb",
-    lat: 50.1163,
-    lng: -122.9574,
-    province: "British Columbia",
-    region: "Coast Mountains"
-  },
-  {
-    name: "Revelstoke Mountain Resort",
-    lat: 50.9981,
-    lng: -118.1958,
-    province: "British Columbia",
-    region: "Columbia Mountains"
-  },
-  {
-    name: "Big White Ski Resort",
-    lat: 49.7308,
-    lng: -118.9357,
-    province: "British Columbia",
-    region: "Okanagan"
-  },
-  {
-    name: "Sun Peaks Resort",
-    lat: 50.8847,
-    lng: -119.8892,
-    province: "British Columbia",
-    region: "Thompson-Okanagan"
-  },
-  {
-    name: "Fernie Alpine Resort",
-    lat: 49.4651,
-    lng: -115.0764,
-    province: "British Columbia",
-    region: "Kootenay Rockies"
-  },
-  {
-    name: "Kicking Horse Mountain Resort",
-    lat: 51.2983,
-    lng: -116.9550,
-    province: "British Columbia",
-    region: "Kootenay Rockies"
-  },
-  {
-    name: "Panorama Mountain Resort",
-    lat: 50.9806,
-    lng: -116.0972,
-    province: "British Columbia",
-    region: "Kootenay Rockies"
-  },
-  {
-    name: "RED Mountain Resort",
-    lat: 49.0878,
-    lng: -117.8197,
-    province: "British Columbia",
-    region: "Kootenay Rockies"
-  },
-  {
-    name: "SilverStar Mountain Resort",
-    lat: 50.4000,
-    lng: -119.0833,
-    province: "British Columbia",
-    region: "Okanagan"
-  },
-  
-  // ========================================
-  // ALBERTA - Canadian Rockies
-  // ========================================
-  
-  {
-    name: "Lake Louise Ski Resort",
-    lat: 51.4254,
-    lng: -116.1773,
-    province: "Alberta",
-    region: "Banff National Park"
-  },
-  {
-    name: "Sunshine Village",
-    lat: 51.1128,
-    lng: -115.7631,
-    province: "Alberta",
-    region: "Banff National Park"
-  },
-  {
-    name: "Mount Norquay",
-    lat: 51.2094,
-    lng: -115.5797,
-    province: "Alberta",
-    region: "Banff National Park"
-  },
-  {
-    name: "Nakiska Ski Area",
-    lat: 50.9042,
-    lng: -115.0856,
-    province: "Alberta",
-    region: "Kananaskis Country"
-  },
-  
-  // ========================================
-  // QUEBEC - Eastern Canada
-  // ========================================
-  
-  {
-    name: "Mont Tremblant",
-    lat: 46.2094,
-    lng: -74.5847,
-    province: "Quebec",
-    region: "Laurentians"
-  },
-  {
-    name: "Le Massif de Charlevoix",
-    lat: 47.3389,
-    lng: -70.6375,
-    province: "Quebec",
-    region: "Charlevoix"
-  },
-  
-  // ========================================
-  // ONTARIO - Eastern Canada
-  // ========================================
-  
-  {
-    name: "Blue Mountain Resort",
-    lat: 44.5067,
-    lng: -80.3158,
-    province: "Ontario",
-    region: "Collingwood"
-  }
-
-];
-
-module.exports = CANADIAN_RESORTS;
+    { name: "Whiteface Mountain", lat: 44.3659, lng: -73.9024 },
+    { name: "Bristol Mountain", lat: 42.7455, lng: -77.4016 },
+    
+    // Additional Canadian Resorts
+    { name: "Revelstoke Mountain Resort", lat: 50.9981, lng: -118.1958 },
+    { name: "Big White Ski Resort", lat: 49.7308, lng: -118.9357 },
+    { name: "Sun Peaks Resort", lat: 50.8847, lng: -119.8892 },
+    { name: "Fernie Alpine Resort", lat: 49.4651, lng: -115.0764 },
+    { name: "Kicking Horse Mountain Resort", lat: 51.2983, lng: -116.9550 },
+    { name: "Panorama Mountain Resort", lat: 50.9806, lng: -116.0972 },
+    { name: "RED Mountain Resort", lat: 49.0878, lng: -117.8197 },
+    { name: "SilverStar Mountain Resort", lat: 50.4000, lng: -119.0833 },
+    { name: "Lake Louise Ski Resort", lat: 51.4254, lng: -116.1773 },
+    { name: "Sunshine Village", lat: 51.1128, lng: -115.7631 },
+    { name: "Mount Norquay", lat: 51.2094, lng: -115.5797 },
+    { name: "Nakiska Ski Area", lat: 50.9042, lng: -115.0856 },
+    { name: "Le Massif de Charlevoix", lat: 47.3389, lng: -70.6375 },
+    { name: "Blue Mountain Resort", lat: 44.5067, lng: -80.3158 }
 ];
