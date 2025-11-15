@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-15T06:45:59.941Z",
+  "generated_at": "2025-11-15T12:56:21.065Z",
   "total_resorts": 100,
   "resorts": [
     {
@@ -10,7 +10,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:36:23.591Z",
+      "last_updated": "2025-11-15T12:50:19.548Z",
       "error": "Point API failed: 404"
     },
     {
@@ -18,10 +18,10 @@
       "lat": 39.6403,
       "lng": -106.3742,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1.2,
-      "forecast_text": "Mostly clear, with a low around 31. West northwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:36:30.356Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 1.1,
+      "forecast_text": "Partly cloudy, with a low around 30. Northwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:50:20.657Z"
     },
     {
       "name": "Park City",
@@ -29,29 +29,29 @@
       "lng": -111.5079,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "Partly cloudy. Low around 39, with temperatures rising to around 41 overnight. South wind 2 to 6 mph.",
-      "last_updated": "2025-11-15T06:36:32.318Z"
+      "snowfall_7day": 0.9,
+      "forecast_text": "Partly cloudy. Low around 39, with temperatures rising to around 41 overnight. South wind around 2 mph.",
+      "last_updated": "2025-11-15T12:50:30.964Z"
     },
     {
       "name": "Breckenridge",
       "lat": 39.4817,
       "lng": -106.0384,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1.3,
-      "forecast_text": "Mostly clear, with a low around 29. West northwest wind around 8 mph.",
-      "last_updated": "2025-11-15T06:36:37.138Z"
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 1.2,
+      "forecast_text": "Partly cloudy. Low around 29, with temperatures rising to around 31 overnight. West northwest wind around 8 mph.",
+      "last_updated": "2025-11-15T12:50:32.311Z"
     },
     {
       "name": "Heavenly",
       "lat": 38.935,
       "lng": -119.9403,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 1.8,
-      "forecast_text": "A slight chance of rain. Mostly cloudy, with a low around 39. Southeast wind around 0 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:37:00.205Z"
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 3.4,
+      "forecast_text": "Mostly cloudy, with a low around 40. East wind around 0 mph.",
+      "last_updated": "2025-11-15T12:50:33.583Z"
     },
     {
       "name": "Aspen Snowmass",
@@ -60,8 +60,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.1,
       "snowfall_7day": 0.3,
-      "forecast_text": "Partly cloudy, with a low around 37. South southeast wind around 5 mph.",
-      "last_updated": "2025-11-15T06:37:02.439Z"
+      "forecast_text": "Mostly cloudy, with a low around 35. South wind around 5 mph.",
+      "last_updated": "2025-11-15T12:50:38.705Z"
     },
     {
       "name": "Jackson Hole",
@@ -69,9 +69,9 @@
       "lng": -110.8278,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "A slight chance of rain showers. Mostly cloudy, with a low around 37. South southwest wind 5 to 10 mph, with gusts as high as 22 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:37:10.048Z"
+      "snowfall_7day": 0.1,
+      "forecast_text": "Mostly cloudy, with a low around 37. South southwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:50:39.620Z"
     },
     {
       "name": "Banff Sunshine",
@@ -81,7 +81,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:37:10.487Z",
+      "last_updated": "2025-11-15T12:50:41.224Z",
       "error": "Point API failed: 404"
     },
     {
@@ -92,7 +92,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:37:11.589Z",
+      "last_updated": "2025-11-15T12:50:41.680Z",
       "error": "Point API failed: 404"
     },
     {
@@ -101,49 +101,49 @@
       "lng": -111.4008,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.3,
-      "forecast_text": "Partly cloudy, with a low around 32. West wind 9 to 13 mph, with gusts as high as 26 mph.",
-      "last_updated": "2025-11-15T06:37:16.024Z"
+      "snowfall_7day": 2.9,
+      "forecast_text": "Mostly cloudy, with a low around 33. West wind around 9 mph, with gusts as high as 20 mph.",
+      "last_updated": "2025-11-15T12:50:50.325Z"
     },
     {
       "name": "Steamboat",
       "lat": 40.458,
       "lng": -106.8047,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0.4,
-      "forecast_text": "Partly cloudy, with a low around 35. Northeast wind 0 to 5 mph.",
-      "last_updated": "2025-11-15T06:37:18.177Z"
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.5,
+      "forecast_text": "Partly cloudy, with a low around 33. East northeast wind around 0 mph.",
+      "last_updated": "2025-11-15T12:50:57.864Z"
     },
     {
       "name": "Mammoth Mountain",
       "lat": 37.6308,
       "lng": -119.0326,
-      "snowfall_24hr": 5.1,
-      "snowfall_48hr": 11.1,
-      "snowfall_7day": 23.7,
-      "forecast_text": "A chance of snow. Cloudy, with a low around 31. Wind chill values as low as 21. East northeast wind 15 to 20 mph, with gusts as high as 30 mph. Chance of precipitation is 50%. New snow accumulation of less than half an inch possible.",
-      "last_updated": "2025-11-15T06:37:22.315Z"
+      "snowfall_24hr": 6.2,
+      "snowfall_48hr": 12.2,
+      "snowfall_7day": 32.6,
+      "forecast_text": "A chance of snow. Cloudy. Low around 31, with temperatures rising to around 36 overnight. Wind chill values as low as 26. Northeast wind around 15 mph, with gusts as high as 25 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:50:58.838Z"
     },
     {
       "name": "Squaw Valley",
       "lat": 39.197,
       "lng": -120.2356,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 3.4,
-      "forecast_text": "A slight chance of rain. Mostly cloudy, with a low around 32. East wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:37:27.191Z"
+      "snowfall_24hr": 0.4,
+      "snowfall_48hr": 1.8,
+      "snowfall_7day": 6.6,
+      "forecast_text": "Mostly cloudy, with a low around 34. Northeast wind around 5 mph.",
+      "last_updated": "2025-11-15T12:51:06.776Z"
     },
     {
       "name": "Telluride",
       "lat": 37.9375,
       "lng": -107.8123,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.6,
-      "snowfall_7day": 3.6,
-      "forecast_text": "Partly cloudy, with a low around 27. Southeast wind around 5 mph.",
-      "last_updated": "2025-11-15T06:37:31.056Z"
+      "snowfall_48hr": 1.9,
+      "snowfall_7day": 4.8,
+      "forecast_text": "Mostly clear, with a low around 29. East southeast wind around 0 mph.",
+      "last_updated": "2025-11-15T12:51:08.617Z"
     },
     {
       "name": "Sun Valley",
@@ -152,58 +152,58 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "Partly cloudy, with a low around 29. North wind around 6 mph.",
-      "last_updated": "2025-11-15T06:37:50.336Z"
+      "forecast_text": "Mostly cloudy, with a low around 29. North wind around 6 mph.",
+      "last_updated": "2025-11-15T12:51:10.326Z"
     },
     {
       "name": "Deer Valley",
       "lat": 40.6374,
       "lng": -111.4783,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 1.7,
-      "forecast_text": "Partly cloudy. Low around 37, with temperatures rising to around 39 overnight. South wind around 6 mph.",
-      "last_updated": "2025-11-15T06:38:01.836Z"
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 1.9,
+      "forecast_text": "Partly cloudy. Low around 37, with temperatures rising to around 39 overnight. South wind around 3 mph.",
+      "last_updated": "2025-11-15T12:51:11.354Z"
     },
     {
       "name": "Killington",
       "lat": 43.6046,
       "lng": -72.822,
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 2,
-      "snowfall_7day": 2,
-      "forecast_text": "Mostly cloudy, with a low around 20. Northwest wind around 10 mph.",
-      "last_updated": "2025-11-15T06:38:11.648Z"
+      "snowfall_24hr": 0.9,
+      "snowfall_48hr": 1.9,
+      "snowfall_7day": 1.9,
+      "forecast_text": "A chance of snow after 5pm. Mostly cloudy, with a high near 31. West wind 6 to 9 mph. Chance of precipitation is 30%. New snow accumulation of less than half an inch possible. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:51:13.714Z"
     },
     {
       "name": "Stowe",
       "lat": 44.5303,
       "lng": -72.7817,
-      "snowfall_24hr": 1,
-      "snowfall_48hr": 6.5,
-      "snowfall_7day": 10.9,
-      "forecast_text": "Isolated snow showers before 2am. Mostly cloudy, with a low around 20. Northwest wind around 5 mph. Chance of precipitation is 20%. New snow accumulation of less than half an inch possible.",
-      "last_updated": "2025-11-15T06:38:18.397Z"
+      "snowfall_24hr": 1.5,
+      "snowfall_48hr": 9.1,
+      "snowfall_7day": 10.6,
+      "forecast_text": "A chance of snow and a chance of freezing rain after 5pm. Partly sunny, with a high near 30. West wind 2 to 6 mph. Chance of precipitation is 30%. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:51:18.306Z"
     },
     {
       "name": "Alta",
       "lat": 40.5885,
       "lng": -111.6376,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 5.5,
-      "snowfall_7day": 13.2,
-      "forecast_text": "Partly cloudy, with a low around 36. Southwest wind around 8 mph.",
-      "last_updated": "2025-11-15T06:38:21.284Z"
+      "snowfall_24hr": 0.4,
+      "snowfall_48hr": 5.7,
+      "snowfall_7day": 15.1,
+      "forecast_text": "Partly cloudy, with a low around 36. West southwest wind around 6 mph.",
+      "last_updated": "2025-11-15T12:51:23.855Z"
     },
     {
       "name": "Snowbird",
       "lat": 40.5803,
       "lng": -111.6573,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 3.1,
-      "snowfall_7day": 9.7,
-      "forecast_text": "Partly cloudy, with a low around 36. Southwest wind around 6 mph.",
-      "last_updated": "2025-11-15T06:38:24.871Z"
+      "snowfall_48hr": 3.4,
+      "snowfall_7day": 11.2,
+      "forecast_text": "Partly cloudy. Low around 36, with temperatures rising to around 38 overnight. South wind around 6 mph.",
+      "last_updated": "2025-11-15T12:51:27.473Z"
     },
     {
       "name": "Taos",
@@ -212,78 +212,78 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.6,
       "snowfall_7day": 3.3,
-      "forecast_text": "Partly cloudy, with a low around 32. West wind around 10 mph.",
-      "last_updated": "2025-11-15T06:38:27.041Z"
+      "forecast_text": "Mostly cloudy, with a low around 32. West wind around 10 mph.",
+      "last_updated": "2025-11-15T12:51:30.039Z"
     },
     {
       "name": "Copper Mountain",
       "lat": 39.5022,
       "lng": -106.1506,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.4,
-      "snowfall_7day": 2,
-      "forecast_text": "Mostly clear, with a low around 24. West southwest wind around 8 mph.",
-      "last_updated": "2025-11-15T06:38:29.866Z"
+      "snowfall_48hr": 1.1,
+      "snowfall_7day": 2.1,
+      "forecast_text": "Partly cloudy. Low around 24, with temperatures rising to around 26 overnight. West southwest wind around 10 mph, with gusts as high as 16 mph.",
+      "last_updated": "2025-11-15T12:51:32.788Z"
     },
     {
       "name": "Winter Park",
       "lat": 39.8868,
       "lng": -105.7625,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 3.1,
-      "forecast_text": "Mostly clear, with a low around 29. West northwest wind around 15 mph, with gusts as high as 24 mph.",
-      "last_updated": "2025-11-15T06:38:38.898Z"
+      "snowfall_48hr": 1.2,
+      "snowfall_7day": 2.8,
+      "forecast_text": "Partly cloudy. Low around 29, with temperatures rising to around 31 overnight. West northwest wind around 15 mph, with gusts as high as 24 mph.",
+      "last_updated": "2025-11-15T12:51:35.969Z"
     },
     {
       "name": "Keystone",
       "lat": 39.605,
       "lng": -105.9347,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 2,
-      "forecast_text": "Mostly clear, with a low around 28. West wind around 10 mph, with gusts as high as 16 mph.",
-      "last_updated": "2025-11-15T06:38:46.005Z"
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 1.7,
+      "forecast_text": "Partly cloudy. Low around 28, with temperatures rising to around 30 overnight. West wind around 9 mph.",
+      "last_updated": "2025-11-15T12:51:40.711Z"
     },
     {
       "name": "Arapahoe Basin",
       "lat": 39.6426,
       "lng": -105.8717,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.2,
-      "snowfall_7day": 4.8,
-      "forecast_text": "Mostly clear, with a low around 30. West wind around 20 mph, with gusts as high as 31 mph.",
-      "last_updated": "2025-11-15T06:38:51.609Z"
+      "snowfall_48hr": 1.9,
+      "snowfall_7day": 4.6,
+      "forecast_text": "Partly cloudy. Low around 30, with temperatures rising to around 32 overnight. West wind around 17 mph, with gusts as high as 28 mph.",
+      "last_updated": "2025-11-15T12:51:46.196Z"
     },
     {
       "name": "Crested Butte",
       "lat": 38.8997,
       "lng": -106.9653,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.3,
-      "snowfall_7day": 1.8,
-      "forecast_text": "Partly cloudy, with a low around 30. West northwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:39:01.352Z"
+      "snowfall_48hr": 1.5,
+      "snowfall_7day": 2.1,
+      "forecast_text": "Partly cloudy, with a low around 28. Northwest wind around 0 mph.",
+      "last_updated": "2025-11-15T12:51:48.232Z"
     },
     {
       "name": "Loveland",
       "lat": 39.6803,
       "lng": -105.8978,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.7,
-      "snowfall_7day": 5,
-      "forecast_text": "Mostly clear, with a low around 29. West wind 17 to 21 mph, with gusts as high as 33 mph.",
-      "last_updated": "2025-11-15T06:39:03.664Z"
+      "snowfall_48hr": 2.2,
+      "snowfall_7day": 4,
+      "forecast_text": "Partly cloudy. Low around 29, with temperatures rising to around 31 overnight. West wind around 18 mph, with gusts as high as 30 mph.",
+      "last_updated": "2025-11-15T12:51:51.294Z"
     },
     {
       "name": "Mt. Bachelor",
       "lat": 43.979,
       "lng": -121.688,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.4,
-      "snowfall_7day": 5.7,
-      "forecast_text": "A slight chance of rain and snow after 4am. Mostly cloudy. Low around 31, with temperatures rising to around 34 overnight. West wind around 12 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:39:12.428Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 4.6,
+      "forecast_text": "Mostly cloudy. Low around 31, with temperatures rising to around 34 overnight. West wind around 10 mph.",
+      "last_updated": "2025-11-15T12:51:52.401Z"
     },
     {
       "name": "Crystal Mountain",
@@ -291,9 +291,9 @@
       "lng": -121.4742,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 7,
-      "forecast_text": "Rain. Cloudy. Low around 37, with temperatures rising to around 39 overnight. Southwest wind around 16 mph, with gusts as high as 23 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:39:15.310Z"
+      "snowfall_7day": 5.9,
+      "forecast_text": "Rain. Cloudy. Low around 37, with temperatures rising to around 39 overnight. Southwest wind around 13 mph, with gusts as high as 26 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:51:53.701Z"
     },
     {
       "name": "Stevens Pass",
@@ -301,19 +301,19 @@
       "lng": -121.0892,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 5.7,
-      "forecast_text": "Rain. Cloudy. Low around 39, with temperatures rising to around 41 overnight. West southwest wind around 10 mph. Chance of precipitation is 100%. New rainfall amounts between a half and three quarters of an inch possible.",
-      "last_updated": "2025-11-15T06:39:19.033Z"
+      "snowfall_7day": 5.1,
+      "forecast_text": "Rain. Cloudy. Low around 39, with temperatures rising to around 41 overnight. West southwest wind around 8 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible.",
+      "last_updated": "2025-11-15T12:52:14.847Z"
     },
     {
       "name": "Mt. Baker",
       "lat": 48.8597,
       "lng": -121.6686,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 10,
-      "forecast_text": "Rain. Cloudy. Low around 34, with temperatures rising to around 39 overnight. South wind around 10 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
-      "last_updated": "2025-11-15T06:39:20.411Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 6.2,
+      "forecast_text": "Rain. Cloudy. Low around 34, with temperatures rising to around 39 overnight. South wind around 7 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:52:19.045Z"
     },
     {
       "name": "Schweitzer",
@@ -322,8 +322,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 1.3,
-      "forecast_text": "Rain before 2am, then rain and snow. Cloudy, with a low around 38. Southwest wind around 15 mph, with gusts as high as 28 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
-      "last_updated": "2025-11-15T06:39:31.364Z"
+      "forecast_text": "Rain likely. Cloudy, with a low around 38. West wind around 15 mph, with gusts as high as 25 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:52:20.571Z"
     },
     {
       "name": "Sun Peaks",
@@ -333,7 +333,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:33.019Z",
+      "last_updated": "2025-11-15T12:52:20.839Z",
       "error": "Point API failed: 404"
     },
     {
@@ -344,7 +344,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:36.309Z",
+      "last_updated": "2025-11-15T12:52:21.834Z",
       "error": "Point API failed: 404"
     },
     {
@@ -355,7 +355,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:36.635Z",
+      "last_updated": "2025-11-15T12:52:22.665Z",
       "error": "Point API failed: 404"
     },
     {
@@ -366,7 +366,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:39.157Z",
+      "last_updated": "2025-11-15T12:52:23.796Z",
       "error": "Point API failed: 404"
     },
     {
@@ -377,7 +377,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:39.416Z",
+      "last_updated": "2025-11-15T12:52:25.167Z",
       "error": "Point API failed: 404"
     },
     {
@@ -388,7 +388,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:39.934Z",
+      "last_updated": "2025-11-15T12:52:25.686Z",
       "error": "Point API failed: 404"
     },
     {
@@ -399,38 +399,38 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:39:41.250Z",
+      "last_updated": "2025-11-15T12:52:25.993Z",
       "error": "Point API failed: 404"
     },
     {
       "name": "Sugarloaf",
       "lat": 45.0314,
       "lng": -70.3139,
-      "snowfall_24hr": 2.2,
-      "snowfall_48hr": 3.6,
+      "snowfall_24hr": 2.5,
+      "snowfall_48hr": 3.8,
       "snowfall_7day": 4,
-      "forecast_text": "Partly cloudy, with a low around 17. Northwest wind around 20 mph, with gusts as high as 35 mph.",
-      "last_updated": "2025-11-15T06:39:50.049Z"
+      "forecast_text": "Sunny, with a high near 27. Northwest wind 10 to 20 mph, with gusts as high as 35 mph.",
+      "last_updated": "2025-11-15T12:52:27.498Z"
     },
     {
       "name": "Sunday River",
       "lat": 44.4697,
       "lng": -70.8561,
       "snowfall_24hr": 1.8,
-      "snowfall_48hr": 2.5,
+      "snowfall_48hr": 2.7,
       "snowfall_7day": 2.7,
-      "forecast_text": "Partly cloudy, with a low around 24. Northwest wind 5 to 10 mph.",
-      "last_updated": "2025-11-15T06:39:52.019Z"
+      "forecast_text": "Sunny, with a high near 35. Northwest wind 5 to 10 mph, with gusts as high as 25 mph.",
+      "last_updated": "2025-11-15T12:52:28.691Z"
     },
     {
       "name": "Sugarbush",
       "lat": 44.135,
       "lng": -72.9017,
-      "snowfall_24hr": 0.8,
-      "snowfall_48hr": 3.5,
-      "snowfall_7day": 4,
-      "forecast_text": "Scattered snow showers before 5am. Mostly cloudy, with a low around 21. Northwest wind around 6 mph. Chance of precipitation is 30%. New snow accumulation of less than half an inch possible.",
-      "last_updated": "2025-11-15T06:40:03.352Z"
+      "snowfall_24hr": 1.4,
+      "snowfall_48hr": 3.8,
+      "snowfall_7day": 3.9,
+      "forecast_text": "A chance of snow after 5pm. Partly sunny, with a high near 30. West wind around 5 mph. Chance of precipitation is 30%. New snow accumulation of less than half an inch possible. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:52:40.532Z"
     },
     {
       "name": "Stratton",
@@ -439,8 +439,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 1.4,
       "snowfall_7day": 1.4,
-      "forecast_text": "Mostly cloudy, with a low around 22. Northwest wind around 2 mph.",
-      "last_updated": "2025-11-15T06:40:13.052Z"
+      "forecast_text": "A chance of rain showers after 5pm. Partly sunny, with a high near 35. West wind around 3 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:52:49.978Z"
     },
     {
       "name": "Okemo",
@@ -449,68 +449,68 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.3,
       "snowfall_7day": 0.3,
-      "forecast_text": "Partly cloudy, with a low around 25. Northwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:40:14.207Z"
+      "forecast_text": "A chance of sleet and a chance of rain and snow after 5pm. Partly sunny, with a high near 38. West wind around 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:52:51.292Z"
     },
     {
       "name": "Jay Peak",
       "lat": 44.9378,
       "lng": -72.5036,
-      "snowfall_24hr": 0.6,
-      "snowfall_48hr": 7.4,
-      "snowfall_7day": 12.1,
-      "forecast_text": "Mostly cloudy, with a low around 19. Northwest wind around 3 mph.",
-      "last_updated": "2025-11-15T06:40:18.589Z"
+      "snowfall_24hr": 1.9,
+      "snowfall_48hr": 9.6,
+      "snowfall_7day": 11.9,
+      "forecast_text": "A chance of snow and a chance of freezing rain after 5pm. Partly sunny, with a high near 28. West wind around 3 mph. Chance of precipitation is 30%. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:52:54.036Z"
     },
     {
       "name": "Smugglers' Notch",
       "lat": 44.5458,
       "lng": -72.7872,
-      "snowfall_24hr": 0.9,
-      "snowfall_48hr": 6.9,
-      "snowfall_7day": 11.6,
-      "forecast_text": "Isolated snow showers before 2am. Mostly cloudy, with a low around 20. Northwest wind around 6 mph. Chance of precipitation is 20%. New snow accumulation of less than half an inch possible.",
-      "last_updated": "2025-11-15T06:40:25.028Z"
+      "snowfall_24hr": 1.8,
+      "snowfall_48hr": 9.8,
+      "snowfall_7day": 11.4,
+      "forecast_text": "A chance of snow and a chance of freezing rain after 5pm. Partly sunny, with a high near 30. West wind around 6 mph. Chance of precipitation is 30%. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:52:59.633Z"
     },
     {
       "name": "Loon Mountain",
       "lat": 44.0369,
       "lng": -71.6206,
       "snowfall_24hr": 0.9,
-      "snowfall_48hr": 2.6,
+      "snowfall_48hr": 2.8,
       "snowfall_7day": 2.8,
-      "forecast_text": "Mostly cloudy, with a low around 20. Northwest wind around 10 mph, with gusts as high as 25 mph.",
-      "last_updated": "2025-11-15T06:40:38.323Z"
+      "forecast_text": "Mostly sunny, with a high near 30. Northwest wind 5 to 10 mph.",
+      "last_updated": "2025-11-15T12:53:09.400Z"
     },
     {
       "name": "Cannon Mountain",
       "lat": 44.1572,
       "lng": -71.6978,
-      "snowfall_24hr": 0.9,
-      "snowfall_48hr": 3.4,
+      "snowfall_24hr": 1.2,
+      "snowfall_48hr": 3.6,
       "snowfall_7day": 4,
-      "forecast_text": "Mostly cloudy, with a low around 14. Northwest wind around 20 mph, with gusts as high as 40 mph.",
-      "last_updated": "2025-11-15T06:40:41.367Z"
+      "forecast_text": "Partly sunny, with a high near 26. Wind chill values as low as 0. Northwest wind 15 to 20 mph, with gusts as high as 40 mph.",
+      "last_updated": "2025-11-15T12:53:10.905Z"
     },
     {
       "name": "Wildcat Mountain",
       "lat": 44.2636,
       "lng": -71.2328,
       "snowfall_24hr": 1.1,
-      "snowfall_48hr": 4.4,
+      "snowfall_48hr": 4.6,
       "snowfall_7day": 5.1,
-      "forecast_text": "Partly cloudy, with a low around 19. North wind around 10 mph, with gusts as high as 25 mph.",
-      "last_updated": "2025-11-15T06:40:49.864Z"
+      "forecast_text": "Mostly sunny, with a high near 33. Northwest wind 0 to 10 mph, with gusts as high as 25 mph.",
+      "last_updated": "2025-11-15T12:53:14.526Z"
     },
     {
       "name": "Bretton Woods",
       "lat": 44.2633,
       "lng": -71.4439,
       "snowfall_24hr": 0.5,
-      "snowfall_48hr": 2.3,
+      "snowfall_48hr": 2.6,
       "snowfall_7day": 3,
-      "forecast_text": "Mostly cloudy, with a low around 19. Northwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:40:56.244Z"
+      "forecast_text": "Mostly sunny, with a high near 32. Northwest wind 0 to 5 mph.",
+      "last_updated": "2025-11-15T12:53:19.482Z"
     },
     {
       "name": "Snowbasin",
@@ -519,88 +519,88 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.4,
-      "forecast_text": "Partly cloudy. Low around 41, with temperatures rising to around 43 overnight. South southwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:40:57.938Z"
+      "forecast_text": "Partly cloudy. Low around 41, with temperatures rising to around 43 overnight. South wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:29.171Z"
     },
     {
       "name": "Powder Mountain",
       "lat": 41.3814,
       "lng": -111.7806,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.9,
-      "snowfall_7day": 5.7,
+      "snowfall_48hr": 2.7,
+      "snowfall_7day": 5.5,
       "forecast_text": "Partly cloudy. Low around 38, with temperatures rising to around 40 overnight. Southwest wind around 6 mph.",
-      "last_updated": "2025-11-15T06:41:05.041Z"
+      "last_updated": "2025-11-15T12:53:30.528Z"
     },
     {
       "name": "Solitude",
       "lat": 40.62,
       "lng": -111.5917,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 3.2,
-      "snowfall_7day": 8.6,
-      "forecast_text": "Partly cloudy. Low around 36, with temperatures rising to around 39 overnight. Southwest wind around 6 mph.",
-      "last_updated": "2025-11-15T06:41:11.898Z"
+      "snowfall_48hr": 2.6,
+      "snowfall_7day": 9.4,
+      "forecast_text": "Partly cloudy. Low around 36, with temperatures rising to around 39 overnight. Southwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:31.928Z"
     },
     {
       "name": "Brighton",
       "lat": 40.5981,
       "lng": -111.5831,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 3.2,
-      "snowfall_7day": 9.1,
-      "forecast_text": "Partly cloudy. Low around 36, with temperatures rising to around 38 overnight. Southwest wind around 6 mph.",
-      "last_updated": "2025-11-15T06:41:14.364Z"
+      "snowfall_48hr": 3.1,
+      "snowfall_7day": 10.6,
+      "forecast_text": "Partly cloudy. Low around 36, with temperatures rising to around 38 overnight. Southwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:32.645Z"
     },
     {
       "name": "Snowmass",
       "lat": 39.2133,
       "lng": -106.9378,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.9,
-      "forecast_text": "Partly cloudy, with a low around 35. South southwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:41:16.513Z"
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 1.1,
+      "forecast_text": "Mostly cloudy, with a low around 35. South southwest wind around 0 mph.",
+      "last_updated": "2025-11-15T12:53:33.953Z"
     },
     {
       "name": "Aspen Highlands",
       "lat": 39.1825,
       "lng": -106.8553,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.3,
+      "snowfall_48hr": 0.2,
       "snowfall_7day": 0.5,
-      "forecast_text": "Partly cloudy, with a low around 34. South wind around 5 mph.",
-      "last_updated": "2025-11-15T06:41:22.010Z"
+      "forecast_text": "Mostly cloudy, with a low around 33. South wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:37.754Z"
     },
     {
       "name": "Buttermilk",
       "lat": 39.2078,
       "lng": -106.8608,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.2,
-      "forecast_text": "Partly cloudy, with a low around 34. South southeast wind around 5 mph.",
-      "last_updated": "2025-11-15T06:41:23.529Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.1,
+      "forecast_text": "Mostly cloudy, with a low around 33. South wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:40.689Z"
     },
     {
       "name": "Beaver Creek",
       "lat": 39.6042,
       "lng": -106.5164,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.4,
+      "snowfall_48hr": 0.3,
       "snowfall_7day": 0.9,
-      "forecast_text": "Mostly clear, with a low around 32. Southwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:41:36.305Z"
+      "forecast_text": "Partly cloudy, with a low around 31. West northwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:44.073Z"
     },
     {
       "name": "Purgatory",
       "lat": 37.6303,
       "lng": -107.8139,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.8,
-      "snowfall_7day": 6,
-      "forecast_text": "Partly cloudy, with a low around 31. North wind around 5 mph.",
-      "last_updated": "2025-11-15T06:41:40.909Z"
+      "snowfall_48hr": 1.7,
+      "snowfall_7day": 9.9,
+      "forecast_text": "Partly cloudy, with a low around 32. North wind around 0 mph.",
+      "last_updated": "2025-11-15T12:53:50.255Z"
     },
     {
       "name": "Wolf Creek",
@@ -608,39 +608,39 @@
       "lng": -106.7931,
       "snowfall_24hr": 0,
       "snowfall_48hr": 6.4,
-      "snowfall_7day": 13.9,
-      "forecast_text": "Partly cloudy, with a low around 32. Southwest wind around 10 mph.",
-      "last_updated": "2025-11-15T06:41:47.699Z"
+      "snowfall_7day": 15.8,
+      "forecast_text": "Mostly clear, with a low around 32. Southwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:53:51.068Z"
     },
     {
       "name": "Monarch Mountain",
       "lat": 38.5117,
       "lng": -106.3317,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.4,
-      "snowfall_7day": 2.3,
+      "snowfall_48hr": 2,
+      "snowfall_7day": 3,
       "forecast_text": "Partly cloudy, with a low around 31. West wind around 15 mph.",
-      "last_updated": "2025-11-15T06:41:50.362Z"
+      "last_updated": "2025-11-15T12:53:53.274Z"
     },
     {
       "name": "Eldora",
       "lat": 39.9372,
       "lng": -105.5828,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.1,
-      "snowfall_7day": 2.6,
-      "forecast_text": "Partly cloudy, with a low around 34. West wind around 17 mph, with gusts as high as 28 mph.",
-      "last_updated": "2025-11-15T06:42:14.818Z"
+      "snowfall_48hr": 1.2,
+      "snowfall_7day": 2.4,
+      "forecast_text": "Mostly cloudy. Low around 34, with temperatures rising to around 37 overnight. West wind around 12 mph, with gusts as high as 18 mph.",
+      "last_updated": "2025-11-15T12:53:59.594Z"
     },
     {
       "name": "Grand Targhee",
       "lat": 43.7886,
       "lng": -110.9586,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.6,
-      "snowfall_7day": 5.7,
-      "forecast_text": "A slight chance of rain and snow showers. Mostly cloudy, with a low around 30. West southwest wind 10 to 16 mph, with gusts as high as 24 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:42:17.458Z"
+      "snowfall_48hr": 2.2,
+      "snowfall_7day": 5.3,
+      "forecast_text": "Mostly cloudy, with a low around 30. West southwest wind around 10 mph.",
+      "last_updated": "2025-11-15T12:54:01.977Z"
     },
     {
       "name": "Snow King",
@@ -649,8 +649,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.1,
-      "forecast_text": "A slight chance of rain showers before 5am. Mostly cloudy. Low around 35, with temperatures rising to around 38 overnight. South wind 7 to 10 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:42:20.584Z"
+      "forecast_text": "Mostly cloudy. Low around 35, with temperatures rising to around 39 overnight. South wind around 7 mph.",
+      "last_updated": "2025-11-15T12:54:02.969Z"
     },
     {
       "name": "Bridger Bowl",
@@ -658,9 +658,9 @@
       "lng": -110.8969,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "Partly cloudy, with a low around 37. West southwest wind 8 to 12 mph, with gusts as high as 28 mph.",
-      "last_updated": "2025-11-15T06:42:28.988Z"
+      "snowfall_7day": 1.2,
+      "forecast_text": "Partly cloudy, with a low around 36. West southwest wind around 9 mph, with gusts as high as 22 mph.",
+      "last_updated": "2025-11-15T12:54:03.642Z"
     },
     {
       "name": "Big Mountain",
@@ -668,9 +668,9 @@
       "lng": -114.3483,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.5,
-      "forecast_text": "Rain and snow. Cloudy, with a low around 33. Southwest wind 15 to 20 mph, with gusts as high as 24 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible.",
-      "last_updated": "2025-11-15T06:42:35.903Z"
+      "snowfall_7day": 0.7,
+      "forecast_text": "Rain and snow. Cloudy, with a low around 33. Southwest wind around 17 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:09.972Z"
     },
     {
       "name": "Snowbowl",
@@ -679,8 +679,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "A chance of rain. Cloudy, with a low around 40. West wind around 13 mph. Chance of precipitation is 50%.",
-      "last_updated": "2025-11-15T06:42:42.896Z"
+      "forecast_text": "A chance of rain. Cloudy, with a low around 40. West wind around 12 mph. Chance of precipitation is 50%.",
+      "last_updated": "2025-11-15T12:54:13.268Z"
     },
     {
       "name": "Bogus Basin",
@@ -688,9 +688,9 @@
       "lng": -116.0939,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "Partly cloudy, with a low around 38. Southwest wind around 7 mph.",
-      "last_updated": "2025-11-15T06:42:48.102Z"
+      "snowfall_7day": 0.5,
+      "forecast_text": "Partly cloudy, with a low around 36. West wind around 7 mph.",
+      "last_updated": "2025-11-15T12:54:14.422Z"
     },
     {
       "name": "Tamarack",
@@ -698,9 +698,9 @@
       "lng": -116.1344,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "Partly cloudy, with a low around 33. Southwest wind around 6 mph.",
-      "last_updated": "2025-11-15T06:42:59.898Z"
+      "snowfall_7day": 1.1,
+      "forecast_text": "Mostly cloudy, with a low around 33. Southwest wind around 6 mph.",
+      "last_updated": "2025-11-15T12:54:19.552Z"
     },
     {
       "name": "Silver Mountain",
@@ -709,8 +709,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "Rain before 1am, then rain and patchy fog. Cloudy, with a low around 43. Southwest wind around 9 mph, with gusts as high as 24 mph. Chance of precipitation is 100%. New rainfall amounts between a tenth and quarter of an inch possible.",
-      "last_updated": "2025-11-15T06:43:08.081Z"
+      "forecast_text": "Rain. Cloudy, with a low around 43. Southwest wind around 9 mph, with gusts as high as 22 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:29.279Z"
     },
     {
       "name": "Mt. Hood Meadows",
@@ -718,19 +718,19 @@
       "lng": -121.6653,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 4.5,
-      "forecast_text": "Rain showers likely. Mostly cloudy, with a low around 38. West southwest wind around 7 mph, with gusts as high as 22 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:43:09.768Z"
+      "snowfall_7day": 5.1,
+      "forecast_text": "Rain likely. Mostly cloudy. Low around 38, with temperatures rising to around 40 overnight. West wind around 8 mph, with gusts as high as 23 mph. Chance of precipitation is 60%.",
+      "last_updated": "2025-11-15T12:54:30.252Z"
     },
     {
       "name": "Timberline",
       "lat": 45.3306,
       "lng": -121.7108,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 8.2,
-      "forecast_text": "Rain showers likely. Mostly cloudy, with a low around 36. West wind around 12 mph, with gusts as high as 24 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:43:12.216Z"
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 7.9,
+      "forecast_text": "Rain likely. Mostly cloudy. Low around 34, with temperatures rising to around 39 overnight. West wind around 13 mph, with gusts as high as 23 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:30.976Z"
     },
     {
       "name": "Willamette Pass",
@@ -738,9 +738,9 @@
       "lng": -122.0336,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.5,
-      "forecast_text": "Mostly cloudy. Low around 34, with temperatures rising to around 36 overnight. West northwest wind around 5 mph.",
-      "last_updated": "2025-11-15T06:43:17.420Z"
+      "snowfall_7day": 2.2,
+      "forecast_text": "Mostly cloudy, with a low around 34. North wind around 5 mph.",
+      "last_updated": "2025-11-15T12:54:33.577Z"
     },
     {
       "name": "Mission Ridge",
@@ -749,8 +749,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 2,
-      "forecast_text": "Rain likely. Mostly cloudy. Low around 38, with temperatures rising to around 41 overnight. Southwest wind around 10 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:43:20.368Z"
+      "forecast_text": "A chance of rain. Mostly cloudy. Low around 38, with temperatures rising to around 41 overnight. West wind around 10 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:40.144Z"
     },
     {
       "name": "Snoqualmie",
@@ -758,9 +758,9 @@
       "lng": -121.4136,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.8,
-      "forecast_text": "Rain. Cloudy. Low around 41, with temperatures rising to around 43 overnight. West wind around 3 mph. Chance of precipitation is 100%. New rainfall amounts between three quarters and one inch possible.",
-      "last_updated": "2025-11-15T06:43:23.983Z"
+      "snowfall_7day": 0.3,
+      "forecast_text": "Rain. Cloudy. Low around 41, with temperatures rising to around 43 overnight. West wind around 2 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
+      "last_updated": "2025-11-15T12:54:42.595Z"
     },
     {
       "name": "Mt. Spokane",
@@ -769,8 +769,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.5,
-      "forecast_text": "Rain. Cloudy, with a low around 40. Southwest wind around 14 mph, with gusts as high as 28 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible.",
-      "last_updated": "2025-11-15T06:43:36.986Z"
+      "forecast_text": "A chance of rain. Cloudy, with a low around 40. Southwest wind around 14 mph, with gusts as high as 25 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:45.328Z"
     },
     {
       "name": "White Pass",
@@ -778,9 +778,9 @@
       "lng": -121.3908,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 3.7,
-      "forecast_text": "Rain. Cloudy. Low around 38, with temperatures rising to around 40 overnight. West wind around 9 mph, with gusts as high as 23 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.",
-      "last_updated": "2025-11-15T06:43:39.076Z"
+      "snowfall_7day": 3.1,
+      "forecast_text": "Rain. Cloudy. Low around 38, with temperatures rising to around 40 overnight. West wind around 8 mph, with gusts as high as 22 mph. Chance of precipitation is 80%. New rainfall amounts between a tenth and quarter of an inch possible.",
+      "last_updated": "2025-11-15T12:54:50.719Z"
     },
     {
       "name": "49 Degrees North",
@@ -789,8 +789,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.1,
-      "forecast_text": "Rain and patchy fog. Cloudy, with a low around 41. South wind around 3 mph. Chance of precipitation is 80%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:43:41.737Z"
+      "forecast_text": "A chance of rain and patchy fog. Cloudy, with a low around 41. South wind around 3 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible.",
+      "last_updated": "2025-11-15T12:54:52.349Z"
     },
     {
       "name": "Red Mountain",
@@ -800,7 +800,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:43:51.925Z",
+      "last_updated": "2025-11-15T12:54:52.688Z",
       "error": "Point API failed: 404"
     },
     {
@@ -811,7 +811,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:43:52.412Z",
+      "last_updated": "2025-11-15T12:54:52.965Z",
       "error": "Point API failed: 404"
     },
     {
@@ -822,7 +822,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:43:53.428Z",
+      "last_updated": "2025-11-15T12:54:57.844Z",
       "error": "Point API failed: 404"
     },
     {
@@ -833,7 +833,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:43:56.745Z",
+      "last_updated": "2025-11-15T12:55:00.053Z",
       "error": "Point API failed: 404"
     },
     {
@@ -844,7 +844,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:43:57.218Z",
+      "last_updated": "2025-11-15T12:55:00.306Z",
       "error": "Point API failed: 404"
     },
     {
@@ -855,7 +855,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:44:00.206Z",
+      "last_updated": "2025-11-15T12:55:00.901Z",
       "error": "Point API failed: 404"
     },
     {
@@ -866,7 +866,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:44:00.517Z",
+      "last_updated": "2025-11-15T12:55:03.884Z",
       "error": "Point API failed: 404"
     },
     {
@@ -877,7 +877,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:44:00.774Z",
+      "last_updated": "2025-11-15T12:55:04.161Z",
       "error": "Point API failed: 404"
     },
     {
@@ -888,108 +888,108 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "Data unavailable",
-      "last_updated": "2025-11-15T06:44:04.587Z",
+      "last_updated": "2025-11-15T12:55:05.312Z",
       "error": "Point API failed: 404"
     },
     {
       "name": "Sierra-at-Tahoe",
       "lat": 38.7986,
       "lng": -120.0828,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 4.6,
-      "snowfall_7day": 10.9,
-      "forecast_text": "A slight chance of rain showers between midnight and 4am. Mostly cloudy, with a low around 38. Northeast wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:44:13.777Z"
+      "snowfall_24hr": 0.9,
+      "snowfall_48hr": 5.5,
+      "snowfall_7day": 17.1,
+      "forecast_text": "A slight chance of rain showers. Mostly cloudy, with a low around 38. Northeast wind around 5 mph. Chance of precipitation is 20%.",
+      "last_updated": "2025-11-15T12:55:07.843Z"
     },
     {
       "name": "Kirkwood",
       "lat": 38.6867,
       "lng": -120.0656,
-      "snowfall_24hr": 0.8,
-      "snowfall_48hr": 10.6,
-      "snowfall_7day": 21.6,
-      "forecast_text": "A chance of rain showers between midnight and 4am. Mostly cloudy, with a low around 33. Southeast wind 6 to 13 mph, with gusts as high as 23 mph. Chance of precipitation is 30%.",
-      "last_updated": "2025-11-15T06:44:26.409Z"
+      "snowfall_24hr": 4.1,
+      "snowfall_48hr": 13.9,
+      "snowfall_7day": 32.9,
+      "forecast_text": "A slight chance of rain showers. Mostly cloudy, with a low around 33. East wind around 14 mph, with gusts as high as 24 mph. Chance of precipitation is 20%.",
+      "last_updated": "2025-11-15T12:55:08.904Z"
     },
     {
       "name": "Northstar",
       "lat": 39.2733,
       "lng": -120.1211,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 1.7,
-      "forecast_text": "A slight chance of rain. Mostly cloudy, with a low around 38. East wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:44:30.963Z"
+      "snowfall_48hr": 0.9,
+      "snowfall_7day": 3.7,
+      "forecast_text": "Mostly cloudy, with a low around 39. East wind around 5 mph.",
+      "last_updated": "2025-11-15T12:55:14.673Z"
     },
     {
       "name": "Homewood",
       "lat": 39.0833,
       "lng": -120.1667,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 2.7,
-      "forecast_text": "A slight chance of rain. Mostly cloudy, with a low around 39. East wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:44:34.715Z"
+      "snowfall_48hr": 1.1,
+      "snowfall_7day": 5.6,
+      "forecast_text": "Mostly cloudy, with a low around 38. East wind around 5 mph.",
+      "last_updated": "2025-11-15T12:55:29.291Z"
     },
     {
       "name": "Mt. Rose",
       "lat": 39.3397,
       "lng": -119.8894,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 4,
-      "snowfall_7day": 8.2,
-      "forecast_text": "A slight chance of rain after 4am. Mostly cloudy, with a low around 35. Southeast wind around 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:44:39.621Z"
+      "snowfall_24hr": 1.6,
+      "snowfall_48hr": 5.3,
+      "snowfall_7day": 11.3,
+      "forecast_text": "Mostly cloudy, with a low around 35. Northeast wind around 5 mph.",
+      "last_updated": "2025-11-15T12:55:35.653Z"
     },
     {
       "name": "Diamond Peak",
       "lat": 39.2525,
       "lng": -119.9169,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 1.2,
-      "snowfall_7day": 3.2,
-      "forecast_text": "A slight chance of rain after 1am. Mostly cloudy, with a low around 38. Northeast wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "last_updated": "2025-11-15T06:44:45.957Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 1.8,
+      "snowfall_7day": 5.3,
+      "forecast_text": "Mostly cloudy, with a low around 39. Northeast wind around 5 mph.",
+      "last_updated": "2025-11-15T12:55:37.299Z"
     },
     {
       "name": "June Mountain",
       "lat": 37.7853,
       "lng": -119.0781,
-      "snowfall_24hr": 0.5,
-      "snowfall_48hr": 2.3,
-      "snowfall_7day": 5.9,
-      "forecast_text": "A chance of rain before 4am, then a chance of rain and snow. Cloudy, with a low around 37. East wind 0 to 5 mph. Chance of precipitation is 40%.",
-      "last_updated": "2025-11-15T06:44:48.799Z"
+      "snowfall_24hr": 0.4,
+      "snowfall_48hr": 2.8,
+      "snowfall_7day": 10.2,
+      "forecast_text": "A chance of rain. Cloudy, with a low around 38. North wind around 5 mph. Chance of precipitation is 30%.",
+      "last_updated": "2025-11-15T12:55:56.667Z"
     },
     {
       "name": "Bear Mountain",
       "lat": 34.235,
       "lng": -116.865,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 3.9,
-      "forecast_text": "Rain showers before 4am, then showers and thunderstorms. Cloudy, with a low around 35. South wind 0 to 10 mph. Chance of precipitation is 90%. New rainfall amounts between a half and three quarters of an inch possible.",
-      "last_updated": "2025-11-15T06:45:05.788Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.5,
+      "forecast_text": "Rain. Cloudy, with a low around 35. South wind 5 to 10 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
+      "last_updated": "2025-11-15T12:55:59.142Z"
     },
     {
       "name": "Snow Summit",
       "lat": 34.2306,
       "lng": -116.8886,
-      "snowfall_24hr": 0.5,
-      "snowfall_48hr": 0.7,
-      "snowfall_7day": 4.6,
-      "forecast_text": "Rain showers before 4am, then showers and thunderstorms. Cloudy, with a low around 37. South wind 0 to 10 mph. Chance of precipitation is 90%. New rainfall amounts between a half and three quarters of an inch possible.",
-      "last_updated": "2025-11-15T06:45:20.706Z"
+      "snowfall_24hr": 1.2,
+      "snowfall_48hr": 1.6,
+      "snowfall_7day": 11.4,
+      "forecast_text": "Rain. Cloudy, with a low around 37. Southeast wind 5 to 10 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
+      "last_updated": "2025-11-15T12:56:05.477Z"
     },
     {
       "name": "Mountain High",
       "lat": 34.3811,
       "lng": -117.6881,
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 1.1,
-      "forecast_text": "Showers and thunderstorms. Cloudy, with a low around 45. South southeast wind around 5 mph. Chance of precipitation is 100%. New rainfall amounts between three quarters and one inch possible.",
-      "last_updated": "2025-11-15T06:45:31.707Z"
+      "snowfall_24hr": 1.5,
+      "snowfall_48hr": 1.5,
+      "snowfall_7day": 3.1,
+      "forecast_text": "Showers and thunderstorms. Cloudy, with a low around 45. South southeast wind around 5 mph. Chance of precipitation is 100%. New rainfall amounts between 1 and 2 inches possible.",
+      "last_updated": "2025-11-15T12:56:12.488Z"
     },
     {
       "name": "Ski Santa Fe",
@@ -998,8 +998,8 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 3.1,
-      "forecast_text": "Mostly clear, with a low around 34. Northwest wind 10 to 15 mph.",
-      "last_updated": "2025-11-15T06:45:43.226Z"
+      "forecast_text": "Partly cloudy, with a low around 34. North wind around 15 mph.",
+      "last_updated": "2025-11-15T12:56:17.674Z"
     },
     {
       "name": "Angel Fire",
@@ -1008,18 +1008,18 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.3,
-      "forecast_text": "Partly cloudy, with a low around 34. Southwest wind 5 to 15 mph.",
-      "last_updated": "2025-11-15T06:45:46.871Z"
+      "forecast_text": "Mostly cloudy, with a low around 34. Southwest wind around 5 mph.",
+      "last_updated": "2025-11-15T12:56:19.251Z"
     },
     {
       "name": "Whiteface Mountain",
       "lat": 44.3659,
       "lng": -73.9024,
-      "snowfall_24hr": 0.8,
+      "snowfall_24hr": 2,
       "snowfall_48hr": 3.8,
-      "snowfall_7day": 4.2,
-      "forecast_text": "Isolated snow showers before 2am. Mostly cloudy, with a low around 17. Northwest wind around 7 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
-      "last_updated": "2025-11-15T06:45:59.740Z"
+      "snowfall_7day": 4,
+      "forecast_text": "A slight chance of snow between 3pm and 5pm, then a chance of freezing rain. Mostly cloudy, with a high near 32. Southwest wind around 6 mph. Chance of precipitation is 50%. New snow accumulation of less than half an inch possible. Little or no ice accumulation expected.",
+      "last_updated": "2025-11-15T12:56:20.864Z"
     }
   ]
 }
