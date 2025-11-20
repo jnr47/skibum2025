@@ -442,8 +442,13 @@
                             .addTo(map.current);
                         
                         el.addEventListener('click', () => {
-                            window.history.pushState({ resortId: resort.id }, '', `#${resort.name.replace(/\s+/g, '-')}`);
-                            setSelectedResort(resort);
+                            // Check if this resort has a dedicated page
+                            if (resort.name === 'Mammoth Mountain') {
+                                window.location.href = '/mammoth.html';
+                            } else {
+                                window.history.pushState({ resortId: resort.id }, '', `#${resort.name.replace(/\s+/g, '-')}`);
+                                setSelectedResort(resort);
+                            }
                         });
                         
                         resort.marker = marker;
