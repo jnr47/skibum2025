@@ -718,18 +718,19 @@
                             </div>
                         </div>
 
-                        {/* Status Banner */}
-                        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 bg-slate-800/85 backdrop-blur-sm rounded-full px-6 py-3 shadow-xl border border-slate-700">
-                            <div className="flex items-center gap-6 text-sm">
+                        {/* Status Banner - positioned to avoid mobile address bar */}
+                        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-slate-800/85 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 shadow-xl border border-slate-700" 
+                             style={{ bottom: 'max(6rem, calc(env(safe-area-inset-bottom) + 5.5rem))' }}>
+                            <div className="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                                     <span className="text-slate-300 font-medium">System Active</span>
                                 </div>
-                                <div className="text-slate-400">•</div>
+                                <div className="text-slate-400 hidden md:block">•</div>
                                 <div className="text-slate-300">
-                                    <span className="font-semibold text-white">117</span> Resorts Monitored
+                                    <span className="font-semibold text-white">117</span> Resorts
                                 </div>
-                                <div className="text-slate-400">•</div>
+                                <div className="text-slate-400 hidden md:block">•</div>
                                 <div className="text-slate-300">
                                     Updated <span className="font-semibold text-white">
                                         {(() => {
