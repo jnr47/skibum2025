@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="nkR5Pfzko7I93RIvy57tFWipkHdbt4gKZGdhstz6Pjg" />
@@ -352,7 +352,7 @@
                     container: mapContainer.current,
                     style: 'mapbox://styles/mapbox/dark-v11',
                     center: [-106, 45],
-                    zoom: 3.5,
+                    zoom: window.innerWidth <= 768 ? 2.8 : 3.5, // Lower zoom on mobile to show full continent
                     projection: 'globe',
                     maxBounds: [[-170, 15], [-50, 72]],
                     minZoom: 2.5
@@ -608,8 +608,8 @@
                     <div style={{ display: selectedResort ? 'none' : 'block' }} className="w-full h-screen relative">
                         <div ref={mapContainer} className="w-full h-full" />
                     
-                        {/* Header */}
-                        <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-4 md:p-6">
+                        {/* Header - with safe-area-inset for iPhone notch/status bar */}
+                        <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-4 md:p-6" style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))' }}>
                             <div className="flex items-center gap-3">
                                 <img 
                                     src="skibum_logo_blacktype_small.png" 
@@ -624,7 +624,12 @@
                         </div>
 
                         {/* Forecast Toggle Buttons */}
-                        <div className="absolute top-24 md:top-28 left-1/2 transform -translate-x-1/2 z-10 bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-xl border border-slate-700">
+                        <div className="absolute z-10 bg-slate-800/90 backdrop-blur-sm rounded-full p-2 shadow-xl border border-slate-700" 
+                             style={{ 
+                                 top: 'max(6.5rem, calc(env(safe-area-inset-top) + 5.5rem))',
+                                 left: '50%',
+                                 transform: 'translateX(-50%)'
+                             }}>
                             <div className="flex gap-1 md:gap-2">
                                 <button 
                                     onClick={() => setForecastPeriod('24hr')}
