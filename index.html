@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SkiBum - Live Snowfall Tracking</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
@@ -10,12 +10,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { margin: 0; padding: 0; overflow: hidden; }
-        .mapboxgl-popup-content { padding: 0; border-radius: 12px; }
-        .marker { cursor: pointer; width: 30px; height: 30px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s; }
-        .marker:hover { transform: scale(1.2); }
-        .marker-glow { position: absolute; width: 100%; height: 100%; border-radius: 50%; opacity: 0.6; filter: blur(20px); animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.2); } }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .mapboxgl-popup-content { 
+            padding: 0; 
+            border-radius: 12px; 
+        }
+        
+        .marker { 
+            cursor: pointer; 
+            width: 30px; 
+            height: 30px; 
+            border-radius: 50%; 
+            border: 2px solid white; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+            transition: all 0.3s; 
+        }
+        
+        .marker:hover { 
+            transform: scale(1.2); 
+        }
+        
+        .marker-glow { 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            border-radius: 50%; 
+            opacity: 0.6; 
+            filter: blur(20px); 
+            animation: pulse 2s infinite; 
+        }
+        
+        @keyframes pulse { 
+            0%, 100% { opacity: 0.6; transform: scale(1); } 
+            50% { opacity: 0.8; transform: scale(1.2); } 
+        }
+        
+        /* Mobile-specific fixes */
+        .resort-detail-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+        }
+        
+        /* Prevent body scroll when modal open */
+        body.modal-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Collapsible legend on mobile */
+        @media (max-width: 768px) {
+            .legend-collapsed {
+                width: 60px !important;
+                padding: 12px !important;
+            }
+            
+            .legend-collapsed .legend-content {
+                display: none;
+            }
+            
+            .legend-toggle {
+                display: block !important;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .legend-toggle {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,6 +215,20 @@
             const [selectedResort, setSelectedResort] = useState(null);
             const [snowfallData, setSnowfallData] = useState({});
             const [loading, setLoading] = useState(true);
+            const [legendCollapsed, setLegendCollapsed] = useState(false);
+
+            // Prevent body scroll when resort detail is open
+            useEffect(() => {
+                if (selectedResort) {
+                    document.body.classList.add('modal-open');
+                } else {
+                    document.body.classList.remove('modal-open');
+                }
+                
+                return () => {
+                    document.body.classList.remove('modal-open');
+                };
+            }, [selectedResort]);
 
             // Handle browser back button
             useEffect(() => {
@@ -167,14 +257,13 @@
                     center: [-106, 45],
                     zoom: 3.5,
                     projection: 'globe',
-                    maxBounds: [[-170, 15], [-50, 72]], // Restrict to North America
+                    maxBounds: [[-170, 15], [-50, 72]],
                     minZoom: 2.5
                 });
 
                 map.current.on('load', () => {
                     setLoading(false);
                     
-                    // Add heatmap source
                     map.current.addSource('snowfall-heat', {
                         type: 'geojson',
                         data: {
@@ -183,14 +272,12 @@
                         }
                     });
 
-                    // Add heatmap layer with Arctic Chill colors - DRAMATIC VERSION
                     map.current.addLayer({
                         id: 'snowfall-heatmap',
                         type: 'heatmap',
                         source: 'snowfall-heat',
                         maxzoom: 15,
                         paint: {
-                            // Increase weight as snowfall increases - MORE AGGRESSIVE
                             'heatmap-weight': [
                                 'interpolate',
                                 ['linear'],
@@ -201,62 +288,56 @@
                                 10, 1,
                                 20, 1.5
                             ],
-                            // Arctic Chill gradient: pale blue → bright blue → purple → magenta → pink
-                            // MUCH MORE OPAQUE
                             'heatmap-color': [
                                 'interpolate',
                                 ['linear'],
                                 ['heatmap-density'],
-                                0, 'rgba(224, 242, 254, 0)',     // Transparent
-                                0.1, 'rgba(224, 242, 254, 0.8)', // Pale blue (dusting) - MORE OPAQUE
-                                0.3, 'rgba(125, 211, 252, 0.9)', // Sky blue (light) - MORE OPAQUE
-                                0.5, 'rgba(59, 130, 246, 0.95)', // Bright blue (moderate) - MORE OPAQUE
-                                0.7, 'rgba(124, 58, 237, 0.95)', // Purple (heavy) - MORE OPAQUE
-                                0.85, 'rgba(236, 72, 153, 1)',   // Magenta (epic) - FULLY OPAQUE
-                                1, 'rgba(240, 171, 252, 1)'      // Pink (legendary) - FULLY OPAQUE
+                                0, 'rgba(224, 242, 254, 0)',
+                                0.1, 'rgba(224, 242, 254, 0.8)',
+                                0.3, 'rgba(125, 211, 252, 0.9)',
+                                0.5, 'rgba(59, 130, 246, 0.95)',
+                                0.7, 'rgba(124, 58, 237, 0.95)',
+                                0.85, 'rgba(236, 72, 153, 1)',
+                                1, 'rgba(240, 171, 252, 1)'
                             ],
-                            // Tighter radius for realistic weather map appearance
                             'heatmap-radius': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 20,    // Smaller at continent view
-                                3, 30,    // Moderate at regional view
-                                5, 40,    // Localized zones visible
-                                6, 30     // Shrink as markers appear
+                                0, 20,
+                                3, 30,
+                                5, 40,
+                                6, 30
                             ],
-                            // COMPLETE fade out at zoom 6
                             'heatmap-opacity': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 1,      // FULLY visible when zoomed out
-                                5, 0.95,   // Still very visible
-                                5.5, 0.5,  // Start fading
-                                6, 0       // COMPLETELY gone at zoom 6
+                                0, 1,
+                                5, 0.95,
+                                5.5, 0.5,
+                                6, 0
                             ],
-                            // Intensity for localized snow zones
                             'heatmap-intensity': [
                                 'interpolate',
                                 ['linear'],
                                 ['zoom'],
-                                0, 1,      // Normal intensity at wide view
-                                5, 1.2,    // Slightly higher as you zoom
-                                6, 1       // Normal before fade
+                                0, 1,
+                                5, 1.2,
+                                6, 1
                             ]
                         }
                     }, 'waterway-label');
 
                     fetchSnowfallData();
                     
-                    // Add resort markers - START HIDDEN
                     resorts.forEach(resort => {
                         const color = getSnowfallColor(0);
                         
                         const el = document.createElement('div');
                         el.className = 'marker';
                         el.style.backgroundColor = color;
-                        el.style.display = 'none';  // START COMPLETELY HIDDEN
+                        el.style.display = 'none';
                         el.innerHTML = `<div class="marker-glow" style="background-color: ${color};"></div>`;
                         
                         const marker = new mapboxgl.Marker(el)
@@ -268,25 +349,20 @@
                             setSelectedResort(resort);
                         });
                         
-                        // Store marker reference for updates
                         resort.marker = marker;
                         resort.markerEl = el;
                     });
 
-                    // Add zoom-based marker visibility - COMPLETE HIDE at low zoom
                     const updateMarkerVisibility = () => {
                         const zoom = map.current.getZoom();
                         
-                        // Markers completely hidden below zoom 6, fade in 6-7, fully visible 7+
                         if (zoom < 6) {
-                            // COMPLETELY HIDDEN
                             resorts.forEach(resort => {
                                 if (resort.markerEl) {
                                     resort.markerEl.style.display = 'none';
                                 }
                             });
                         } else if (zoom < 7) {
-                            // Fade in from 6 to 7
                             const opacity = (zoom - 6);
                             resorts.forEach(resort => {
                                 if (resort.markerEl) {
@@ -296,7 +372,6 @@
                                 }
                             });
                         } else {
-                            // FULLY VISIBLE
                             resorts.forEach(resort => {
                                 if (resort.markerEl) {
                                     resort.markerEl.style.display = 'block';
@@ -307,16 +382,12 @@
                         }
                     };
 
-                    // Run immediately to set initial state
                     updateMarkerVisibility();
-                    
-                    // Run on every zoom change
                     map.current.on('zoom', updateMarkerVisibility);
                 });
 
                 map.current.addControl(new mapboxgl.NavigationControl());
 
-                // Cleanup function to prevent duplicate maps
                 return () => {
                     if (map.current) {
                         map.current.remove();
@@ -326,60 +397,53 @@
             }, []);
 
             const fetchSnowfallData = async () => {
-                console.log('Fetching real snow data from NOAA...');
+                console.log('Fetching real snow data...');
                 const newData = {};
                 const heatmapFeatures = [];
                 
-                // Fetch data for each resort from your worker
-               // Fetch all resorts in ONE batch request
-try {
-    const locations = resorts.map(r => ({ lat: r.lat, lng: r.lng }));
-    
-    const response = await fetch('/snow-data.json');
-    const snowData = await response.json();
-    
-    // Process results
-    resorts.forEach((resort) => {
-        const data = snowData.resorts.find(r => 
-            Math.abs(r.lat - resort.lat) < 0.01 && 
-            Math.abs(r.lng - resort.lng) < 0.01
-        );
-        
-        if (data && !data.error) {
-            newData[resort.id] = {
-                forecast24hr: data.snowfall_24hr || 0,
-                forecast48hr: data.snowfall_48hr || 0,
-                forecast7day: data.snowfall_7day || 0
-            };
-            
-            // Use 24hr data for heatmap (shows what's happening NOW)
-            const snowfall = data.snowfall_24hr || 0;
-            if (snowfall > 0) {
-                heatmapFeatures.push({
-                    type: 'Feature',
-                    properties: { snowfall: snowfall },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [resort.lng, resort.lat]
-                    }
-                });
-            }
-        } else {
-            newData[resort.id] = {
-                forecast24hr: 0,
-                forecast48hr: 0,
-                forecast7day: 0
-            };
-        }
-    });
-} catch (error) {
-    console.error('Error fetching batch data:', error);
-};
+                try {
+                    const response = await fetch('/snow-data.json');
+                    const snowData = await response.json();
+                    
+                    resorts.forEach((resort) => {
+                        const data = snowData.resorts.find(r => 
+                            Math.abs(r.lat - resort.lat) < 0.01 && 
+                            Math.abs(r.lng - resort.lng) < 0.01
+                        );
+                        
+                        if (data && !data.error) {
+                            newData[resort.id] = {
+                                forecast24hr: data.snowfall_24hr || 0,
+                                forecast48hr: data.snowfall_48hr || 0,
+                                forecast7day: data.snowfall_7day || 0
+                            };
+                            
+                            const snowfall = data.snowfall_24hr || 0;
+                            if (snowfall > 0) {
+                                heatmapFeatures.push({
+                                    type: 'Feature',
+                                    properties: { snowfall: snowfall },
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: [resort.lng, resort.lat]
+                                    }
+                                });
+                            }
+                        } else {
+                            newData[resort.id] = {
+                                forecast24hr: 0,
+                                forecast48hr: 0,
+                                forecast7day: 0
+                            };
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error fetching batch data:', error);
+                }
 
                 setSnowfallData(newData);
                 updateMarkers(newData);
 
-                // Update heatmap with actual data
                 if (map.current && map.current.getSource('snowfall-heat')) {
                     map.current.getSource('snowfall-heat').setData({
                         type: 'FeatureCollection',
@@ -391,7 +455,6 @@ try {
             const updateMarkers = (data) => {
                 resorts.forEach(resort => {
                     if (resort.markerEl && data[resort.id] !== undefined) {
-                        // Use 24hr forecast for marker color
                         const snowfall = data[resort.id].forecast24hr || 0;
                         const color = getSnowfallColor(snowfall);
                         resort.markerEl.style.backgroundColor = color;
@@ -401,229 +464,215 @@ try {
             };
 
             const getSnowfallColor = (inches) => {
-                if (inches >= 10) return '#ef4444'; // Red - Epic (10"+)
-                if (inches >= 6) return '#f97316';  // Orange - Great (6-10")
-                if (inches >= 3) return '#eab308';  // Yellow - Good (3-6")
-                if (inches >= 1) return '#22c55e';  // Green - Moderate (1-3")
-                if (inches > 0) return '#3b82f6';   // Blue - Light (>0")
-                return '#64748b';                    // Gray - None
+                if (inches >= 10) return '#ef4444';
+                if (inches >= 6) return '#f97316';
+                if (inches >= 3) return '#eab308';
+                if (inches >= 1) return '#22c55e';
+                if (inches > 0) return '#3b82f6';
+                return '#64748b';
             };
 
             return (
                 <>
-                    {/* Map view - hide when resort selected */}
                     <div style={{ display: selectedResort ? 'none' : 'block' }} className="w-full h-screen relative">
                         <div ref={mapContainer} className="w-full h-full" />
                     
-                    {/* Header */}
-                    <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-6">
-                        <div className="flex items-center gap-3">
-                            <img 
-                                src="skibum_logo_blacktype_small.png" 
-                                alt="SkiBum Logo" 
-                                className="h-16 w-auto"
-                            />
-                            <div>
-                                <h1 className="text-4xl font-bold text-white">SkiBum</h1>
-                                <p className="text-blue-300 text-sm">Live Snowfall Tracking</p>
+                        {/* Header */}
+                        <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-slate-900/95 to-transparent p-4 md:p-6">
+                            <div className="flex items-center gap-3">
+                                <img 
+                                    src="skibum_logo_blacktype_small.png" 
+                                    alt="SkiBum Logo" 
+                                    className="h-12 md:h-16 w-auto"
+                                />
+                                <div>
+                                    <h1 className="text-2xl md:text-4xl font-bold text-white">SkiBum</h1>
+                                    <p className="text-blue-300 text-xs md:text-sm">Live Snowfall Tracking</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Legend */}
-                    <div className="absolute top-24 right-6 z-10 bg-slate-800/90 backdrop-blur-sm rounded-lg p-4 shadow-xl border border-slate-700">
-                        <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
-                            </svg>
-                            24hr Snowfall
-                        </h3>
-                        <div className="space-y-2">
-                            {[
-                                { label: '10"+ Epic', color: '#ef4444' },
-                                { label: '6-10" Great', color: '#f97316' },
-                                { label: '3-6" Good', color: '#eab308' },
-                                { label: '1-3" Moderate', color: '#22c55e' },
-                                { label: '<1" Light', color: '#3b82f6' },
-                                { label: 'None', color: '#64748b' },
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex items-center gap-2">
-                                    <div className="w-6 h-4 rounded" style={{ backgroundColor: item.color }}></div>
-                                    <span className="text-sm text-slate-300">{item.label}</span>
+                        {/* Legend - Collapsible on Mobile */}
+                        <div className={`absolute top-20 md:top-24 right-4 md:right-6 z-10 bg-slate-800/90 backdrop-blur-sm rounded-lg shadow-xl border border-slate-700 transition-all ${legendCollapsed ? 'legend-collapsed' : 'p-4'}`}>
+                            {/* Toggle button for mobile */}
+                            <button 
+                                onClick={() => setLegendCollapsed(!legendCollapsed)}
+                                className="legend-toggle w-full flex items-center justify-center text-white mb-2"
+                            >
+                                {legendCollapsed ? (
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                ) : (
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                )}
+                            </button>
+                            
+                            <div className="legend-content">
+                                <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
+                                    </svg>
+                                    24hr Snowfall
+                                </h3>
+                                <div className="space-y-2">
+                                    {[
+                                        { label: '10"+ Epic', color: '#ef4444' },
+                                        { label: '6-10" Great', color: '#f97316' },
+                                        { label: '3-6" Good', color: '#eab308' },
+                                        { label: '1-3" Moderate', color: '#22c55e' },
+                                        { label: '<1" Light', color: '#3b82f6' },
+                                        { label: 'None', color: '#64748b' },
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-2">
+                                            <div className="w-6 h-4 rounded" style={{ backgroundColor: item.color }}></div>
+                                            <span className="text-sm text-slate-300">{item.label}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                                <div className="mt-4 pt-4 border-t border-slate-700">
+                                    <p className="text-xs text-slate-400 mb-2">
+                                        💡 <strong>How to Use:</strong>
+                                    </p>
+                                    <p className="text-xs text-slate-400 mb-1">
+                                        • Zoom in/out to toggle heatmap/markers
+                                    </p>
+                                    <p className="text-xs text-slate-400">
+                                        • Click resorts for detailed forecasts
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="mt-4 pt-4 border-t border-slate-700">
-                            <p className="text-xs text-slate-400 mb-2">
-                                💡 <strong>How to Use:</strong>
-                            </p>
-                            <p className="text-xs text-slate-400 mb-1">
-                                • Zoom in/out to toggle heatmap/markers
-                            </p>
-                            <p className="text-xs text-slate-400">
-                                • Click resorts for detailed forecasts
-                            </p>
-                        </div>
+
+                        {loading && (
+                            <div className="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-20">
+                                <div className="text-white text-xl">Loading SkiBum...</div>
+                            </div>
+                        )}
                     </div>
 
-                    {loading && (
-                        <div className="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-20">
-                            <div className="text-white text-xl">Loading SkiBum...</div>
-                        </div>
+                    {selectedResort && (
+                        <ResortDetail 
+                            resort={selectedResort} 
+                            snowfallData={snowfallData[selectedResort.id] || {forecast24hr: 0, forecast48hr: 0, forecast7day: 0}} 
+                            onBack={() => {
+                                setSelectedResort(null);
+                                window.history.back();
+                            }} 
+                        />
                     )}
-                </div>
-
-                {/* Resort detail view - show when resort selected */}
-                {selectedResort && (
-                    <ResortDetail 
-                        resort={selectedResort} 
-                        snowfallData={snowfallData[selectedResort.id] || {forecast24hr: 0, forecast48hr: 0, forecast7day: 0}} 
-                        onBack={() => window.history.back()} 
-                    />
-                )}
-            </>
+                </>
             );
         };
 
         const ResortDetail = ({ resort, snowfallData, onBack }) => {
             return (
-                <div className="w-full min-h-screen bg-slate-900 text-white overflow-y-auto">
+                <div className="resort-detail-container w-full bg-slate-900 text-white">
                     {/* Hero */}
-                    <div className="relative h-96 bg-gradient-to-br from-blue-600 to-slate-800">
+                    <div className="relative h-64 md:h-96 bg-gradient-to-br from-blue-600 to-slate-800">
                         <button
                             onClick={onBack}
-                            className="absolute top-6 left-6 bg-slate-800/80 hover:bg-slate-700 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors z-10"
+                            className="absolute top-4 md:top-6 left-4 md:left-6 bg-slate-800/80 hover:bg-slate-700 px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 transition-colors z-10 text-sm md:text-base"
                         >
                             ← Back to Map
                         </button>
                         
-                        <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center p-4">
                             <div className="text-center">
                                 <img 
                                     src="skibum_logo_blacktype_small.png" 
                                     alt="SkiBum Logo" 
-                                    className="h-24 w-auto mx-auto mb-4"
+                                    className="h-16 md:h-24 w-auto mx-auto mb-4"
                                 />
-                                <h1 className="text-5xl font-bold mb-2">{resort.name}</h1>
-                                <p className="text-xl text-blue-200">{resort.state}, {resort.country}</p>
+                                <h1 className="text-3xl md:text-5xl font-bold mb-2">{resort.name}</h1>
+                                <p className="text-lg md:text-xl text-blue-200">{resort.state}, {resort.country}</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Snowfall Stats */}
-                    <div className="max-w-6xl mx-auto px-6 -mt-16 relative z-10">
-                        <div className="bg-slate-800 rounded-xl shadow-2xl p-8 border border-slate-700">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="max-w-6xl mx-auto px-4 md:px-6 -mt-12 md:-mt-16 relative z-10">
+                        <div className="bg-slate-800 rounded-xl shadow-2xl p-4 md:p-8 border border-slate-700">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                                 <div className="text-center">
-                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-4xl font-bold text-white mb-1">{snowfallData.forecast24hr}"</div>
-                                    <div className="text-slate-400">24 Hour Forecast</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.forecast24hr}"</div>
+                                    <div className="text-sm md:text-base text-slate-400">24 Hour Forecast</div>
                                 </div>
                                 <div className="text-center">
-                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-4xl font-bold text-white mb-1">{snowfallData.forecast48hr}"</div>
-                                    <div className="text-slate-400">48 Hour Forecast</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.forecast48hr}"</div>
+                                    <div className="text-sm md:text-base text-slate-400">48 Hour Forecast</div>
                                 </div>
                                 <div className="text-center">
-                                    <svg className="w-12 h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-4xl font-bold text-white mb-1">{snowfallData.forecast7day}"</div>
-                                    <div className="text-slate-400">7 Day Forecast</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.forecast7day}"</div>
+                                    <div className="text-sm md:text-base text-slate-400">7 Day Forecast</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Content Sections */}
-                    <div className="max-w-6xl mx-auto px-6 py-12">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                             {/* Top 10 Runs */}
-                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                            <div className="bg-slate-800 rounded-xl p-4 md:p-6 border border-slate-700">
                                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
-                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l7 18 7-18" />
                                     </svg>
-                                    <h2 className="text-xl font-bold">Top 10 Ski Runs</h2>
+                                    <h2 className="text-lg md:text-xl font-bold">Top 10 Ski Runs</h2>
                                 </div>
                                 <ol className="space-y-3">
-                                    {[
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon"
-                                    ].map((item, idx) => (
+                                    {Array(10).fill("Content coming soon").map((item, idx) => (
                                         <li key={idx} className="flex items-start gap-3">
-                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
-                                            <span className="text-slate-300">{item}</span>
+                                            <span className="text-blue-400 font-bold min-w-6 text-sm md:text-base">{idx + 1}.</span>
+                                            <span className="text-slate-300 text-sm md:text-base">{item}</span>
                                         </li>
                                     ))}
                                 </ol>
                             </div>
 
                             {/* Top 10 Restaurants */}
-                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                            <div className="bg-slate-800 rounded-xl p-4 md:p-6 border border-slate-700">
                                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
-                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
-                                    <h2 className="text-xl font-bold">Top 10 Restaurants</h2>
+                                    <h2 className="text-lg md:text-xl font-bold">Top 10 Restaurants</h2>
                                 </div>
                                 <ol className="space-y-3">
-                                    {[
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon"
-                                    ].map((item, idx) => (
+                                    {Array(10).fill("Content coming soon").map((item, idx) => (
                                         <li key={idx} className="flex items-start gap-3">
-                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
-                                            <span className="text-slate-300">{item}</span>
+                                            <span className="text-blue-400 font-bold min-w-6 text-sm md:text-base">{idx + 1}.</span>
+                                            <span className="text-slate-300 text-sm md:text-base">{item}</span>
                                         </li>
                                     ))}
                                 </ol>
                             </div>
 
                             {/* Top 10 Places to Stay */}
-                            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                            <div className="bg-slate-800 rounded-xl p-4 md:p-6 border border-slate-700">
                                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-700">
-                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                                     </svg>
-                                    <h2 className="text-xl font-bold">Top 10 Places to Stay</h2>
+                                    <h2 className="text-lg md:text-xl font-bold">Top 10 Places to Stay</h2>
                                 </div>
                                 <ol className="space-y-3">
-                                    {[
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon",
-                                        "Content coming soon"
-                                    ].map((item, idx) => (
+                                    {Array(10).fill("Content coming soon").map((item, idx) => (
                                         <li key={idx} className="flex items-start gap-3">
-                                            <span className="text-blue-400 font-bold min-w-6">{idx + 1}.</span>
-                                            <span className="text-slate-300">{item}</span>
+                                            <span className="text-blue-400 font-bold min-w-6 text-sm md:text-base">{idx + 1}.</span>
+                                            <span className="text-slate-300 text-sm md:text-base">{item}</span>
                                         </li>
                                     ))}
                                 </ol>
