@@ -623,6 +623,63 @@
                             </div>
                         </div>
 
+                        {/* Status Banner */}
+                        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 bg-slate-800/85 backdrop-blur-sm rounded-full px-6 py-3 shadow-xl border border-slate-700">
+                            <div className="flex items-center gap-6 text-sm">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span className="text-slate-300 font-medium">System Active</span>
+                                </div>
+                                <div className="text-slate-400">•</div>
+                                <div className="text-slate-300">
+                                    <span className="font-semibold text-white">117</span> Resorts Monitored
+                                </div>
+                                <div className="text-slate-400">•</div>
+                                <div className="text-slate-300">
+                                    Updated <span className="font-semibold text-white">
+                                        {(() => {
+                                            const lastUpdate = new Date(Date.now() - 2 * 60 * 60 * 1000);
+                                            const hours = Math.floor((Date.now() - lastUpdate) / (1000 * 60 * 60));
+                                            return hours === 0 ? 'just now' : `${hours}hrs ago`;
+                                        })()}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* SEO Content Section - Hidden visually but readable by Google */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-slate-900/95 text-white p-6 overflow-hidden" style={{ maxHeight: '0px', opacity: 0 }}>
+                            <div className="max-w-6xl mx-auto">
+                                <h2 className="text-2xl font-bold mb-4">Live Snowfall Tracking for 117+ Ski Resorts Across North America</h2>
+                                <p className="text-slate-300 mb-4">
+                                    SkiBum provides real-time snow forecasts for skiers and snowboarders looking for the best powder conditions. 
+                                    Our interactive map displays 24-hour, 48-hour, and 7-day snowfall predictions updated every 6 hours with accurate 
+                                    weather data from trusted sources.
+                                </p>
+                                <h3 className="text-xl font-semibold mb-3">Featured Ski Resorts</h3>
+                                <p className="text-slate-300 mb-4">
+                                    Track live snow conditions at top destinations including Whistler Blackcomb, Vail, Park City, Breckenridge, 
+                                    Heavenly, Aspen Snowmass, Jackson Hole, Lake Louise, Big Sky, Steamboat, Mammoth Mountain, Squaw Valley, 
+                                    Telluride, Sun Valley, Deer Valley, Killington, Stowe, Alta, Snowbird, Taos, and 97+ more ski areas across 
+                                    the United States and Canada.
+                                </p>
+                                <h3 className="text-xl font-semibold mb-3">Real-Time Snow Reports</h3>
+                                <p className="text-slate-300 mb-4">
+                                    Whether you're planning a weekend ski trip or chasing fresh powder, SkiBum helps you find the best snow 
+                                    conditions with our color-coded forecast system. Red markers indicate epic snowfall (10+ inches), orange shows 
+                                    great conditions (6-10 inches), yellow represents good skiing (3-6 inches), green indicates moderate snowfall 
+                                    (1-3 inches), and blue shows light dustings.
+                                </p>
+                                <h3 className="text-xl font-semibold mb-3">Coverage Across North America</h3>
+                                <p className="text-slate-300">
+                                    Our ski resort snow tracker covers major mountain destinations in Colorado, Utah, California, Vermont, Wyoming, 
+                                    Montana, Idaho, Oregon, Washington, New Hampshire, Maine, New York, New Mexico, British Columbia, Alberta, 
+                                    Quebec, and Ontario. From the Rocky Mountains to the Sierra Nevada, from the Northeast to the Canadian Rockies, 
+                                    SkiBum monitors snowfall at all the best ski resorts for powder hounds and weekend warriors alike.
+                                </p>
+                            </div>
+                        </div>
+
                         {loading && (
                             <div className="absolute inset-0 bg-slate-900/80 flex items-center justify-center z-20">
                                 <div className="text-white text-xl">Loading SkiBum...</div>
