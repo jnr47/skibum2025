@@ -638,9 +638,22 @@
                                 <div className="text-slate-300">
                                     Updated <span className="font-semibold text-white">
                                         {(() => {
-                                            const lastUpdate = new Date(Date.now() - 2 * 60 * 60 * 1000);
-                                            const hours = Math.floor((Date.now() - lastUpdate) / (1000 * 60 * 60));
-                                            return hours === 0 ? 'just now' : `${hours}hrs ago`;
+                                            // GitHub Actions runs at 0, 6, 12, 18 UTC
+                                            const now = new Date();
+                                            const currentHourUTC = now.getUTCHours();
+                                            
+                                            // Find the last run time
+                                            let lastRunHour;
+                                            if (currentHourUTC >= 18) lastRunHour = 18;
+                                            else if (currentHourUTC >= 12) lastRunHour = 12;
+                                            else if (currentHourUTC >= 6) lastRunHour = 6;
+                                            else lastRunHour = 0;
+                                            
+                                            const hoursSinceUpdate = currentHourUTC - lastRunHour;
+                                            
+                                            if (hoursSinceUpdate === 0) return 'just now';
+                                            if (hoursSinceUpdate === 1) return '1hr ago';
+                                            return `${hoursSinceUpdate}hrs ago`;
                                         })()}
                                     </span>
                                 </div>
