@@ -68,11 +68,16 @@
         
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, #1B3A5F 0%, #2A4A6F 100%);
+            background: linear-gradient(135deg, rgba(27, 58, 95, 0.85) 0%, rgba(42, 74, 111, 0.85) 100%), 
+                        url('images/mammoth-hero.jpg') center/cover;
             padding: 4rem 2rem 3rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .hero::before {
