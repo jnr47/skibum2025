@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Mammoth Mountain - Live Snow Report | SkiBum</title>
-    <meta name="description" content="Current snow conditions, legendary runs, and authentic mountain lodging at Mammoth Mountain, California. Your vintage guide to California's premier powder destination.">
+    <title>Mammoth Mountain - Live Snow Report & Ski Guide | SkiBum</title>
+    <meta name="description" content="Live snow conditions, essential gear recommendations, and discount lift tickets for Mammoth Mountain. California's premier powder destination with 384 inches of annual snowfall.">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
@@ -66,18 +66,18 @@
             color: #1B3A5F;
         }
         
-        /* Hero */
+        /* Hero - Compact Version */
         .hero {
             background-color: #1B3A5F;
             background-image: url('/images/mammoth-hero.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding: 4rem 2rem 3rem;
+            padding: 3rem 2rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 500px;
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -122,7 +122,7 @@
         
         .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             color: #F5EFE6;
             letter-spacing: 4px;
             margin-bottom: 0.5rem;
@@ -132,51 +132,41 @@
         .hero-subtitle {
             font-family: 'Lora', serif;
             font-style: italic;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #E86E3A;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
-        /* Snow Forecast Badges */
+        /* Snow Forecast Badges - Horizontal Compact */
         .forecast-badges {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
         
         .forecast-badge {
             background: #F5EFE6;
-            border: 4px solid #E86E3A;
+            border: 3px solid #E86E3A;
             border-radius: 50%;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .forecast-badge::before {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border: 2px dashed #B85C38;
-            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         
         .forecast-amount {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2.2rem;
             color: #1B3A5F;
             line-height: 1;
         }
         
         .forecast-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #E86E3A;
             font-weight: 600;
             text-transform: uppercase;
@@ -187,17 +177,77 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2rem;
+        }
+        
+        /* Priority CTA Banner */
+        .priority-banner {
+            background: linear-gradient(135deg, #E86E3A 0%, #B85C38 100%);
+            color: #F5EFE6;
+            padding: 2rem;
+            margin: -1rem 0 3rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .priority-banner h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .priority-banner p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #F5EFE6;
+            color: #1B3A5F;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            background: #1B3A5F;
+            color: #F5EFE6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button-primary {
+            background: #1B3A5F;
+            color: #F5EFE6;
+        }
+        
+        .cta-button-primary:hover {
+            background: #F5EFE6;
+            color: #1B3A5F;
         }
         
         /* Section Headers */
         .section {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             position: relative;
         }
         
@@ -212,7 +262,7 @@
         
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #1B3A5F;
             letter-spacing: 3px;
             margin-bottom: 0.5rem;
@@ -225,7 +275,156 @@
             font-size: 1.1rem;
         }
         
-        /* Vintage Cards */
+        /* Gear Cards with Vintage Photos */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gear-card {
+            background: white;
+            border: 3px solid #1B3A5F;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #E86E3A;
+            transition: all 0.3s;
+        }
+        
+        .gear-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0 #E86E3A;
+        }
+        
+        .gear-photo {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gear-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+        }
+        
+        /* Vintage texture overlay on photos */
+        .gear-photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        .gear-content {
+            padding: 1.5rem;
+        }
+        
+        .gear-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            color: #1B3A5F;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gear-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .gear-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: #E86E3A;
+            margin-bottom: 1rem;
+        }
+        
+        .gear-button {
+            display: block;
+            width: 100%;
+            background: #1B3A5F;
+            color: #F5EFE6;
+            padding: 0.8rem;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .gear-button:hover {
+            background: #E86E3A;
+        }
+        
+        /* Lift Ticket Section */
+        .ticket-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .ticket-card {
+            background: white;
+            border: 4px solid #E86E3A;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        
+        .ticket-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .ticket-type {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: #1B3A5F;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .ticket-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: #E86E3A;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ticket-savings {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ticket-button {
+            display: inline-block;
+            background: #E86E3A;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .ticket-button:hover {
+            background: #1B3A5F;
+            transform: translateY(-2px);
+        }
+        
+        /* Vintage Cards (for ski runs, hotels, restaurants) */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -233,206 +432,84 @@
         }
         
         .vintage-card {
-            background: #FDFBF7;
+            background: white;
             border: 3px solid #1B3A5F;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-        }
-        
-        .vintage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: repeating-linear-gradient(
-                90deg,
-                #E86E3A 0px,
-                #E86E3A 10px,
-                #B85C38 10px,
-                #B85C38 20px
-            );
+            box-shadow: 4px 4px 0 #E86E3A;
+            transition: all 0.3s;
         }
         
         .vintage-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            box-shadow: 6px 6px 0 #E86E3A;
         }
         
         .card-image-container {
-            width: 160px;
-            height: 160px;
-            margin: 2rem auto 1.5rem;
-            position: relative;
-        }
-        
-        .card-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid #1B3A5F;
-            background: linear-gradient(135deg, #E0E0E0 0%, #BDBDBD 100%);
+            background: linear-gradient(135deg, #1B3A5F 0%, #2A4A6F 100%);
+            height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image {
             font-size: 4rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
         .card-content {
-            padding: 0 1.5rem 2rem;
-            text-align: center;
+            padding: 1.5rem;
         }
         
         .card-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #1B3A5F;
-            margin-bottom: 0.5rem;
             letter-spacing: 1px;
-        }
-        
-        .card-rating {
-            color: #E86E3A;
-            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
         
         .card-detail {
             color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .card-price {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: #1B3A5F;
-            margin: 1rem 0;
-        }
-        
-        .card-price-label {
             font-size: 0.9rem;
-            color: #999;
+            margin-bottom: 0.5rem;
         }
         
-        .vintage-button {
+        .card-difficulty {
             display: inline-block;
             background: #E86E3A;
-            color: #F5EFE6;
-            padding: 0.8rem 2rem;
-            border: 3px solid #1B3A5F;
-            border-radius: 4px;
-            text-decoration: none;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            box-shadow: 4px 4px 0 #1B3A5F;
-            transition: all 0.2s;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-top: 0.5rem;
         }
         
-        .vintage-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #1B3A5F;
-        }
-        
-        .vintage-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0 0 0 #1B3A5F;
-        }
-        
-        /* Ski Runs List */
-        .runs-list {
-            background: #FDFBF7;
-            border: 3px solid #1B3A5F;
-            border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .run-item {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            padding: 1.5rem 0;
-            border-bottom: 2px dashed #E0E0E0;
-        }
-        
-        .run-item:last-child {
-            border-bottom: none;
-        }
-        
-        .run-number {
-            background: #E86E3A;
-            color: #F5EFE6;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            flex-shrink: 0;
-            border: 3px solid #1B3A5F;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .run-content {
-            flex: 1;
-        }
-        
-        .run-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem;
-            color: #1B3A5F;
-            margin-bottom: 0.3rem;
-            letter-spacing: 1px;
-        }
-        
-        .run-difficulty {
-            display: inline-block;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+        .affiliate-badge {
+            background: #1B3A5F;
+            color: white;
+            padding: 0.6rem 1rem;
+            text-align: center;
             font-weight: 600;
-            margin-left: 0.5rem;
-            text-transform: uppercase;
-        }
-        
-        .difficulty-beginner { background: #4CAF50; color: white; }
-        .difficulty-intermediate { background: #2196F3; color: white; }
-        .difficulty-advanced { background: #1B3A5F; color: white; }
-        .difficulty-expert { background: #000; color: white; }
-        
-        .run-description {
-            color: #666;
-            line-height: 1.6;
-            margin-top: 0.5rem;
-        }
-        
-        /* Badge */
-        .coming-soon-badge {
-            display: inline-block;
-            background: #3D5F4C;
-            color: #F5EFE6;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.9rem;
             margin-top: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .affiliate-badge:hover {
+            background: #E86E3A;
         }
         
         /* Footer */
         .footer {
             background: #1B3A5F;
             color: #F5EFE6;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             margin-top: 4rem;
         }
@@ -442,227 +519,361 @@
             background: repeating-linear-gradient(
                 90deg,
                 #E86E3A 0px,
-                #E86E3A 30px,
-                #B85C38 30px,
-                #B85C38 60px
+                #E86E3A 20px,
+                #B85C38 20px,
+                #B85C38 40px
             );
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
-                letter-spacing: 2px;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .forecast-badge {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .forecast-amount {
-                font-size: 2rem;
             }
             
             .section-title {
                 font-size: 2rem;
             }
             
-            .card-grid {
+            .forecast-badge {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .forecast-amount {
+                font-size: 1.8rem;
+            }
+            
+            .gear-grid {
                 grid-template-columns: 1fr;
             }
             
-            .run-item {
+            .cta-buttons {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
+            }
+            
+            .cta-button {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    
     <!-- Header -->
     <div class="header">
         <div class="header-content">
-            <img src="skibum_logo_blacktype_small.png" alt="SkiBum Logo" style="height: 60px; width: auto;">
-            <a href="/" class="back-link">← Back to Map</a>
+            <a href="/" class="back-link">← Back to Live Snow Map</a>
         </div>
     </div>
     
-    <!-- Hero -->
+    <!-- Hero Section - Compact -->
     <div class="hero">
         <h1>MAMMOTH MOUNTAIN</h1>
-        <div class="hero-subtitle">California's Premier Powder Destination</div>
+        <p class="hero-subtitle">Eastern Sierra's Crown Jewel</p>
         
+        <!-- Snow Forecast Badges -->
         <div class="forecast-badges">
             <div class="forecast-badge">
                 <div class="forecast-amount">8"</div>
                 <div class="forecast-label">24 Hours</div>
             </div>
             <div class="forecast-badge">
-                <div class="forecast-amount">14"</div>
+                <div class="forecast-amount">18"</div>
                 <div class="forecast-label">48 Hours</div>
             </div>
             <div class="forecast-badge">
-                <div class="forecast-amount">22"</div>
+                <div class="forecast-amount">34"</div>
                 <div class="forecast-label">7 Days</div>
             </div>
+        </div>
+    </div>
+    
+    <!-- Priority CTA Banner -->
+    <div class="priority-banner">
+        <h2>🎿 PLAN YOUR MAMMOTH TRIP</h2>
+        <p>Get discount lift tickets & essential gear before you go</p>
+        <div class="cta-buttons">
+            <a href="#lift-tickets" class="cta-button cta-button-primary">Get Lift Tickets (Save 30%)</a>
+            <a href="#gear" class="cta-button">Essential Gear Guide</a>
         </div>
     </div>
     
     <!-- Main Content -->
     <div class="container">
         
-        <!-- The Legendary Runs -->
-        <section class="section">
+        <!-- SECTION 1: LIFT TICKETS -->
+        <section class="section" id="lift-tickets">
             <div class="section-header">
-                <h2 class="section-title">The Legendary Runs</h2>
-                <p class="section-subtitle">Ten trails that define Mammoth Mountain</p>
+                <h2 class="section-title">Get Your Lift Tickets</h2>
+                <p class="section-subtitle">Save up to 30% buying in advance</p>
             </div>
             
-            <div class="runs-list">
-                <div class="run-item">
-                    <div class="run-number">1</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Cornice Bowl
-                            <span class="run-difficulty difficulty-expert">Expert</span>
-                        </div>
-                        <div class="run-description">
-                            Steep chutes and wide-open faces above treeline. This is Mammoth's crown jewel for expert skiers chasing big mountain terrain and Sierra sunrises.
-                        </div>
+            <div class="ticket-options">
+                <div class="ticket-card">
+                    <div class="ticket-type">SINGLE DAY</div>
+                    <div class="ticket-price">$159</div>
+                    <p class="ticket-savings">Save $30 vs. window price</p>
+                    <a href="#" class="ticket-button">Buy on Liftopia</a>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your Liftopia affiliate link</p>
+                </div>
+                
+                <div class="ticket-card">
+                    <div class="ticket-type">3-DAY PASS</div>
+                    <div class="ticket-price">$389</div>
+                    <p class="ticket-savings">Save $80 vs. daily rate</p>
+                    <a href="#" class="ticket-button">Buy on Ski.com</a>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your affiliate link</p>
+                </div>
+                
+                <div class="ticket-card">
+                    <div class="ticket-type">5-DAY PASS</div>
+                    <div class="ticket-price">$599</div>
+                    <p class="ticket-savings">Best value - Save $150</p>
+                    <a href="#" class="ticket-button">Buy on Liftopia</a>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your Liftopia affiliate link</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
+                💡 Pro Tip: Midweek tickets (Mon-Fri) are 20% cheaper than weekend rates
+            </p>
+        </section>
+        
+        <!-- SECTION 2: ESSENTIAL GEAR -->
+        <section class="section" id="gear">
+            <div class="section-header">
+                <h2 class="section-title">Essential Gear for Mammoth</h2>
+                <p class="section-subtitle">What you need for California's 384 inches of annual snowfall</p>
+            </div>
+            
+            <div class="gear-grid">
+                <!-- Gear Card 1: Powder Skis -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&q=80" alt="Powder skiing">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Powder Skis</h3>
+                        <p class="gear-desc">Blizzard Rustler 11 - Perfect for Mammoth's deep snow days. 110mm waist handles variable Sierra conditions.</p>
+                        <div class="gear-price">$699</div>
+                        <a href="#" class="gear-button">View on Backcountry</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Backcountry affiliate link</p>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">2</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Climax
-                            <span class="run-difficulty difficulty-intermediate">Intermediate</span>
-                        </div>
-                        <div class="run-description">
-                            Wide-open groomer perfect for high-speed cruising. Named for the adrenaline rush, this run epitomizes Sierra spring skiing at its finest.
-                        </div>
+                <!-- Gear Card 2: Heated Gloves -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?w=800&q=80" alt="Ski gloves">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Heated Gloves</h3>
+                        <p class="gear-desc">Outdoor Research Lucent - Life-saver on 10°F mornings at the summit. Rechargeable battery lasts all day.</p>
+                        <div class="gear-price">$299</div>
+                        <a href="#" class="gear-button">View on Amazon</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Amazon affiliate link</p>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">3</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Dave's Run
-                            <span class="run-difficulty difficulty-intermediate">Intermediate</span>
-                        </div>
-                        <div class="run-description">
-                            Classic Mammoth cruiser with varied terrain and stunning views. A local favorite that showcases everything great about Sierra skiing.
-                        </div>
+                <!-- Gear Card 3: Goggles -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800&q=80" alt="Ski goggles">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Goggles</h3>
+                        <p class="gear-desc">Smith I/O Mag XL - Variable conditions mean you need quality lenses. Quick-change system is clutch.</p>
+                        <div class="gear-price">$270</div>
+                        <a href="#" class="gear-button">View on Evo</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Evo affiliate link</p>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">4</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Wipeout Chutes
-                            <span class="run-difficulty difficulty-expert">Expert</span>
-                        </div>
-                        <div class="run-description">
-                            Technical chutes off the summit that demand respect. When fresh snow fills these steep lines, powder hounds line up at first chair.
-                        </div>
+                <!-- Gear Card 4: Shell Jacket -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&q=80" alt="Ski jacket">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Shell Jacket</h3>
+                        <p class="gear-desc">Arc'teryx Rush - Breathable, waterproof, bomber. Worth every penny for Mammoth's variable weather.</p>
+                        <div class="gear-price">$549</div>
+                        <a href="#" class="gear-button">View on REI</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your REI affiliate link</p>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">5</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Broadway
-                            <span class="run-difficulty difficulty-intermediate">Intermediate</span>
-                        </div>
-                        <div class="run-description">
-                            Long, flowing run through the trees with consistent pitch. Perfect for warming up legs or cooling down after hard charging.
-                        </div>
+                <!-- Gear Card 5: Avalanche Beacon -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1551698618-013f8e95ed6c?w=800&q=80" alt="Backcountry skiing">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Avalanche Beacon</h3>
+                        <p class="gear-desc">BCA Tracker 4 - Essential if you're going backcountry. Mammoth's sidecountry requires proper safety gear.</p>
+                        <div class="gear-price">$329</div>
+                        <a href="#" class="gear-button">View on Backcountry</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Backcountry affiliate link</p>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">6</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Gravy Train
-                            <span class="run-difficulty difficulty-intermediate">Intermediate</span>
-                        </div>
-                        <div class="run-description">
-                            Smooth, confidence-building terrain that lives up to its name. Ideal for progressing skiers ready to tackle longer runs.
-                        </div>
+                <!-- Gear Card 6: Ski Bag -->
+                <div class="gear-card">
+                    <div class="gear-photo">
+                        <img src="https://images.unsplash.com/photo-1553481187-be93c21490a9?w=800&q=80" alt="Ski equipment">
+                    </div>
+                    <div class="gear-content">
+                        <h3 class="gear-name">Ski Bag</h3>
+                        <p class="gear-desc">Dakine Fall Line Roller - Fits 2 pairs of skis. Padded protection for the flight to Mammoth.</p>
+                        <div class="gear-price">$199</div>
+                        <a href="#" class="gear-button">View on Amazon</a>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Amazon affiliate link</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
+                🏔️ Not ready to buy? <a href="#" style="color: #E86E3A; text-decoration: none; font-weight: 600;">Rent gear at Mammoth</a> - Christy Sports has locations at the base
+            </p>
+        </section>
+        
+        <!-- SECTION 3: TOP 10 SKI RUNS -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Top 10 Legendary Runs</h2>
+                <p class="section-subtitle">Where locals go when the powder hits</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">⛷️</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">1. Cornice Bowl</h3>
+                        <p class="card-detail">📍 Lift 23</p>
+                        <p class="card-detail">Steep chutes and wide-open faces. Get there early on powder days.</p>
+                        <span class="card-difficulty">Expert • Steep</span>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">7</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Hangman's Hollow
-                            <span class="run-difficulty difficulty-advanced">Advanced</span>
-                        </div>
-                        <div class="run-description">
-                            Steep, technical tree skiing for advanced riders. When the snow is deep, this hidden gem offers some of the best tree runs on the mountain.
-                        </div>
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🏂</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">2. Dave's Run</h3>
+                        <p class="card-detail">📍 Lift 22</p>
+                        <p class="card-detail">Classic mogul run. Tests your legs and technique all the way down.</p>
+                        <span class="card-difficulty">Expert • Moguls</span>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">8</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            St. Anton
-                            <span class="run-difficulty difficulty-advanced">Advanced</span>
-                        </div>
-                        <div class="run-description">
-                            European-style steeps named after the legendary Austrian resort. This run pays homage to classic Alpine skiing with sustained pitch and fall-line skiing.
-                        </div>
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🌲</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">3. Paranoid Flats</h3>
+                        <p class="card-detail">📍 Lift 14</p>
+                        <p class="card-detail">Tree skiing paradise. Secret powder stashes days after a storm.</p>
+                        <span class="card-difficulty">Advanced • Trees</span>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">9</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Scotty's
-                            <span class="run-difficulty difficulty-intermediate">Intermediate</span>
-                        </div>
-                        <div class="run-description">
-                            Cruisy intermediate with great views of the Minarets. Named after a Mammoth legend, this run captures the soul of California skiing.
-                        </div>
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">⚡</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">4. Climax</h3>
+                        <p class="card-detail">📍 Lift 3</p>
+                        <p class="card-detail">Groomed perfection. Wide-open cruiser for speed demons.</p>
+                        <span class="card-difficulty">Intermediate • Groomed</span>
                     </div>
                 </div>
                 
-                <div class="run-item">
-                    <div class="run-number">10</div>
-                    <div class="run-content">
-                        <div class="run-title">
-                            Face of 3
-                            <span class="run-difficulty difficulty-expert">Expert</span>
-                        </div>
-                        <div class="run-description">
-                            Steep, sustained pitch directly under Chair 3. A proving ground for confident skiers and a spectator gallery for those riding the lift.
-                        </div>
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🎿</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">5. Broadway</h3>
+                        <p class="card-detail">📍 Lift 9</p>
+                        <p class="card-detail">Long cruiser with incredible views. Perfect for intermediate confidence building.</p>
+                        <span class="card-difficulty">Intermediate • Scenic</span>
+                    </div>
+                </div>
+                
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🎯</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">6. Scotty's</h3>
+                        <p class="card-detail">📍 Lift 7</p>
+                        <p class="card-detail">Hidden gem. Rarely crowded, always fun. Great for warming up.</p>
+                        <span class="card-difficulty">Intermediate • Fun</span>
+                    </div>
+                </div>
+                
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">💎</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">7. Gravy</h3>
+                        <p class="card-detail">📍 Lift 22</p>
+                        <p class="card-detail">Locals' secret. Tight trees and natural features. Never tracked out.</p>
+                        <span class="card-difficulty">Advanced • Hidden</span>
+                    </div>
+                </div>
+                
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🏔️</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">8. Face of 3</h3>
+                        <p class="card-detail">📍 Lift 3</p>
+                        <p class="card-detail">Steep face with incredible panoramic views of the Sierra.</p>
+                        <span class="card-difficulty">Expert • Steep Views</span>
+                    </div>
+                </div>
+                
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">💨</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">9. Dropout Chutes</h3>
+                        <p class="card-detail">📍 Lift 22</p>
+                        <p class="card-detail">Steep, tight chutes. Patrol opens after storms. First tracks are earned.</p>
+                        <span class="card-difficulty">Expert • Powder</span>
+                    </div>
+                </div>
+                
+                <div class="vintage-card">
+                    <div class="card-image-container">
+                        <div class="card-image">🏃</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">10. Road Runner</h3>
+                        <p class="card-detail">📍 Lift 1</p>
+                        <p class="card-detail">Longest groomed run at Mammoth. Over 3 miles of continuous skiing.</p>
+                        <span class="card-difficulty">Intermediate • Long</span>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Where to Lay Your Head -->
+        <!-- SECTION 4: WHERE TO STAY -->
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Where to Lay Your Head</h2>
-                <p class="section-subtitle">Authentic mountain lodging near the slopes</p>
+                <h2 class="section-title">Where to Stay</h2>
+                <p class="section-subtitle">A few solid options near the slopes</p>
             </div>
             
             <div class="card-grid">
@@ -672,14 +883,11 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Mammoth Mountain Inn</h3>
-                        <div class="card-rating">⭐⭐⭐⭐ (2,847)</div>
                         <p class="card-detail">📍 Ski-in/Ski-out Location</p>
                         <p class="card-detail">🛏️ Mountain View Rooms</p>
-                        <div class="card-price">
-                            FROM $189
-                            <div class="card-price-label">per night</div>
-                        </div>
-                        <div class="coming-soon-badge">Booking Links Coming Soon</div>
+                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $189</div>
+                        <div class="affiliate-badge">Check Availability on Booking.com</div>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
                     </div>
                 </div>
                 
@@ -689,14 +897,11 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">The Village Lodge</h3>
-                        <div class="card-rating">⭐⭐⭐⭐⭐ (1,203)</div>
                         <p class="card-detail">📍 Village Center Location</p>
                         <p class="card-detail">🍳 Complimentary Breakfast</p>
-                        <div class="card-price">
-                            FROM $245
-                            <div class="card-price-label">per night</div>
-                        </div>
-                        <div class="coming-soon-badge">Booking Links Coming Soon</div>
+                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $245</div>
+                        <div class="affiliate-badge">Check Availability on Booking.com</div>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
                     </div>
                 </div>
                 
@@ -706,98 +911,21 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Juniper Springs Resort</h3>
-                        <div class="card-rating">⭐⭐⭐⭐ (956)</div>
                         <p class="card-detail">📍 Free Shuttle to Slopes</p>
                         <p class="card-detail">🏊 Heated Pool & Hot Tubs</p>
-                        <div class="card-price">
-                            FROM $169
-                            <div class="card-price-label">per night</div>
-                        </div>
-                        <div class="coming-soon-badge">Booking Links Coming Soon</div>
+                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $169</div>
+                        <div class="affiliate-badge">Check Availability on Booking.com</div>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
                     </div>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏡</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Sierra Nevada Resort</h3>
-                        <div class="card-rating">⭐⭐⭐⭐⭐ (1,534)</div>
-                        <p class="card-detail">📍 Luxury Mountain Suites</p>
-                        <p class="card-detail">♨️ On-Site Spa Services</p>
-                        <div class="card-price">
-                            FROM $215
-                            <div class="card-price-label">per night</div>
-                        </div>
-                        <div class="coming-soon-badge">Booking Links Coming Soon</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Gear Up & Get Out -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Gear Up & Get Out</h2>
-                <p class="section-subtitle">Lessons, tours & mountain experiences</p>
             </div>
             
-            <div class="card-grid">
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">⛷️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Private Ski Lesson</h3>
-                        <div class="card-rating">⭐⭐⭐⭐⭐ (847)</div>
-                        <p class="card-detail">⏱️ 2 Hours • 👥 1-4 People</p>
-                        <p class="card-detail">🎿 All Equipment Included</p>
-                        <div class="card-price">
-                            FROM $289
-                            <div class="card-price-label">per group</div>
-                        </div>
-                        <div class="coming-soon-badge">Activity Links Coming Soon</div>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏂</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Snowboard Full Day</h3>
-                        <div class="card-rating">⭐⭐⭐⭐⭐ (623)</div>
-                        <p class="card-detail">⏱️ 6 Hours • 🎒 Gear Included</p>
-                        <p class="card-detail">🏔️ Mountain Guide</p>
-                        <div class="card-price">
-                            FROM $175
-                            <div class="card-price-label">per person</div>
-                        </div>
-                        <div class="coming-soon-badge">Activity Links Coming Soon</div>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🥾</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Backcountry Tour</h3>
-                        <div class="card-rating">⭐⭐⭐⭐ (412)</div>
-                        <p class="card-detail">⏱️ 4 Hours • 🚐 Hotel Pickup</p>
-                        <p class="card-detail">🏔️ Expert Guides</p>
-                        <div class="card-price">
-                            FROM $129
-                            <div class="card-price-label">per person</div>
-                        </div>
-                        <div class="coming-soon-badge">Activity Links Coming Soon</div>
-                    </div>
-                </div>
-            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
+                🏨 <a href="#" style="color: #E86E3A; text-decoration: none; font-weight: 600;">See all Mammoth hotels on Booking.com</a>
+            </p>
         </section>
         
-        <!-- Après-Ski Fuel -->
+        <!-- SECTION 5: APRÈS-SKI FUEL -->
         <section class="section">
             <div class="section-header">
                 <h2 class="section-title">Après-Ski Fuel</h2>
@@ -811,10 +939,9 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">The Mogul</h3>
-                        <div class="card-rating">⭐⭐⭐⭐⭐ (824 reviews)</div>
+                        <p class="card-detail">⭐⭐⭐⭐⭐ (824 reviews)</p>
                         <p class="card-detail">💰💰💰 Upscale American</p>
                         <p class="card-detail">📍 0.4 miles from resort</p>
-                        <div class="coming-soon-badge">Restaurant Info Coming Soon</div>
                     </div>
                 </div>
                 
@@ -824,10 +951,9 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Mammoth Brewing Co.</h3>
-                        <div class="card-rating">⭐⭐⭐⭐ (1,456 reviews)</div>
+                        <p class="card-detail">⭐⭐⭐⭐ (1,456 reviews)</p>
                         <p class="card-detail">💰💰 Brewpub & Casual</p>
                         <p class="card-detail">📍 At The Village</p>
-                        <div class="coming-soon-badge">Restaurant Info Coming Soon</div>
                     </div>
                 </div>
                 
@@ -837,10 +963,9 @@
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Slocum's Grill</h3>
-                        <div class="card-rating">⭐⭐⭐⭐ (967 reviews)</div>
+                        <p class="card-detail">⭐⭐⭐⭐ (967 reviews)</p>
                         <p class="card-detail">💰💰 Italian & American</p>
                         <p class="card-detail">📍 Canyon Lodge Area</p>
-                        <div class="coming-soon-badge">Restaurant Info Coming Soon</div>
                     </div>
                 </div>
             </div>
