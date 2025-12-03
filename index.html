@@ -876,19 +876,72 @@
                 });
                 
                 previewMap.on('load', function() {
-                    // Add simple markers for top 10 resorts
-                    resortData.forEach(function(resort) {
-                        const el = document.createElement('div');
-                        el.style.width = '20px';
-                        el.style.height = '20px';
-                        el.style.borderRadius = '50%';
-                        el.style.backgroundColor = '#3b82f6';
-                        el.style.border = '2px solid white';
-                        el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-                        
-                        new mapboxgl.Marker(el)
-                            .setLngLat([resort.lng, resort.lat])
-                            .addTo(previewMap);
+                    // Add heatmap source
+                    previewMap.addSource('snowfall-heat', {
+                        type: 'geojson',
+                        data: {
+                            type: 'FeatureCollection',
+                            features: resortData.map(function(resort) {
+                                return {
+                                    type: 'Feature',
+                                    properties: { snowfall: 10 }, // Default snowfall for preview
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: [resort.lng, resort.lat]
+                                    }
+                                };
+                            })
+                        }
+                    });
+
+                    // Add heatmap layer
+                    previewMap.addLayer({
+                        id: 'snowfall-heatmap',
+                        type: 'heatmap',
+                        source: 'snowfall-heat',
+                        maxzoom: 15,
+                        paint: {
+                            'heatmap-weight': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'snowfall'],
+                                0, 0,
+                                1, 0.5,
+                                5, 0.8,
+                                10, 1,
+                                20, 1.5
+                            ],
+                            'heatmap-color': [
+                                'interpolate',
+                                ['linear'],
+                                ['heatmap-density'],
+                                0, 'rgba(224, 242, 254, 0)',
+                                0.1, 'rgba(224, 242, 254, 0.8)',
+                                0.3, 'rgba(125, 211, 252, 0.9)',
+                                0.5, 'rgba(59, 130, 246, 0.95)',
+                                0.7, 'rgba(124, 58, 237, 0.95)',
+                                0.85, 'rgba(236, 72, 153, 1)',
+                                1, 'rgba(240, 171, 252, 1)'
+                            ],
+                            'heatmap-radius': [
+                                'interpolate',
+                                ['linear'],
+                                ['zoom'],
+                                0, 20,
+                                3, 30,
+                                5, 40,
+                                6, 30
+                            ],
+                            'heatmap-opacity': 1,
+                            'heatmap-intensity': [
+                                'interpolate',
+                                ['linear'],
+                                ['zoom'],
+                                0, 1,
+                                5, 1.2,
+                                6, 1
+                            ]
+                        }
                     });
                 });
             } catch (error) {
