@@ -839,7 +839,7 @@
         </footer>
     </div>
 
-    <script type="text/babel" data-type="module">
+    <script>
         // Mapbox token
         mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
         
@@ -862,7 +862,9 @@
         
         function initPreviewMap() {
             const mapContainer = document.getElementById('preview-map');
-            if (!mapContainer || previewMap) return;
+            if (!mapContainer || previewMap) {
+                return;
+            }
             
             try {
                 previewMap = new mapboxgl.Map({
@@ -873,9 +875,9 @@
                     interactive: false
                 });
                 
-                previewMap.on('load', () => {
+                previewMap.on('load', function() {
                     // Add simple markers for top 10 resorts
-                    resortData.forEach(resort => {
+                    resortData.forEach(function(resort) {
                         const el = document.createElement('div');
                         el.style.width = '20px';
                         el.style.height = '20px';
@@ -895,35 +897,43 @@
         }
         
         // Initialize preview map when page loads - with slight delay to ensure container is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                initPreviewMap();
-            }, 100);
-        });
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(initPreviewMap, 200);
+            });
+        } else {
+            setTimeout(initPreviewMap, 200);
+        }
         
         // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href !== '#map') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href !== '#map') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
                     }
-                }
+                });
             });
         });
         
         // Email form
-        document.querySelector('.email-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Email signup functionality will be integrated with your email service provider.');
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailForm = document.querySelector('.email-form');
+            if (emailForm) {
+                emailForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Email signup functionality will be integrated with your email service provider.');
+                });
+            }
         });
     </script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </body>
 </html>
