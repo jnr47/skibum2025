@@ -110,6 +110,10 @@
             text-decoration: none;
         }
         
+        .logo img {
+            height: 60px;
+        }
+        
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -236,7 +240,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-top: 2rem;
             overflow: hidden;
-            height: 500px;
+            height: 400px;
             position: relative;
         }
         
@@ -517,7 +521,7 @@
             }
             
             .map-embed-container {
-                height: 350px;
+                height: 300px;
             }
         }
         
@@ -537,7 +541,7 @@
         <nav>
             <div class="container">
                 <a href="/" class="logo">
-                    <img src="skibum_logo_blacktype_small.png" alt="SkiBum" style="height: 40px;">
+                    <img src="skibum_logo_blacktype_small.png" alt="SkiBum">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#map">Map</a></li>
@@ -857,37 +861,44 @@
         let previewMap = null;
         
         function initPreviewMap() {
-            if (previewMap) return;
+            const mapContainer = document.getElementById('preview-map');
+            if (!mapContainer || previewMap) return;
             
-            previewMap = new mapboxgl.Map({
-                container: 'preview-map',
-                style: 'mapbox://styles/mapbox/dark-v11',
-                center: [-106, 45],
-                zoom: 3.5,
-                interactive: false
-            });
-            
-            previewMap.on('load', () => {
-                // Add simple markers for top 10 resorts
-                resortData.forEach(resort => {
-                    const el = document.createElement('div');
-                    el.style.width = '20px';
-                    el.style.height = '20px';
-                    el.style.borderRadius = '50%';
-                    el.style.backgroundColor = '#3b82f6';
-                    el.style.border = '2px solid white';
-                    el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-                    
-                    new mapboxgl.Marker(el)
-                        .setLngLat([resort.lng, resort.lat])
-                        .addTo(previewMap);
+            try {
+                previewMap = new mapboxgl.Map({
+                    container: 'preview-map',
+                    style: 'mapbox://styles/mapbox/dark-v11',
+                    center: [-106, 45],
+                    zoom: 3.5,
+                    interactive: false
                 });
-            });
+                
+                previewMap.on('load', () => {
+                    // Add simple markers for top 10 resorts
+                    resortData.forEach(resort => {
+                        const el = document.createElement('div');
+                        el.style.width = '20px';
+                        el.style.height = '20px';
+                        el.style.borderRadius = '50%';
+                        el.style.backgroundColor = '#3b82f6';
+                        el.style.border = '2px solid white';
+                        el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+                        
+                        new mapboxgl.Marker(el)
+                            .setLngLat([resort.lng, resort.lat])
+                            .addTo(previewMap);
+                    });
+                });
+            } catch (error) {
+                console.error('Error initializing preview map:', error);
+            }
         }
         
-        // Initialize preview map when page loads
+        // Initialize preview map when page loads - with slight delay to ensure container is ready
         document.addEventListener('DOMContentLoaded', () => {
-            initPreviewMap();
+            setTimeout(() => {
+                initPreviewMap();
+            }, 100);
         });
         
         // Smooth scrolling
