@@ -2,984 +2,1380 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Mammoth Mountain - Live Snow Report & Ski Guide | SkiBum</title>
-    <meta name="description" content="Live snow conditions, essential gear recommendations, and discount lift tickets for Mammoth Mountain. California's premier powder destination with 384 inches of annual snowfall.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mammoth Mountain - Live Snow Conditions | SkiBum.com</title>
+    <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Real-time snowfall tracking, road conditions, and lodging deals.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --cream: #F5F1E8;
+            --dark-navy: #0B1B2B;
+            --burnt-orange: #D9512C;
+            --powder-blue: #A8DADC;
+            --forest-green: #2D5F3F;
+            --gold: #F4A460;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: #F5EFE6;
-            color: #2A2A2A;
+            font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            color: var(--dark-navy);
             line-height: 1.6;
         }
         
-        /* Texture overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-        }
-        
-        /* Header */
+        /* Header Navigation */
         .header {
-            background: #1B3A5F;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: var(--dark-navy);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
         }
         
-        .back-link {
-            color: #F5EFE6;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-left: auto;
-            padding: 0.5rem 1rem;
-            border: 2px solid #F5EFE6;
-            border-radius: 4px;
-            transition: all 0.3s;
+        .logo {
+            height: 50px;
         }
         
-        .back-link:hover {
-            background: #F5EFE6;
-            color: #1B3A5F;
-        }
-        
-        /* Hero - Compact Version */
-        .hero {
-            background-color: #1B3A5F;
-            background-image: url('/images/mammoth-hero.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
+        .nav-links {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            gap: 30px;
+            align-items: center;
         }
         
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(27, 58, 95, 0.85) 0%, rgba(42, 74, 111, 0.85) 100%);
-            pointer-events: none;
-            z-index: 1;
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
         }
         
-        .hero h1,
-        .hero-subtitle,
-        .forecast-badges {
+        .nav-links a:hover {
+            color: var(--burnt-orange);
+        }
+        
+        /* Hero Section */
+        .hero {
             position: relative;
-            z-index: 2;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(11, 27, 43, 0.3), rgba(11, 27, 43, 0.5)),
+                        url('https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: repeating-linear-gradient(
-                90deg,
-                #E86E3A 0px,
-                #E86E3A 20px,
-                #B85C38 20px,
-                #B85C38 40px
-            );
-            opacity: 0.15;
-            z-index: 2;
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
         }
         
         .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            color: #F5EFE6;
-            letter-spacing: 4px;
-            margin-bottom: 0.5rem;
-            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
         
-        .hero-subtitle {
-            font-family: 'Lora', serif;
+        .hero-tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 40px;
             font-style: italic;
-            font-size: 1.1rem;
-            color: #E86E3A;
-            margin-bottom: 1.5rem;
         }
         
-        /* Snow Forecast Badges - Horizontal Compact */
-        .forecast-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+        /* Conditions Card */
+        .conditions-card {
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: -100px auto 60px;
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         
-        .forecast-badge {
-            background: #F5EFE6;
-            border: 3px solid #E86E3A;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
         
-        .forecast-amount {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            color: #1B3A5F;
+        .condition-item {
+            text-align: center;
+        }
+        
+        .condition-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            display: block;
             line-height: 1;
         }
         
-        .forecast-label {
-            font-size: 0.7rem;
-            color: #E86E3A;
+        .condition-label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .pass-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: var(--dark-navy);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+        
+        .quick-nav {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-orange {
+            background: var(--burnt-orange);
+            color: white;
+        }
+        
+        .btn-orange:hover {
+            background: #c23d1f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(217, 81, 44, 0.3);
+        }
+        
+        .btn-navy {
+            background: var(--dark-navy);
+            color: white;
+        }
+        
+        .btn-navy:hover {
+            background: #1a2f45;
+            transform: translateY(-2px);
         }
         
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
         }
         
-        /* Priority CTA Banner */
-        .priority-banner {
-            background: linear-gradient(135deg, #E86E3A 0%, #B85C38 100%);
-            color: #F5EFE6;
-            padding: 2rem;
-            margin: -1rem 0 3rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-        
-        .priority-banner h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .priority-banner p {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #F5EFE6;
-            color: #1B3A5F;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover {
-            background: #1B3A5F;
-            color: #F5EFE6;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
-        
-        .cta-button-primary {
-            background: #1B3A5F;
-            color: #F5EFE6;
-        }
-        
-        .cta-button-primary:hover {
-            background: #F5EFE6;
-            color: #1B3A5F;
-        }
-        
-        /* Section Headers */
+        /* Section Styling */
         .section {
-            margin-bottom: 3rem;
+            padding: 60px 0;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-        
-        .section-header::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #E86E3A 0%, #B85C38 100%);
-            margin: 1.5rem auto 0;
+            margin-bottom: 40px;
         }
         
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: #1B3A5F;
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
         
         .section-subtitle {
-            font-family: 'Lora', serif;
-            font-style: italic;
+            font-size: 1.1rem;
             color: #666;
+            font-weight: 300;
+        }
+        
+        /* Good Time to Go Section */
+        .decision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .decision-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .decision-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .powder-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .stats-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .stats-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stats-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            color: var(--dark-navy);
             font-size: 1.1rem;
         }
         
-        /* Gear Cards with Vintage Photos */
+        /* Camera Grid */
+        .cam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cam-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s;
+        }
+        
+        .cam-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cam-image {
+            width: 100%;
+            height: 180px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .cam-info {
+            padding: 15px;
+        }
+        
+        .cam-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .cam-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Vanlife Section */
+        .vanlife-section {
+            background: linear-gradient(135deg, #2D5F3F 0%, #1a3828 100%);
+            color: white;
+        }
+        
+        .vanlife-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .vanlife-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .vanlife-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .vanlife-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .vanlife-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .vanlife-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        /* Resort Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--burnt-orange);
+            display: block;
+        }
+        
+        .stat-text {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Lodging Section */
+        .lodging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .lodging-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .lodging-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .lodging-content {
+            padding: 20px;
+        }
+        
+        .lodging-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .lodging-details {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--burnt-orange);
+            margin-bottom: 15px;
+        }
+        
+        /* Gear Section */
         .gear-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
         }
         
         .gear-card {
             background: white;
-            border: 3px solid #1B3A5F;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 4px 4px 0 #E86E3A;
-            transition: all 0.3s;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
         
         .gear-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 6px 6px 0 #E86E3A;
+            transform: translateY(-5px);
         }
         
-        .gear-photo {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .gear-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%) contrast(1.1);
-        }
-        
-        /* Vintage texture overlay on photos */
-        .gear-photo::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        
-        .gear-content {
-            padding: 1.5rem;
-        }
-        
-        .gear-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.4rem;
-            color: #1B3A5F;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gear-desc {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-        
-        .gear-price {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: #E86E3A;
-            margin-bottom: 1rem;
-        }
-        
-        .gear-button {
-            display: block;
-            width: 100%;
-            background: #1B3A5F;
-            color: #F5EFE6;
-            padding: 0.8rem;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        
-        .gear-button:hover {
-            background: #E86E3A;
-        }
-        
-        /* Lift Ticket Section */
-        .ticket-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .ticket-card {
-            background: white;
-            border: 4px solid #E86E3A;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-        }
-        
-        .ticket-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-        
-        .ticket-type {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: #1B3A5F;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-        
-        .ticket-price {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
-            color: #E86E3A;
-            margin-bottom: 0.5rem;
-        }
-        
-        .ticket-savings {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .ticket-button {
-            display: inline-block;
-            background: #E86E3A;
-            color: white;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-        
-        .ticket-button:hover {
-            background: #1B3A5F;
-            transform: translateY(-2px);
-        }
-        
-        /* Vintage Cards (for ski runs, hotels, restaurants) */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .vintage-card {
-            background: white;
-            border: 3px solid #1B3A5F;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 4px 4px 0 #E86E3A;
-            transition: all 0.3s;
-        }
-        
-        .vintage-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 6px 6px 0 #E86E3A;
-        }
-        
-        .card-image-container {
-            background: linear-gradient(135deg, #1B3A5F 0%, #2A4A6F 100%);
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card-image {
+        .gear-icon {
             font-size: 4rem;
+            margin-bottom: 15px;
         }
         
-        .card-content {
-            padding: 1.5rem;
+        .gear-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
-        .card-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            color: #1B3A5F;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+        .gear-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
         
-        .card-detail {
+        .gear-link {
+            padding: 8px 16px;
+            background: var(--cream);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--dark-navy);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .gear-link:hover {
+            background: var(--burnt-orange);
+            color: white;
+        }
+        
+        /* Itinerary Section */
+        .itinerary-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
         }
         
-        .card-difficulty {
-            display: inline-block;
-            background: #E86E3A;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .tab.active {
+            color: var(--burnt-orange);
+            border-bottom-color: var(--burnt-orange);
+        }
+        
+        .itinerary-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .timeline li {
+            padding: 20px 0;
+            border-left: 3px solid var(--burnt-orange);
+            padding-left: 30px;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .timeline li:before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: var(--burnt-orange);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 25px;
+        }
+        
+        .time {
+            font-weight: 700;
+            color: var(--burnt-orange);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
             font-weight: 600;
-            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .affiliate-badge {
-            background: #1B3A5F;
+        .faq-question:hover {
+            background: var(--cream);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #666;
+            line-height: 1.8;
+            display: none;
+        }
+        
+        /* Email Capture */
+        .email-capture {
+            background: linear-gradient(135deg, var(--burnt-orange) 0%, #c23d1f 100%);
             color: white;
-            padding: 0.6rem 1rem;
             text-align: center;
+        }
+        
+        .email-form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        
+        .email-submit {
+            padding: 15px 30px;
+            background: var(--dark-navy);
+            color: white;
+            border: none;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
         }
         
-        .affiliate-badge:hover {
-            background: #E86E3A;
+        .email-submit:hover {
+            background: #1a2f45;
+            transform: scale(1.05);
         }
         
         /* Footer */
         .footer {
-            background: #1B3A5F;
-            color: #F5EFE6;
-            padding: 3rem 2rem;
+            background: var(--dark-navy);
+            color: white;
+            padding: 40px 20px 20px;
             text-align: center;
-            margin-top: 4rem;
         }
         
-        .footer-stripe {
-            height: 8px;
-            background: repeating-linear-gradient(
-                90deg,
-                #E86E3A 0px,
-                #E86E3A 20px,
-                #B85C38 20px,
-                #B85C38 40px
-            );
-            margin-bottom: 2rem;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         
-        /* Mobile Responsive */
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--burnt-orange);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .forecast-badge {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .forecast-amount {
-                font-size: 1.8rem;
-            }
-            
-            .gear-grid {
+            .decision-grid {
                 grid-template-columns: 1fr;
             }
             
-            .cta-buttons {
+            .conditions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pass-badge {
+                position: static;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+            
+            .email-form {
                 flex-direction: column;
             }
             
-            .cta-button {
-                width: 100%;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    
     <!-- Header -->
-    <div class="header">
+    <header class="header">
         <div class="header-content">
-            <a href="/" class="back-link">← Back to Live Snow Map</a>
+            <a href="index.html">
+                <img src="skibum_logo_blacktype_small.png" alt="SkiBum.com" class="logo">
+            </a>
+            <nav class="nav-links">
+                <a href="map.html">Live Map</a>
+                <a href="#resorts">Resorts</a>
+                <a href="#guides">Guides</a>
+                <a href="#vanlife">Vanlife</a>
+            </nav>
         </div>
-    </div>
-    
-    <!-- Hero Section - Compact -->
-    <div class="hero">
-        <h1>MAMMOTH MOUNTAIN</h1>
-        <p class="hero-subtitle">Eastern Sierra's Crown Jewel</p>
-        
-        <!-- Snow Forecast Badges -->
-        <div class="forecast-badges">
-            <div class="forecast-badge">
-                <div class="forecast-amount">8"</div>
-                <div class="forecast-label">24 Hours</div>
-            </div>
-            <div class="forecast-badge">
-                <div class="forecast-amount">18"</div>
-                <div class="forecast-label">48 Hours</div>
-            </div>
-            <div class="forecast-badge">
-                <div class="forecast-amount">34"</div>
-                <div class="forecast-label">7 Days</div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Priority CTA Banner -->
-    <div class="priority-banner">
-        <h2>🎿 PLAN YOUR MAMMOTH TRIP</h2>
-        <p>Get discount lift tickets & essential gear before you go</p>
-        <div class="cta-buttons">
-            <a href="#lift-tickets" class="cta-button cta-button-primary">Get Lift Tickets (Save 30%)</a>
-            <a href="#gear" class="cta-button">Essential Gear Guide</a>
-        </div>
-    </div>
-    
-    <!-- Main Content -->
-    <div class="container">
-        
+    </header>
 
-        <!-- SECTION 2: ESSENTIAL GEAR -->
-        <section class="section" id="gear">
+    <!-- SECTION 1: Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MAMMOTH MOUNTAIN</h1>
+            <p class="hero-tagline">Eastern Sierra's Crown Jewel</p>
+        </div>
+    </section>
+
+    <!-- Conditions Card -->
+    <div class="container">
+        <div class="conditions-card">
+            <div class="pass-badge">IKON</div>
+            <div class="conditions-grid">
+                <div class="condition-item">
+                    <span class="condition-value" id="snow-24hr">24"</span>
+                    <span class="condition-label">24hr Snowfall</span>
+                </div>
+                <div class="condition-item">
+                    <span class="condition-value" id="snow-48hr">48°</span>
+                    <span class="condition-label">Temp High</span>
+                </div>
+                <div class="condition-item">
+                    <span class="condition-value" id="snow-7day">7"❄</span>
+                    <span class="condition-label">Next Storm</span>
+                </div>
+                <div class="condition-item">
+                    <span class="condition-value" id="base-depth">481"↑</span>
+                    <span class="condition-label">Base Depth</span>
+                </div>
+            </div>
+            <div class="quick-nav">
+                <a href="#conditions" class="btn btn-orange">Conditions</a>
+                <a href="#cams" class="btn btn-orange">Road Cams</a>
+                <a href="#parking" class="btn btn-orange">Parking & Vanlife</a>
+                <a href="#lodging" class="btn btn-navy">Where to Stay →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: Is It a Good Time to Go? -->
+    <section class="section" id="conditions">
+        <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Essential Gear for Mammoth</h2>
-                <p class="section-subtitle">What you need for California's 384 inches of annual snowfall</p>
+                <h2 class="section-title">Is It a Good Time to Go?</h2>
+                <span class="powder-badge">Powder Incoming</span>
             </div>
-            
-            <div class="gear-grid">
-                <!-- Gear Card 1: Powder Skis -->
-                <div class="gear-card">
-                    <div class="gear-photo">
-                      <img src="/images/powder-skis.jpg" alt="Powder skiing">
-                    </div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">Powder Skis</h3>
-                        <p class="gear-desc">Blizzard Rustler 11 - Perfect for Mammoth's deep snow days. 110mm waist handles variable Sierra conditions.</p>
-                        <div class="gear-price">$699</div>
-                        <a href="#" class="gear-button">View on Backcountry</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Backcountry affiliate link</p>
-                    </div>
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <h3>📊 Snowfall Stats</h3>
+                    <ul class="stats-list">
+                        <li>
+                            <span class="stat-label">🎿 Last 24hr</span>
+                            <span class="stat-value">7 inches</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">📅 This Week</span>
+                            <span class="stat-value">17 inches</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">⏰ 7-Day Total</span>
+                            <span class="stat-value">31 inches</span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <!-- Gear Card 2: Heated Gloves -->
-                <div class="gear-card">
-                    
-                    <div class="gear-content">
-                        <h3 class="gear-name">Heated Gloves</h3>
-                        <p class="gear-desc">Outdoor Research Lucent - Life-saver on 10°F mornings at the summit. Rechargeable battery lasts all day.</p>
-                        <div class="gear-price">$299</div>
-                        <a href="#" class="gear-button">View on Amazon</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Amazon affiliate link</p>
-                    </div>
-                </div>
-                
-                <!-- Gear Card 3: Goggles -->
-                <div class="gear-card">
-                    <div class="gear-photo">
-                       <img src="/images/goggles-vintage.jpg" alt="Vintage ski goggles">
-                    </div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">Goggles</h3>
-                        <p class="gear-desc">Smith I/O Mag XL - Variable conditions mean you need quality lenses. Quick-change system is clutch.</p>
-                        <div class="gear-price">$270</div>
-                        <a href="#" class="gear-button">View on Evo</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Evo affiliate link</p>
-                    </div>
-                </div>
-                
-                <!-- Gear Card 4: Shell Jacket -->
-                <div class="gear-card">
-                   <div class="gear-photo">
-                       <img src="/images/shell-jacket.jpg" alt="Vintage Shell Jacket">
-                    </div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">Shell Jacket</h3>
-                        <p class="gear-desc">Arc'teryx Rush - Breathable, waterproof, bomber. Worth every penny for Mammoth's variable weather.</p>
-                        <div class="gear-price">$549</div>
-                        <a href="#" class="gear-button">View on REI</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your REI affiliate link</p>
-                    </div>
-                </div>
-                
-                <!-- Gear Card 5: Avalanche Beacon -->
-                <div class="gear-card">
-                   
-                    <div class="gear-content">
-                        <h3 class="gear-name">Avalanche Beacon</h3>
-                        <p class="gear-desc">BCA Tracker 4 - Essential if you're going backcountry. Mammoth's sidecountry requires proper safety gear.</p>
-                        <div class="gear-price">$329</div>
-                        <a href="#" class="gear-button">View on Backcountry</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Backcountry affiliate link</p>
-                    </div>
-                </div>
-                
-                <!-- Gear Card 6: Ski Bag -->
-                <div class="gear-card">
-                    
-                    <div class="gear-content">
-                        <h3 class="gear-name">Ski Bag</h3>
-                        <p class="gear-desc">Dakine Fall Line Roller - Fits 2 pairs of skis. Padded protection for the flight to Mammoth.</p>
-                        <div class="gear-price">$199</div>
-                        <a href="#" class="gear-button">View on Amazon</a>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Amazon affiliate link</p>
-                    </div>
+                <div class="decision-card">
+                    <h3>🌤️ 7-Day Forecast</h3>
+                    <ul class="stats-list">
+                        <li>
+                            <span class="stat-label">Conditions</span>
+                            <span class="stat-value">Excellent</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Weather</span>
+                            <span class="stat-value">Clear</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Road Conditions</span>
+                            <span class="stat-value">Light (10 mph wind)</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
-                🏔️ Not ready to buy? <a href="#" style="color: #E86E3A; text-decoration: none; font-weight: 600;">Rent gear at Mammoth</a> - Christy Sports has locations at the base
-            </p>
-        </section>
-                <!-- SECTION 1: LIFT TICKETS -->
-                <section class="section" id="lift-tickets">
-                    <div class="section-header">
-                        <h2 class="section-title">Get Your Lift Tickets</h2>
-                        <p class="section-subtitle">Save up to 30% buying in advance</p>
-                    </div>
-                    
-                    <div class="ticket-options">
-                        <div class="ticket-card">
-                            <div class="ticket-type">SINGLE DAY</div>
-                            <div class="ticket-price">$159</div>
-                            <p class="ticket-savings">Save $30 vs. window price</p>
-                            <a href="#" class="ticket-button">Buy on Liftopia</a>
-                            <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your Liftopia affiliate link</p>
-                        </div>
-                        
-                        <div class="ticket-card">
-                            <div class="ticket-type">3-DAY PASS</div>
-                            <div class="ticket-price">$389</div>
-                            <p class="ticket-savings">Save $80 vs. daily rate</p>
-                            <a href="#" class="ticket-button">Buy on Ski.com</a>
-                            <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your affiliate link</p>
-                        </div>
-                        
-                        <div class="ticket-card">
-                            <div class="ticket-type">5-DAY PASS</div>
-                            <div class="ticket-price">$599</div>
-                            <p class="ticket-savings">Best value - Save $150</p>
-                            <a href="#" class="ticket-button">Buy on Liftopia</a>
-                            <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem;">Add your Liftopia affiliate link</p>
-                        </div>
-                    </div>
-                    
-                    <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
-                        💡 Pro Tip: Midweek tickets (Mon-Fri) are 20% cheaper than weekend rates
-                    </p>
-                </section>
-                
-        <!-- SECTION 3: TOP 10 SKI RUNS -->
-        <section class="section">
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#email" class="btn btn-navy">Get Powder Alerts for Mammoth →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Live Mountain & Road Cams -->
+    <section class="section" id="cams" style="background: white;">
+        <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Top 10 Legendary Runs</h2>
-                <p class="section-subtitle">Where locals go when the powder hits</p>
+                <h2 class="section-title">Live Mountain & Road Cams</h2>
+                <p class="section-subtitle">Watch real-time footage from the slopes and nearby highway</p>
             </div>
-            
-            <div class="card-grid">
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">⛷️</div>
+            <div class="cam-grid">
+                <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="cam-card">
+                    <div class="cam-image">📹</div>
+                    <div class="cam-info">
+                        <div class="cam-title">Summit Cam</div>
+                        <div class="cam-description">11,053 ft elevation</div>
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">1. Cornice Bowl</h3>
-                        <p class="card-detail">📍 Lift 23</p>
-                        <p class="card-detail">Steep chutes and wide-open faces. Get there early on powder days.</p>
-                        <span class="card-difficulty">Expert • Steep</span>
+                </a>
+                <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="cam-card">
+                    <div class="cam-image">📹</div>
+                    <div class="cam-info">
+                        <div class="cam-title">Main Lodge Cam</div>
+                        <div class="cam-description">Base area view</div>
                     </div>
+                </a>
+                <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="cam-card">
+                    <div class="cam-image">📹</div>
+                    <div class="cam-info">
+                        <div class="cam-title">Canyon Lodge Cam</div>
+                        <div class="cam-description">Mid-mountain</div>
+                    </div>
+                </a>
+                <a href="https://roads.dot.ca.gov/" target="_blank" class="cam-card">
+                    <div class="cam-image">🚗</div>
+                    <div class="cam-info">
+                        <div class="cam-title">US-395 North</div>
+                        <div class="cam-description">CalTrans road cam</div>
+                    </div>
+                </a>
+                <a href="https://roads.dot.ca.gov/" target="_blank" class="cam-card">
+                    <div class="cam-image">🚗</div>
+                    <div class="cam-info">
+                        <div class="cam-title">Minaret Summit</div>
+                        <div class="cam-description">Highway 203</div>
+                    </div>
+                </a>
+                <a href="https://roads.dot.ca.gov/" target="_blank" class="cam-card">
+                    <div class="cam-image">🚗</div>
+                    <div class="cam-info">
+                        <div class="cam-title">Main Lodge Road</div>
+                        <div class="cam-description">Access road conditions</div>
+                    </div>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="btn btn-navy">View All Mammoth Cams</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Parking & Vanlife Overnight Guide -->
+    <section class="section vanlife-section" id="parking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🚐 Parking & Vanlife Overnight Guide</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Your complete guide to overnight parking and vanlife options</p>
+            </div>
+            <div class="vanlife-grid">
+                <div class="vanlife-card">
+                    <h3>🅿️ Official Overnight Parking</h3>
+                    <ul>
+                        <li>Main Lodge: $25/night</li>
+                        <li>Canyon Lodge: $20/night</li>
+                        <li>Book ahead during peak season</li>
+                        <li>Electrical hookups available</li>
+                        <li>Restrooms & water access</li>
+                    </ul>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏂</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">2. Dave's Run</h3>
-                        <p class="card-detail">📍 Lift 22</p>
-                        <p class="card-detail">Classic mogul run. Tests your legs and technique all the way down.</p>
-                        <span class="card-difficulty">Expert • Moguls</span>
-                    </div>
+                <div class="vanlife-card">
+                    <h3>🏕️ Nearby Vanlife Spots</h3>
+                    <ul>
+                        <li>Convict Lake: 15 min away (free)</li>
+                        <li>Sherwin Creek Road: Free BLM</li>
+                        <li>Lake Mary Road: Seasonal free</li>
+                        <li>Twin Lakes: 10 min, scenic</li>
+                        <li>Crowley Lake BLM: 25 min</li>
+                    </ul>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🌲</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">3. Paranoid Flats</h3>
-                        <p class="card-detail">📍 Lift 14</p>
-                        <p class="card-detail">Tree skiing paradise. Secret powder stashes days after a storm.</p>
-                        <span class="card-difficulty">Advanced • Trees</span>
-                    </div>
+                <div class="vanlife-card">
+                    <h3>⛽ Essential Services</h3>
+                    <ul>
+                        <li>Chevron (Diesel): Main St</li>
+                        <li>Dump Station: Main Lodge $10</li>
+                        <li>Water Fill: Canyon Lodge</li>
+                        <li>Propane: Shell Station 24hr</li>
+                        <li>Grocery: Vons open till 11pm</li>
+                    </ul>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">⚡</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">4. Climax</h3>
-                        <p class="card-detail">📍 Lift 3</p>
-                        <p class="card-detail">Groomed perfection. Wide-open cruiser for speed demons.</p>
-                        <span class="card-difficulty">Intermediate • Groomed</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🎿</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">5. Broadway</h3>
-                        <p class="card-detail">📍 Lift 9</p>
-                        <p class="card-detail">Long cruiser with incredible views. Perfect for intermediate confidence building.</p>
-                        <span class="card-difficulty">Intermediate • Scenic</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🎯</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">6. Scotty's</h3>
-                        <p class="card-detail">📍 Lift 7</p>
-                        <p class="card-detail">Hidden gem. Rarely crowded, always fun. Great for warming up.</p>
-                        <span class="card-difficulty">Intermediate • Fun</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">💎</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">7. Gravy</h3>
-                        <p class="card-detail">📍 Lift 22</p>
-                        <p class="card-detail">Locals' secret. Tight trees and natural features. Never tracked out.</p>
-                        <span class="card-difficulty">Advanced • Hidden</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏔️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">8. Face of 3</h3>
-                        <p class="card-detail">📍 Lift 3</p>
-                        <p class="card-detail">Steep face with incredible panoramic views of the Sierra.</p>
-                        <span class="card-difficulty">Expert • Steep Views</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">💨</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">9. Dropout Chutes</h3>
-                        <p class="card-detail">📍 Lift 22</p>
-                        <p class="card-detail">Steep, tight chutes. Patrol opens after storms. First tracks are earned.</p>
-                        <span class="card-difficulty">Expert • Powder</span>
-                    </div>
-                </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏃</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">10. Road Runner</h3>
-                        <p class="card-detail">📍 Lift 1</p>
-                        <p class="card-detail">Longest groomed run at Mammoth. Over 3 miles of continuous skiing.</p>
-                        <span class="card-difficulty">Intermediate • Long</span>
-                    </div>
+                <div class="vanlife-card">
+                    <h3>📝 Pro Tips</h3>
+                    <ul>
+                        <li>Arrive before 8pm for best spots</li>
+                        <li>Chains required Nov-Apr</li>
+                        <li>Temps drop to 0°F at night</li>
+                        <li>Carry 5+ gallons water</li>
+                        <li>Check fire restrictions</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        
-        <!-- SECTION 4: WHERE TO STAY -->
-        <section class="section">
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="btn" style="background: white; color: var(--forest-green);">See All Vanlife Options Near Mammoth →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Resort Overview & Stats -->
+    <section class="section" id="stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resort Overview</h2>
+                <p class="section-subtitle">California's highest elevation resort with legendary snowfall</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">3,500'</span>
+                    <span class="stat-text">Vertical Rise</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">3,500+</span>
+                    <span class="stat-text">Skiable Acres</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">28</span>
+                    <span class="stat-text">Lifts</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">400"</span>
+                    <span class="stat-text">Annual Snowfall</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">25%</span>
+                    <span class="stat-text">Beginner</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-text">Intermediate</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">35%</span>
+                    <span class="stat-text">Advanced</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">11,053'</span>
+                    <span class="stat-text">Summit Elevation</span>
+                </div>
+            </div>
+            <div style="background: white; padding: 30px; border-radius: 15px; margin-top: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem;">💡 Local Intel</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <strong>Best Powder Zones:</strong>
+                        <ul style="margin-top: 10px; color: #666; line-height: 1.8;">
+                            <li>Chair 23 (The Face)</li>
+                            <li>Lincoln Mountain</li>
+                            <li>Dave's Run off Chair 14</li>
+                            <li>Climax trees</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Best for Beginners:</strong>
+                        <ul style="margin-top: 10px; color: #666; line-height: 1.8;">
+                            <li>Discovery Chair</li>
+                            <li>Schoolyard Express</li>
+                            <li>Broadway area</li>
+                            <li>Sesame Street</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Best Routes to Mammoth -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Best Routes to Mammoth</h2>
+                <p class="section-subtitle">Trip planning made simple</p>
+            </div>
+            <div class="decision-grid">
+                <div class="decision-card" style="box-shadow: none;">
+                    <h3>🚗 From Los Angeles</h3>
+                    <ul class="stats-list">
+                        <li>
+                            <span class="stat-label">Distance</span>
+                            <span class="stat-value">315 miles</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Drive Time</span>
+                            <span class="stat-value">5-6 hours</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Route</span>
+                            <span class="stat-value">US-395 North</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Pro Tip</span>
+                            <span class="stat-value">Leave by 5am</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="decision-card" style="box-shadow: none;">
+                    <h3>✈️ From Reno Airport</h3>
+                    <ul class="stats-list">
+                        <li>
+                            <span class="stat-label">Distance</span>
+                            <span class="stat-value">165 miles</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Drive Time</span>
+                            <span class="stat-value">3 hours</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Route</span>
+                            <span class="stat-value">US-395 South</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Rental Cars</span>
+                            <span class="stat-value">Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.google.com/maps/dir//Mammoth+Mountain+Ski+Area,+10001+Minaret+Rd,+Mammoth+Lakes,+CA+93546" target="_blank" class="btn btn-navy">Open Directions in Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Where to Stay -->
+    <section class="section" id="lodging">
+        <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Where to Stay</h2>
-                <p class="section-subtitle">A few solid options near the slopes</p>
+                <p class="section-subtitle">Lodging recommendations both on and off the mountain</p>
             </div>
-            
-            <div class="card-grid">
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏔️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Mammoth Mountain Inn</h3>
-                        <p class="card-detail">📍 Ski-in/Ski-out Location</p>
-                        <p class="card-detail">🛏️ Mountain View Rooms</p>
-                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $189</div>
-                        <div class="affiliate-badge">Check Availability on Booking.com</div>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
+            <div class="lodging-grid">
+                <div class="lodging-card">
+                    <div class="lodging-image">🏨</div>
+                    <div class="lodging-content">
+                        <div class="lodging-title">Mammoth Mountain Inn</div>
+                        <div class="lodging-details">
+                            ⭐ Slopeside · 100ft to lifts · Pet friendly
+                        </div>
+                        <div class="price">From $189/night</div>
+                        <a href="https://www.booking.com/searchresults.html?ss=Mammoth+Mountain" target="_blank" class="btn btn-orange" style="width: 100%;">See Lodging Deals →</a>
                     </div>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🏨</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">The Village Lodge</h3>
-                        <p class="card-detail">📍 Village Center Location</p>
-                        <p class="card-detail">🍳 Complimentary Breakfast</p>
-                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $245</div>
-                        <div class="affiliate-badge">Check Availability on Booking.com</div>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
+                <div class="lodging-card">
+                    <div class="lodging-image">🏡</div>
+                    <div class="lodging-content">
+                        <div class="lodging-title">Village Lodge</div>
+                        <div class="lodging-details">
+                            ⭐ Village center · Gondola access · Hot tub
+                        </div>
+                        <div class="price">From $159/night</div>
+                        <a href="https://www.booking.com/searchresults.html?ss=Mammoth+Lakes" target="_blank" class="btn btn-orange" style="width: 100%;">See Lodging Deals →</a>
                     </div>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🛏️</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Juniper Springs Resort</h3>
-                        <p class="card-detail">📍 Free Shuttle to Slopes</p>
-                        <p class="card-detail">🏊 Heated Pool & Hot Tubs</p>
-                        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #E86E3A; margin: 1rem 0;">FROM $169</div>
-                        <div class="affiliate-badge">Check Availability on Booking.com</div>
-                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.5rem; text-align: center;">Add your Booking.com affiliate link</p>
+                <div class="lodging-card">
+                    <div class="lodging-image">⛺</div>
+                    <div class="lodging-content">
+                        <div class="lodging-title">Convict Lake Campground</div>
+                        <div class="lodging-details">
+                            ⭐ 15 min away · Full hookups · Budget option
+                        </div>
+                        <div class="price">From $35/night</div>
+                        <a href="https://www.hipcamp.com/en-US/california/mammoth-lakes" target="_blank" class="btn btn-orange" style="width: 100%;">See Camping Options →</a>
                     </div>
                 </div>
             </div>
-            
-            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">
-                🏨 <a href="#" style="color: #E86E3A; text-decoration: none; font-weight: 600;">See all Mammoth hotels on Booking.com</a>
-            </p>
-        </section>
-        
-        <!-- SECTION 5: APRÈS-SKI FUEL -->
-        <section class="section">
+        </div>
+    </section>
+
+    <!-- SECTION 8: Essential Gear -->
+    <section class="section" style="background: white;">
+        <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Après-Ski Fuel</h2>
-                <p class="section-subtitle">Local favorites for refueling after a day on the slopes</p>
+                <h2 class="section-title">Essential Gear for This Mountain</h2>
+                <p class="section-subtitle">Built for Powder Chasers, Vanlifers & Weekend Sends</p>
             </div>
-            
-            <div class="card-grid">
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🍔</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">The Mogul</h3>
-                        <p class="card-detail">⭐⭐⭐⭐⭐ (824 reviews)</p>
-                        <p class="card-detail">💰💰💰 Upscale American</p>
-                        <p class="card-detail">📍 0.4 miles from resort</p>
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <div class="gear-icon">🎿</div>
+                    <div class="gear-title">Powder Skis</div>
+                    <div class="gear-links">
+                        <a href="https://www.backcountry.com/powder-skis" target="_blank" class="gear-link">Backcountry</a>
+                        <a href="https://www.evo.com/shop/ski/skis/powder" target="_blank" class="gear-link">Evo</a>
+                        <a href="https://www.rei.com/c/skis" target="_blank" class="gear-link">REI</a>
                     </div>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🍕</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Mammoth Brewing Co.</h3>
-                        <p class="card-detail">⭐⭐⭐⭐ (1,456 reviews)</p>
-                        <p class="card-detail">💰💰 Brewpub & Casual</p>
-                        <p class="card-detail">📍 At The Village</p>
+                <div class="gear-card">
+                    <div class="gear-icon">🥽</div>
+                    <div class="gear-title">Goggles</div>
+                    <div class="gear-links">
+                        <a href="https://www.backcountry.com/ski-goggles" target="_blank" class="gear-link">Backcountry</a>
+                        <a href="https://www.evo.com/shop/goggles/ski-snowboard" target="_blank" class="gear-link">Evo</a>
+                        <a href="https://www.rei.com/c/ski-goggles" target="_blank" class="gear-link">REI</a>
                     </div>
                 </div>
-                
-                <div class="vintage-card">
-                    <div class="card-image-container">
-                        <div class="card-image">🍜</div>
+                <div class="gear-card">
+                    <div class="gear-icon">🧤</div>
+                    <div class="gear-title">Gloves/Layers</div>
+                    <div class="gear-links">
+                        <a href="https://www.backcountry.com/ski-gloves" target="_blank" class="gear-link">Backcountry</a>
+                        <a href="https://www.evo.com/shop/ski-snowboard/gloves" target="_blank" class="gear-link">Evo</a>
+                        <a href="https://www.rei.com/c/ski-gloves" target="_blank" class="gear-link">REI</a>
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Slocum's Grill</h3>
-                        <p class="card-detail">⭐⭐⭐⭐ (967 reviews)</p>
-                        <p class="card-detail">💰💰 Italian & American</p>
-                        <p class="card-detail">📍 Canyon Lodge Area</p>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-icon">🦺</div>
+                    <div class="gear-title">Safety Gear</div>
+                    <div class="gear-links">
+                        <a href="https://www.backcountry.com/avalanche-safety" target="_blank" class="gear-link">Backcountry</a>
+                        <a href="https://www.evo.com/shop/backcountry/avalanche-safety" target="_blank" class="gear-link">Evo</a>
+                        <a href="https://www.rei.com/c/avalanche-safety-gear" target="_blank" class="gear-link">REI</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-    </div>
-    
+        </div>
+    </section>
+
+    <!-- SECTION 9: Lift Tickets & Passes -->
+    <section class="section" style="background: var(--dark-navy); color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lift Tickets & Passes</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Get the best deals on tickets</p>
+            </div>
+            <div class="decision-grid">
+                <div class="decision-card" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                    <h3>🎫 Daily Tickets</h3>
+                    <ul class="stats-list">
+                        <li style="border-bottom-color: rgba(255,255,255,0.1);">
+                            <span class="stat-label" style="color: rgba(255,255,255,0.8);">Single Day</span>
+                            <span class="stat-value" style="color: white;">$199</span>
+                        </li>
+                        <li style="border-bottom-color: rgba(255,255,255,0.1);">
+                            <span class="stat-label" style="color: rgba(255,255,255,0.8);">Multi-Day (3+)</span>
+                            <span class="stat-value" style="color: white;">$179/day</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.mammothmountain.com/plan-your-trip/lift-access/tickets" target="_blank" class="btn btn-orange" style="width: 100%; margin-top: 20px;">Buy Tickets →</a>
+                </div>
+                <div class="decision-card" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                    <h3>🎟️ Season Passes</h3>
+                    <ul class="stats-list">
+                        <li style="border-bottom-color: rgba(255,255,255,0.1);">
+                            <span class="stat-label" style="color: rgba(255,255,255,0.8);">Ikon Pass</span>
+                            <span class="stat-value" style="color: white;">Unlimited</span>
+                        </li>
+                        <li style="border-bottom-color: rgba(255,255,255,0.1);">
+                            <span class="stat-label" style="color: rgba(255,255,255,0.8);">Ikon Base</span>
+                            <span class="stat-value" style="color: white;">7 days</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.ikonpass.com/" target="_blank" class="btn btn-orange" style="width: 100%; margin-top: 20px;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: Plan Your Trip -->
+    <section class="section" id="itinerary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Plan Your Trip</h2>
+                <p class="section-subtitle">Sample itineraries for every type of trip</p>
+            </div>
+            <div class="itinerary-tabs">
+                <button class="tab active" data-day="1">1-Day</button>
+                <button class="tab" data-day="2">Weekend</button>
+                <button class="tab" data-day="3">3-Day</button>
+            </div>
+            <div class="itinerary-content">
+                <ul class="timeline" id="timeline-1">
+                    <li>
+                        <div class="time">7:00 AM</div>
+                        <div>Hit the road from LA (pack coffee & breakfast)</div>
+                    </li>
+                    <li>
+                        <div class="time">12:00 PM</div>
+                        <div>Arrive at Mammoth, grab lunch at Base Camp Cafe</div>
+                    </li>
+                    <li>
+                        <div class="time">1:00 PM - 4:00 PM</div>
+                        <div>Ski powder runs: Chair 23, Lincoln Mountain, Dave's Run</div>
+                    </li>
+                    <li>
+                        <div class="time">4:30 PM</div>
+                        <div>Après at Mammoth Brewing Company</div>
+                    </li>
+                    <li>
+                        <div class="time">6:00 PM</div>
+                        <div>Head home or find overnight parking</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: Resort Map -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resort Location</h2>
+                <p class="section-subtitle">Mammoth Mountain on the live snow map</p>
+            </div>
+            <div style="background: #ddd; height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                🗺️ Map Embed Here
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="map.html" class="btn btn-navy">View Full Interactive Map</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        When is the best time to ski Mammoth? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        February through April offers the best combination of deep snowpack and longer days. December and January can be colder with shorter days, but offer excellent early-season conditions. The resort typically operates into May or June depending on snowpack.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How crowded is Mammoth? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Mammoth gets busy on weekends and holidays, especially from LA. Weekdays are significantly less crowded. The vast terrain (3,500+ acres) helps distribute crowds. Arrive early (before 8am) for best parking and first tracks.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Where can I park overnight? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Official overnight parking is available at Main Lodge ($25/night) and Canyon Lodge ($20/night). Nearby free options include Convict Lake, Sherwin Creek Road (BLM land), and various dispersed camping spots along Lake Mary Road. Always check current regulations and fire restrictions.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is Mammoth vanlife-friendly? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Mammoth is one of the most vanlife-friendly ski resorts. Multiple overnight parking options, dump stations at Main Lodge, water fill stations, and diesel fuel available in town. Winter temps can drop to 0°F, so prepare with proper insulation and heating.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is Mammoth good for beginners? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. 25% of terrain is beginner-friendly with wide, groomed runs. Discovery Chair and Schoolyard Express offer excellent learning terrain. The resort has multiple ski schools with group and private lessons. Broadway area is perfect for building confidence before progressing.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does Mammoth have good terrain parks? <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Unbound Terrain Parks at Mammoth are world-class with features for all levels. Main Park has jumps and rails, Jibs Park focuses on technical features, and South Park offers progression terrain. Parks are typically open late November through April.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: Email Capture -->
+    <section class="section email-capture" id="email">
+        <div class="container">
+            <h2 class="section-title">Get Powder Alerts for Mammoth</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">Weekend storm picks, vanlife updates & gear deals</p>
+            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="email-submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <div class="footer">
-        <div class="footer-stripe"></div>
-        <div style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 0.5rem;">
-            SKIBUM
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="map.html">Live Map</a>
+                <a href="#resorts">Top 10 Resorts</a>
+                <a href="#guides">Guides</a>
+                <a href="#vanlife">Vanlife</a>
+                <a href="#about">About</a>
+            </div>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 20px;">
+                © 2025 SkiBum.com · Live Snow Tracking · Vanlife Guides
+            </p>
         </div>
-        <div style="font-family: 'Lora', serif; font-style: italic; color: #E86E3A;">
-            Authentic Snow Tracking Since 2025
-        </div>
-        <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-            <a href="/" style="color: #F5EFE6; text-decoration: none;">Back to Live Snow Map</a>
-        </div>
-    </div>
-    
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                
+                // Toggle current answer
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+
+        // Itinerary Tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // In production, you'd swap timeline content here
+            });
+        });
+
+        // Email Form Submit
+        function handleEmailSubmit(e) {
+            e.preventDefault();
+            alert('Thanks for subscribing! You\'ll get Mammoth powder alerts soon.');
+            e.target.reset();
+        }
+
+        // Load snow data from API
+        async function loadSnowData() {
+            try {
+                const response = await fetch('snow-data.json');
+                const data = await response.json();
+                const mammoth = data.resorts.find(r => r.name.toLowerCase().includes('mammoth'));
+                
+                if (mammoth && mammoth.snowfall_7day) {
+                    // Update conditions with real data
+                    document.getElementById('snow-7day').textContent = Math.round(mammoth.snowfall_7day) + '"❄';
+                    console.log('Loaded Mammoth data:', mammoth);
+                }
+            } catch (error) {
+                console.log('Using static data - snow-data.json not found');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize
+        loadSnowData();
+    </script>
 </body>
 </html>
