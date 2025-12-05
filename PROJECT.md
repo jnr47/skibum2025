@@ -11,28 +11,30 @@
 
 ---
 
-## 🎯 CURRENT STATUS (December 3, 2025 - 7:55 PM ET)
+## 🎯 CURRENT STATUS (December 5, 2025)
 
-**Status**: 🟢 NEW HOMEPAGE LIVE & POLISHED!
+**Status**: 🟢 MAMMOTH MOUNTAIN TEMPLATE COMPLETE!
 
 **What's Working:**
 - ✅ **NEW HOMEPAGE** - Modern, clean design with full site structure
 - ✅ **Interactive map** - Now at /map.html (117 resorts with real Open-Meteo data)
+- ✅ **MAMMOTH MOUNTAIN PAGE** - Complete 13-section resort template ready
 - ✅ Site loads in <500ms
 - ✅ Map preview with heatmap visualization on homepage
 - ✅ **REAL TRAIL MAP IMAGES** - Top 10 resorts showing actual ski maps (not emojis!)
 - ✅ **Real vanlife winter photo** - Gorgeous snowy van scene
 - ✅ **Real storm radar image** - Actual weather visualization
-- ✅ **Clean shield logo** - Transparent PNG in footer
-- ✅ Compact navigation (50px logo, 0.5rem padding)
+- ✅ **Clean shield logo** - skibum_128.png used consistently
+- ✅ Compact navigation (50px logo, optimized spacing)
 - ✅ Tight spacing - resort tiles visible above fold
 - ✅ Mobile optimized with fixed button text wrapping
 - ✅ SEO meta tags
-- ✅ Hero section with Mammoth Mountain background image
+- ✅ Real Mammoth Mountain banner image
 
 **Site Architecture:**
-- `index.html` = New homepage (marketing/navigation hub)
-- `map.html` = Interactive snow tracking map (your original index.html)
+- `index.html` = Homepage (marketing/navigation hub)
+- `map.html` = Interactive snow tracking map
+- `mammoth.html` = Complete resort page template (13 sections)
 - Clean separation between marketing and tool
 
 **Image Assets Added:**
@@ -136,13 +138,32 @@ Standard footer with navigation links and "Built for the ones who chase it" tagl
 
 ```
 skibum2025/
-├── index.html                          ← NEW homepage
-├── map.html                            ← Interactive map (old index.html)
+├── index.html                          ← Homepage
+├── map.html                            ← Interactive map
+├── mammoth.html                        ← Resort page template (COMPLETE)
 ├── snow-data.json                      ← Auto-updated every 6 hours
-├── skibum_logo_blacktype_small.png     ← Logo file
+├── skibum_128.png                      ← Shield logo (official)
+├── skibum_logo_blacktype_small.png     ← Old logo (legacy)
+├── mammoth_mountain_banner.jpg         ← Hero banner image
 ├── images/
-│   └── mammoth-hero.jpeg              ← Hero background image
-└── mammoth.html                        ← Future resort page template
+│   ├── resorts/                        ← Trail map images (.avif)
+│   │   ├── vail.avif
+│   │   ├── aspen.avif
+│   │   ├── breckenridge.avif
+│   │   ├── park-city.avif
+│   │   ├── whistler.avif
+│   │   ├── jackson-hole.avif
+│   │   ├── mammoth.avif
+│   │   ├── palisades.avif
+│   │   ├── steamboat.avif
+│   │   └── big-sky.avif
+│   ├── mammoth-hero.jpeg               ← Hero background image
+│   ├── vanlife-winter.jpg              ← Vanlife section photo
+│   ├── storm-radar.jpg                 ← Storm tracker visualization
+│   └── skibum-shield.png               ← Transparent logo for footer
+└── .github/
+    └── workflows/
+        └── update-snow-data.yml        ← GitHub Action workflow
 ```
 
 ---
@@ -307,9 +328,22 @@ skibum2025/
 ## 📋 NEXT SESSION PRIORITIES
 
 ### Immediate (Next Session):
-1. **Build first resort page template** (use Mammoth Mountain as test)
-2. **Test affiliate link integration** (Travelpayouts)
-3. **Write first vanlife guide** (overnight parking basics)
+1. **Option A: Scale Resort Pages** - Duplicate Mammoth template for remaining 9 resorts
+2. **Option B: Implement New Ideas** - Pivot based on new strategy
+3. **Link Mammoth page from homepage** - Update Top 10 resort tiles to link to /mammoth.html
+4. **Test affiliate link tracking** - Verify Travelpayouts integration
+5. **Integrate real snow data** - Connect mammoth.html to snow-data.json
+
+### If Scaling (Option A):
+1. Collect banner images for 9 remaining resorts
+2. Customize resort-specific data (stats, cams, parking info)
+3. Update resort names, taglines, and content
+4. Test each page on mobile
+
+### If Pivoting (Option B):
+1. Document new strategy/ideas
+2. Prioritize features based on user value
+3. Update roadmap accordingly
 
 ### Short-term (Weeks 2-3):
 1. Replicate template for remaining 9 resorts
@@ -426,10 +460,73 @@ skibum2025/
 
 ---
 
-**Last Updated**: December 3, 2025, 7:55 PM ET  
-**Status**: 🟢 New Homepage Live & Polished - Phase 1 Complete  
-**Next Session**: Build Mammoth Mountain resort page (first of Top 10)  
-**Focus**: 13-section resort page template with real data integration 🎿
+**Last Updated**: December 5, 2025  
+**Status**: 🟢 Mammoth Mountain Template Complete  
+**Next Session**: Replicate template for remaining 9 resorts OR implement new ideas  
+**Focus**: Scale resort pages or pivot to new features 🎿
+
+## 📸 MAMMOTH MOUNTAIN TEMPLATE - SESSION SUMMARY (December 5, 2025)
+
+### Major Accomplishments:
+1. **Complete 13-Section Template Built** - Following master resort page structure
+2. **All Sections Implemented**:
+   - Hero with real Mammoth Mountain banner image
+   - Conditions card with 5-column grid (24hr, Temp, IKON badge, Next Storm, Base Depth)
+   - "Is It a Good Time to Go?" with Powder badge
+   - Live Mountain & Road Cams (6 camera links)
+   - Parking & Vanlife Guide (complete overnight parking info)
+   - Resort Overview & Stats with Local Intel
+   - Best Routes (from LA and Reno)
+   - Where to Stay (3 lodging options with affiliate structure)
+   - Essential Gear (4 categories with Backcountry/Evo/REI links)
+   - Lift Tickets & Passes
+   - Plan Your Trip (sample itinerary with tabs)
+   - Resort Map placeholder
+   - FAQ (6 SEO-optimized questions with collapsible answers)
+   - Email Capture (bottom CTA)
+
+3. **Design Refinements**:
+   - Logo standardized: shield icon (skibum_128.png) + "Skibum" + "Built for the ones who chase it."
+   - Hero banner reduced from 60vh to 35vh (much more compact)
+   - All white space compressed (60px → 35px section padding)
+   - Conditions card optimized (tighter spacing, smaller fonts)
+   - IKON badge centered in conditions bar (not floating)
+   - Buttons made more compact (12px/24px padding)
+
+4. **Assets Created**:
+   - `mammoth.html` - Complete resort page template
+   - `mammoth_mountain_banner.jpg` - Real Mammoth peaks hero image
+   - `skibum_128.png` - Official shield logo (128px)
+
+### Technical Implementation:
+- Vintage 1970s aesthetic: Cream (#F5F1E8), burnt orange (#D9512C), navy (#0B1B2B)
+- Bebas Neue for headers, Libre Franklin for body text
+- Fully responsive with mobile optimization
+- JavaScript for FAQ toggles, itinerary tabs, smooth scrolling
+- Ready for snow-data.json integration
+- All affiliate links structured and ready
+
+### Key Design Decisions:
+1. **IKON badge in center** - Not overlapping, part of the metrics grid
+2. **Compact spacing** - Reduced all padding/margins by ~40%
+3. **Real banner image** - Authentic Mammoth Mountain photo
+4. **Logo consistency** - Shield + text format matches homepage
+5. **Green vanlife section** - Differentiator with unique color treatment
+
+### Ready to Scale:
+This template can now be duplicated for the remaining 9 Top 10 resorts:
+1. ✅ Mammoth Mountain (complete)
+2. ⏳ Vail
+3. ⏳ Aspen Snowmass
+4. ⏳ Breckenridge
+5. ⏳ Park City
+6. ⏳ Whistler Blackcomb
+7. ⏳ Jackson Hole
+8. ⏳ Palisades Tahoe
+9. ⏳ Steamboat
+10. ⏳ Big Sky
+
+---
 
 ## 📸 SESSION SUMMARY (December 3, 2025)
 
