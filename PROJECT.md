@@ -1,566 +1,303 @@
-# 🎿 SKIBUM.COM - PROJECT DOCUMENTATION
+# SkiBum.com - Project Documentation
 
-## 📌 Quick Links
-- **Live Site**: https://skibum.com
-- **Interactive Map**: https://skibum.com/map.html
-- **GitHub Repo**: https://github.com/jnr47/skibum2025
-- **GitHub Actions**: Runs every 6 hours automatically (0, 6, 12, 18 UTC)
-- **Snow Data JSON**: https://skibum.com/snow-data.json
-- **Google Search Console**: Verified ✅
-- **Travelpayouts Dashboard**: Active ✅
+## Project Overview
+SkiBum.com is a live snow tracking and ski trip planning platform that helps skiers and vanlifers find the best resorts based on real-time conditions, pass ownership, and overnight parking availability.
 
----
+**Core Value Proposition:** 
+The fastest way to decide where to ski – and where to sleep. Snow, passes, and overnight parking all in one place.
 
-## 🎯 CURRENT STATUS (December 5, 2025)
+## Current Status (As of December 5, 2024)
 
-**Status**: 🟢 MAMMOTH MOUNTAIN TEMPLATE COMPLETE!
+### What's Live
+- Homepage with interactive map (Mapbox)
+- 117+ North American ski resorts tracked
+- Real-time snow data via Open-Meteo API
+- GitHub Actions automation for data updates
+- Hosted on Cloudflare Pages
+- First resort page template (Mammoth Mountain)
+- Vintage 1970s ski culture aesthetic
+- Mobile-optimized design
 
-**What's Working:**
-- ✅ **NEW HOMEPAGE** - Modern, clean design with full site structure
-- ✅ **Interactive map** - Now at /map.html (117 resorts with real Open-Meteo data)
-- ✅ **MAMMOTH MOUNTAIN PAGE** - Complete 13-section resort template ready
-- ✅ Site loads in <500ms
-- ✅ Map preview with heatmap visualization on homepage
-- ✅ **REAL TRAIL MAP IMAGES** - Top 10 resorts showing actual ski maps (not emojis!)
-- ✅ **Real vanlife winter photo** - Gorgeous snowy van scene
-- ✅ **Real storm radar image** - Actual weather visualization
-- ✅ **Clean shield logo** - skibum_128.png used consistently
-- ✅ Compact navigation (50px logo, optimized spacing)
-- ✅ Tight spacing - resort tiles visible above fold
-- ✅ Mobile optimized with fixed button text wrapping
-- ✅ SEO meta tags
-- ✅ Real Mammoth Mountain banner image
+### Tech Stack
+- **Frontend:** HTML, CSS, JavaScript
+- **Map:** Mapbox GL JS
+- **Data:** Open-Meteo API (global weather coverage)
+- **Automation:** GitHub Actions (automated data updates)
+- **Hosting:** Cloudflare Pages
+- **Version Control:** GitHub
 
-**Site Architecture:**
-- `index.html` = Homepage (marketing/navigation hub)
-- `map.html` = Interactive snow tracking map
-- `mammoth.html` = Complete resort page template (13 sections)
-- Clean separation between marketing and tool
+## Critical Strategic Pivot (December 5, 2024)
 
-**Image Assets Added:**
-- `/images/resorts/` - 10 trail map images (.avif format): vail, aspen, breckenridge, park-city, whistler, jackson-hole, mammoth, palisades, steamboat, big-sky
-- `/images/mammoth-hero.jpeg` - Hero background
-- `/images/vanlife-winter.jpg` - Vanlife section photo
-- `/images/storm-radar.jpg` - Storm tracker visualization
-- `/images/skibum-shield.png` - Transparent logo for footer
+### The Problem Identified
+Current site is "informational" but not "irreplaceable." It shows data but doesn't make decisions for users.
 
----
+### The New Direction: Decision Engine First
 
-## 🎯 THE NEW VISION (December 3, 2025)
+**Old approach:** "Here's information about ski resorts"
+**New approach:** "I will tell you where to go this weekend in 30 seconds"
 
-### **What Changed:**
-We pivoted from an **affiliate-heavy monetization strategy** to building a **genuine planning hub** that differentiates through:
+The hero decision form becomes the primary product, with the map serving as a secondary exploration tool.
 
-1. **Real utility** - Centralized snow data, cams, road conditions
-2. **Vanlife focus** - Overnight parking guides (no competitor does this)
-3. **Map as centerpiece** - Interactive tool, not just content
-4. **Content supports tool** - Not the other way around
+### Core Differentiators
+1. **Pass-Aware Recommendations** - No other tool filters by Ikon/Epic/Indy ownership + snow + drive time
+2. **Parking Legality Layer** - First-class treatment of overnight parking rules (the moat)
+3. **Vanlife-Friendly Focus** - Not an afterthought; core to the product
+4. **Decision Engine** - "Show me the best places to go" vs browsing data manually
 
-### **Why We Changed:**
-- Affiliate marketing is saturated with AI-generated content
-- Need differentiation beyond just "another ski blog"
-- The map + vanlife angle = unique positioning
-- Build audience first, monetize later
+## V1.5 Roadmap - Decision Engine Launch
 
----
+### Phase 1: Data Foundation (Week 1-2)
+**Goal:** Build the logic engine that powers recommendations
 
-## 📐 HOMEPAGE STRUCTURE
+**Data Model Expansion:**
+- Add parking_legality_score (0-10) for each resort
+- Add overnight_notes, num_overnight_options
+- Add pass arrays: ["Ikon", "Epic", "Indy"]
+- Add terrain data, vertical drop
+- Add day_ticket_price estimates
 
-### Section 1: Hero
-- **Headline**: "Where should you ski this weekend?"
-- **Subheadline**: Real-time snow, cams, road conditions, vanlife parking
-- **CTAs**: "Open the Map" (primary) | "Explore Resorts" (secondary)
-- **Background**: Mammoth Mountain hero image with blue overlay
-- **Design**: Compact, above-the-fold
-
-### Section 2: Map Preview
-- **Title**: "Your entire season, all on one map"
-- **Visual**: Embedded Mapbox map with heatmap visualization
-- **Purpose**: Show the tool, drive clicks to full map
-- **CTA**: "View Full Map →"
-
-### Section 3: Top 10 Resorts (PRIMARY NAVIGATION)
-**Featured Resorts:**
-1. Vail
-2. Aspen Snowmass
-3. Breckenridge
-4. Park City
-5. Whistler Blackcomb
-6. Jackson Hole
-7. Mammoth Mountain
-8. Palisades Tahoe
-9. Steamboat
-10. Big Sky
-
-**Why these 10:**
-- Highest search volume in North America
-- Geographic diversity (West Coast, Rockies, Canada)
-- Mix of Ikon/Epic pass coverage
-- Strong vanlife culture
-
-**Card Display:**
-- Full-width grid (3 columns desktop, 2 mobile)
-- Shows: Resort name, snowfall amount, pass badge
-- Clickable → leads to individual resort pages (to be built)
-
-### Section 4: Vanlife on the Mountain
-**Layout**: Two-column (text left, visual right)
-**Content**: 
-- Clear overnight parking rules
-- Safe spots to stay
-- Camp-friendly options
-**Differentiator**: "The only ski platform built with vanlife in mind"
-
-### Section 5: Storm Tracker
-**Layout**: Two-column
-**Purpose**: Drive email signups for powder alerts
-**Updates**: Daily storm tracking
-
-### Section 6: Guides
-**SEO-driven articles** (to be written):
-- Best Ski Resorts for Vanlife
-- Where to Park Overnight at Ski Resorts
-- Ikon vs Epic for Road Trips
-- Best U.S. Powder Mountains
-- Top Budget Ski Trips
-
-### Section 7: Email Capture
-**Headline**: "Get Powder Alerts & Overnight Parking Updates"
-**Promise**: "No spam. Ever."
-**Purpose**: Build owned audience
-
-### Section 8: Footer
-Standard footer with navigation links and "Built for the ones who chase it" tagline
-
----
-
-## 🗂️ FILE STRUCTURE
-
+**Scoring Algorithm:**
 ```
-skibum2025/
-├── index.html                          ← Homepage
-├── map.html                            ← Interactive map
-├── mammoth.html                        ← Resort page template (COMPLETE)
-├── snow-data.json                      ← Auto-updated every 6 hours
-├── skibum_128.png                      ← Shield logo (official)
-├── skibum_logo_blacktype_small.png     ← Old logo (legacy)
-├── mammoth_mountain_banner.jpg         ← Hero banner image
-├── images/
-│   ├── resorts/                        ← Trail map images (.avif)
-│   │   ├── vail.avif
-│   │   ├── aspen.avif
-│   │   ├── breckenridge.avif
-│   │   ├── park-city.avif
-│   │   ├── whistler.avif
-│   │   ├── jackson-hole.avif
-│   │   ├── mammoth.avif
-│   │   ├── palisades.avif
-│   │   ├── steamboat.avif
-│   │   └── big-sky.avif
-│   ├── mammoth-hero.jpeg               ← Hero background image
-│   ├── vanlife-winter.jpg              ← Vanlife section photo
-│   ├── storm-radar.jpg                 ← Storm tracker visualization
-│   └── skibum-shield.png               ← Transparent logo for footer
-└── .github/
-    └── workflows/
-        └── update-snow-data.yml        ← GitHub Action workflow
+total_score = 
+  0.4 * snow_score +      // Recent + forecast snowfall
+  0.2 * pass_score +      // On user's pass = high score
+  0.2 * travel_score +    // Drive time bands
+  0.2 * overnight_score   // Parking legality
 ```
 
----
+**Parking Research System:**
+Automated research using Claude API + web search to gather parking intel from:
+- Official resort websites (parking pages, FAQs, policies)
+- Campendium, The Dyrt, iOverlander, Hipcamp
+- Skiburrito.com
+- Reddit (r/vanlife, r/skiing, regional subs)
+- TGR Forums, Newschoolers, Mountain Project
 
-## 🎨 DESIGN SYSTEM
+**Research Script Details:**
+- Location: `/Users/dad/Documents/skibum-research/`
+- Script: `research_resort.py`
+- Cost: ~$0.50-2.00 per resort
+- Time: 60 seconds per resort vs 2-3 hours manual
+- Output: Structured JSON with parking scores, policies, enforcement levels, backup options
 
-### Colors:
-- **Primary Blue**: #1e3a5f
-- **Accent Orange**: #ff6b35
-- **Light Background**: #f8f9fa
-- **White**: #ffffff
-- **Text Dark**: #2c3e50
-- **Text Light**: #6c757d
+**Completed Research (As of Dec 5, 2024):**
+1. Breckenridge - 1/10 (strict enforcement, good alternatives 3mi away)
+2. Big Sky - 1/10 (strict, limited alternatives, Bozeman 45mi)
+3. Arapahoe Basin - 1/10 (gates lock 6PM-7AM)
+4. Killington - 6/10 (Skyeship Base allows overnight, 2 night/week limit)
+5. Vail - 3/10 (paid overnight $35-60, free lots prohibited)
 
-### Typography:
-- **Font**: System fonts (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto)
-- **Hero H1**: 2rem (mobile: 1.5rem)
-- **Section Titles**: 1.75rem
-- **Body**: 1rem
+**Known Data Gaps to Address:**
+- Stratton (friend reports vanlife-friendly, script found limited evidence - needs manual verification)
+- Need to improve official website search accuracy
 
-### Layout:
-- **Max Width**: 1200px
-- **Padding**: 2rem (desktop), 1.5rem (mobile)
-- **Grid**: 3 columns (desktop) → 2 (tablet) → 1 (mobile)
+**Remaining Resorts to Research:** 25 of top 30 Western resorts
 
-### Logo:
-- **Size**: 80px height
-- **Position**: Top-left in navigation
+### Phase 2: Frontend Transformation (Week 3-4)
+**Goal:** Rebuild homepage around decision engine
 
----
+**New Homepage Structure:**
+1. **Hero Section** (Top of page)
+   - Headline: "Where should you ski this weekend?"
+   - Subhead: "Real-time snow, passes, and overnight parking—all in one place"
+   - Decision form with inputs:
+     * Leaving from: [Denver, CO]
+     * Passes owned: [Ikon, Epic, Indy] (multi-select chips)
+     * Trip window: [Fri → Sun] (date picker)
+   - CTA: "Show me the best places to go"
+   - Subtext: "Powder, parking, and drive-time ranked recommendations"
 
-## 🚀 12-WEEK ROADMAP
+2. **Results Cards** (Dynamic, appears after form submission)
+   - Top 3-5 resorts ranked by total_score
+   - Each card shows: snow totals, pass match, overnight score, drive time
+   - CTAs: "View Trip" | "Add to Favorites"
 
-### WEEKS 1-2: Foundation ✅ COMPLETE
-- ✅ New homepage launched
-- ✅ Homepage → Map separation
-- ✅ Basic structure in place
+3. **Map Preview Section** (Mid-page)
+   - Headline: "Your entire season — visualized"
+   - Smaller map preview with pass filter toggles
+   - CTA: "View Full Map →"
 
-### WEEKS 3-6: Build Top 10 Resort Pages
-**Priority**: Build complete pages for the top 10 resorts first
+4. **Why SkiBum?** (Feature cards)
+   - Skip the planning chaos
+   - Sleep legally near the mountain
+   - Chase storms intelligently  
+   - Plan your entire ski roadtrip
 
-**Each resort page includes:**
-1. Hero with snow forecast (24hr, 48hr, 7-day)
-2. Live mountain & road cams
-3. Parking & vanlife overnight guide
-4. Resort overview & stats
-5. Best routes to get there
-6. Where to stay (affiliate section)
-7. Essential gear (affiliate section)
-8. Lift tickets & passes
-9. Plan your trip (itineraries)
-10. Embedded map
-11. FAQ (SEO-optimized)
-12. Email capture
+**Map Page Upgrades:**
+- Search bar with autocomplete (zoom to resort)
+- Pass filter chips (All | Epic | Ikon | Indy | Independent)
+- Snow filters (Any | >3" 24h | >6" 72h | Storm incoming)
+- Van-friendly toggle (shows only overnight_score >= 7)
+- Enhanced pin popups with mini-cards
 
-### WEEKS 7-8: Vanlife Content Layer
-- Build vanlife guide page
-- Add parking info to all 10 resort pages
-- Create "Where to Park Overnight" comprehensive guide
+**API Endpoint:**
+- Route: `/api/recommend`
+- Accepts: origin, passes[], start_date, end_date, max_drive_hours
+- Returns: Top 5 ranked resorts with scores + summary
 
-### WEEKS 9-10: SEO & Content
-**Write 4 Core Articles:**
-1. Best Ski Resorts for Vanlife
-2. Where to Park Overnight at Ski Resorts
-3. Ikon vs Epic for Road Trips
-4. Best U.S. Powder Mountains
+**Drive Time Calculation:**
+- Integrate Google Maps Distance Matrix API or Mapbox Directions
+- Cache results for major city pairs
+- Fall back to straight-line estimates
 
-### WEEKS 11-12: Light Monetization
-- Add Booking.com affiliate links (via Travelpayouts or Awin)
-- Add Hipcamp/Harvest Hosts links
-- Add gear affiliate links (Backcountry, Evo, REI)
-- Set up email automation for powder alerts
+### Phase 3: Conversion & Retention (Week 5-6)
+**Email Capture Flows:**
+- "Save Your Results" prompt after hero form
+- "Get weekly storm alerts" opt-in
+- Lead magnets: "Best Overnight Spots Guide" PDF
 
----
+**Favorites System (v1):**
+- LocalStorage-based (logged-out)
+- Heart icon to save resorts
+- "Email me this list" prompt
 
-## 💰 MONETIZATION STRATEGY (REVISED)
-
-### Phase 1: Build Audience (Months 1-3)
-**Focus**: Traffic + Email list + Brand
-- No aggressive monetization
-- Light affiliate links only
-- Build trust first
-
-### Phase 2: Introduce Affiliates (Months 4-6)
-**Revenue Streams:**
-1. **Lodging** (Booking.com via Awin - 25-40% commission)
-2. **Vanlife** (Hipcamp, Harvest Hosts - 10-15% commission)
-3. **Gear** (Backcountry, REI, Evo - 5-10% commission)
-4. **Activities** (Viator - 8% commission)
-
-### Phase 3: Premium Features (Month 7+)
-**Potential Premium Offerings:**
-- Advanced trip planner
-- Custom powder alerts by region
-- "Vanlife Mode" with diesel-safe gas stations
-- Multi-resort itinerary builder
-
-**Conservative Revenue Goals:**
-- Month 3: $0 (audience building)
-- Month 6: $1,000-2,000/month
-- Month 12: $5,000-10,000/month
-- Year 2: $25,000+/month (if traffic scales)
-
----
-
-## 📊 TRAFFIC STRATEGY
-
-### SEO (Primary)
-**Target Keywords:**
-- "ski conditions [resort name]"
-- "where to park overnight [resort name]"
-- "vanlife ski resorts"
-- "best ski resorts for vanlife"
-- "powder forecast [region]"
+**SEO Foundation:**
+- Update resort pages with "Overnight Parking" sections
+- Display parking_legality_score visually
+- Show nearby Hipcamp/Harvest Hosts
+- Target long-tail keywords: "Ikon resorts near Denver with free parking"
+- Schema markup for SkiResort + FAQ
 
 **Content Strategy:**
-- 10 resort pages (long-tail SEO)
-- 4-5 comprehensive guides
-- Regular blog updates
+5-10 high-value blog posts:
+- "Ikon Resorts Near Denver with Free Parking"
+- "Best Vanlife-Friendly Ski Resorts in Colorado"
+- "Where to Sleep Overnight at [Resort Name]"
 
-### Social (Secondary)
-**Platforms:**
-- Instagram (vanlife audience)
-- Reddit (r/skiing, r/vanlife)
-- Facebook (vanlife groups)
+### Phase 4: Polish & Launch (Week 7)
+- QA testing (hero form, scoring logic, mobile)
+- GA4 events (form submissions, result clicks, signups)
+- Heatmaps (Hotjar)
+- Launch content (Reddit posts, email, social)
+- Soft launch with 10-20 trusted users
 
-**Content:**
-- Map flyovers
-- Powder alerts
-- Parking guides
-- Storm chase content
+## Post-V1.5: Future Phases
 
-### Email (Retention)
-**Weekly Newsletter:**
-- Weekend powder forecast
-- Best parking options this week
-- Storm tracker updates
-- New resort pages
+### V2: UGC & Community (Weeks 8-10)
+- Parking intel submission form
+- User reviews/comments on resort pages
+- Voting: "Is this info still accurate?"
+- Community-sourced data validation
 
----
+### V3: Trip Planning Tools (Weeks 11-13)
+- Multi-resort itinerary builder
+- "Save trips" with notes
+- Route optimization (fuel/time estimates)
+- Storm-chasing mode
 
-## 🛠️ TECHNICAL STACK
+### V4: Monetization (Weeks 14-16)
+- SkiBum+ subscription ($5-10/mo)
+  * Advanced filters
+  * Storm alerts
+  * Trip planning tools
+- Optimized affiliate links (gear > hotels)
+- Partnership outreach to gear brands
 
-### Frontend:
-- **HTML/CSS/JavaScript** (no frameworks on homepage)
-- **React** (for interactive map only)
-- **Mapbox GL JS** (mapping)
-- **Cloudflare Pages** (hosting)
+## Success Metrics
 
-### Data:
-- **Open-Meteo API** (weather data)
-- **GitHub Actions** (automated updates every 6 hours)
-- **Static JSON** (snow-data.json)
+**Week 1 Post-Launch:**
+- 500+ hero form submissions
+- 100+ email signups
+- 2,000+ pageviews
 
-### Tools:
-- **Google Search Console** (SEO tracking)
-- **Travelpayouts** (affiliate tracking)
-- **Git/GitHub** (version control)
+**Month 1:**
+- 5,000+ hero form submissions
+- 500+ email list
+- 10+ organic mentions (Reddit/forums)
+- 3-5 parking pages ranking on Google page 1
 
----
+**Month 3:**
+- 20,000+ monthly users
+- 2,000+ email subscribers
+- First affiliate revenue ($100+)
+- User-submitted parking intel flowing
 
-## 📋 NEXT SESSION PRIORITIES
+## Technical Debt & Improvements Needed
 
-### Immediate (Next Session):
-1. **Option A: Scale Resort Pages** - Duplicate Mammoth template for remaining 9 resorts
-2. **Option B: Implement New Ideas** - Pivot based on new strategy
-3. **Link Mammoth page from homepage** - Update Top 10 resort tiles to link to /mammoth.html
-4. **Test affiliate link tracking** - Verify Travelpayouts integration
-5. **Integrate real snow data** - Connect mammoth.html to snow-data.json
+### Immediate (V1.5)
+- [ ] Complete parking research for remaining 25 resorts
+- [ ] Improve research script to better search official resort sites
+- [ ] Build recommendation API endpoint
+- [ ] Implement hero form UI
+- [ ] Set up email capture system
 
-### If Scaling (Option A):
-1. Collect banner images for 9 remaining resorts
-2. Customize resort-specific data (stats, cams, parking info)
-3. Update resort names, taglines, and content
-4. Test each page on mobile
+### Short-term (V2)
+- [ ] Create user accounts system
+- [ ] Build UGC submission workflow
+- [ ] Set up monthly auto-refresh of parking data
+- [ ] Investigate RV Life / Campendium API access
 
-### If Pivoting (Option B):
-1. Document new strategy/ideas
-2. Prioritize features based on user value
-3. Update roadmap accordingly
+### Long-term (V3+)
+- [ ] Mobile app
+- [ ] AI trip planner with natural language
+- [ ] Partnership integrations (resorts, gear brands)
+- [ ] Marketplace for parking spot exchange
 
-### Short-term (Weeks 2-3):
-1. Replicate template for remaining 9 resorts
-2. Add real snow data to resort pages
-3. Integrate mountain cams (public URLs)
-4. Add road cams (DOT APIs)
+## Design Philosophy
 
-### Medium-term (Months 2-3):
-1. Expand to 35 resorts
-2. Write 4 core SEO articles
-3. Build comprehensive vanlife guide
-4. Set up email automation
+**Aesthetic:** 1970s après-ski culture
+- Vintage ski photography
+- Retro color palette (burnt orange, cream, forest green)
+- Authentic, non-corporate vibe
+- "Ski bum" authenticity over slick corporate design
 
----
+**UX Principles:**
+- Decision speed over information density
+- Mobile-first (vanlifers are on phones)
+- Reduce planning time by 80%
+- Make the hard questions easy (parking legality)
 
-## 💭 KEY DECISIONS MADE (December 3, 2025)
+## Competitive Landscape
 
-### Decision 1: Two-File Architecture
-**Chose**: Separate homepage (index.html) and map (map.html)
-**Why**: Clean separation, easier to maintain, better user flow
+**What Exists:**
+- OpenSnow: Best snow forecasting, but no pass awareness or parking intel
+- Epic/Ikon apps: Pass-specific, no multi-pass comparison or parking
+- OnTheSnow: General info, no decision engine
+- Vanlife apps: Not ski-focused, don't understand resort policies
 
-### Decision 2: Resorts as Primary Navigation
-**Chose**: Full-width resort grid as main navigation
-**Why**: Resort pages = core content = monetization = SEO
+**SkiBum's Moat:**
+- Pass-aware recommendations (unique)
+- Parking legality database (no one else has this)
+- Vanlife-first UX (not an afterthought)
+- Decision engine vs information display
 
-### Decision 3: Vanlife as Differentiator
-**Chose**: Prominent vanlife section, dedicated guides
-**Why**: No competitor addresses this, passionate niche audience
+## Repository & Deployment
 
-### Decision 4: Preview Map with Fake Data
-**Chose**: Show heatmap with fake snow data on homepage
-**Why**: Always looks impressive, drives clicks to real map
+**GitHub:** [Repository URL if applicable]
+**Live Site:** skibum.com
+**Staging:** [Cloudflare Pages preview URLs]
 
-### Decision 5: Top 10 First, Then Scale
-**Chose**: Build 10 complete pages before expanding
-**Why**: Test conversion, prove model, iterate before scaling
+**Deployment Process:**
+- Push to main branch
+- GitHub Actions runs data update workflow
+- Cloudflare Pages auto-deploys
 
----
+## Notes & Learnings
 
-## 🎯 SUCCESS METRICS
+### December 5, 2024 - Research Automation Breakthrough
+- Built Claude API-powered research script
+- Validated it can reduce 90 hours of manual work to ~30 minutes
+- Discovered web search rate limits (30/second) - need 2-3 min spacing between searches
+- Original research approach works well, gives ~80% accuracy
+- Human review still critical for edge cases (Stratton example)
+- Cost per resort: $0.50-2.00 (very affordable at scale)
 
-### Month 1:
-- [ ] Homepage live and functional
-- [ ] 10 resort pages complete
-- [ ] 100 email subscribers
-- [ ] 1,000 monthly visitors
+### Key Insight
+The parking legality layer is genuinely differentiated. No competitor owns this data. But it must be:
+1. Comprehensive (30+ resorts minimum for launch)
+2. Current (monthly refresh needed)
+3. Trustworthy (user verification + official sources)
+4. Visible (front-and-center in UX, not buried)
 
-### Month 3:
-- [ ] 35 resort pages live
-- [ ] 4 core guides published
-- [ ] 500 email subscribers
-- [ ] 5,000 monthly visitors
-- [ ] First affiliate conversions
-
-### Month 6:
-- [ ] All 117 resort pages live
-- [ ] 10+ comprehensive guides
-- [ ] 2,000 email subscribers
-- [ ] 20,000 monthly visitors
-- [ ] $1,000-2,000/month revenue
-
-### Month 12:
-- [ ] Established brand
-- [ ] 5,000+ email subscribers
-- [ ] 50,000+ monthly visitors
-- [ ] $5,000-10,000/month revenue
-- [ ] Featured in vanlife/ski media
-
----
-
-## 📝 LESSONS LEARNED
-
-### What Worked:
-✅ **Simple two-file architecture** - Easy to understand and maintain
-✅ **Map as centerpiece** - Strong differentiator
-✅ **Vanlife angle** - Unique positioning
-✅ **Clean design** - Professional, not cheesy
-✅ **Mobile-first approach** - Looks great on phones
-
-### What to Remember:
-- **Traction before monetization** - Build audience first
-- **Content supports tool** - Not the other way around
-- **Vanlife = wedge** - Lean into it heavily
-- **Start with 10, then scale** - Don't build all 117 at once
-- **Real utility > SEO tricks** - Focus on genuinely useful features
-
-### What's Next:
-- Build resort page template
-- Write vanlife content
-- Set up email system
-- Drive initial traffic
+This is the feature that makes SkiBum irreplaceable.
 
 ---
 
-## 🔗 IMPORTANT LINKS
-
-### Development:
-- GitHub: https://github.com/jnr47/skibum2025
-- Cloudflare Pages: Auto-deploys from GitHub
-
-### SEO & Analytics:
-- Google Search Console: Verified
-- (Add Google Analytics in future session)
-
-### Affiliate Programs:
-- Travelpayouts: https://www.travelpayouts.com/
-- Awin (priority): https://www.awin.com/us
-- Yelp API: https://www.yelp.com/developers
-
-### Data Sources:
-- Open-Meteo: Weather API (currently in use)
-- State DOT APIs: Road conditions
-- Public webcams: Mountain cams
+## Contact & Team
+- **Project Lead:** Jeff
+- **Role:** Global Alliance Manager at Cloudflare (day job)
+- **Goal:** Make ski trips tax-deductible research expenses 🎿
 
 ---
 
-**Last Updated**: December 5, 2025  
-**Status**: 🟢 Mammoth Mountain Template Complete  
-**Next Session**: Replicate template for remaining 9 resorts OR implement new ideas  
-**Focus**: Scale resort pages or pivot to new features 🎿
-
-## 📸 MAMMOTH MOUNTAIN TEMPLATE - SESSION SUMMARY (December 5, 2025)
-
-### Major Accomplishments:
-1. **Complete 13-Section Template Built** - Following master resort page structure
-2. **All Sections Implemented**:
-   - Hero with real Mammoth Mountain banner image
-   - Conditions card with 5-column grid (24hr, Temp, IKON badge, Next Storm, Base Depth)
-   - "Is It a Good Time to Go?" with Powder badge
-   - Live Mountain & Road Cams (6 camera links)
-   - Parking & Vanlife Guide (complete overnight parking info)
-   - Resort Overview & Stats with Local Intel
-   - Best Routes (from LA and Reno)
-   - Where to Stay (3 lodging options with affiliate structure)
-   - Essential Gear (4 categories with Backcountry/Evo/REI links)
-   - Lift Tickets & Passes
-   - Plan Your Trip (sample itinerary with tabs)
-   - Resort Map placeholder
-   - FAQ (6 SEO-optimized questions with collapsible answers)
-   - Email Capture (bottom CTA)
-
-3. **Design Refinements**:
-   - Logo standardized: shield icon (skibum_128.png) + "Skibum" + "Built for the ones who chase it."
-   - Hero banner reduced from 60vh to 35vh (much more compact)
-   - All white space compressed (60px → 35px section padding)
-   - Conditions card optimized (tighter spacing, smaller fonts)
-   - IKON badge centered in conditions bar (not floating)
-   - Buttons made more compact (12px/24px padding)
-
-4. **Assets Created**:
-   - `mammoth.html` - Complete resort page template
-   - `mammoth_mountain_banner.jpg` - Real Mammoth peaks hero image
-   - `skibum_128.png` - Official shield logo (128px)
-
-### Technical Implementation:
-- Vintage 1970s aesthetic: Cream (#F5F1E8), burnt orange (#D9512C), navy (#0B1B2B)
-- Bebas Neue for headers, Libre Franklin for body text
-- Fully responsive with mobile optimization
-- JavaScript for FAQ toggles, itinerary tabs, smooth scrolling
-- Ready for snow-data.json integration
-- All affiliate links structured and ready
-
-### Key Design Decisions:
-1. **IKON badge in center** - Not overlapping, part of the metrics grid
-2. **Compact spacing** - Reduced all padding/margins by ~40%
-3. **Real banner image** - Authentic Mammoth Mountain photo
-4. **Logo consistency** - Shield + text format matches homepage
-5. **Green vanlife section** - Differentiator with unique color treatment
-
-### Ready to Scale:
-This template can now be duplicated for the remaining 9 Top 10 resorts:
-1. ✅ Mammoth Mountain (complete)
-2. ⏳ Vail
-3. ⏳ Aspen Snowmass
-4. ⏳ Breckenridge
-5. ⏳ Park City
-6. ⏳ Whistler Blackcomb
-7. ⏳ Jackson Hole
-8. ⏳ Palisades Tahoe
-9. ⏳ Steamboat
-10. ⏳ Big Sky
-
----
-
-## 📸 SESSION SUMMARY (December 3, 2025)
-
-### Major Accomplishments:
-1. **Homepage Design Complete** - Complete from scratch in one session
-2. **Visual Upgrade** - Replaced all placeholder emojis with professional images
-3. **Trail Maps Integration** - 10 actual resort ski maps (.avif format)
-4. **Photography** - Real vanlife winter scene, storm radar, hero background
-5. **Spacing Optimization** - Tightened layout to show resort tiles above fold
-6. **Navigation Polish** - Compact header (50px logo, sticky positioning)
-7. **Logo Refinement** - Transparent shield PNG for footer
-8. **Mobile Fixes** - Button text wrapping, touch targets, responsive images
-9. **Strategic Pivot Documentation** - Updated vision from affiliate-heavy to planning hub
-
-### Files Created/Updated:
-- `index.html` - Complete new homepage (production ready)
-- `PROJECT.md` - Updated documentation
-- `CHANGELOG.md` - Session log created
-- 10 trail map images uploaded to `/images/resorts/`
-- 4 additional images for sections (hero, vanlife, storm, logo)
-
-### Key Decisions:
-- Real images > emojis (authenticity over convenience)
-- Tight spacing to show resort tiles above fold (conversion optimization)
-- Compact navigation to maximize content space
-- Map preview uses fake data for consistent visual appeal
-- Two-file architecture maintained (index.html + map.html)
-
-### Next Session Goals:
-1. Build Mammoth Mountain resort page as template
-2. Implement 13-section structure from vision doc
-3. Integrate real snow data from snow-data.json
-4. Add mountain cams (if public URLs available)
-5. Test affiliate link integration
-6. Mobile optimization testing
-
----
+*Last Updated: December 5, 2024*
