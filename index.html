@@ -192,6 +192,19 @@
             flex: 1;
             position: relative;
             background: #1a1a1a;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-box {
+            width: 100%;
+            height: 90%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
         
         #hero-map {
@@ -750,6 +763,81 @@
             padding: 0 2rem;
         }
         
+        /* Trending Section */
+        .trending-section {
+            background: var(--white);
+            padding: 4rem 2rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .trending-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .trending-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .trending-image-placeholder {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .trending-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .snow-badge {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pass-badge-small {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--pass-gold);
+            color: white;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trending-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
         /* Features Section */
         .features {
             background: var(--white);
@@ -1009,8 +1097,8 @@
             <!-- Left Sidebar - Control Panel -->
             <div class="control-panel">
                 <div class="panel-header">
-                    <h1 class="panel-title">Where should you ski this weekend?</h1>
-                    <p class="panel-subtitle">Real-time snow, passes, and overnight parking—all in one place.</p>
+                    <h1 class="panel-title">See where the best skiing is right now.</h1>
+                    <p class="panel-subtitle">Live snow, pass coverage, and overnight options—all on one map.</p>
                 </div>
                 
                 <!-- Search Bar -->
@@ -1018,37 +1106,37 @@
                     <input 
                         type="text" 
                         class="search-input-panel" 
-                        placeholder="Search resorts, cities, or regions..."
+                        placeholder="Search a resort or mountain..."
                         id="panelSearch"
                     >
                 </div>
                 
                 <!-- Divider -->
                 <div class="panel-divider">
-                    <span>or</span>
+                    <span>or let us narrow it down</span>
                 </div>
                 
                 <!-- Primary CTA -->
                 <button class="cta-primary" id="showRecommendations">
-                    Show me the best places right now
+                    See top picks
                 </button>
                 
                 <!-- Progressive Disclosure - Filters (Hidden by Default) -->
                 <div class="filters-section" id="filtersSection">
                     <div class="filter-group">
-                        <label class="filter-label">How far are you going?</label>
+                        <label class="filter-label">Trip distance</label>
                         <div class="radius-chips">
                             <div class="radius-chip" data-radius="local">
                                 Local
-                                <span class="chip-subtext">1–2h</span>
+                                <span class="chip-subtext">1–2 hr</span>
                             </div>
                             <div class="radius-chip selected" data-radius="day">
                                 Day/Weekend
-                                <span class="chip-subtext">2–4h</span>
+                                <span class="chip-subtext">2–4 hr</span>
                             </div>
                             <div class="radius-chip" data-radius="weekend">
                                 Weekend+
-                                <span class="chip-subtext">4–6h</span>
+                                <span class="chip-subtext">4–6 hr</span>
                             </div>
                             <div class="radius-chip" data-radius="destination">
                                 Destination
@@ -1058,7 +1146,7 @@
                     </div>
                     
                     <div class="filter-group">
-                        <label class="filter-label">Passes owned:</label>
+                        <label class="filter-label">Pass coverage</label>
                         <div class="pass-chips">
                             <div class="pass-chip" data-pass="Ikon">Ikon</div>
                             <div class="pass-chip" data-pass="Epic">Epic</div>
@@ -1074,21 +1162,22 @@
                     </div>
                     
                     <button class="cta-primary" id="findResortsBtn" style="margin-top: 1rem;">
-                        Find My Top 3 Resorts
+                        Show my top picks
                     </button>
                 </div>
             </div>
             
             <!-- Right Side - Interactive Map -->
             <div class="map-container-hero">
-                <div id="hero-map"></div>
-                
-                <!-- Results Tray (Hidden by Default) -->
-                <div class="results-tray" id="resultsTray">
+                <div class="map-box">
+                    <div id="hero-map"></div>
+                    
+                    <!-- Results Tray (Hidden by Default) -->
+                    <div class="results-tray" id="resultsTray">
                     <div class="results-header">
                         <div>
                             <h2 class="results-title">Your Top Picks</h2>
-                            <p class="results-subtitle">Ranked by powder, parking, and passes</p>
+                            <p class="results-subtitle">Ranked by current snow, access, and overnight options</p>
                         </div>
                         <button class="close-tray-btn" id="closeTrayBtn">✕</button>
                     </div>
@@ -1099,6 +1188,66 @@
                     
                     <div class="show-more">
                         <button class="show-more-btn" id="showMoreBtn">Show 2 more options ↓</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Resorts Section -->
+        <section class="trending-section">
+            <div class="container">
+                <h2 class="section-title">Where skiers are looking right now</h2>
+                <p class="section-subtitle">Based on snowfall, conditions, and seasonal patterns.</p>
+                
+                <div class="trending-grid">
+                    <!-- Resort cards will go here - placeholder for now -->
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Mt. Bachelor</h3>
+                        <p class="snow-badge">❄️ 12" last 48h</p>
+                        <span class="pass-badge-small">Ikon</span>
+                        <p class="trending-note">Storm cycle ongoing</p>
+                    </div>
+                    
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Jackson Hole</h3>
+                        <p class="snow-badge">❄️ 18" last 48h</p>
+                        <span class="pass-badge-small">Ikon</span>
+                        <p class="trending-note">Heavy powder</p>
+                    </div>
+                    
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Vail</h3>
+                        <p class="snow-badge">❄️ 6" last 48h</p>
+                        <span class="pass-badge-small">Epic</span>
+                        <p class="trending-note">Fresh grooming</p>
+                    </div>
+                    
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Steamboat</h3>
+                        <p class="snow-badge">❄️ 8" last 48h</p>
+                        <span class="pass-badge-small">Ikon</span>
+                        <p class="trending-note">Champagne powder</p>
+                    </div>
+                    
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Breckenridge</h3>
+                        <p class="snow-badge">❄️ 4" last 48h</p>
+                        <span class="pass-badge-small">Epic</span>
+                        <p class="trending-note">Summit accessible</p>
+                    </div>
+                    
+                    <div class="trending-card">
+                        <div class="trending-image-placeholder"></div>
+                        <h3>Killington</h3>
+                        <p class="snow-badge">❄️ 10" last 48h</p>
+                        <span class="pass-badge-small">Ikon</span>
+                        <p class="trending-note">East coast powder</p>
                     </div>
                 </div>
             </div>
