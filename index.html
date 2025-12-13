@@ -106,14 +106,31 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
         }
         
         .logo img {
-            height: 50px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            line-height: 1.2;
+        }
+        
+        .logo-title {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        .logo-tagline {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--text-light);
         }
         
         .nav-links {
@@ -141,7 +158,7 @@
             background-position: center;
             background-attachment: fixed;
             color: var(--white);
-            padding: 2rem 2rem 1.5rem;
+            padding: 1.5rem 2rem 1rem;
             text-align: center;
             display: flex;
             align-items: center;
@@ -154,15 +171,15 @@
         }
         
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 0.5rem;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 0.35rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.1;
         }
         
         .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 1rem;
             opacity: 0.95;
             font-weight: 300;
         }
@@ -170,15 +187,15 @@
         /* Decision Form Card */
         .decision-form-card {
             background: var(--cream);
-            border-radius: 16px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 1.25rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             max-width: 550px;
             margin: 0 auto;
         }
         
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.875rem;
             text-align: left;
         }
         
@@ -186,8 +203,8 @@
             display: block;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
         }
         
         .location-input-wrapper {
@@ -199,10 +216,10 @@
         
         .location-input {
             flex: 1;
-            padding: 0.875rem 1rem;
+            padding: 0.75rem 1rem;
             border: 2px solid #d1d5db;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
             background: white;
             transition: all 0.3s;
@@ -224,12 +241,12 @@
         .pass-chip {
             flex: 1;
             min-width: 100px;
-            padding: 0.875rem 1.25rem;
+            padding: 0.75rem 1rem;
             border: 2px solid #d1d5db;
             border-radius: 8px;
             background: white;
             color: var(--text-dark);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-align: center;
             cursor: pointer;
@@ -251,12 +268,12 @@
         /* Submit Button */
         .submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
+            padding: 0.875rem 1.5rem;
             background: var(--accent-orange);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -275,14 +292,14 @@
         
         .form-subtext {
             text-align: center;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-light);
-            margin-top: 1rem;
+            margin-top: 0.75rem;
         }
         
         .scroll-indicator {
-            margin-top: 1rem;
-            font-size: 0.875rem;
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
             opacity: 0.8;
             animation: bounce 2s infinite;
         }
@@ -578,7 +595,7 @@
             }
             
             .hero {
-                padding: 2rem 1rem 1.5rem;
+                padding: 1.5rem 1rem 1rem;
             }
             
             .decision-form-card {
@@ -618,6 +635,10 @@
             <div class="container">
                 <a href="#" class="logo">
                     <img src="images/skibum-shield.png" alt="Skibum">
+                    <div class="logo-text">
+                        <span class="logo-title">Skibum</span>
+                        <span class="logo-tagline">Built for the ones who chase it.</span>
+                    </div>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#map">Map</a></li>
