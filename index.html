@@ -194,6 +194,76 @@
             margin: 0 auto;
         }
         
+        /* Search Section */
+        .search-section {
+            margin-bottom: 1rem;
+        }
+        
+        .search-wrapper {
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: white;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        /* Form Divider */
+        .form-divider {
+            text-align: center;
+            margin: 1.25rem 0;
+            position: relative;
+        }
+        
+        .form-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: #d1d5db;
+        }
+        
+        .form-divider span {
+            background: var(--cream);
+            padding: 0 1rem;
+            position: relative;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Form Section Label */
+        .form-section-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
         .form-group {
             margin-bottom: 0.875rem;
             text-align: left;
@@ -263,6 +333,67 @@
             background: var(--pass-gold);
             color: white;
             border-color: var(--pass-gold);
+        }
+        
+        /* Trip Radius Chips */
+        .radius-chips {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .radius-chip {
+            padding: 0.65rem 0.75rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            background: white;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: none;
+            line-height: 1.3;
+        }
+        
+        .radius-chip:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+        
+        .radius-chip.selected {
+            background: var(--accent-orange);
+            color: white;
+            border-color: var(--accent-orange);
+        }
+        
+        .chip-subtext {
+            font-size: 0.7rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        /* Checkbox */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            margin: 0;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .checkbox-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            cursor: pointer;
         }
         
         /* Submit Button */
@@ -599,7 +730,7 @@
             }
             
             .decision-form-card {
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
             
             .pass-chips {
@@ -608,6 +739,10 @@
             
             .pass-chip {
                 min-width: 100%;
+            }
+            
+            .radius-chips {
+                grid-template-columns: 1fr;
             }
             
             .email-form {
@@ -656,7 +791,29 @@
                 <p class="hero-subtitle">Real-time snow, cams, passes, and overnight parking—all in one place.</p>
                 
                 <div class="decision-form-card">
+                    <!-- Quick Search Section -->
+                    <div class="search-section">
+                        <label class="form-label">Already know where you want to go?</label>
+                        <div class="search-wrapper">
+                            <input 
+                                type="text" 
+                                class="search-input" 
+                                placeholder="Search: Jackson Hole, Vail, Killington..."
+                                id="resortSearch"
+                            >
+                            <span class="search-icon">🔍</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="form-divider">
+                        <span>or</span>
+                    </div>
+                    
+                    <!-- Decision Form Section -->
                     <form id="decisionForm">
+                        <div class="form-section-label">Let us recommend based on your trip:</div>
+                        
                         <div class="form-group">
                             <label class="form-label">Leaving from:</label>
                             <div class="location-input-wrapper">
@@ -671,6 +828,16 @@
                         </div>
                         
                         <div class="form-group">
+                            <label class="form-label">Trip radius:</label>
+                            <div class="radius-chips">
+                                <div class="radius-chip" data-radius="local">Local<br><span class="chip-subtext">1-2h</span></div>
+                                <div class="radius-chip" data-radius="day">Day/Weekend<br><span class="chip-subtext">2-4h</span></div>
+                                <div class="radius-chip" data-radius="weekend">Weekend+<br><span class="chip-subtext">4-6h</span></div>
+                                <div class="radius-chip" data-radius="destination">Destination<br><span class="chip-subtext">6+/Flying</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
                             <label class="form-label">Passes owned:</label>
                             <div class="pass-chips">
                                 <div class="pass-chip" data-pass="Ikon">Ikon</div>
@@ -679,12 +846,19 @@
                             </div>
                         </div>
                         
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="prioritizeOvernight">
+                                <span class="checkbox-label">Prioritize overnight parking (vanlife)</span>
+                            </label>
+                        </div>
+                        
                         <button type="submit" class="submit-btn">
-                            Show me the best places to go
+                            Show my top 3 picks
                         </button>
                     </form>
                     
-                    <p class="form-subtext">Powder, parking legality, and drive-time ranked for u</p>
+                    <p class="form-subtext">Ranked by powder, parking, and passes</p>
                 </div>
                 
                 <div class="scroll-indicator">↓ Scroll for map & top resorts</div>
@@ -822,12 +996,75 @@
     </div>
 
     <script>
-        // Pass chip selection
+        // Trip radius chip selection (single select)
+        document.querySelectorAll('.radius-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                // Remove selected from all radius chips
+                document.querySelectorAll('.radius-chip').forEach(c => c.classList.remove('selected'));
+                // Add selected to clicked chip
+                chip.classList.add('selected');
+            });
+        });
+        
+        // Pass chip selection (multi-select)
         document.querySelectorAll('.pass-chip').forEach(chip => {
             chip.addEventListener('click', () => {
                 chip.classList.toggle('selected');
             });
         });
+        
+        // Resort search with autocomplete
+        const resortSearch = document.getElementById('resortSearch');
+        const resortList = [
+            'Jackson Hole',
+            'Vail',
+            'Breckenridge',
+            'Park City',
+            'Aspen Snowmass',
+            'Whistler Blackcomb',
+            'Mammoth Mountain',
+            'Killington',
+            'Steamboat',
+            'Deer Valley',
+            'Arapahoe Basin',
+            'Big Sky',
+            'Mt. Bachelor',
+            'Bridger Bowl',
+            'Powderhorn',
+            'Kicking Horse',
+            'Whitefish',
+            'Stratton'
+        ];
+        
+        if (resortSearch) {
+            resortSearch.addEventListener('input', (e) => {
+                const value = e.target.value.toLowerCase();
+                if (value.length < 2) return;
+                
+                // Simple autocomplete (TODO: add dropdown UI)
+                const matches = resortList.filter(resort => 
+                    resort.toLowerCase().includes(value)
+                );
+                console.log('Matching resorts:', matches);
+            });
+            
+            resortSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const value = e.target.value.toLowerCase();
+                    const match = resortList.find(resort => 
+                        resort.toLowerCase().includes(value)
+                    );
+                    
+                    if (match) {
+                        // TODO: Navigate to resort page
+                        alert(`Navigating to ${match} (resort page coming soon)`);
+                    } else {
+                        alert('Resort not found. Try: Jackson Hole, Vail, Killington, etc.');
+                    }
+                }
+            });
+        }
 
         // Form submission
         document.getElementById('decisionForm').addEventListener('submit', (e) => {
@@ -836,14 +1073,29 @@
             const location = document.getElementById('locationInput').value;
             const selectedPasses = Array.from(document.querySelectorAll('.pass-chip.selected'))
                 .map(chip => chip.dataset.pass);
+            const selectedRadius = document.querySelector('.radius-chip.selected')?.dataset.radius;
+            const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
             
             console.log('Form submitted:', {
                 location,
-                passes: selectedPasses
+                passes: selectedPasses,
+                radius: selectedRadius,
+                prioritizeOvernight
             });
             
+            // Validation
+            if (!selectedRadius) {
+                alert('Please select a trip radius');
+                return;
+            }
+            
+            if (selectedPasses.length === 0) {
+                alert('Please select at least one pass (or we can add a "No pass" option)');
+                return;
+            }
+            
             // TODO: Call decision algorithm API
-            alert('Decision engine coming soon! You selected: ' + (selectedPasses.length > 0 ? selectedPasses.join(', ') : 'No passes'));
+            alert(`Decision engine coming soon!\n\nFrom: ${location}\nRadius: ${selectedRadius}\nPasses: ${selectedPasses.join(', ')}\nPrioritize overnight: ${prioritizeOvernight}`);
         });
 
         // Mapbox token
