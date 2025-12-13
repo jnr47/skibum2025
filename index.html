@@ -458,6 +458,25 @@
             top: 0;
             background: white;
             z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .close-tray-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            transition: all 0.3s;
+            line-height: 1;
+        }
+        
+        .close-tray-btn:hover {
+            color: var(--text-dark);
+            transform: scale(1.1);
         }
         
         .results-title {
@@ -1053,6 +1072,10 @@
                             <span class="checkbox-label">Prioritize overnight parking</span>
                         </label>
                     </div>
+                    
+                    <button class="cta-primary" id="findResortsBtn" style="margin-top: 1rem;">
+                        Find My Top 3 Resorts
+                    </button>
                 </div>
             </div>
             
@@ -1063,8 +1086,11 @@
                 <!-- Results Tray (Hidden by Default) -->
                 <div class="results-tray" id="resultsTray">
                     <div class="results-header">
-                        <h2 class="results-title">Your Top Picks</h2>
-                        <p class="results-subtitle">Ranked by powder, parking, and passes</p>
+                        <div>
+                            <h2 class="results-title">Your Top Picks</h2>
+                            <p class="results-subtitle">Ranked by powder, parking, and passes</p>
+                        </div>
+                        <button class="close-tray-btn" id="closeTrayBtn">✕</button>
                     </div>
                     
                     <div class="results-list" id="resultsList">
@@ -1198,6 +1224,8 @@
         const showRecommendationsBtn = document.getElementById('showRecommendations');
         const filtersSection = document.getElementById('filtersSection');
         const resultsTray = document.getElementById('resultsTray');
+        const findResortsBtn = document.getElementById('findResortsBtn');
+        const closeTrayBtn = document.getElementById('closeTrayBtn');
         
         showRecommendationsBtn.addEventListener('click', () => {
             // Show filters with animation
@@ -1206,11 +1234,23 @@
             // Scroll to show filters in sidebar
             filtersSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             
-            // After a short delay, run the recommendation engine and show results
-            setTimeout(() => {
-                runRecommendationEngine();
-            }, 500);
+            // Don't auto-run - wait for user to select filters
+            // User will click a "Find Resorts" button after selecting filters
         });
+        
+        // Find Resorts button (appears after filters are shown)
+        if (findResortsBtn) {
+            findResortsBtn.addEventListener('click', () => {
+                runRecommendationEngine();
+            });
+        }
+        
+        // Close results tray
+        if (closeTrayBtn) {
+            closeTrayBtn.addEventListener('click', () => {
+                resultsTray.classList.remove('visible');
+            });
+        }
         
         // === CHIP INTERACTIONS ===
         // Trip radius chips (single select)
