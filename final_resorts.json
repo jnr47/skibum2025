@@ -1,0 +1,408 @@
+[
+  {
+    "name": "Jackson Hole",
+    "parking_score": 1,
+    "parking_policy": "Overnight parking in Teton Village lots is for hotel guests ONLY throughout the entire year. This is clearly stated on the official Jackson Hole Mountain Resort website and enforced year-round.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon",
+      "Mountain Collective"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 43.5875,
+      "lng": -110.8278
+    },
+    "region": null,
+    "latitude": 43.5875,
+    "longitude": -110.8278,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Partly cloudy, with a low around 25. Northwest wind around 5 mph.",
+    "last_updated": "2025-11-10T01:43:31.633Z"
+  },
+  {
+    "name": "Breckenridge",
+    "parking_score": 4,
+    "parking_policy": "Breckenridge Ski Resort prohibits overnight parking in all resort lots (towing enforced 2-6 AM). Town of Breckenridge allows overnight parking only at designated Stephen C. West Ice Arena for regular vehicles and Runway Oversize Lot for vehicles >20ft. Vehicle camping is strictly prohibited. Street parking banned 2-6 AM.",
+    "enforcement": "strict",
+    "allowed_lots": [
+      "Stephen C. West Ice Arena (regular vehicles only",
+      "<20ft)"
+    ],
+    "passes": [
+      "Epic"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 39.4817,
+      "lng": -106.0384
+    },
+    "region": null,
+    "latitude": 39.4817,
+    "longitude": -106.0384,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 22. West northwest wind 9 to 13 mph, with gusts as high as 21 mph.",
+    "last_updated": "2025-11-10T01:43:21.347Z"
+  },
+  {
+    "name": "Killington",
+    "parking_score": 6,
+    "parking_policy": "Winter car camping and overnight parking is officially allowed at Skyeship Base, but restricted to 2 nights per week maximum. Summer camping is allowed in the Vale Parking Lot.",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "Skyeship Base overflow lot",
+      "Vale Parking Lot (summer)"
+    ],
+    "passes": [
+      "Ikon",
+      "Uphill New England"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 43.6046,
+      "lng": -72.822
+    },
+    "region": null,
+    "latitude": 43.6046,
+    "longitude": -72.822,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Rain. Cloudy, with a low around 36. South wind 25 to 41 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.",
+    "last_updated": "2025-11-10T01:44:34.495Z"
+  },
+  {
+    "name": "Vail",
+    "parking_score": 3,
+    "parking_policy": "Official overnight parking is available but expensive ($60/night in Vail Village and Lionshead structures, $35 in Red Sandstone garage). Overnight parking is explicitly prohibited in Ford Park and Soccer lots. No overnight parking allowed 11pm-5am in most free lots. Town policy explicitly states 'camping is not allowed in Town of Vail limits' and 'overnight car camping is not permitted in the Vail Parking Structures.'",
+    "enforcement": "strict",
+    "allowed_lots": [
+      "Vail Village Parking Structure (paid - $60/night)",
+      "Lionshead Parking Structure (paid - $60/night)",
+      "Red Sandstone Garage (paid - $35/night winter",
+      "$15/night summer)"
+    ],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 39.6403,
+      "lng": -106.3742
+    },
+    "region": null,
+    "latitude": 39.6403,
+    "longitude": -106.3742,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 25. South southwest wind around 0 mph.",
+    "last_updated": "2025-11-10T01:43:06.465Z"
+  },
+  {
+    "name": "Arapahoe Basin",
+    "parking_score": 1,
+    "parking_policy": "Arapahoe Basin officially prohibits camping and overnight parking. Parking lots close at 6:00 PM and open at 7:00 AM. The resort states 'We do not allow camping or large vehicles such as RVs and trailers.' Gates are locked overnight, and paid parking reservations are required on weekends/holidays from Dec 21-May 4 ($20 unless carpooling with 4+ people).",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon",
+      "Mountain Collective"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 39.6426,
+      "lng": -105.8717
+    },
+    "region": null,
+    "latitude": 39.6426,
+    "longitude": -105.8717,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 23. West wind around 16 mph, with gusts as high as 25 mph.",
+    "last_updated": "2025-11-10T01:45:57.264Z"
+  },
+  {
+    "name": "Big Sky",
+    "parking_score": 1,
+    "parking_policy": "Big Sky Resort explicitly prohibits overnight parking and camping of any kind on resort-owned property. This includes all day parking lots (Mountain Village, Pony Express, Madison Base, Whitewater Inn, Golf Course, overflow lots). Camper vehicles can park during the day but must leave before overnight hours unless guests have valid Big Sky Resort Lodging parking tags.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon",
+      "Mountain Collective"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 45.2846,
+      "lng": -111.4008
+    },
+    "region": null,
+    "latitude": 45.2846,
+    "longitude": -111.4008,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly cloudy, with a low around 34. Southwest wind around 8 mph.",
+    "last_updated": "2025-11-10T01:43:53.943Z"
+  },
+  {
+    "name": "Mt. Bachelor",
+    "parking_score": 8,
+    "parking_policy": "Mt. Bachelor officially allows overnight RV/vehicle parking in their West Village parking lot for a fee. Winter rates are $40-75+ per night depending on power hookups and season. Reservations are required and must be booked online. Soft-sided tents are prohibited due to snow removal operations, but hard-sided RVs and vehicles are permitted year-round.",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "West Village parking lot (official paid overnight parking)"
+    ],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 43.979,
+      "lng": -121.688
+    },
+    "region": null,
+    "latitude": 43.979,
+    "longitude": -121.688,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly cloudy. High near 53, with temperatures falling to around 45 in the afternoon. Southwest wind around 6 mph.",
+    "last_updated": "2025-11-10T01:46:19.082Z"
+  },
+  {
+    "name": "Park City",
+    "parking_score": 1,
+    "parking_policy": "Overnight parking is explicitly prohibited at all Park City Mountain Resort surface parking lots and Mountain Village garage. The resort clearly states 'Please note that our surface parking lots are not available for overnight parking' and 'No overnight parking is permitted in Mountain Village Lots.'",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Epic"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 40.6514,
+      "lng": -111.5079
+    },
+    "region": null,
+    "latitude": 40.6514,
+    "longitude": -111.5079,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 36. West southwest wind around 2 mph.",
+    "last_updated": "2025-11-10T01:43:17.057Z"
+  },
+  {
+    "name": "Aspen Snowmass",
+    "parking_score": 1,
+    "parking_policy": "Overnight parking is explicitly prohibited at all Aspen Snowmass resort parking lots. This includes Buttermilk Main lot, West Buttermilk lot, Aspen Highlands Parking Garage, Base Village Parking Garage, Town Park Station (Rodeo Lot), Brush Creek Intercept Lot, and all Snowmass Village numbered lots. The policy is consistently stated across multiple official sources and strictly prohibits camping or sleeping in vehicles.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 39.1911,
+      "lng": -106.8175
+    },
+    "region": null,
+    "latitude": 39.1911,
+    "longitude": -106.8175,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 31. South wind around 5 mph.",
+    "last_updated": "2025-11-10T01:43:29.870Z"
+  },
+  {
+    "name": "Whistler Blackcomb",
+    "parking_score": 2,
+    "parking_policy": "Overnight parking is strictly prohibited in all Whistler resort parking lots from November 1 to March 31 for snow clearing operations. Sleeping in vehicles is banned on all Whistler roads, municipal parking lots, and private property for wildlife safety (bear protection). Municipality enforces no overnight parking in Day Lots 1-5 and Oversized Lot from 3 AM to 6 AM year-round. Resort-operated Upper Lots 6-8 and Creekside Parkade have new reservation system for 2025-26 season but still prohibit overnight stays.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Epic"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 50.1163,
+      "lng": -122.9574
+    },
+    "region": null,
+    "latitude": 50.1163,
+    "longitude": -122.9574,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Data unavailable",
+    "last_updated": "2025-11-10T01:42:59.989Z"
+  },
+  {
+    "name": "Mammoth Mountain",
+    "parking_score": 3,
+    "parking_policy": "Overnight parking is strictly prohibited in all Mammoth Mountain parking lots during winter season (November 1 - April 30). Violators will be towed or ticketed for obstructing snow removal. Summer allows limited overnight parking downhill from shuttle stop B on Highway 203 at owner's risk, but no overnight camping is allowed.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 37.6308,
+      "lng": -119.0326
+    },
+    "region": null,
+    "latitude": 37.6308,
+    "longitude": -119.0326,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Sunny. High near 50, with temperatures falling to around 45 in the afternoon. East northeast wind around 5 mph.",
+    "last_updated": "2025-11-10T01:43:56.707Z"
+  },
+  {
+    "name": "Steamboat",
+    "parking_score": 2,
+    "parking_policy": "Steamboat Resort has explicit no overnight parking policies at all resort lots. Upper Knoll Lot specifically prohibits overnight parking due to snow removal (2:00am-5:00am). Meadows Lot also prohibits overnight parking. Only option for overnight at resort is Steamboat Square Garage for $25/night for general public, though this is paid parking in a garage structure.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 40.458,
+      "lng": -106.8047
+    },
+    "region": null,
+    "latitude": 40.458,
+    "longitude": -106.8047,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 26. East wind around 0 mph.",
+    "last_updated": "2025-11-10T01:43:55.599Z"
+  },
+  {
+    "name": "Deer Valley",
+    "parking_score": 0,
+    "parking_policy": "Deer Valley Resort explicitly prohibits overnight parking anywhere on resort property. Their official website states 'Please note that overnight parking is NOT permitted anywhere at Deer Valley.' This policy is enforced during resort operating hours by Interstate Parking staff who monitor lots and issue tickets as needed.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 40.6374,
+      "lng": -111.4783
+    },
+    "region": null,
+    "latitude": 40.6374,
+    "longitude": -111.4783,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly clear, with a low around 34. West southwest wind around 3 mph.",
+    "last_updated": "2025-11-10T01:44:24.823Z"
+  },
+  {
+    "name": "Bridger Bowl",
+    "parking_score": 7,
+    "parking_policy": "Bridger Bowl allows overnight parking for self-contained RVs/vans with advance permission. Must contact facilities@bridgerbowl.com or check with resort staff. Allowed in lower lots only. No hookups available. Free parking when permitted. No overnight parking allowed from May through November.",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "Lower lots (specific lots not detailed in sources)"
+    ],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 45.8167,
+      "lng": -110.8969
+    },
+    "region": null,
+    "latitude": 45.8167,
+    "longitude": -110.8969,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Mostly cloudy, with a low around 36. West southwest wind around 6 mph.",
+    "last_updated": "2025-11-10T01:49:58.669Z"
+  },
+  {
+    "name": "Powderhorn",
+    "parking_score": 8,
+    "parking_policy": "Powderhorn officially allows overnight camping in the 4th dirt lot only. Overnight camping in lots 1, 2, and 3 is prohibited. Vehicles may be asked to move at any time for snow removal operations starting at 4:00am. During weekends, campers should use overflow parking lots rather than the third lot.",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "4th dirt lot",
+      "Overflow parking lots"
+    ],
+    "passes": [],
+    "snow_24h": null,
+    "snow_72h": null,
+    "coordinates": null,
+    "region": null
+  },
+  {
+    "name": "Kicking Horse",
+    "parking_score": 6,
+    "parking_policy": "Mixed information - some sources indicate free overnight RV parking is allowed in designated lots, while recent 2023 reports suggest enforcement has increased and overnight parking may no longer be permitted",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "First parking lot on the right as you enter the resort (next to heli-pad)"
+    ],
+    "passes": [],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 51.2514,
+      "lng": -117.0492
+    },
+    "region": null,
+    "latitude": 51.2514,
+    "longitude": -117.0492,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Data unavailable",
+    "last_updated": "2025-11-10T01:46:55.803Z"
+  },
+  {
+    "name": "Whitefish Mountain Resort",
+    "parking_score": 8,
+    "parking_policy": "Whitefish Mountain Resort officially allows RV and hard-sided vehicle overnight camping in the Aspen Lot for up to 3 days maximum stay. $25 per night plus tax fee required. Must register at Lodging Check-In in Upper Village before parking. First-come, first-served basis with limited spots available. No tents allowed, vehicles must be self-contained.",
+    "enforcement": "moderate",
+    "allowed_lots": [
+      "Aspen Lot (official overnight camping area)"
+    ],
+    "passes": [],
+    "snow_24h": null,
+    "snow_72h": null,
+    "coordinates": null,
+    "region": null
+  },
+  {
+    "name": "Stratton",
+    "parking_score": 2,
+    "parking_policy": "No official overnight parking or camping policy found on resort website. Multiple references to 'Resort Parking & Overnight Camping' page exist but content appears incomplete or inaccessible.",
+    "enforcement": "strict",
+    "allowed_lots": [],
+    "passes": [
+      "Ikon"
+    ],
+    "snow_24h": 0,
+    "snow_72h": null,
+    "coordinates": {
+      "lat": 43.1133,
+      "lng": -72.9083
+    },
+    "region": null,
+    "latitude": 43.1133,
+    "longitude": -72.9083,
+    "snow_48h": 0,
+    "snow_7day": 0,
+    "forecast_text": "Rain. Cloudy, with a low around 41. South wind 2 to 6 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.",
+    "last_updated": "2025-11-10T01:47:25.136Z"
+  }
+]
