@@ -1512,20 +1512,33 @@
                         el.style.backgroundColor = color;
                         el.style.display = 'none'; // Start hidden
                         
-                        const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-                            .setHTML(`
-                                <div class="popup-resort-name">${resort.name}</div>
-                                <div class="popup-snow-data" id="popup-${resort.id}">
-                                    Loading...
-                                </div>
-                            `);
+                        const popup = new mapboxgl.Popup({ offset: 25, closeButton: false });
                         
                         const marker = new mapboxgl.Marker(el)
                             .setLngLat([resort.lng, resort.lat])
                             .setPopup(popup)
                             .addTo(heroMap);
                         
-                        el.addEventListener('mouseenter', () => marker.togglePopup());
+                        el.addEventListener('mouseenter', () => {
+                            // Update popup content with current data
+                            const data = snowData ? snowData[resort.id] : null;
+                            if (data) {
+                                popup.setHTML(`
+                                    <div class="popup-resort-name">${resort.name}</div>
+                                    <div class="popup-snow-data">
+                                        <strong>24h:</strong> ${data.forecast24hr?.toFixed(1) || 0}"<br>
+                                        <strong>48h:</strong> ${data.forecast48hr?.toFixed(1) || 0}"<br>
+                                        <strong>7 day:</strong> ${data.forecast7day?.toFixed(1) || 0}"
+                                    </div>
+                                `);
+                            } else {
+                                popup.setHTML(`
+                                    <div class="popup-resort-name">${resort.name}</div>
+                                    <div class="popup-snow-data">Loading...</div>
+                                `);
+                            }
+                            marker.togglePopup();
+                        });
                         el.addEventListener('mouseleave', () => marker.togglePopup());
                         
                         resort.marker = marker;
@@ -1596,16 +1609,6 @@
                     const snowfall = data[resort.id][periodKey] || 0;
                     const color = getSnowfallColor(snowfall);
                     resort.markerEl.style.backgroundColor = color;
-                    
-                    // Update popup content
-                    const popupContent = document.getElementById(`popup-${resort.id}`);
-                    if (popupContent) {
-                        popupContent.innerHTML = `
-                            <strong>24h:</strong> ${data[resort.id].forecast24hr?.toFixed(1) || 0}"<br>
-                            <strong>48h:</strong> ${data[resort.id].forecast48hr?.toFixed(1) || 0}"<br>
-                            <strong>7 day:</strong> ${data[resort.id].forecast7day?.toFixed(1) || 0}"
-                        `;
-                    }
                 }
             });
         };
@@ -1644,13 +1647,17 @@
             
             const trendingGrid = document.getElementById('trendingGrid');
             
-            // Create array of resorts with snow data
-            const resortsWithSnow = resorts.map(resort => ({
+            // Only show resorts we have images for
+            const featuredResortNames = ['Palisades Tahoe', 'Breckenridge', 'Whistler Blackcomb', 'Park City', 'Big Sky', 'Vail'];
+            const featuredResorts = resorts.filter(r => featuredResortNames.includes(r.name));
+            
+            // Sort by 48h snowfall
+            const sortedResorts = featuredResorts.map(resort => ({
                 ...resort,
                 snow48h: snowData[resort.id]?.forecast48hr || 0
-            })).sort((a, b) => b.snow48h - a.snow48h).slice(0, 6);
+            })).sort((a, b) => b.snow48h - a.snow48h);
             
-            trendingGrid.innerHTML = resortsWithSnow.map(resort => {
+            trendingGrid.innerHTML = sortedResorts.map(resort => {
                 const image = resortImages[resort.name];
                 const snow48h = resort.snow48h.toFixed(1);
                 
