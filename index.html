@@ -69,8 +69,22 @@
         
         /* Map specific styles */
         .mapboxgl-popup-content { 
-            padding: 0; 
-            border-radius: 12px; 
+            padding: 15px; 
+            border-radius: 12px;
+            max-width: 280px;
+        }
+        
+        .popup-resort-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .popup-snow-data {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin: 0.25rem 0;
         }
         
         .marker { 
@@ -85,6 +99,62 @@
         
         .marker:hover { 
             transform: scale(1.2); 
+        }
+        
+        /* Snow Forecast Toggle Buttons */
+        .snow-toggle-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            gap: 8px;
+        }
+        
+        .toggle-btn {
+            padding: 8px 16px;
+            border: 2px solid #d1d5db;
+            background: white;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .toggle-btn:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-1px);
+        }
+        
+        .toggle-btn.active {
+            background: var(--accent-orange);
+            color: white;
+            border-color: var(--accent-orange);
+        }
+        
+        /* Loading indicator */
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .loading-indicator.visible {
+            display: block;
         }
         
         /* Navigation */
@@ -153,7 +223,7 @@
         /* Hero Section - TWO COLUMN LAYOUT */
         .hero {
             display: flex;
-            height: calc(100vh - 70px); /* Full height minus nav */
+            height: calc(100vh - 70px);
             background: var(--white);
             position: relative;
         }
@@ -800,6 +870,14 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
         
+        .trending-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
         .trending-image-placeholder {
             width: 100%;
             height: 160px;
@@ -1068,6 +1146,18 @@
             .email-form {
                 flex-direction: column;
             }
+            
+            .snow-toggle-controls {
+                top: 10px;
+                right: 10px;
+                flex-direction: column;
+                gap: 6px;
+            }
+            
+            .toggle-btn {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -1170,6 +1260,18 @@
             <!-- Right Side - Interactive Map -->
             <div class="map-container-hero">
                 <div class="map-box">
+                    <!-- Loading Indicator -->
+                    <div class="loading-indicator" id="loadingIndicator">
+                        <p>Loading snow data...</p>
+                    </div>
+                    
+                    <!-- Snow Forecast Toggle Controls -->
+                    <div class="snow-toggle-controls">
+                        <button class="toggle-btn active" data-timeframe="24h">24h</button>
+                        <button class="toggle-btn" data-timeframe="48h">48h</button>
+                        <button class="toggle-btn" data-timeframe="7day">7 day</button>
+                    </div>
+                    
                     <div id="hero-map"></div>
                     
                     <!-- Results Tray (Hidden by Default) -->
@@ -1200,55 +1302,8 @@
                 <h2 class="section-title">Where skiers are looking right now</h2>
                 <p class="section-subtitle">Based on snowfall, conditions, and seasonal patterns.</p>
                 
-                <div class="trending-grid">
-                    <!-- Resort cards will go here - placeholder for now -->
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Mt. Bachelor</h3>
-                        <p class="snow-badge">❄️ 12" last 48h</p>
-                        <span class="pass-badge-small">Ikon</span>
-                        <p class="trending-note">Storm cycle ongoing</p>
-                    </div>
-                    
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Jackson Hole</h3>
-                        <p class="snow-badge">❄️ 18" last 48h</p>
-                        <span class="pass-badge-small">Ikon</span>
-                        <p class="trending-note">Heavy powder</p>
-                    </div>
-                    
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Vail</h3>
-                        <p class="snow-badge">❄️ 6" last 48h</p>
-                        <span class="pass-badge-small">Epic</span>
-                        <p class="trending-note">Fresh grooming</p>
-                    </div>
-                    
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Steamboat</h3>
-                        <p class="snow-badge">❄️ 8" last 48h</p>
-                        <span class="pass-badge-small">Ikon</span>
-                        <p class="trending-note">Champagne powder</p>
-                    </div>
-                    
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Breckenridge</h3>
-                        <p class="snow-badge">❄️ 4" last 48h</p>
-                        <span class="pass-badge-small">Epic</span>
-                        <p class="trending-note">Summit accessible</p>
-                    </div>
-                    
-                    <div class="trending-card">
-                        <div class="trending-image-placeholder"></div>
-                        <h3>Killington</h3>
-                        <p class="snow-badge">❄️ 10" last 48h</p>
-                        <span class="pass-badge-small">Ikon</span>
-                        <p class="trending-note">East coast powder</p>
-                    </div>
+                <div class="trending-grid" id="trendingGrid">
+                    <!-- Will be populated with real snow data -->
                 </div>
             </div>
         </section>
@@ -1260,13 +1315,13 @@
                 <div class="feature-card">
                     <div class="feature-icon">🥽</div>
                     <h3>Skip the planning chaos</h3>
-                    <p>No more parking chaos. Snow + parking + passes in one filter_place.</p>
+                    <p>No more parking chaos. Snow + parking + passes in one place.</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">🏔️</div>
                     <h3>Sleep legally near the mountain</h3>
-                    <p>Overnight parking mules + nearby Hipcamp/Harvest, hC stays.</p>
+                    <p>Overnight parking rules + nearby Hipcamp/Harvest Hosts stays.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1369,224 +1424,129 @@
     </div>
 
     <script>
-        // === PROGRESSIVE DISCLOSURE ===
-        const showRecommendationsBtn = document.getElementById('showRecommendations');
-        const filtersSection = document.getElementById('filtersSection');
-        const resultsTray = document.getElementById('resultsTray');
-        const findResortsBtn = document.getElementById('findResortsBtn');
-        const closeTrayBtn = document.getElementById('closeTrayBtn');
-        
-        showRecommendationsBtn.addEventListener('click', () => {
-            // Show filters with animation
-            filtersSection.classList.add('visible');
-            
-            // Scroll to show filters in sidebar
-            filtersSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Don't auto-run - wait for user to select filters
-            // User will click a "Find Resorts" button after selecting filters
-        });
-        
-        // Find Resorts button (appears after filters are shown)
-        if (findResortsBtn) {
-            findResortsBtn.addEventListener('click', () => {
-                runRecommendationEngine();
-            });
-        }
-        
-        // Close results tray
-        if (closeTrayBtn) {
-            closeTrayBtn.addEventListener('click', () => {
-                resultsTray.classList.remove('visible');
-            });
-        }
-        
-        // === CHIP INTERACTIONS ===
-        // Trip radius chips (single select)
-        document.querySelectorAll('.radius-chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                document.querySelectorAll('.radius-chip').forEach(c => c.classList.remove('selected'));
-                chip.classList.add('selected');
-            });
-        });
-        
-        // Pass chips (multi-select)
-        document.querySelectorAll('.pass-chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                chip.classList.toggle('selected');
-            });
-        });
-        
-        // === SEARCH FUNCTIONALITY ===
-        const panelSearch = document.getElementById('panelSearch');
-        const resortList = [
-            'Jackson Hole', 'Vail', 'Breckenridge', 'Park City', 'Aspen Snowmass',
-            'Whistler Blackcomb', 'Mammoth Mountain', 'Killington', 'Steamboat',
-            'Deer Valley', 'Arapahoe Basin', 'Big Sky', 'Mt. Bachelor',
-            'Bridger Bowl', 'Powderhorn', 'Kicking Horse', 'Whitefish', 'Stratton'
-        ];
-        
-        if (panelSearch) {
-            panelSearch.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const value = e.target.value.toLowerCase();
-                    const match = resortList.find(resort => 
-                        resort.toLowerCase().includes(value)
-                    );
-                    
-                    if (match) {
-                        alert(`Navigating to ${match} (resort page coming soon)`);
-                    } else {
-                        alert('Resort not found. Try: Jackson Hole, Vail, Killington, etc.');
-                    }
-                }
-            });
-        }
-        
-        // === RECOMMENDATION ENGINE ===
-        function runRecommendationEngine() {
-            const selectedPasses = Array.from(document.querySelectorAll('.pass-chip.selected'))
-                .map(chip => chip.dataset.pass);
-            const selectedRadius = document.querySelector('.radius-chip.selected')?.dataset.radius;
-            const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
-            
-            console.log('Running recommendation engine:', {
-                passes: selectedPasses,
-                radius: selectedRadius,
-                prioritizeOvernight
-            });
-            
-            // Generate demo results
-            const results = getDemoResults(selectedPasses, prioritizeOvernight);
-            displayResults(results);
-            
-            // Show results tray
-            resultsTray.classList.add('visible');
-        }
-        
-        function getDemoResults(passes, prioritizeOvernight) {
-            // Demo data - replace with actual API call
-            const allResorts = [
-                {
-                    name: 'Mt. Bachelor',
-                    score: 8.2,
-                    snow: '12" last 48h',
-                    passes: ['Ikon'],
-                    parking: '8/10 Official overnight',
-                    distance: '5h drive'
-                },
-                {
-                    name: 'Bridger Bowl',
-                    score: 7.8,
-                    snow: '15" last 48h',
-                    passes: [],
-                    parking: '7/10 W/ permission',
-                    distance: '8h drive'
-                },
-                {
-                    name: 'Killington',
-                    score: 7.2,
-                    snow: '6" last 48h',
-                    passes: ['Ikon'],
-                    parking: '6/10 Skyeship lot',
-                    distance: 'Flight required'
-                },
-                {
-                    name: 'Vail',
-                    score: 6.8,
-                    snow: '4" last 48h',
-                    passes: ['Epic'],
-                    parking: '3/10 Paid only',
-                    distance: '2h drive'
-                },
-                {
-                    name: 'Steamboat',
-                    score: 6.5,
-                    snow: '8" last 48h',
-                    passes: ['Ikon'],
-                    parking: '2/10 Limited',
-                    distance: '3h drive'
-                }
-            ];
-            
-            // Filter by passes if selected
-            let filtered = allResorts;
-            if (passes.length > 0) {
-                filtered = allResorts.filter(resort => 
-                    resort.passes.some(pass => passes.includes(pass))
-                );
-            }
-            
-            return filtered.slice(0, 5);
-        }
-        
-        function displayResults(results) {
-            const resultsList = document.getElementById('resultsList');
-            const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
-            
-            resultsList.innerHTML = results.map((resort, index) => `
-                <div class="result-card">
-                    <div>
-                        <span class="result-rank">${emojis[index]}</span>
-                        <h3 class="result-name">${resort.name}</h3>
-                        <span class="result-score">${resort.score}/10</span>
-                    </div>
-                    
-                    <div class="result-details">
-                        <div class="result-detail">
-                            <span class="result-detail-label">❄️ SNOW</span>
-                            <span class="result-detail-value">${resort.snow}</span>
-                        </div>
-                        <div class="result-detail">
-                            <span class="result-detail-label">🎟️ PASS</span>
-                            <span class="result-detail-value">${resort.passes.length > 0 ? resort.passes.join(', ') : 'Independent'}</span>
-                        </div>
-                        <div class="result-detail">
-                            <span class="result-detail-label">🚐 PARKING</span>
-                            <span class="result-detail-value">${resort.parking}</span>
-                        </div>
-                        <div class="result-detail">
-                            <span class="result-detail-label">⏱️ DRIVE</span>
-                            <span class="result-detail-value">${resort.distance}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="result-actions">
-                        <button class="btn-small btn-view">View details</button>
-                        <button class="btn-small btn-plan">Plan trip</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        // Show more results button
-        document.getElementById('showMoreBtn')?.addEventListener('click', () => {
-            alert('Showing 2 more results (feature coming soon)');
-        });
-
-        // === MAPBOX INITIALIZATION ===
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
-        
-        const resortData = [
-            { id: 1, name: "Whistler Blackcomb", lat: 50.1163, lng: -122.9574 },
-            { id: 2, name: "Vail", lat: 39.6403, lng: -106.3742 },
-            { id: 3, name: "Park City", lat: 40.6514, lng: -111.5079 },
-            { id: 4, name: "Breckenridge", lat: 39.4817, lng: -106.0384 },
-            { id: 5, name: "Aspen Snowmass", lat: 39.1911, lng: -106.8175 },
-            { id: 6, name: "Jackson Hole", lat: 43.5875, lng: -110.8278 },
-            { id: 7, name: "Mammoth Mountain", lat: 37.6308, lng: -119.0326 },
-            { id: 8, name: "Palisades Tahoe", lat: 39.1970, lng: -120.2356 },
-            { id: 9, name: "Steamboat", lat: 40.4580, lng: -106.8047 },
-            { id: 10, name: "Big Sky", lat: 45.2846, lng: -111.4008 }
-        ];
-        
-        // Initialize hero map
+        // === GLOBAL STATE ===
+        let snowData = null;
         let heroMap = null;
+        let currentTimeframe = '24h';
+        let markers = [];
+        
+        // Resort images mapping (from your GitHub repo)
+        const resortImages = {
+            'Palisades Tahoe': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/palisades.avif',
+            'Jackson Hole': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/jackson-hole.avif',
+            'Vail': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/vail.avif',
+            'Steamboat': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/steamboat.avif',
+            'Breckenridge': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/breckenridge.avif',
+            'Mammoth Mountain': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/mammoth.avif',
+            'Big Sky': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/big-sky.avif',
+            'Aspen Snowmass': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/aspen.avif',
+            'Park City': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/park-city.avif',
+            'Whistler Blackcomb': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/whistler.avif'
+        };
+        
+        // === FETCH SNOW DATA ===
+        async function loadSnowData() {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            loadingIndicator.classList.add('visible');
+            
+            try {
+                const response = await fetch('snow-data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                snowData = await response.json();
+                console.log('Snow data loaded:', snowData);
+                
+                // Initialize everything that depends on snow data
+                initHeroMap();
+                populateTrendingSection();
+                
+            } catch (error) {
+                console.error('Error loading snow data:', error);
+                // Fallback: show message to user
+                alert('Unable to load snow forecast data. Please refresh the page.');
+            } finally {
+                loadingIndicator.classList.remove('visible');
+            }
+        }
+        
+        // === HELPER FUNCTIONS ===
+        function getSnowValue(resort, timeframe) {
+            if (timeframe === '24h') return resort.snowfall_24hr || 0;
+            if (timeframe === '48h') return resort.snowfall_48hr || 0;
+            return resort.snowfall_7day || 0;
+        }
+        
+        function getMarkerColor(snowfall) {
+            if (snowfall >= 10) return '#ec4899'; // Pink (heavy)
+            if (snowfall >= 5) return '#3b82f6';  // Blue (moderate)
+            if (snowfall >= 1) return '#7dd3fc';  // Light blue (light)
+            return '#9ca3af'; // Gray (no snow)
+        }
+        
+        // === MAP FUNCTIONS ===
+        function updateHeatmap(timeframe) {
+            currentTimeframe = timeframe;
+            
+            if (!heroMap || !heroMap.getSource('snowfall-heat') || !snowData) return;
+            
+            // Update heatmap data
+            heroMap.getSource('snowfall-heat').setData({
+                type: 'FeatureCollection',
+                features: snowData.resorts.map(resort => ({
+                    type: 'Feature',
+                    properties: { snowfall: getSnowValue(resort, timeframe) },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [resort.lng, resort.lat]
+                    }
+                }))
+            });
+            
+            // Update markers
+            markers.forEach(marker => marker.remove());
+            markers = [];
+            addMarkers(timeframe);
+        }
+        
+        function addMarkers(timeframe) {
+            if (!snowData) return;
+            
+            snowData.resorts.forEach(resort => {
+                const snowfall = getSnowValue(resort, timeframe);
+                const color = getMarkerColor(snowfall);
+                
+                const el = document.createElement('div');
+                el.className = 'marker';
+                el.style.backgroundColor = color;
+                
+                const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+                    .setHTML(`
+                        <div class="popup-resort-name">${resort.name}</div>
+                        <div class="popup-snow-data">
+                            <strong>24h:</strong> ${resort.snowfall_24hr?.toFixed(1) || 0}"<br>
+                            <strong>48h:</strong> ${resort.snowfall_48hr?.toFixed(1) || 0}"<br>
+                            <strong>7 day:</strong> ${resort.snowfall_7day?.toFixed(1) || 0}"
+                        </div>
+                    `);
+                
+                const marker = new mapboxgl.Marker(el)
+                    .setLngLat([resort.lng, resort.lat])
+                    .setPopup(popup)
+                    .addTo(heroMap);
+                
+                markers.push(marker);
+                
+                el.addEventListener('mouseenter', () => marker.togglePopup());
+                el.addEventListener('mouseleave', () => marker.togglePopup());
+            });
+        }
         
         function initHeroMap() {
             const mapContainer = document.getElementById('hero-map');
-            if (!mapContainer || heroMap) return;
+            if (!mapContainer || heroMap || !snowData) return;
+            
+            mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
             
             try {
                 heroMap = new mapboxgl.Map({
@@ -1603,16 +1563,14 @@
                         type: 'geojson',
                         data: {
                             type: 'FeatureCollection',
-                            features: resortData.map(function(resort) {
-                                return {
-                                    type: 'Feature',
-                                    properties: { snowfall: 10 },
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: [resort.lng, resort.lat]
-                                    }
-                                };
-                            })
+                            features: snowData.resorts.map(resort => ({
+                                type: 'Feature',
+                                properties: { snowfall: getSnowValue(resort, currentTimeframe) },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [resort.lng, resort.lat]
+                                }
+                            }))
                         }
                     });
 
@@ -1665,19 +1623,182 @@
                             ]
                         }
                     });
+                    
+                    // Add markers
+                    addMarkers(currentTimeframe);
                 });
             } catch (error) {
                 console.error('Error initializing hero map:', error);
             }
         }
         
-        // Initialize map when page loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(initHeroMap, 200);
+        // === TRENDING SECTION ===
+        function populateTrendingSection() {
+            if (!snowData) return;
+            
+            const trendingGrid = document.getElementById('trendingGrid');
+            
+            // Sort resorts by 48h snowfall and take top 6
+            const topResorts = [...snowData.resorts]
+                .sort((a, b) => (b.snowfall_48hr || 0) - (a.snowfall_48hr || 0))
+                .slice(0, 6);
+            
+            trendingGrid.innerHTML = topResorts.map(resort => {
+                const image = resortImages[resort.name];
+                const snow48h = resort.snowfall_48hr?.toFixed(1) || 0;
+                
+                return `
+                    <div class="trending-card">
+                        ${image ? 
+                            `<video class="trending-image" autoplay loop muted playsinline>
+                                <source src="${image}" type="video/mp4">
+                                <div class="trending-image-placeholder"></div>
+                            </video>` :
+                            `<div class="trending-image-placeholder"></div>`
+                        }
+                        <h3>${resort.name}</h3>
+                        <p class="snow-badge">❄️ ${snow48h}" last 48h</p>
+                        <p class="trending-note">${resort.forecast_text || 'Checking conditions'}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // === PROGRESSIVE DISCLOSURE ===
+        const showRecommendationsBtn = document.getElementById('showRecommendations');
+        const filtersSection = document.getElementById('filtersSection');
+        const resultsTray = document.getElementById('resultsTray');
+        const findResortsBtn = document.getElementById('findResortsBtn');
+        const closeTrayBtn = document.getElementById('closeTrayBtn');
+        
+        showRecommendationsBtn.addEventListener('click', () => {
+            filtersSection.classList.add('visible');
+            filtersSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+        
+        if (findResortsBtn) {
+            findResortsBtn.addEventListener('click', () => {
+                runRecommendationEngine();
             });
+        }
+        
+        if (closeTrayBtn) {
+            closeTrayBtn.addEventListener('click', () => {
+                resultsTray.classList.remove('visible');
+            });
+        }
+        
+        // === CHIP INTERACTIONS ===
+        document.querySelectorAll('.radius-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.radius-chip').forEach(c => c.classList.remove('selected'));
+                chip.classList.add('selected');
+            });
+        });
+        
+        document.querySelectorAll('.pass-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                chip.classList.toggle('selected');
+            });
+        });
+        
+        // === SEARCH FUNCTIONALITY ===
+        const panelSearch = document.getElementById('panelSearch');
+        
+        if (panelSearch) {
+            panelSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && snowData) {
+                    e.preventDefault();
+                    const value = e.target.value.toLowerCase();
+                    const match = snowData.resorts.find(resort => 
+                        resort.name.toLowerCase().includes(value)
+                    );
+                    
+                    if (match) {
+                        alert(`Navigating to ${match.name} (resort page coming soon)`);
+                    } else {
+                        alert('Resort not found. Try: Jackson Hole, Vail, Palisades, etc.');
+                    }
+                }
+            });
+        }
+        
+        // === RECOMMENDATION ENGINE ===
+        function runRecommendationEngine() {
+            if (!snowData) return;
+            
+            const selectedPasses = Array.from(document.querySelectorAll('.pass-chip.selected'))
+                .map(chip => chip.dataset.pass);
+            const selectedRadius = document.querySelector('.radius-chip.selected')?.dataset.radius;
+            const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
+            
+            // Sort by 48h snowfall
+            const results = [...snowData.resorts]
+                .sort((a, b) => (b.snowfall_48hr || 0) - (a.snowfall_48hr || 0))
+                .slice(0, 5);
+            
+            displayResults(results);
+            resultsTray.classList.add('visible');
+        }
+        
+        function displayResults(results) {
+            const resultsList = document.getElementById('resultsList');
+            const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+            
+            resultsList.innerHTML = results.map((resort, index) => {
+                const snow48h = resort.snowfall_48hr?.toFixed(1) || 0;
+                const snow7day = resort.snowfall_7day?.toFixed(1) || 0;
+                
+                return `
+                    <div class="result-card">
+                        <div>
+                            <span class="result-rank">${emojis[index]}</span>
+                            <h3 class="result-name">${resort.name}</h3>
+                        </div>
+                        
+                        <div class="result-details">
+                            <div class="result-detail">
+                                <span class="result-detail-label">❄️ 48H SNOW</span>
+                                <span class="result-detail-value">${snow48h}"</span>
+                            </div>
+                            <div class="result-detail">
+                                <span class="result-detail-label">📊 7 DAY</span>
+                                <span class="result-detail-value">${snow7day}"</span>
+                            </div>
+                            <div class="result-detail">
+                                <span class="result-detail-label">📍 STATUS</span>
+                                <span class="result-detail-value">${resort.forecast_text || 'Checking'}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button class="btn-small btn-view">View details</button>
+                            <button class="btn-small btn-plan">Plan trip</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        document.getElementById('showMoreBtn')?.addEventListener('click', () => {
+            alert('Showing 2 more results (feature coming soon)');
+        });
+        
+        // === TOGGLE BUTTON HANDLERS ===
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const timeframe = btn.dataset.timeframe;
+                updateHeatmap(timeframe);
+            });
+        });
+        
+        // === INITIALIZE ON PAGE LOAD ===
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadSnowData);
         } else {
-            setTimeout(initHeroMap, 200);
+            loadSnowData();
         }
 
         // Smooth scrolling
