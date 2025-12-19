@@ -6,329 +6,582 @@ SkiBum.com is a live snow tracking and ski trip planning platform that helps ski
 **Core Value Proposition:** 
 The fastest way to decide where to ski — and where to sleep. Snow, passes, and overnight parking all in one place.
 
-## Current Status (As of December 12, 2025)
+## Current Status (As of December 13, 2025)
 
-### 🎉 MAJOR MILESTONE: Decision Engine Built & Tested!
-
-**What's Complete:**
-- ✅ Parking research: 18 resorts with detailed scores and policies
-- ✅ Pass affiliation data: All 18 resorts mapped to Ikon/Epic/etc
-- ✅ Snow data integration: Live weather data from Open-Meteo API
-- ✅ Coordinates: All 18 resorts geocoded
-- ✅ **Working decision algorithm with real data**
-- ✅ **Successfully tested with 3 user scenarios**
-
-### What's Live on SkiBum.com
-- Homepage with interactive map (Mapbox)
-- 115 North American ski resorts tracked
+### What's Live
+- **Map-first homepage** with two-column layout (control panel + interactive map)
+- Interactive Mapbox map with snow heatmap visible above the fold
+- Progressive disclosure decision engine (minimal default state → expand on intent)
+- Results tray that overlays map (dismissible)
+- 117+ North American ski resorts tracked
 - Real-time snow data via Open-Meteo API
-- GitHub Actions automation (updates every 6 hours)
-- Hosted on Cloudflare Pages / Vercel backup
-- Vintage 1970s ski culture aesthetic
-- Mobile-optimized design
+- GitHub Actions automation for data updates
+- Hosted on Cloudflare Pages
+- "Where skiers are looking right now" trending section
+- Mobile-optimized responsive design
 
 ### Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
-- **Map:** Mapbox GL JS
-- **Weather Data:** Open-Meteo API (global coverage)
-- **Automation:** GitHub Actions (automated updates)
-- **Hosting:** Cloudflare Pages + Vercel backup
-- **Decision Engine:** Node.js JavaScript algorithm
-- **Data Pipeline:** Python scripts for research + merging
+- **Map:** Mapbox GL JS (interactive heatmap)
+- **Data:** Open-Meteo API (global weather coverage)
+- **Automation:** GitHub Actions (automated data updates)
+- **Hosting:** Cloudflare Pages
+- **Version Control:** GitHub
+- **Data Management:** Excel + Python scripts for parking research
+- **Decision Engine:** JavaScript algorithm (Node.js compatible)
 
----
+## Major UX Pivot (December 13, 2025)
 
-## 🎯 Strategic Direction: Decision Engine First
+### The Problem Identified
+Initial implementation was "form-first" - users had to fill out criteria before seeing any value. This:
+- Put cognitive load upfront
+- Hid the map (primary differentiator) below the fold
+- Felt like a planning tool, not an exploration surface
+- Made Skibum feel "needy" rather than confident
 
-**Old approach:** "Here's information about ski resorts"  
+### The New Direction: Map-First, Exploration-Focused
+
+**Old approach:** Form-heavy hero that asks for decisions before showing value
+**New approach:** Show value first (interactive map), ask for intent second
+
+### New Homepage Architecture
+
+**Two-Column Layout:**
+```
+┌─────────────────────────────────────────────────────┐
+│  [Left: Control Panel - 360px]  [Right: Map - flex] │
+│                                                      │
+│  Minimal default:                Interactive map    │
+│  - Search bar                    with snow heatmap  │
+│  - "or let us narrow it down"    (boxed, rounded    │
+│  - "See top picks" button        corners, shadow)   │
+│                                                      │
+│  Progressive disclosure:          Results tray      │
+│  Filters appear only after        slides up over    │
+│  clicking "See top picks"         map (dismissible) │
+└─────────────────────────────────────────────────────┘
+```
+
+**Key UX Principles:**
+1. **Show value immediately** - Map visible above fold, no scrolling needed
+2. **Minimal default state** - Search + one CTA, no cognitive overload
+3. **Progressive disclosure** - Filters appear only when user shows intent
+4. **User control** - Results are dismissible, user can close and re-open
+5. **Pull-based, not push-based** - Let users explore, don't force workflow
+
+### Homepage Copy (Finalized December 13, 2025)
+
+**Panel Header:**
+- Headline: "See where the best skiing is right now."
+- Subhead: "Live snow, pass coverage, and overnight options—all on one map."
+
+**Default State:**
+- Search placeholder: "Search a resort or mountain..."
+- Divider: "or let us narrow it down"
+- Primary CTA: "See top picks"
+
+**Expanded State (After CTA Click):**
+- Trip distance label: "Trip distance"
+- Chips: "Local (1–2 hr)", "Day/Weekend (2–4 hr)", "Weekend+ (4–6 hr)", "Destination (Flying)"
+- Pass coverage label: "Pass coverage"
+- Chips: "Ikon", "Epic", "Indy"
+- Checkbox: "Prioritize overnight parking (vanlife)"
+- CTA: "Show my top picks"
+
+**Results Tray:**
+- Header: "Your Top Picks"
+- Subtitle: "Ranked by current snow, access, and overnight options"
+- Close button: ✕ (top-right)
+
+## Critical Strategic Pivot (December 5, 2024)
+
+### The Problem Identified
+Current site is "informational" but not "irreplaceable." It shows data but doesn't make decisions for users.
+
+### The New Direction: Decision Engine First
+
+**Old approach:** "Here's information about ski resorts"
 **New approach:** "I will tell you where to go this weekend in 30 seconds"
 
-The hero decision form will be the primary product, with the map serving as a secondary exploration tool.
+The map becomes the hero, with the decision engine as a supporting tool for refinement.
 
 ### Core Differentiators
-1. **Pass-Aware Recommendations** ✅ WORKING - Filters by Ikon/Epic/Indy ownership + snow + parking
-2. **Parking Legality Layer** ✅ COMPLETE - 18 resorts researched, this is our moat
-3. **Vanlife-Friendly Focus** ✅ WORKING - Parking prioritization built into algorithm
-4. **Decision Engine** ✅ TESTED - "Show me the best places to go" vs browsing data manually
+1. **Pass-Aware Recommendations** - No other tool filters by Ikon/Epic/Indy ownership + snow + drive time
+2. **Parking Legality Layer** - First-class treatment of overnight parking rules (the moat)
+3. **Vanlife-Friendly Focus** - Not an afterthought; core to the product
+4. **Decision Engine** - "Show me the best places to go" vs browsing data manually
+5. **Map-First Exploration** - Value visible immediately, not hidden behind forms
 
----
-
-## 📊 Data Infrastructure (COMPLETE - December 12, 2025)
+## Data Infrastructure (Completed December 12, 2025)
 
 ### Parking Research System
 **Location:** `/Users/dad/Documents/skibum-research/`
 
-**Completed Research (18 Resorts):**
+**Components:**
+1. **research_resort_old.py** - Automated parking research using Claude API + web search
+   - Cost: ~$0.02-0.50 per resort
+   - Time: 60 seconds per resort
+   - Sources: Official sites, Reddit, vanlife forums, Campendium, iOverlander
+   - Output: Structured JSON with scores, policies, enforcement levels
 
-**Top Tier Parking (7-8/10):**
-- Mt. Bachelor - 8/10 (official paid overnight parking)
-- Powderhorn - 8/10 (4th dirt lot allowed)
-- Whitefish - 8/10 (Aspen Lot, $25/night, 3-day max)
-- Bridger Bowl - 7/10 (allowed with advance permission, winter only)
+2. **parking_database.py** - Excel database management
+   - Creates Excel template with auto-calculating formulas
+   - Imports automated research results
+   - Exports to JSON for production use
+   - Supports manual data entry and verification
 
-**Mid Tier Parking (4-6/10):**
-- Killington - 6/10 (Skyeship Base, 2 night/week limit)
-- Kicking Horse - 6/10 (mixed enforcement reports)
-- Breckenridge - 4/10 (town lots only, resort prohibited)
+3. **Excel Database** - `skibum_parking_database_YYYYMMDD.xlsx`
+   - 3 tabs: Resort Parking Data, Scoring Guide, Alternatives Database
+   - Auto-calculating parking scores and status
+   - Manual override capability for corrections
+   - 18 resorts researched (as of Dec 10)
 
-**Poor Parking (1-3/10):**
-- Vail - 3/10 ($35-60/night paid only)
-- Mammoth - 3/10 (strict winter prohibition)
-- Whistler - 2/10 (winter prohibition for snow removal)
-- Steamboat - 2/10 (no overnight except paid garage)
-- Stratton - 2/10 (unclear policy)
+**Completed Research (18 Resorts - December 12, 2025):**
 
-**No Parking (0-1/10):**
-- Jackson Hole - 1/10 (hotel guests only, strict)
-- Big Sky - 1/10 (strict prohibition)
+**Top 10 Most-Searched Resorts:**
+1. Jackson Hole - 1/10 (hotel guests only, strict enforcement)
+2. Vail - 3/10 (paid overnight $35-60, free lots prohibited)
+3. Breckenridge - 4/10 (town lots only, resort lots prohibited)
+4. Park City - Score TBD
+5. Aspen Snowmass - Score TBD
+6. Whistler Blackcomb - Score TBD
+7. Mammoth Mountain - Score TBD
+8. Killington - 6/10 (Skyeship Base allows overnight, 2 night/week limit)
+9. Steamboat - Score TBD
+10. Deer Valley - Score TBD
+
+**Additional Researched Resorts:**
 - Arapahoe Basin - 1/10 (gates lock overnight)
-- Park City - 1/10 (explicit prohibition)
-- Aspen Snowmass - 1/10 (explicit prohibition)
-- Deer Valley - 0/10 (strictest policy)
+- Big Sky - 1/10 (strict enforcement)
+- Mt. Bachelor - 8/10 (official paid overnight parking available)
+- Bridger Bowl - 7/10 (allowed with advance permission, winter only)
+- Powderhorn - Score TBD
+- Kicking Horse - Score TBD
+- Whitefish - Score TBD
+- Stratton - 2/10 (needs manual verification - conflicting data)
 
-### Data Pipeline (WORKING)
+**Key Findings:**
+- Resorts with official overnight parking: Mt. Bachelor, Bridger Bowl, Killington
+- Hostile resorts (strict enforcement, no alternatives): Jackson Hole, Big Sky, A-Basin
+- Mixed enforcement: Breckenridge (town allows, resort prohibits)
+- Cost range for paid overnight: $0 (free) to $75/night
 
-**Scripts Created:**
-1. `research_resort_old.py` - Automated parking research (Claude API + web search)
-2. `parking_database.py` - Excel database management with auto-scoring
-3. `merge_data.py` - Combines parking + pass affiliation data
-4. `merge_snow_data.py` - Integrates snow data from GitHub repo
-5. `test_algorithm.js` - Decision algorithm with real data testing
+### Pass Affiliation Database
+**File:** `Resorts_Global_Pass_Affiliations.csv`
+- 625 resorts globally
+- Pass types tracked: Ikon, Epic, Indy, Mountain Collective, Powder Alliance, Freedom, Power
+- Successfully merged with parking data
 
-**Data Flow:**
-```
-Parking Research → Excel Database → JSON Export
-        ↓
-Pass Affiliations (CSV) → Merge Script → merged_resorts.json
-        ↓
-GitHub Snow Data (115 resorts) → Merge Script → final_resorts.json (18 complete)
-        ↓
-Decision Algorithm → Ranked Recommendations
-```
+### Merged Resort Data
+**File:** `output/merged_resorts.json`
+- Combines parking scores + pass affiliations
+- 18 resorts with complete data
+- Ready for decision algorithm integration
+- Placeholders for snow data and coordinates (to be added)
 
-### Final Dataset Structure
-**File:** `final_resorts.json` (18 resorts)
+**Data Structure:**
 ```json
 {
-  "name": "Jackson Hole",
-  "parking_score": 1,
-  "parking_policy": "Full policy text...",
-  "enforcement": "strict",
-  "allowed_lots": [],
-  "passes": ["Ikon", "Mountain Collective"],
-  "latitude": 43.5875,
-  "longitude": -110.8278,
-  "coordinates": {"lat": 43.5875, "lng": -110.8278},
-  "snow_24h": 0,
-  "snow_48h": 0,
-  "snow_7day": 4.1,
-  "forecast_text": "Weather description",
-  "last_updated": "2025-12-12T18:41:47.312Z",
-  "region": null
+  "name": "Resort Name",
+  "parking_score": 0-10,
+  "parking_policy": "Full policy text",
+  "enforcement": "strict/moderate/relaxed",
+  "allowed_lots": ["Lot names"],
+  "passes": ["Ikon", "Epic"],
+  "snow_24h": null,
+  "snow_72h": null,
+  "coordinates": null,
+  "region": "State/Province"
 }
 ```
 
----
+## Decision Algorithm (Built December 12, 2025)
 
-## 🧮 Decision Algorithm (COMPLETE & TESTED)
+### Scoring Logic
+**File:** `decision_algorithm.js`
 
-### Scoring Formula
-```javascript
+**Formula:**
+```
 total_score = 
-  snow_score * 0.4 +      // 40% - Recent + forecast snowfall
-  pass_score * 0.2 +      // 20% - On user's pass = 10, not on pass = 0
-  parking_score * 0.4     // 40% - Parking legality (0-10 from research)
+  0.4 * snow_score +      // Recent + forecast snowfall
+  0.2 * pass_score +      // On user's pass = 10, not on pass = 0
+  0.2 * travel_score +    // Drive time bands
+  0.2 * overnight_score   // Parking legality score
 ```
 
-**Weights are configurable** - users can adjust priorities
+**Weights are configurable** - users can adjust priorities via "Prioritize overnight parking" checkbox
 
-### Snow Scoring Logic
-- **24h snowfall:** 60% weight (fresh powder most important!)
-- **7-day forecast:** 40% weight (upcoming conditions)
-- Thresholds: 6" = good, 12" = excellent
+**Current Status:**
+- ✅ Pass matching: WORKING (filters by Ikon/Epic/Indy)
+- ✅ Parking scoring: WORKING (uses research data)
+- ⚠️ Snow scoring: PLACEHOLDER (needs GitHub data integration)
+- ⚠️ Travel scoring: PLACEHOLDER (needs coordinates + distance calc)
 
-### Test Results (December 12, 2025)
+**Test Results:**
+For user with Ikon pass, algorithm correctly ranks:
+1. Mt. Bachelor (8.2/10) - Ikon + excellent parking (8/10)
+2. Killington (7.2/10) - Ikon + good parking (6/10)
+3. Jackson Hole (4.2/10) - Ikon + terrible parking (1/10)
 
-**Test 1: Ikon Pass Holder + Vanlifer**
-- Weights: Snow 30%, Pass 20%, Parking 50%
-- Winner: **Killington** (6/10 parking + Ikon pass match)
-- Algorithm correctly prioritized good parking over better parking with no pass
+Algorithm successfully prioritizes resorts with better parking when pass matches.
 
-**Test 2: Epic Pass Holder + Powder Chaser**
-- Weights: Snow 60%, Pass 30%, Parking 10%
-- Winner: **Breckenridge** (Epic pass match, decent parking)
-- Algorithm correctly prioritized pass + snow over parking
+## V1.5 Roadmap - Decision Engine Launch
 
-**Test 3: Balanced (Ikon + Epic holder)**
-- Weights: Snow 40%, Pass 30%, Parking 30%
-- Winner: **Killington** (best combo of all factors)
+### Phase 1: Data Foundation ✅ COMPLETED (December 12, 2025)
+**Goal:** Build the logic engine that powers recommendations
 
-**✅ Algorithm Status:** Fully functional, tested, ready for frontend integration
-
----
-
-## 🚀 Roadmap
-
-### Phase 1: Data Foundation ✅ COMPLETE
-- ✅ Parking research system (18 resorts)
+**Completed:**
+- ✅ Parking research system (18 resorts researched)
+- ✅ Excel database with auto-scoring
 - ✅ Pass affiliation data (625 resorts)
-- ✅ Snow data integration (GitHub automation)
-- ✅ Coordinates for all 18 resorts
-- ✅ Decision algorithm built and tested
+- ✅ Data merging pipeline (parking + passes)
+- ✅ Decision algorithm core logic
+- ✅ Pass-aware filtering working
 
-### Phase 2: Frontend Integration (NEXT UP)
-**Goal:** Build the decision form UI
+**Remaining:**
+- [ ] Integrate snow data from GitHub (Open-Meteo API)
+- [ ] Add resort coordinates for all resorts
+- [ ] Implement drive time calculation (Mapbox Directions API)
+- [ ] Research remaining top 30 resorts (12 more needed)
 
-**Tasks:**
-1. Create hero form component
-   - Input: Origin location
-   - Input: Pass selection (Ikon/Epic/Indy chips)
-   - Input: Priority sliders (Snow/Pass/Parking weights)
-   - Button: "Find My Resort"
+### Phase 2: Frontend Transformation ✅ COMPLETED (December 13, 2025)
+**Goal:** Rebuild homepage around map-first exploration
 
-2. Results display
-   - Top 5 ranked resorts
-   - Show: Name, total score, snow conditions, parking score, pass match
-   - Links to resort detail pages
+**Completed:**
+- ✅ Two-column layout (control panel + map)
+- ✅ Map visible above the fold
+- ✅ Minimal default state (search + one CTA)
+- ✅ Progressive disclosure filters
+- ✅ Results tray overlay with close button
+- ✅ "Where skiers are looking right now" trending section
+- ✅ Finalized all copy and microcopy
+- ✅ Mobile responsive design
 
-3. API endpoint setup
-   - Route: `/api/recommend`
-   - Accepts: origin, passes[], weights{}
-   - Returns: Ranked resort list
+**Remaining:**
+- [ ] Connect decision algorithm to real data
+- [ ] Search autocomplete dropdown UI
+- [ ] Map interactions (dim non-matching resorts on filter)
+- [ ] Drive time integration (Mapbox Directions API)
 
-4. Drive time integration (Mapbox Directions API)
-   - Calculate actual drive times from origin
-   - Add travel_score to algorithm (currently placeholder)
+### Phase 3: Content & SEO (Week 5-6)
+**Goal:** Make Skibum discoverable
 
-### Phase 3: Expand Coverage (Week 3-4)
-- Research remaining 12 resorts from Top 30 most-searched
-- Target: 30 resorts total with complete data
-- Continue expanding from there
+**Content Creation:**
+- [ ] Finish 18 resort detail pages
+- [ ] Add "Overnight Parking" sections to each
+- [ ] 5-10 high-value blog posts targeting long-tail keywords
 
-### Phase 4: Polish & Launch
-- QA testing (mobile, edge cases)
-- Analytics setup (GA4)
-- SEO optimization (resort pages with parking info)
-- Soft launch to trusted users
+**SEO Foundation:**
+- [ ] Schema markup for SkiResort + FAQ
+- [ ] Target keywords: "Ikon resorts near Denver with free parking"
+- [ ] Update meta descriptions and titles
+- [ ] Build internal linking structure
 
----
+### Phase 4: Polish & Launch (Week 7)
+- [ ] QA testing (hero form, scoring logic, mobile)
+- [ ] GA4 events (form submissions, result clicks, signups)
+- [ ] Heatmaps (Hotjar)
+- [ ] Launch content (Reddit posts, email, social)
+- [ ] Soft launch with 10-20 trusted users
 
-## 🎯 Success Metrics
+## Homepage UX Specification (December 13, 2025)
 
-**Phase 1 Complete (Current):**
-- ✅ 18 resorts with complete data
-- ✅ Working decision algorithm
-- ✅ Tested with multiple user scenarios
-- ✅ Data pipeline automated
+### Layout Structure
+**Two-Column Above the Fold:**
+- Left: Control panel (360px max width, collapsed by default)
+- Right: Interactive map (flex: 1, boxed with rounded corners and shadow)
+- Results: Overlay tray on map (slides up from bottom, dismissible)
 
-**Phase 2 Goals (Frontend):**
-- [ ] Hero form functional
-- [ ] Results displaying correctly
-- [ ] Drive time calculation working
-- [ ] Mobile responsive
+**Below the Fold:**
+- "Where skiers are looking right now" - Trending resorts section
+- "Why Skibum?" - Feature cards
+- Stats section
+- Newsletter signup
+- Footer
 
-**Launch Targets:**
-- 500+ decision form submissions (Week 1)
-- 100+ email signups (Week 1)
-- 2,000+ pageviews (Week 1)
+### Control Panel States
 
----
+**Default (Collapsed):**
+- Headline: "See where the best skiing is right now."
+- Subhead: "Live snow, pass coverage, and overnight options—all on one map."
+- Search input: "Search a resort or mountain..."
+- Divider: "or let us narrow it down"
+- Primary CTA: "See top picks"
 
-## 💭 Key Learnings
+**Expanded (After CTA Click):**
+- Trip distance chips: Local (1–2 hr), Day/Weekend (2–4 hr), Weekend+ (4–6 hr), Destination (Flying)
+- Pass coverage chips: Ikon, Epic, Indy
+- Overnight checkbox: "Prioritize overnight parking (vanlife)"
+- CTA: "Show my top picks"
+- Helper text: "Ranked by current snow, access, and overnight options"
 
-### What Worked Well
-1. **Hybrid automation:** Claude API for research (80%) + manual verification (20%) = high quality data
-2. **Simple data pipeline:** Python → JSON → JavaScript works smoothly
-3. **Modular approach:** Separate scripts for each step makes debugging easy
-4. **Testing early:** Caught issues before building frontend
+### Map Treatment
+- **Homepage:** Boxed container with rounded corners (16px), subtle shadow
+- **Map page:** Full-bleed, immersive
+- **Resort pages:** Embedded sections
 
-### Critical Success Factors
-1. **Parking data is the moat** - No competitor has this
-2. **Pass-aware filtering** - Users care deeply about "free with my pass"
-3. **Decision speed** - Algorithm must be fast (<1 second response)
-4. **Mobile-first** - Vanlifers are on phones in parking lots
+### Results Tray
+- Slides up over bottom of map
+- Header: "Your Top Picks" + subtitle + close button (✕)
+- Result cards show: Rank, Name, Score, Snow (last 48h), Pass badge, Parking score, Drive time
+- Actions: "View details", "Plan trip"
+- "Show 2 more options ↓" expandable
 
----
+### Trending Section
+- Headline: "Where skiers are looking right now"
+- Subhead: "Based on snowfall, conditions, and seasonal patterns."
+- 6-9 resort cards
+- Each card: Resort name, snow badge, pass badge, "why this matters" note
+- Links to resort detail pages
 
-## 📁 Repository Structure
+## Post-V1.5: Future Phases
 
-### Main Repo (GitHub: jnr47/skibum2025)
-```
-skibum2025/
-├── snow-data.json          # 115 resorts, auto-updated every 6hrs
-├── index.html              # Homepage with map
-├── map.html                # Full map view
-├── decision-engine/        # NEW - Decision algorithm files
-│   ├── final_resorts.json  # 18 resorts with complete data
-│   └── test_algorithm.js   # Algorithm test script
-└── .github/workflows/      # GitHub Actions for automation
-```
+### V2: UGC & Community (Weeks 8-10)
+- Parking intel submission form
+- User reviews/comments on resort pages
+- Voting: "Is this info still accurate?"
+- Community-sourced data validation
 
-### Research Repo (Local: ~/Documents/skibum-research)
+### V3: Trip Planning Tools (Weeks 11-13)
+- Multi-resort itinerary builder
+- "Save trips" with notes
+- Route optimization (fuel/time estimates)
+- Storm-chasing mode
+
+### V4: Monetization (Weeks 14-16)
+- SkiBum+ subscription ($5-10/mo)
+  * Advanced filters
+  * Storm alerts
+  * Trip planning tools
+- Optimized affiliate links (gear > hotels)
+- Partnership outreach to gear brands
+
+## Success Metrics
+
+**Week 1 Post-Launch:**
+- 500+ hero form submissions
+- 100+ email signups
+- 2,000+ pageviews
+
+**Month 1:**
+- 5,000+ hero form submissions
+- 500+ email list
+- 10+ organic mentions (Reddit/forums)
+- 3-5 parking pages ranking on Google page 1
+
+**Month 3:**
+- 20,000+ monthly users
+- 2,000+ email subscribers
+- First affiliate revenue ($100+)
+- User-submitted parking intel flowing
+
+## Technical Debt & Improvements Needed
+
+### Immediate (Phase 2 - In Progress)
+- [ ] Integrate snow data from GitHub into merged_resorts.json
+- [ ] Add coordinates for all 18 researched resorts
+- [ ] Implement Mapbox Directions API for drive times
+- [ ] Test algorithm with real snow data
+- [ ] Connect frontend decision engine to backend algorithm
+- [ ] Add search autocomplete dropdown UI
+
+### Short-term (V2)
+- [ ] Research remaining 12 resorts from Top 30
+- [ ] Create user accounts system
+- [ ] Build UGC submission workflow
+- [ ] Set up monthly auto-refresh of parking data
+- [ ] Investigate RV Life / Campendium API access
+
+### Long-term (V3+)
+- [ ] Mobile app
+- [ ] AI trip planner with natural language
+- [ ] Partnership integrations (resorts, gear brands)
+- [ ] Marketplace for parking spot exchange
+
+## Files & Repository Structure
+
+### Parking Research Repository
+**Location:** `/Users/dad/Documents/skibum-research/`
+
 ```
 skibum-research/
-├── research_resort_old.py      # Automated parking research
-├── parking_database.py         # Excel management
-├── merge_data.py               # Parking + passes merger
-├── merge_snow_data.py          # Snow data integration
-├── skibum_parking_database.xlsx # Master Excel database
-├── Resorts_Global_Pass_Affiliations.csv
-└── output/
-    ├── merged_resorts.json     # Parking + passes (18)
-    ├── final_resorts.json      # Complete dataset (18)
-    └── test_algorithm.js       # Algorithm test
+├── .env (API key)
+├── venv/ (Python virtual environment)
+├── research_resort_old.py (working research script)
+├── parking_database.py (Excel management)
+├── merge_data.py (combines parking + pass data)
+├── decision_algorithm.js (scoring logic)
+├── export_parking.py (Excel → JSON)
+├── skibum_parking_database_20241210.xlsx (master database)
+├── Resorts_Global_Pass_Affiliations.csv (625 resorts)
+├── output/
+│   ├── all_resorts_parking.json (18 resorts, parking only)
+│   ├── merged_resorts.json (18 resorts, parking + passes)
+│   ├── jackson_hole_parking.json
+│   ├── killington_parking.json
+│   └── [16 more individual resort files]
+└── README.md
 ```
 
+### Main SkiBum.com Repository
+**Location:** GitHub (separate repo)
+- Weather data (Open-Meteo API via GitHub Actions)
+- Map interface (Mapbox GL JS)
+- Frontend HTML/CSS/JS
+- 117 resort coordinates
+- Two-column homepage layout
+- Progressive disclosure decision engine
+
+**Next Integration Step:**
+Copy `merged_resorts.json` to main repo and integrate with existing snow data
+
+## Design Philosophy
+
+**UX Principles (December 13, 2025):**
+- **Show value first** - Map visible immediately, no scrolling
+- **Ask second** - Filters only appear when user shows intent
+- **Exploration over forms** - Pull-based, not push-based
+- **User control** - Everything is reversible and dismissible
+- **Confidence** - Product feels assured, not needy
+
+**Visual Design:**
+- Clean, modern interface
+- Map-first hero with boxed treatment (rounded corners, shadow)
+- Minimal default state (reduces cognitive load)
+- Progressive disclosure (filters appear on demand)
+- Mobile-first responsive design
+
+**Copy Principles:**
+- Direct and confident ("See" not "Where should")
+- Less question-heavy
+- Tighter, more precise language
+- Reinforces map-first mental model
+
+## Competitive Landscape
+
+**What Exists:**
+- OpenSnow: Best snow forecasting, but no pass awareness or parking intel
+- Epic/Ikon apps: Pass-specific, no multi-pass comparison or parking
+- OnTheSnow: General info, no decision engine
+- Vanlife apps: Not ski-focused, don't understand resort policies
+
+**SkiBum's Moat:**
+- Pass-aware recommendations (unique) ✅ WORKING
+- Parking legality database (no one else has this) ✅ 18 RESORTS COMPLETE
+- Vanlife-first UX (not an afterthought)
+- Decision engine vs information display ✅ ALGORITHM BUILT
+- Map-first exploration surface ✅ UX IMPLEMENTED
+
+## Key Resources & References
+
+### Parking Intel Sources (Validated)
+- **SnowBrains Article:** "North American Ski Resorts That Allow Camping" (Dec 2024)
+  - Lists 40+ resorts that officially allow overnight parking
+  - Validated against our research (Mt. Bachelor, Bridger Bowl confirmed)
+- Official resort websites (when accessible)
+- Reddit: r/vanlife, r/skiing
+- Campendium, iOverlander, TheDyrt
+- TGR Forums, Newschoolers
+
+### API Costs (Actual)
+- Claude API for parking research: $0.02-0.50 per resort
+- Open-Meteo API: Free
+- Mapbox (current usage): Free tier sufficient for MVP
+
+## Notes & Learnings
+
+### December 13, 2025 - UX Pivot to Map-First Layout
+**Accomplishments:**
+- Rebuilt homepage from form-first to map-first two-column layout
+- Implemented progressive disclosure (minimal default → expand on intent)
+- Created dismissible results tray that overlays map
+- Finalized all homepage copy and microcopy
+- Added "Where skiers are looking right now" trending section
+- Fixed JavaScript bugs (duplicate resortData declaration)
+- Achieved fully working interactive experience
+
+**Key Insights:**
+- "Show value first, ask for intent second" is the right UX approach
+- Map-first layout makes Skibum feel exploratory, not transactional
+- Progressive disclosure reduces cognitive load without hiding power
+- Dismissible results give users control and reduce friction
+- Boxed map (not full-bleed) signals "there's more below" and encourages scroll
+- Copy refinements ("See" not "Where should") increase confidence
+- Two clear paths (search OR recommend) is better than one combined input
+
+**UX Validation:**
+- Map loads properly with snow heatmap
+- Filters appear smoothly on CTA click
+- Results don't auto-populate (user selects criteria first)
+- Results tray can be closed and reopened
+- Mobile responsive (stacks vertically)
+
+**Cost Analysis:**
+- Total development time: ~4 hours for complete UX rebuild
+- Zero additional API costs (all frontend changes)
+- Significant UX improvement without backend changes needed
+
+### December 12, 2025 - Data Infrastructure Complete
+**Accomplishments:**
+- Built complete parking research pipeline (automated + manual verification)
+- Researched 18 resorts including all Top 10 most-searched
+- Created Excel database with auto-scoring formulas
+- Merged parking + pass data for 18 resorts
+- Built working decision algorithm with pass-aware filtering
+- Validated algorithm successfully ranks resorts by parking quality
+
+**Key Insights:**
+- Hybrid approach works best: automation (80%) + manual verification (20%)
+- Excel database provides flexibility for manual corrections
+- Pass matching is critical - users care more about "free with my pass" than absolute quality
+- Parking scores significantly affect rankings (Killington beats Jackson Hole despite both being Ikon)
+- Bot protection on official sites requires human verification for ~30% of resorts
+
+**Cost Analysis:**
+- Total spent on parking research: ~$5-10 for 18 resorts
+- Average: $0.28-0.56 per resort
+- Time saved vs manual: ~30-40 hours (2-3 hours manual vs 1 minute automated + 5 min verification)
+
+### December 5, 2024 - Research Automation Breakthrough
+- Built Claude API-powered research script
+- Validated it can reduce 90 hours of manual work to ~30 minutes
+- Discovered web search rate limits (30/second) - need 2-3 min spacing between searches
+- Original research approach works well, gives ~80% accuracy
+- Human review still critical for edge cases (Stratton example)
+- Cost per resort: $0.50-2.00 (very affordable at scale)
+
+### Critical Success Factors
+The parking legality layer is genuinely differentiated. No competitor owns this data. But it must be:
+1. Comprehensive (30+ resorts minimum for launch) - ✅ 18/30 complete
+2. Current (monthly refresh needed) - System built, automation ready
+3. Trustworthy (user verification + official sources) - Hybrid approach working
+4. Visible (front-and-center in UX, not buried) - ✅ Ready for integration
+
+The map-first UX is equally critical. It must:
+1. Show value immediately (no scrolling) - ✅ COMPLETE
+2. Reduce friction (minimal default state) - ✅ COMPLETE
+3. Feel confident, not needy - ✅ COMPLETE
+4. Support both exploration and decision-making - ✅ COMPLETE
+
+These two elements together make SkiBum irreplaceable.
+
 ---
 
-## 🔧 Next Session Priorities
-
-1. **Build frontend decision form**
-   - Create HTML/React component
-   - Wire up algorithm
-   - Test with real users
-
-2. **Add drive time calculation**
-   - Integrate Mapbox Directions API
-   - Complete the travel_score in algorithm
-
-3. **Research 12 more resorts**
-   - Complete Top 30 most-searched list
-   - Expand coverage to 30 total
+## Contact & Team
+- **Project Lead:** Jeff
+- **Role:** Global Alliance Manager at Cloudflare (day job)
+- **Goal:** Make ski trips tax-deductible research expenses 🎿
 
 ---
 
-## 📝 Session Summary - December 12, 2025
-
-**Major Accomplishments:**
-- ✅ Successfully merged parking data (18 resorts) with snow data from GitHub (115 resorts)
-- ✅ Added coordinates to all 18 researched resorts
-- ✅ Built and tested decision algorithm with real data
-- ✅ Validated algorithm with 3 different user scenarios
-- ✅ Created complete data pipeline: research → merge → algorithm → results
-
-**Files Created:**
-- `merge_snow_data.py` - Integrates GitHub snow data with parking research
-- `test_algorithm.js` - Working decision algorithm with real data
-- `final_resorts.json` - Complete dataset (18 resorts ready for production)
-
-**Technical Wins:**
-- Pass matching works correctly (Ikon/Epic prioritization)
-- Parking scores properly weighted
-- Snow scoring logic functional (tested in dry conditions)
-- Algorithm produces sensible rankings based on user preferences
-
-**Next Steps:**
-- Frontend form integration
-- Mapbox drive time calculation
-- Expand to 30 resorts
+## Next Session Priorities
+1. Connect decision engine to real merged_resorts.json data
+2. Integrate snow data from GitHub Actions
+3. Implement search autocomplete dropdown
+4. Add Mapbox Directions API for drive time calculation
+5. Map interactions (dim non-matching resorts when filters change)
+6. Test full workflow end-to-end with real data
 
 ---
 
-**Last Updated:** December 12, 2025  
-**Status:** 🟢 Phase 1 Complete - Decision Engine Ready  
-**Next Phase:** Frontend Integration
-
----
-
-*Ready to revolutionize ski trip planning! 🎿*
+*Last Updated: December 13, 2025*
