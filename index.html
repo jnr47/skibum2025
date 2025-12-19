@@ -39,8 +39,6 @@
     
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
     
     <style>
         * {
@@ -137,24 +135,6 @@
             background: var(--accent-orange);
             color: white;
             border-color: var(--accent-orange);
-        }
-        
-        /* Loading indicator */
-        .loading-indicator {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .loading-indicator.visible {
-            display: block;
         }
         
         /* Navigation */
@@ -383,40 +363,6 @@
             font-size: 0.9rem;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
-        }
-        
-        /* Pass Chips */
-        .pass-chips {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-        
-        .pass-chip {
-            flex: 1;
-            min-width: 100px;
-            padding: 0.75rem 1rem;
-            border: 2px solid #d1d5db;
-            border-radius: 8px;
-            background: white;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            user-select: none;
-        }
-        
-        .pass-chip:hover {
-            border-color: var(--pass-gold);
-            transform: translateY(-2px);
-        }
-        
-        .pass-chip.selected {
-            background: var(--pass-gold);
-            color: white;
-            border-color: var(--pass-gold);
         }
         
         /* Trip Radius Chips */
@@ -694,138 +640,6 @@
             color: var(--accent-orange);
         }
         
-        /* Submit Button */
-        .submit-btn {
-            width: 100%;
-            padding: 0.875rem 1.5rem;
-            background: var(--accent-orange);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-        }
-        
-        .submit-btn:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-        
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-        
-        .form-subtext {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 0.75rem;
-        }
-        
-        .scroll-indicator {
-            margin-top: 0.75rem;
-            font-size: 0.8rem;
-            opacity: 0.8;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        /* Map Section Header */
-        .map-section-header {
-            text-align: center;
-            padding: 2rem 2rem 1rem;
-            background: var(--cream);
-        }
-        
-        .map-section-header h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-        
-        .map-section-header p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Section Containers */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Map Preview Container */
-        .map-preview {
-            background: var(--cream);
-            padding: 0 2rem 3rem;
-        }
-        
-        .map-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            height: 500px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        #preview-map {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .map-cta {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            padding: 0.625rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            display: inline-block;
-        }
-        
-        .btn-primary {
-            background: var(--accent-orange);
-            color: var(--white);
-        }
-        
-        .btn-primary:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-        }
-        
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary-blue);
-            border: 2px solid var(--primary-blue);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-        
         /* Section Containers */
         .container {
             max-width: 1200px;
@@ -837,6 +651,13 @@
         .trending-section {
             background: var(--white);
             padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
         
         .section-subtitle {
@@ -920,13 +741,6 @@
         .features {
             background: var(--white);
             padding: 4rem 2rem;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 3rem;
-            color: var(--text-dark);
         }
         
         .features-grid {
@@ -1260,15 +1074,10 @@
             <!-- Right Side - Interactive Map -->
             <div class="map-container-hero">
                 <div class="map-box">
-                    <!-- Loading Indicator -->
-                    <div class="loading-indicator" id="loadingIndicator">
-                        <p>Loading snow data...</p>
-                    </div>
-                    
                     <!-- Snow Forecast Toggle Controls -->
                     <div class="snow-toggle-controls">
-                        <button class="toggle-btn active" data-timeframe="24h">24h</button>
-                        <button class="toggle-btn" data-timeframe="48h">48h</button>
+                        <button class="toggle-btn active" data-timeframe="24hr">24h</button>
+                        <button class="toggle-btn" data-timeframe="48hr">48h</button>
                         <button class="toggle-btn" data-timeframe="7day">7 day</button>
                     </div>
                     
@@ -1276,22 +1085,22 @@
                     
                     <!-- Results Tray (Hidden by Default) -->
                     <div class="results-tray" id="resultsTray">
-                    <div class="results-header">
-                        <div>
-                            <h2 class="results-title">Your Top Picks</h2>
-                            <p class="results-subtitle">Ranked by current snow, access, and overnight options</p>
+                        <div class="results-header">
+                            <div>
+                                <h2 class="results-title">Your Top Picks</h2>
+                                <p class="results-subtitle">Ranked by current snow, access, and overnight options</p>
+                            </div>
+                            <button class="close-tray-btn" id="closeTrayBtn">✕</button>
                         </div>
-                        <button class="close-tray-btn" id="closeTrayBtn">✕</button>
+                        
+                        <div class="results-list" id="resultsList">
+                            <!-- Results will be inserted here via JavaScript -->
+                        </div>
+                        
+                        <div class="show-more">
+                            <button class="show-more-btn" id="showMoreBtn">Show 2 more options ↓</button>
+                        </div>
                     </div>
-                    
-                    <div class="results-list" id="resultsList">
-                        <!-- Results will be inserted here via JavaScript -->
-                    </div>
-                    
-                    <div class="show-more">
-                        <button class="show-more-btn" id="showMoreBtn">Show 2 more options ↓</button>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -1315,7 +1124,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🥽</div>
                     <h3>Skip the planning chaos</h3>
-                    <p>No more parking chaos. Snow + parking + passes in one place.</p>
+                    <p>Snow + parking + passes in one place.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -1364,7 +1173,7 @@
                 
                 <form class="email-form">
                     <input type="email" class="email-input" placeholder="your@email.com" required>
-                    <button type="submit" class="btn btn-primary">Join Free</button>
+                    <button type="submit" class="btn cta-primary">Join Free</button>
                 </form>
                 
                 <p class="reassurance">No spam. Ever.</p>
@@ -1427,7 +1236,7 @@
         // === GLOBAL STATE ===
         let snowData = null;
         let heroMap = null;
-        let currentTimeframe = '24h';
+        let currentTimeframe = '24hr';
         let markers = [];
         
         // Resort images mapping (from your GitHub repo)
@@ -1444,107 +1253,174 @@
             'Whistler Blackcomb': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/whistler.avif'
         };
         
+        // === 117 RESORT DATA (from map.html) ===
+        const resorts = [
+            { id: 1, name: "Whistler Blackcomb", lat: 50.1163, lng: -122.9574, state: "British Columbia", country: "Canada" },
+            { id: 2, name: "Vail", lat: 39.6403, lng: -106.3742, state: "Colorado", country: "USA" },
+            { id: 3, name: "Park City", lat: 40.6514, lng: -111.5079, state: "Utah", country: "USA" },
+            { id: 4, name: "Breckenridge", lat: 39.4817, lng: -106.0384, state: "Colorado", country: "USA" },
+            { id: 5, name: "Heavenly", lat: 38.9350, lng: -119.9403, state: "California", country: "USA" },
+            { id: 6, name: "Aspen Snowmass", lat: 39.1911, lng: -106.8175, state: "Colorado", country: "USA" },
+            { id: 7, name: "Jackson Hole", lat: 43.5875, lng: -110.8278, state: "Wyoming", country: "USA" },
+            { id: 8, name: "Banff Sunshine", lat: 51.1158, lng: -115.7631, state: "Alberta", country: "Canada" },
+            { id: 9, name: "Lake Louise", lat: 51.4254, lng: -116.1773, state: "Alberta", country: "Canada" },
+            { id: 10, name: "Big Sky", lat: 45.2846, lng: -111.4008, state: "Montana", country: "USA" },
+            { id: 11, name: "Steamboat", lat: 40.4580, lng: -106.8047, state: "Colorado", country: "USA" },
+            { id: 12, name: "Mammoth Mountain", lat: 37.6308, lng: -119.0326, state: "California", country: "USA" },
+            { id: 13, name: "Squaw Valley", lat: 39.1970, lng: -120.2356, state: "California", country: "USA" },
+            { id: 14, name: "Telluride", lat: 37.9375, lng: -107.8123, state: "Colorado", country: "USA" },
+            { id: 15, name: "Sun Valley", lat: 43.6966, lng: -114.3553, state: "Idaho", country: "USA" },
+            { id: 16, name: "Deer Valley", lat: 40.6374, lng: -111.4783, state: "Utah", country: "USA" },
+            { id: 17, name: "Killington", lat: 43.6046, lng: -72.8220, state: "Vermont", country: "USA" },
+            { id: 18, name: "Stowe", lat: 44.5303, lng: -72.7817, state: "Vermont", country: "USA" },
+            { id: 19, name: "Alta", lat: 40.5885, lng: -111.6376, state: "Utah", country: "USA" },
+            { id: 20, name: "Snowbird", lat: 40.5803, lng: -111.6573, state: "Utah", country: "USA" },
+            { id: 21, name: "Taos", lat: 36.5924, lng: -105.4467, state: "New Mexico", country: "USA" },
+            { id: 22, name: "Copper Mountain", lat: 39.5022, lng: -106.1506, state: "Colorado", country: "USA" },
+            { id: 23, name: "Winter Park", lat: 39.8868, lng: -105.7625, state: "Colorado", country: "USA" },
+            { id: 24, name: "Keystone", lat: 39.6050, lng: -105.9347, state: "Colorado", country: "USA" },
+            { id: 25, name: "Arapahoe Basin", lat: 39.6426, lng: -105.8717, state: "Colorado", country: "USA" },
+            { id: 26, name: "Crested Butte", lat: 38.8997, lng: -106.9653, state: "Colorado", country: "USA" },
+            { id: 27, name: "Loveland", lat: 39.6803, lng: -105.8978, state: "Colorado", country: "USA" },
+            { id: 28, name: "Mt. Bachelor", lat: 43.9790, lng: -121.6880, state: "Oregon", country: "USA" },
+            { id: 29, name: "Crystal Mountain", lat: 46.9358, lng: -121.4742, state: "Washington", country: "USA" },
+            { id: 30, name: "Stevens Pass", lat: 47.7453, lng: -121.0892, state: "Washington", country: "USA" },
+            { id: 31, name: "Mt. Baker", lat: 48.8597, lng: -121.6686, state: "Washington", country: "USA" },
+            { id: 32, name: "Schweitzer", lat: 48.3642, lng: -116.6228, state: "Idaho", country: "USA" },
+            { id: 33, name: "Sun Peaks", lat: 50.8817, lng: -119.8847, state: "British Columbia", country: "Canada" },
+            { id: 34, name: "Revelstoke", lat: 50.9981, lng: -118.1956, state: "British Columbia", country: "Canada" },
+            { id: 35, name: "Fernie", lat: 49.4653, lng: -115.0636, state: "British Columbia", country: "Canada" },
+            { id: 36, name: "Big White", lat: 49.7311, lng: -118.9350, state: "British Columbia", country: "Canada" },
+            { id: 37, name: "Kicking Horse", lat: 51.2514, lng: -117.0492, state: "British Columbia", country: "Canada" },
+            { id: 38, name: "Mont Tremblant", lat: 46.2094, lng: -74.5847, state: "Quebec", country: "Canada" },
+            { id: 39, name: "Blue Mountain", lat: 44.5075, lng: -80.3231, state: "Ontario", country: "Canada" },
+            { id: 40, name: "Sugarloaf", lat: 45.0314, lng: -70.3139, state: "Maine", country: "USA" },
+            { id: 41, name: "Sunday River", lat: 44.4697, lng: -70.8561, state: "Maine", country: "USA" },
+            { id: 42, name: "Sugarbush", lat: 44.1350, lng: -72.9017, state: "Vermont", country: "USA" },
+            { id: 43, name: "Stratton", lat: 43.1133, lng: -72.9083, state: "Vermont", country: "USA" },
+            { id: 44, name: "Okemo", lat: 43.4017, lng: -72.7167, state: "Vermont", country: "USA" },
+            { id: 45, name: "Jay Peak", lat: 44.9378, lng: -72.5036, state: "Vermont", country: "USA" },
+            { id: 46, name: "Smugglers' Notch", lat: 44.5458, lng: -72.7872, state: "Vermont", country: "USA" },
+            { id: 47, name: "Loon Mountain", lat: 44.0369, lng: -71.6206, state: "New Hampshire", country: "USA" },
+            { id: 48, name: "Cannon Mountain", lat: 44.1572, lng: -71.6978, state: "New Hampshire", country: "USA" },
+            { id: 49, name: "Wildcat Mountain", lat: 44.2636, lng: -71.2328, state: "New Hampshire", country: "USA" },
+            { id: 50, name: "Bretton Woods", lat: 44.2633, lng: -71.4439, state: "New Hampshire", country: "USA" },
+            { id: 51, name: "Snowbasin", lat: 41.2156, lng: -111.8567, state: "Utah", country: "USA" },
+            { id: 52, name: "Powder Mountain", lat: 41.3814, lng: -111.7806, state: "Utah", country: "USA" },
+            { id: 53, name: "Solitude", lat: 40.6200, lng: -111.5917, state: "Utah", country: "USA" },
+            { id: 54, name: "Brighton", lat: 40.5981, lng: -111.5831, state: "Utah", country: "USA" },
+            { id: 55, name: "Snowmass", lat: 39.2133, lng: -106.9378, state: "Colorado", country: "USA" },
+            { id: 56, name: "Aspen Highlands", lat: 39.1825, lng: -106.8553, state: "Colorado", country: "USA" },
+            { id: 57, name: "Buttermilk", lat: 39.2078, lng: -106.8608, state: "Colorado", country: "USA" },
+            { id: 58, name: "Beaver Creek", lat: 39.6042, lng: -106.5164, state: "Colorado", country: "USA" },
+            { id: 59, name: "Purgatory", lat: 37.6303, lng: -107.8139, state: "Colorado", country: "USA" },
+            { id: 60, name: "Wolf Creek", lat: 37.4722, lng: -106.7931, state: "Colorado", country: "USA" },
+            { id: 61, name: "Monarch Mountain", lat: 38.5117, lng: -106.3317, state: "Colorado", country: "USA" },
+            { id: 62, name: "Eldora", lat: 39.9372, lng: -105.5828, state: "Colorado", country: "USA" },
+            { id: 63, name: "Grand Targhee", lat: 43.7886, lng: -110.9586, state: "Wyoming", country: "USA" },
+            { id: 64, name: "Snow King", lat: 43.4783, lng: -110.7628, state: "Wyoming", country: "USA" },
+            { id: 65, name: "Bridger Bowl", lat: 45.8167, lng: -110.8969, state: "Montana", country: "USA" },
+            { id: 66, name: "Big Mountain", lat: 48.4928, lng: -114.3483, state: "Montana", country: "USA" },
+            { id: 67, name: "Snowbowl", lat: 46.9417, lng: -113.9492, state: "Montana", country: "USA" },
+            { id: 68, name: "Grand Valira", lat: 42.5397, lng: 1.7350, state: "Andorra", country: "Andorra" },
+            { id: 69, name: "Bogus Basin", lat: 43.7725, lng: -116.0939, state: "Idaho", country: "USA" },
+            { id: 70, name: "Tamarack", lat: 44.6922, lng: -116.1344, state: "Idaho", country: "USA" },
+            { id: 71, name: "Silver Mountain", lat: 47.6764, lng: -116.0703, state: "Idaho", country: "USA" },
+            { id: 72, name: "Mt. Hood Meadows", lat: 45.3319, lng: -121.6653, state: "Oregon", country: "USA" },
+            { id: 73, name: "Timberline", lat: 45.3306, lng: -121.7108, state: "Oregon", country: "USA" },
+            { id: 74, name: "Willamette Pass", lat: 43.6006, lng: -122.0336, state: "Oregon", country: "USA" },
+            { id: 75, name: "Mission Ridge", lat: 47.2917, lng: -120.3997, state: "Washington", country: "USA" },
+            { id: 76, name: "Snoqualmie", lat: 47.4219, lng: -121.4136, state: "Washington", country: "USA" },
+            { id: 77, name: "Mt. Spokane", lat: 47.9208, lng: -117.0856, state: "Washington", country: "USA" },
+            { id: 78, name: "White Pass", lat: 46.6394, lng: -121.3908, state: "Washington", country: "USA" },
+            { id: 79, name: "49 Degrees North", lat: 48.7511, lng: -117.6369, state: "Washington", country: "USA" },
+            { id: 80, name: "Red Mountain", lat: 49.0917, lng: -117.8233, state: "British Columbia", country: "Canada" },
+            { id: 81, name: "Whitewater", lat: 49.5394, lng: -117.2717, state: "British Columbia", country: "Canada" },
+            { id: 82, name: "Panorama", lat: 50.8036, lng: -116.0533, state: "British Columbia", country: "Canada" },
+            { id: 83, name: "Marmot Basin", lat: 52.8236, lng: -118.0747, state: "Alberta", country: "Canada" },
+            { id: 84, name: "Nakiska", lat: 50.9800, lng: -115.0733, state: "Alberta", country: "Canada" },
+            { id: 85, name: "Castle Mountain", lat: 49.4058, lng: -114.5169, state: "Alberta", country: "Canada" },
+            { id: 86, name: "Norquay", lat: 51.1967, lng: -115.5531, state: "Alberta", country: "Canada" },
+            { id: 87, name: "Le Massif", lat: 47.3136, lng: -70.6358, state: "Quebec", country: "Canada" },
+            { id: 88, name: "Calabogie", lat: 45.2906, lng: -76.7019, state: "Ontario", country: "Canada" },
+            { id: 89, name: "Sierra-at-Tahoe", lat: 38.7986, lng: -120.0828, state: "California", country: "USA" },
+            { id: 90, name: "Kirkwood", lat: 38.6867, lng: -120.0656, state: "California", country: "USA" },
+            { id: 91, name: "Northstar", lat: 39.2733, lng: -120.1211, state: "California", country: "USA" },
+            { id: 92, name: "Homewood", lat: 39.0833, lng: -120.1667, state: "California", country: "USA" },
+            { id: 93, name: "Mt. Rose", lat: 39.3397, lng: -119.8894, state: "Nevada", country: "USA" },
+            { id: 94, name: "Diamond Peak", lat: 39.2525, lng: -119.9169, state: "Nevada", country: "USA" },
+            { id: 95, name: "June Mountain", lat: 37.7853, lng: -119.0781, state: "California", country: "USA" },
+            { id: 96, name: "Bear Mountain", lat: 34.2350, lng: -116.8650, state: "California", country: "USA" },
+            { id: 97, name: "Snow Summit", lat: 34.2306, lng: -116.8886, state: "California", country: "USA" },
+            { id: 98, name: "Mountain High", lat: 34.3811, lng: -117.6881, state: "California", country: "USA" },
+            { id: 99, name: "Ski Santa Fe", lat: 35.7869, lng: -105.7961, state: "New Mexico", country: "USA" },
+            { id: 100, name: "Angel Fire", lat: 36.3975, lng: -105.2886, state: "New Mexico", country: "USA" },
+            { id: 101, name: "Whiteface Mountain", lat: 44.3659, lng: -73.9024, state: "New York", country: "USA" },
+            { id: 102, name: "Bristol Mountain", lat: 42.7455, lng: -77.4016, state: "New York", country: "USA" }
+        ];
+        
         // === FETCH SNOW DATA ===
         async function loadSnowData() {
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            loadingIndicator.classList.add('visible');
+            console.log('Fetching real snow data...');
+            const newData = {};
+            const heatmapFeatures = [];
             
             try {
-                const response = await fetch('snow-data.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                snowData = await response.json();
-                console.log('Snow data loaded:', snowData);
+                const response = await fetch('/snow-data.json');
+                const snowDataResponse = await response.json();
                 
-                // Initialize everything that depends on snow data
-                initHeroMap();
-                populateTrendingSection();
-                
+                resorts.forEach((resort) => {
+                    const data = snowDataResponse.resorts.find(r => 
+                        Math.abs(r.lat - resort.lat) < 0.01 && 
+                        Math.abs(r.lng - resort.lng) < 0.01
+                    );
+                    
+                    if (data && !data.error) {
+                        newData[resort.id] = {
+                            forecast24hr: data.snowfall_24hr || 0,
+                            forecast48hr: data.snowfall_48hr || 0,
+                            forecast7day: data.snowfall_7day || 0
+                        };
+                        
+                        const snowfall = data.snowfall_24hr || 0;
+                        if (snowfall > 0) {
+                            heatmapFeatures.push({
+                                type: 'Feature',
+                                properties: { snowfall: snowfall },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [resort.lng, resort.lat]
+                                }
+                            });
+                        }
+                    } else {
+                        newData[resort.id] = {
+                            forecast24hr: 0,
+                            forecast48hr: 0,
+                            forecast7day: 0
+                        };
+                    }
+                });
             } catch (error) {
-                console.error('Error loading snow data:', error);
-                // Fallback: show message to user
-                alert('Unable to load snow forecast data. Please refresh the page.');
-            } finally {
-                loadingIndicator.classList.remove('visible');
+                console.error('Error fetching snow data:', error);
+            }
+
+            snowData = newData;
+            updateMarkers(newData);
+            populateTrendingSection();
+
+            if (heroMap && heroMap.getSource('snowfall-heat')) {
+                heroMap.getSource('snowfall-heat').setData({
+                    type: 'FeatureCollection',
+                    features: heatmapFeatures
+                });
             }
         }
         
-        // === HELPER FUNCTIONS ===
-        function getSnowValue(resort, timeframe) {
-            if (timeframe === '24h') return resort.snowfall_24hr || 0;
-            if (timeframe === '48h') return resort.snowfall_48hr || 0;
-            return resort.snowfall_7day || 0;
-        }
-        
-        function getMarkerColor(snowfall) {
-            if (snowfall >= 10) return '#ec4899'; // Pink (heavy)
-            if (snowfall >= 5) return '#3b82f6';  // Blue (moderate)
-            if (snowfall >= 1) return '#7dd3fc';  // Light blue (light)
-            return '#9ca3af'; // Gray (no snow)
-        }
-        
-        // === MAP FUNCTIONS ===
-        function updateHeatmap(timeframe) {
-            currentTimeframe = timeframe;
-            
-            if (!heroMap || !heroMap.getSource('snowfall-heat') || !snowData) return;
-            
-            // Update heatmap data
-            heroMap.getSource('snowfall-heat').setData({
-                type: 'FeatureCollection',
-                features: snowData.resorts.map(resort => ({
-                    type: 'Feature',
-                    properties: { snowfall: getSnowValue(resort, timeframe) },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [resort.lng, resort.lat]
-                    }
-                }))
-            });
-            
-            // Update markers
-            markers.forEach(marker => marker.remove());
-            markers = [];
-            addMarkers(timeframe);
-        }
-        
-        function addMarkers(timeframe) {
-            if (!snowData) return;
-            
-            snowData.resorts.forEach(resort => {
-                const snowfall = getSnowValue(resort, timeframe);
-                const color = getMarkerColor(snowfall);
-                
-                const el = document.createElement('div');
-                el.className = 'marker';
-                el.style.backgroundColor = color;
-                
-                const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
-                    .setHTML(`
-                        <div class="popup-resort-name">${resort.name}</div>
-                        <div class="popup-snow-data">
-                            <strong>24h:</strong> ${resort.snowfall_24hr?.toFixed(1) || 0}"<br>
-                            <strong>48h:</strong> ${resort.snowfall_48hr?.toFixed(1) || 0}"<br>
-                            <strong>7 day:</strong> ${resort.snowfall_7day?.toFixed(1) || 0}"
-                        </div>
-                    `);
-                
-                const marker = new mapboxgl.Marker(el)
-                    .setLngLat([resort.lng, resort.lat])
-                    .setPopup(popup)
-                    .addTo(heroMap);
-                
-                markers.push(marker);
-                
-                el.addEventListener('mouseenter', () => marker.togglePopup());
-                el.addEventListener('mouseleave', () => marker.togglePopup());
-            });
-        }
-        
+        // === MAP INITIALIZATION ===
         function initHeroMap() {
             const mapContainer = document.getElementById('hero-map');
-            if (!mapContainer || heroMap || !snowData) return;
+            if (!mapContainer || heroMap) return;
             
             mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
             
@@ -1563,18 +1439,11 @@
                         type: 'geojson',
                         data: {
                             type: 'FeatureCollection',
-                            features: snowData.resorts.map(resort => ({
-                                type: 'Feature',
-                                properties: { snowfall: getSnowValue(resort, currentTimeframe) },
-                                geometry: {
-                                    type: 'Point',
-                                    coordinates: [resort.lng, resort.lat]
-                                }
-                            }))
+                            features: []
                         }
                     });
 
-                    // Add heatmap layer
+                    // Add heatmap layer (visible at low zoom, fades out as you zoom in)
                     heroMap.addLayer({
                         id: 'snowfall-heatmap',
                         type: 'heatmap',
@@ -1612,7 +1481,15 @@
                                 5, 40,
                                 6, 30
                             ],
-                            'heatmap-opacity': 1,
+                            'heatmap-opacity': [
+                                'interpolate',
+                                ['linear'],
+                                ['zoom'],
+                                0, 1,
+                                5, 0.95,
+                                5.5, 0.5,
+                                6, 0
+                            ],
                             'heatmap-intensity': [
                                 'interpolate',
                                 ['linear'],
@@ -1623,14 +1500,143 @@
                             ]
                         }
                     });
+
+                    loadSnowData();
                     
-                    // Add markers
-                    addMarkers(currentTimeframe);
+                    // Add markers (hidden by default at low zoom)
+                    resorts.forEach(resort => {
+                        const color = getSnowfallColor(0);
+                        
+                        const el = document.createElement('div');
+                        el.className = 'marker';
+                        el.style.backgroundColor = color;
+                        el.style.display = 'none'; // Start hidden
+                        
+                        const popup = new mapboxgl.Popup({ offset: 25, closeButton: false })
+                            .setHTML(`
+                                <div class="popup-resort-name">${resort.name}</div>
+                                <div class="popup-snow-data" id="popup-${resort.id}">
+                                    Loading...
+                                </div>
+                            `);
+                        
+                        const marker = new mapboxgl.Marker(el)
+                            .setLngLat([resort.lng, resort.lat])
+                            .setPopup(popup)
+                            .addTo(heroMap);
+                        
+                        el.addEventListener('mouseenter', () => marker.togglePopup());
+                        el.addEventListener('mouseleave', () => marker.togglePopup());
+                        
+                        resort.marker = marker;
+                        resort.markerEl = el;
+                    });
+
+                    // CRITICAL: Update marker visibility based on zoom (from map.html)
+                    const updateMarkerVisibility = () => {
+                        const zoom = heroMap.getZoom();
+                        
+                        if (zoom < 6) {
+                            // Hide markers at low zoom (show only heatmap)
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'none';
+                                }
+                            });
+                        } else if (zoom < 7) {
+                            // Fade in markers between zoom 6-7
+                            const opacity = (zoom - 6);
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'block';
+                                    resort.markerEl.style.opacity = opacity;
+                                    resort.markerEl.style.pointerEvents = 'auto';
+                                }
+                            });
+                        } else {
+                            // Show markers fully at high zoom
+                            resorts.forEach(resort => {
+                                if (resort.markerEl) {
+                                    resort.markerEl.style.display = 'block';
+                                    resort.markerEl.style.opacity = 1;
+                                    resort.markerEl.style.pointerEvents = 'auto';
+                                }
+                            });
+                        }
+                    };
+
+                    updateMarkerVisibility();
+                    heroMap.on('zoom', updateMarkerVisibility);
                 });
             } catch (error) {
                 console.error('Error initializing hero map:', error);
             }
         }
+        
+        // === COLOR CODING (from map.html) ===
+        const getSnowfallColor = (inches) => {
+            if (inches >= 10) return '#ef4444'; // Red
+            if (inches >= 6) return '#f97316';  // Orange
+            if (inches >= 3) return '#eab308';  // Yellow
+            if (inches >= 1) return '#22c55e';  // Green
+            if (inches > 0) return '#3b82f6';   // Blue
+            return '#64748b'; // Gray
+        };
+        
+        // === UPDATE MARKERS (from map.html) ===
+        const updateMarkers = (data) => {
+            updateMarkersForPeriod(data, currentTimeframe);
+        };
+
+        const updateMarkersForPeriod = (data, period) => {
+            const periodKey = period === '24hr' ? 'forecast24hr' : period === '48hr' ? 'forecast48hr' : 'forecast7day';
+            
+            resorts.forEach(resort => {
+                if (resort.markerEl && data[resort.id] !== undefined) {
+                    const snowfall = data[resort.id][periodKey] || 0;
+                    const color = getSnowfallColor(snowfall);
+                    resort.markerEl.style.backgroundColor = color;
+                    
+                    // Update popup content
+                    const popupContent = document.getElementById(`popup-${resort.id}`);
+                    if (popupContent) {
+                        popupContent.innerHTML = `
+                            <strong>24h:</strong> ${data[resort.id].forecast24hr?.toFixed(1) || 0}"<br>
+                            <strong>48h:</strong> ${data[resort.id].forecast48hr?.toFixed(1) || 0}"<br>
+                            <strong>7 day:</strong> ${data[resort.id].forecast7day?.toFixed(1) || 0}"
+                        `;
+                    }
+                }
+            });
+        };
+
+        const updateHeatmapForPeriod = (data, period) => {
+            const periodKey = period === '24hr' ? 'forecast24hr' : period === '48hr' ? 'forecast48hr' : 'forecast7day';
+            const heatmapFeatures = [];
+            
+            resorts.forEach(resort => {
+                if (data[resort.id] !== undefined) {
+                    const snowfall = data[resort.id][periodKey] || 0;
+                    if (snowfall > 0) {
+                        heatmapFeatures.push({
+                            type: 'Feature',
+                            properties: { snowfall: snowfall },
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [resort.lng, resort.lat]
+                            }
+                        });
+                    }
+                }
+            });
+
+            if (heroMap && heroMap.getSource('snowfall-heat')) {
+                heroMap.getSource('snowfall-heat').setData({
+                    type: 'FeatureCollection',
+                    features: heatmapFeatures
+                });
+            }
+        };
         
         // === TRENDING SECTION ===
         function populateTrendingSection() {
@@ -1638,14 +1644,15 @@
             
             const trendingGrid = document.getElementById('trendingGrid');
             
-            // Sort resorts by 48h snowfall and take top 6
-            const topResorts = [...snowData.resorts]
-                .sort((a, b) => (b.snowfall_48hr || 0) - (a.snowfall_48hr || 0))
-                .slice(0, 6);
+            // Create array of resorts with snow data
+            const resortsWithSnow = resorts.map(resort => ({
+                ...resort,
+                snow48h: snowData[resort.id]?.forecast48hr || 0
+            })).sort((a, b) => b.snow48h - a.snow48h).slice(0, 6);
             
-            trendingGrid.innerHTML = topResorts.map(resort => {
+            trendingGrid.innerHTML = resortsWithSnow.map(resort => {
                 const image = resortImages[resort.name];
-                const snow48h = resort.snowfall_48hr?.toFixed(1) || 0;
+                const snow48h = resort.snow48h.toFixed(1);
                 
                 return `
                     <div class="trending-card">
@@ -1658,11 +1665,26 @@
                         }
                         <h3>${resort.name}</h3>
                         <p class="snow-badge">❄️ ${snow48h}" last 48h</p>
-                        <p class="trending-note">${resort.forecast_text || 'Checking conditions'}</p>
+                        <p class="trending-note">${snow48h > 10 ? 'Epic conditions' : snow48h > 5 ? 'Great powder' : 'Fresh snow'}</p>
                     </div>
                 `;
             }).join('');
         }
+        
+        // === TOGGLE BUTTON HANDLERS ===
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const timeframe = btn.dataset.timeframe;
+                currentTimeframe = timeframe;
+                
+                if (snowData) {
+                    updateMarkersForPeriod(snowData, timeframe);
+                    updateHeatmapForPeriod(snowData, timeframe);
+                }
+            });
+        });
         
         // === PROGRESSIVE DISCLOSURE ===
         const showRecommendationsBtn = document.getElementById('showRecommendations');
@@ -1710,7 +1732,7 @@
                 if (e.key === 'Enter' && snowData) {
                     e.preventDefault();
                     const value = e.target.value.toLowerCase();
-                    const match = snowData.resorts.find(resort => 
+                    const match = resorts.find(resort => 
                         resort.name.toLowerCase().includes(value)
                     );
                     
@@ -1733,9 +1755,11 @@
             const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
             
             // Sort by 48h snowfall
-            const results = [...snowData.resorts]
-                .sort((a, b) => (b.snowfall_48hr || 0) - (a.snowfall_48hr || 0))
-                .slice(0, 5);
+            const results = resorts.map(resort => ({
+                ...resort,
+                snow48h: snowData[resort.id]?.forecast48hr || 0,
+                snow7day: snowData[resort.id]?.forecast7day || 0
+            })).sort((a, b) => b.snow48h - a.snow48h).slice(0, 5);
             
             displayResults(results);
             resultsTray.classList.add('visible');
@@ -1746,8 +1770,8 @@
             const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
             
             resultsList.innerHTML = results.map((resort, index) => {
-                const snow48h = resort.snowfall_48hr?.toFixed(1) || 0;
-                const snow7day = resort.snowfall_7day?.toFixed(1) || 0;
+                const snow48h = resort.snow48h?.toFixed(1) || 0;
+                const snow7day = resort.snow7day?.toFixed(1) || 0;
                 
                 return `
                     <div class="result-card">
@@ -1766,8 +1790,8 @@
                                 <span class="result-detail-value">${snow7day}"</span>
                             </div>
                             <div class="result-detail">
-                                <span class="result-detail-label">📍 STATUS</span>
-                                <span class="result-detail-value">${resort.forecast_text || 'Checking'}</span>
+                                <span class="result-detail-label">📍 LOCATION</span>
+                                <span class="result-detail-value">${resort.state}</span>
                             </div>
                         </div>
                         
@@ -1784,21 +1808,11 @@
             alert('Showing 2 more results (feature coming soon)');
         });
         
-        // === TOGGLE BUTTON HANDLERS ===
-        document.querySelectorAll('.toggle-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const timeframe = btn.dataset.timeframe;
-                updateHeatmap(timeframe);
-            });
-        });
-        
         // === INITIALIZE ON PAGE LOAD ===
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadSnowData);
+            document.addEventListener('DOMContentLoaded', initHeroMap);
         } else {
-            loadSnowData();
+            initHeroMap();
         }
 
         // Smooth scrolling
