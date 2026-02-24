@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T13:26:20.399Z",
+  "generated_at": "2026-02-24T19:13:41.596Z",
   "total_resorts": 115,
   "data_source": "Open-Meteo",
   "resorts": [
@@ -8,20 +8,20 @@
       "lat": 50.1163,
       "lng": -122.9574,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.4,
+      "snowfall_48hr": 2,
       "snowfall_7day": 5.4,
-      "forecast_text": "2.4\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:56.021Z"
+      "forecast_text": "2.0\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:18.660Z"
     },
     {
       "name": "Vail",
       "lat": 39.6403,
       "lng": -106.3742,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 2.9,
-      "snowfall_7day": 3.7,
-      "forecast_text": "2.9\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:56.228Z"
+      "snowfall_24hr": 0.1,
+      "snowfall_48hr": 1.7,
+      "snowfall_7day": 2.1,
+      "forecast_text": "0.1\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:18.860Z"
     },
     {
       "name": "Park City",
@@ -29,19 +29,19 @@
       "lng": -111.5079,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:56.433Z"
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.4\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:19.059Z"
     },
     {
       "name": "Breckenridge",
       "lat": 39.4817,
       "lng": -106.0384,
-      "snowfall_24hr": 0.3,
-      "snowfall_48hr": 2.2,
-      "snowfall_7day": 2.4,
-      "forecast_text": "0.3\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:56.638Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 1.2,
+      "snowfall_7day": 1.4,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:19.258Z"
     },
     {
       "name": "Heavenly",
@@ -49,9 +49,9 @@
       "lng": -119.9403,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:25:56.843Z"
+      "snowfall_7day": 0.7,
+      "forecast_text": "0.7\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:19.457Z"
     },
     {
       "name": "Aspen Snowmass",
@@ -59,19 +59,19 @@
       "lng": -106.8175,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.5,
-      "forecast_text": "0.5\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:25:57.048Z"
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.2\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:19.655Z"
     },
     {
       "name": "Jackson Hole",
       "lat": 43.5875,
       "lng": -110.8278,
-      "snowfall_24hr": 1.7,
+      "snowfall_24hr": 1.4,
       "snowfall_48hr": 1.8,
-      "snowfall_7day": 4.2,
-      "forecast_text": "1.7\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:57.252Z"
+      "snowfall_7day": 7.6,
+      "forecast_text": "1.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:19.854Z"
     },
     {
       "name": "Banff Sunshine",
@@ -79,9 +79,9 @@
       "lng": -115.7631,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.1,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:57.455Z"
+      "snowfall_7day": 2,
+      "forecast_text": "2.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:20.053Z"
     },
     {
       "name": "Lake Louise",
@@ -89,29 +89,29 @@
       "lng": -116.1773,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.2,
-      "forecast_text": "2.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:25:57.661Z"
+      "snowfall_7day": 2.7,
+      "forecast_text": "2.7\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:20.252Z"
     },
     {
       "name": "Big Sky",
       "lat": 45.2846,
       "lng": -111.4008,
-      "snowfall_24hr": 1,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 1.2,
-      "forecast_text": "1.0\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:57.866Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 0.4,
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:20.450Z"
     },
     {
       "name": "Steamboat",
       "lat": 40.458,
       "lng": -106.8047,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.2,
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
       "snowfall_7day": 0.2,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:58.070Z"
+      "forecast_text": "0.1\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:20.649Z"
     },
     {
       "name": "Mammoth Mountain",
@@ -119,9 +119,9 @@
       "lng": -119.0326,
       "snowfall_24hr": 0.2,
       "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.4,
+      "snowfall_7day": 1.1,
       "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:58.275Z"
+      "last_updated": "2026-02-24T19:13:20.847Z"
     },
     {
       "name": "Squaw Valley",
@@ -129,29 +129,29 @@
       "lng": -120.2356,
       "snowfall_24hr": 0.5,
       "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.7,
+      "snowfall_7day": 0.5,
       "forecast_text": "0.5\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:58.481Z"
+      "last_updated": "2026-02-24T19:13:21.046Z"
     },
     {
       "name": "Telluride",
       "lat": 37.9375,
       "lng": -107.8123,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.1,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:58.685Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "No snow expected",
+      "last_updated": "2026-02-24T19:13:21.244Z"
     },
     {
       "name": "Sun Valley",
       "lat": 43.6966,
       "lng": -114.3553,
-      "snowfall_24hr": 0.2,
+      "snowfall_24hr": 0.3,
       "snowfall_48hr": 0.3,
-      "snowfall_7day": 0.7,
-      "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:58.885Z"
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.3\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:21.442Z"
     },
     {
       "name": "Deer Valley",
@@ -159,49 +159,49 @@
       "lng": -111.4783,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.1,
-      "forecast_text": "0.1\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:25:59.088Z"
+      "snowfall_7day": 0,
+      "forecast_text": "No snow expected",
+      "last_updated": "2026-02-24T19:13:21.642Z"
     },
     {
       "name": "Killington",
       "lat": 43.6046,
       "lng": -72.822,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.2,
-      "snowfall_7day": 1.4,
-      "forecast_text": "1.2\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:59.293Z"
+      "snowfall_48hr": 0.9,
+      "snowfall_7day": 0.9,
+      "forecast_text": "0.9\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:21.840Z"
     },
     {
       "name": "Stowe",
       "lat": 44.5303,
       "lng": -72.7817,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:25:59.497Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 1,
+      "forecast_text": "0.6\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:22.039Z"
     },
     {
       "name": "Alta",
       "lat": 40.5885,
       "lng": -111.6376,
-      "snowfall_24hr": 2.3,
-      "snowfall_48hr": 7.7,
-      "snowfall_7day": 7.7,
-      "forecast_text": "2.3\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:59.700Z"
+      "snowfall_24hr": 2,
+      "snowfall_48hr": 3.8,
+      "snowfall_7day": 4.2,
+      "forecast_text": "2.0\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:22.240Z"
     },
     {
       "name": "Snowbird",
       "lat": 40.5803,
       "lng": -111.6573,
-      "snowfall_24hr": 1.1,
-      "snowfall_48hr": 5.4,
-      "snowfall_7day": 5.5,
-      "forecast_text": "1.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:25:59.904Z"
+      "snowfall_24hr": 1,
+      "snowfall_48hr": 1.8,
+      "snowfall_7day": 2.2,
+      "forecast_text": "1.0\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:22.437Z"
     },
     {
       "name": "Taos",
@@ -211,117 +211,117 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:00.107Z"
+      "last_updated": "2026-02-24T19:13:22.635Z"
     },
     {
       "name": "Copper Mountain",
       "lat": 39.5022,
       "lng": -106.1506,
-      "snowfall_24hr": 0.3,
-      "snowfall_48hr": 2.7,
-      "snowfall_7day": 3.2,
-      "forecast_text": "0.3\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:00.313Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 1.3,
+      "snowfall_7day": 1.5,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:22.833Z"
     },
     {
       "name": "Winter Park",
       "lat": 39.8868,
       "lng": -105.7625,
-      "snowfall_24hr": 0.3,
-      "snowfall_48hr": 3.5,
-      "snowfall_7day": 5.4,
-      "forecast_text": "0.3\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:00.527Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 1.9,
+      "forecast_text": "0.7\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:23.031Z"
     },
     {
       "name": "Keystone",
       "lat": 39.605,
       "lng": -105.9347,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 3.2,
-      "snowfall_7day": 3.9,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:00.731Z"
+      "snowfall_24hr": 0.3,
+      "snowfall_48hr": 2.3,
+      "snowfall_7day": 2.7,
+      "forecast_text": "0.3\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:23.228Z"
     },
     {
       "name": "Arapahoe Basin",
       "lat": 39.6426,
       "lng": -105.8717,
       "snowfall_24hr": 0.4,
-      "snowfall_48hr": 4.9,
-      "snowfall_7day": 5.7,
+      "snowfall_48hr": 2.6,
+      "snowfall_7day": 3,
       "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:00.933Z"
+      "last_updated": "2026-02-24T19:13:23.425Z"
     },
     {
       "name": "Crested Butte",
       "lat": 38.8997,
       "lng": -106.9653,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.1,
-      "snowfall_7day": 2.1,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:01.138Z"
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.3,
+      "forecast_text": "0.2\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:23.623Z"
     },
     {
       "name": "Loveland",
       "lat": 39.6803,
       "lng": -105.8978,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 4,
-      "snowfall_7day": 4.7,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:01.341Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 2.1,
+      "snowfall_7day": 2.6,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:23.821Z"
     },
     {
       "name": "Mt. Bachelor",
       "lat": 43.979,
       "lng": -121.688,
-      "snowfall_24hr": 8.8,
-      "snowfall_48hr": 9.5,
-      "snowfall_7day": 9.6,
-      "forecast_text": "8.8\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:01.545Z"
+      "snowfall_24hr": 5.6,
+      "snowfall_48hr": 5.9,
+      "snowfall_7day": 5.9,
+      "forecast_text": "5.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:24.019Z"
     },
     {
       "name": "Crystal Mountain",
       "lat": 46.9358,
       "lng": -121.4742,
-      "snowfall_24hr": 1.7,
-      "snowfall_48hr": 1.7,
-      "snowfall_7day": 1.7,
-      "forecast_text": "1.7\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:01.749Z"
+      "snowfall_24hr": 1.4,
+      "snowfall_48hr": 1.4,
+      "snowfall_7day": 1.4,
+      "forecast_text": "1.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:24.217Z"
     },
     {
       "name": "Stevens Pass",
       "lat": 47.7453,
       "lng": -121.0892,
       "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.4,
-      "snowfall_7day": 1.4,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 1.1,
       "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:01.953Z"
+      "last_updated": "2026-02-24T19:13:24.414Z"
     },
     {
       "name": "Mt. Baker",
       "lat": 48.8597,
       "lng": -121.6686,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.1,
-      "snowfall_7day": 5.1,
-      "forecast_text": "2.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:02.160Z"
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 4,
+      "forecast_text": "0.8\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:24.612Z"
     },
     {
       "name": "Schweitzer",
       "lat": 48.3642,
       "lng": -116.6228,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:02.363Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.1,
+      "forecast_text": "0.1\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:24.809Z"
     },
     {
       "name": "Sun Peaks",
@@ -329,9 +329,9 @@
       "lng": -119.8847,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:02.567Z"
+      "snowfall_7day": 0.6,
+      "forecast_text": "0.6\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:25.007Z"
     },
     {
       "name": "Revelstoke",
@@ -339,19 +339,19 @@
       "lng": -118.1956,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 9.3,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:02.771Z"
+      "snowfall_7day": 6.9,
+      "forecast_text": "6.9\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:25.204Z"
     },
     {
       "name": "Fernie",
       "lat": 49.4653,
       "lng": -115.0636,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 2.2,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:02.973Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.6,
+      "forecast_text": "2.6\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:25.402Z"
     },
     {
       "name": "Big White",
@@ -359,9 +359,9 @@
       "lng": -118.935,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.4,
-      "forecast_text": "0.4\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:03.176Z"
+      "snowfall_7day": 1,
+      "forecast_text": "1.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:25.600Z"
     },
     {
       "name": "Kicking Horse",
@@ -371,137 +371,137 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0.8,
       "forecast_text": "0.8\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:03.379Z"
+      "last_updated": "2026-02-24T19:13:25.797Z"
     },
     {
       "name": "Mont Tremblant",
       "lat": 46.2094,
       "lng": -74.5847,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.9,
-      "snowfall_7day": 2.9,
-      "forecast_text": "0.9\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:03.592Z"
+      "snowfall_48hr": 1,
+      "snowfall_7day": 3.1,
+      "forecast_text": "1.0\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:25.995Z"
     },
     {
       "name": "Blue Mountain",
       "lat": 44.5075,
       "lng": -80.3231,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:03.797Z"
+      "snowfall_24hr": 0.6,
+      "snowfall_48hr": 1.7,
+      "snowfall_7day": 2,
+      "forecast_text": "0.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:26.194Z"
     },
     {
       "name": "Sugarloaf",
       "lat": 45.0314,
       "lng": -70.3139,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 1,
-      "forecast_text": "0.6\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:04.001Z"
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 0.9,
+      "forecast_text": "0.8\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:26.392Z"
     },
     {
       "name": "Sunday River",
       "lat": 44.4697,
       "lng": -70.8561,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:04.204Z"
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 0.5,
+      "forecast_text": "0.5\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:26.590Z"
     },
     {
       "name": "Sugarbush",
       "lat": 44.135,
       "lng": -72.9017,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.8,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:04.407Z"
+      "snowfall_48hr": 0.4,
+      "snowfall_7day": 0.5,
+      "forecast_text": "0.4\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:26.789Z"
     },
     {
       "name": "Stratton",
       "lat": 43.1133,
       "lng": -72.9083,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 1.5,
-      "snowfall_7day": 2.1,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:04.612Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 1.3,
+      "snowfall_7day": 1.6,
+      "forecast_text": "1.3\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:26.987Z"
     },
     {
       "name": "Okemo",
       "lat": 43.4017,
       "lng": -72.7167,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1.3,
-      "forecast_text": "0.8\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:04.815Z"
+      "snowfall_48hr": 0.9,
+      "snowfall_7day": 1,
+      "forecast_text": "0.9\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:27.185Z"
     },
     {
       "name": "Jay Peak",
       "lat": 44.9378,
       "lng": -72.5036,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 1.2,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:05.020Z"
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 1.1,
+      "forecast_text": "0.5\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:27.383Z"
     },
     {
       "name": "Smugglers' Notch",
       "lat": 44.5458,
       "lng": -72.7872,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:05.224Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 1,
+      "forecast_text": "0.6\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:27.580Z"
     },
     {
       "name": "Loon Mountain",
       "lat": 44.0369,
       "lng": -71.6206,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.4,
-      "snowfall_7day": 1.8,
-      "forecast_text": "1.4\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:05.428Z"
+      "snowfall_48hr": 1.5,
+      "snowfall_7day": 1.6,
+      "forecast_text": "1.5\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:27.778Z"
     },
     {
       "name": "Cannon Mountain",
       "lat": 44.1572,
       "lng": -71.6978,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.2,
-      "snowfall_7day": 2,
-      "forecast_text": "1.2\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:05.633Z"
+      "snowfall_48hr": 2.1,
+      "snowfall_7day": 2.4,
+      "forecast_text": "2.1\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:27.976Z"
     },
     {
       "name": "Wildcat Mountain",
       "lat": 44.2636,
       "lng": -71.2328,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.9,
-      "snowfall_7day": 1.2,
-      "forecast_text": "0.9\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:05.838Z"
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 0.9,
+      "forecast_text": "0.8\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:28.173Z"
     },
     {
       "name": "Bretton Woods",
       "lat": 44.2633,
       "lng": -71.4439,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 1.2,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:06.041Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 1,
+      "forecast_text": "0.6\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:28.372Z"
     },
     {
       "name": "Snowbasin",
@@ -511,37 +511,37 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:06.242Z"
+      "last_updated": "2026-02-24T19:13:28.569Z"
     },
     {
       "name": "Powder Mountain",
       "lat": 41.3814,
       "lng": -111.7806,
-      "snowfall_24hr": 1.7,
-      "snowfall_48hr": 3,
-      "snowfall_7day": 3,
-      "forecast_text": "1.7\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:06.445Z"
+      "snowfall_24hr": 1,
+      "snowfall_48hr": 1,
+      "snowfall_7day": 1,
+      "forecast_text": "1.0\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:28.767Z"
     },
     {
       "name": "Solitude",
       "lat": 40.62,
       "lng": -111.5917,
-      "snowfall_24hr": 0.7,
-      "snowfall_48hr": 2.6,
-      "snowfall_7day": 2.6,
-      "forecast_text": "0.7\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:06.649Z"
+      "snowfall_24hr": 0.6,
+      "snowfall_48hr": 1.1,
+      "snowfall_7day": 1.5,
+      "forecast_text": "0.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:28.964Z"
     },
     {
       "name": "Brighton",
       "lat": 40.5981,
       "lng": -111.5831,
-      "snowfall_24hr": 1.4,
-      "snowfall_48hr": 6,
-      "snowfall_7day": 6,
-      "forecast_text": "1.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:06.853Z"
+      "snowfall_24hr": 1.2,
+      "snowfall_48hr": 2.8,
+      "snowfall_7day": 3.1,
+      "forecast_text": "1.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:29.163Z"
     },
     {
       "name": "Snowmass",
@@ -549,19 +549,19 @@
       "lng": -106.9378,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.2,
+      "snowfall_7day": 0.1,
       "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:07.057Z"
+      "last_updated": "2026-02-24T19:13:29.361Z"
     },
     {
       "name": "Aspen Highlands",
       "lat": 39.1825,
       "lng": -106.8553,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:07.260Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.0\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:29.558Z"
     },
     {
       "name": "Buttermilk",
@@ -569,19 +569,19 @@
       "lng": -106.8608,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.5,
-      "forecast_text": "0.5\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:07.463Z"
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.2\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:29.755Z"
     },
     {
       "name": "Beaver Creek",
       "lat": 39.6042,
       "lng": -106.5164,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1,
-      "forecast_text": "0.8\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:07.667Z"
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 0.8,
+      "forecast_text": "0.6\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:29.953Z"
     },
     {
       "name": "Purgatory",
@@ -591,7 +591,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:07.870Z"
+      "last_updated": "2026-02-24T19:13:30.151Z"
     },
     {
       "name": "Wolf Creek",
@@ -601,177 +601,177 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:08.074Z"
+      "last_updated": "2026-02-24T19:13:30.348Z"
     },
     {
       "name": "Monarch Mountain",
       "lat": 38.5117,
       "lng": -106.3317,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.6,
-      "snowfall_7day": 1.6,
-      "forecast_text": "1.6\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:08.277Z"
+      "snowfall_48hr": 1.2,
+      "snowfall_7day": 1.2,
+      "forecast_text": "1.2\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:30.546Z"
     },
     {
       "name": "Eldora",
       "lat": 39.9372,
       "lng": -105.5828,
-      "snowfall_24hr": 1,
-      "snowfall_48hr": 7.4,
-      "snowfall_7day": 8.1,
-      "forecast_text": "1.0\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:08.556Z"
+      "snowfall_24hr": 0.8,
+      "snowfall_48hr": 3.4,
+      "snowfall_7day": 4.4,
+      "forecast_text": "0.8\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:30.744Z"
     },
     {
       "name": "Grand Targhee",
       "lat": 43.7886,
       "lng": -110.9586,
-      "snowfall_24hr": 8.8,
-      "snowfall_48hr": 8.8,
-      "snowfall_7day": 10.5,
-      "forecast_text": "8.8\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:08.759Z"
+      "snowfall_24hr": 5.8,
+      "snowfall_48hr": 5.8,
+      "snowfall_7day": 10.6,
+      "forecast_text": "5.8\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:30.941Z"
     },
     {
       "name": "Snow King",
       "lat": 43.4783,
       "lng": -110.7628,
-      "snowfall_24hr": 1.6,
-      "snowfall_48hr": 1.6,
-      "snowfall_7day": 3.1,
-      "forecast_text": "1.6\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:08.959Z"
+      "snowfall_24hr": 1,
+      "snowfall_48hr": 1.4,
+      "snowfall_7day": 6.2,
+      "forecast_text": "1.0\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:31.147Z"
     },
     {
       "name": "Bridger Bowl",
       "lat": 45.8167,
       "lng": -110.8969,
-      "snowfall_24hr": 0.9,
-      "snowfall_48hr": 0.9,
-      "snowfall_7day": 1,
-      "forecast_text": "0.9\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:09.164Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.4,
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.4\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:31.344Z"
     },
     {
       "name": "Big Mountain",
       "lat": 48.4928,
       "lng": -114.3483,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 1.2,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:09.368Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 1,
+      "forecast_text": "1.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:31.541Z"
     },
     {
       "name": "Snowbowl",
       "lat": 46.9417,
       "lng": -113.9492,
-      "snowfall_24hr": 1.2,
-      "snowfall_48hr": 1.2,
-      "snowfall_7day": 1.2,
-      "forecast_text": "1.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:09.572Z"
+      "snowfall_24hr": 1.4,
+      "snowfall_48hr": 1.8,
+      "snowfall_7day": 1.8,
+      "forecast_text": "1.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:31.738Z"
     },
     {
       "name": "Bogus Basin",
       "lat": 43.7725,
       "lng": -116.0939,
-      "snowfall_24hr": 6.4,
-      "snowfall_48hr": 6.9,
-      "snowfall_7day": 6.9,
-      "forecast_text": "6.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:09.776Z"
+      "snowfall_24hr": 4.6,
+      "snowfall_48hr": 4.7,
+      "snowfall_7day": 4.7,
+      "forecast_text": "4.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:31.936Z"
     },
     {
       "name": "Tamarack",
       "lat": 44.6922,
       "lng": -116.1344,
-      "snowfall_24hr": 4.1,
-      "snowfall_48hr": 4.1,
-      "snowfall_7day": 4.5,
-      "forecast_text": "4.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:09.979Z"
+      "snowfall_24hr": 2.4,
+      "snowfall_48hr": 3.4,
+      "snowfall_7day": 3.4,
+      "forecast_text": "2.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:32.133Z"
     },
     {
       "name": "Silver Mountain",
       "lat": 47.6764,
       "lng": -116.0703,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 0.4,
-      "snowfall_7day": 0.4,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:10.184Z"
+      "snowfall_24hr": 0.8,
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 0.8,
+      "forecast_text": "0.8\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:32.338Z"
     },
     {
       "name": "Mt. Hood Meadows",
       "lat": 45.3319,
       "lng": -121.6653,
-      "snowfall_24hr": 2.6,
-      "snowfall_48hr": 2.6,
-      "snowfall_7day": 2.6,
-      "forecast_text": "2.6\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:10.391Z"
+      "snowfall_24hr": 3.2,
+      "snowfall_48hr": 3.2,
+      "snowfall_7day": 3.2,
+      "forecast_text": "3.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:32.540Z"
     },
     {
       "name": "Timberline",
       "lat": 45.3306,
       "lng": -121.7108,
-      "snowfall_24hr": 4.1,
-      "snowfall_48hr": 4.1,
-      "snowfall_7day": 4.1,
-      "forecast_text": "4.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:10.600Z"
+      "snowfall_24hr": 4.9,
+      "snowfall_48hr": 4.9,
+      "snowfall_7day": 4.9,
+      "forecast_text": "4.9\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:32.737Z"
     },
     {
       "name": "Willamette Pass",
       "lat": 43.6006,
       "lng": -122.0336,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:10.803Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 0.7,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:32.935Z"
     },
     {
       "name": "Mission Ridge",
       "lat": 47.2917,
       "lng": -120.3997,
-      "snowfall_24hr": 0.6,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:11.006Z"
+      "snowfall_24hr": 0.5,
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 0.5,
+      "forecast_text": "0.5\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:33.134Z"
     },
     {
       "name": "Snoqualmie",
       "lat": 47.4219,
       "lng": -121.4136,
-      "snowfall_24hr": 0.5,
+      "snowfall_24hr": 0.7,
       "snowfall_48hr": 0.7,
-      "snowfall_7day": 1.7,
-      "forecast_text": "0.5\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:11.208Z"
+      "snowfall_7day": 1.5,
+      "forecast_text": "0.7\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:33.331Z"
     },
     {
       "name": "Mt. Spokane",
       "lat": 47.9208,
       "lng": -117.0856,
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:11.411Z"
+      "snowfall_24hr": 0.4,
+      "snowfall_48hr": 0.4,
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:33.529Z"
     },
     {
       "name": "White Pass",
       "lat": 46.6394,
       "lng": -121.3908,
-      "snowfall_24hr": 2.7,
-      "snowfall_48hr": 2.7,
-      "snowfall_7day": 2.7,
-      "forecast_text": "2.7\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:11.615Z"
+      "snowfall_24hr": 2.6,
+      "snowfall_48hr": 2.6,
+      "snowfall_7day": 2.6,
+      "forecast_text": "2.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:33.727Z"
     },
     {
       "name": "49 Degrees North",
@@ -780,38 +780,38 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:11.819Z"
+      "forecast_text": "0.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:33.925Z"
     },
     {
       "name": "Red Mountain",
       "lat": 49.0917,
       "lng": -117.8233,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
+      "snowfall_48hr": 0,
       "snowfall_7day": 0.1,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:12.021Z"
+      "forecast_text": "0.1\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:34.121Z"
     },
     {
       "name": "Whitewater",
       "lat": 49.5394,
       "lng": -117.2717,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 3,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:12.225Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.9,
+      "forecast_text": "2.9\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:34.320Z"
     },
     {
       "name": "Panorama",
       "lat": 50.8036,
       "lng": -116.0533,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.9\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:12.429Z"
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 1.4,
+      "forecast_text": "0.1\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:34.518Z"
     },
     {
       "name": "Marmot Basin",
@@ -819,9 +819,9 @@
       "lng": -118.0747,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.6,
-      "snowfall_7day": 3,
+      "snowfall_7day": 1.5,
       "forecast_text": "0.6\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:12.633Z"
+      "last_updated": "2026-02-24T19:13:34.716Z"
     },
     {
       "name": "Nakiska",
@@ -829,9 +829,9 @@
       "lng": -115.0733,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.5,
-      "forecast_text": "2.5\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:12.837Z"
+      "snowfall_7day": 2.2,
+      "forecast_text": "2.2\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:34.913Z"
     },
     {
       "name": "Castle Mountain",
@@ -839,9 +839,9 @@
       "lng": -114.5169,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0.1,
-      "snowfall_7day": 1.2,
+      "snowfall_7day": 2.2,
       "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:13.042Z"
+      "last_updated": "2026-02-24T19:13:35.112Z"
     },
     {
       "name": "Norquay",
@@ -849,49 +849,49 @@
       "lng": -115.5531,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2,
-      "forecast_text": "2.0\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:13.246Z"
+      "snowfall_7day": 1.8,
+      "forecast_text": "1.8\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:35.309Z"
     },
     {
       "name": "Le Massif",
       "lat": 47.3136,
       "lng": -70.6358,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.9,
-      "snowfall_7day": 3.7,
-      "forecast_text": "0.9\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:13.451Z"
+      "snowfall_48hr": 1.2,
+      "snowfall_7day": 3.3,
+      "forecast_text": "1.2\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:35.508Z"
     },
     {
       "name": "Calabogie",
       "lat": 45.2906,
       "lng": -76.7019,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 1.1,
-      "forecast_text": "1.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:13.655Z"
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.3\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:35.707Z"
     },
     {
       "name": "Sierra-at-Tahoe",
       "lat": 38.7986,
       "lng": -120.0828,
-      "snowfall_24hr": 0.3,
-      "snowfall_48hr": 0.3,
-      "snowfall_7day": 0.5,
-      "forecast_text": "0.3\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:13.860Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.4,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:35.904Z"
     },
     {
       "name": "Kirkwood",
       "lat": 38.6867,
       "lng": -120.0656,
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:14.062Z"
+      "snowfall_24hr": 0.3,
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 0.3,
+      "forecast_text": "0.3\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:36.101Z"
     },
     {
       "name": "Northstar",
@@ -899,19 +899,19 @@
       "lng": -120.1211,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:14.265Z"
+      "snowfall_7day": 0.1,
+      "forecast_text": "0.1\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:36.299Z"
     },
     {
       "name": "Homewood",
       "lat": 39.0833,
       "lng": -120.1667,
-      "snowfall_24hr": 0.8,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.8\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:14.469Z"
+      "snowfall_24hr": 0.4,
+      "snowfall_48hr": 0.4,
+      "snowfall_7day": 0.5,
+      "forecast_text": "0.4\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:36.497Z"
     },
     {
       "name": "Mt. Rose",
@@ -921,7 +921,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0.2,
       "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:14.672Z"
+      "last_updated": "2026-02-24T19:13:36.694Z"
     },
     {
       "name": "Diamond Peak",
@@ -931,7 +931,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0.2,
       "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:14.877Z"
+      "last_updated": "2026-02-24T19:13:36.893Z"
     },
     {
       "name": "June Mountain",
@@ -939,9 +939,9 @@
       "lng": -119.0781,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.3\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:15.079Z"
+      "snowfall_7day": 1,
+      "forecast_text": "1.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:37.090Z"
     },
     {
       "name": "Bear Mountain",
@@ -951,7 +951,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:15.282Z"
+      "last_updated": "2026-02-24T19:13:37.288Z"
     },
     {
       "name": "Snow Summit",
@@ -961,7 +961,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:15.486Z"
+      "last_updated": "2026-02-24T19:13:37.485Z"
     },
     {
       "name": "Mountain High",
@@ -971,7 +971,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:15.689Z"
+      "last_updated": "2026-02-24T19:13:37.682Z"
     },
     {
       "name": "Ski Santa Fe",
@@ -981,7 +981,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:15.893Z"
+      "last_updated": "2026-02-24T19:13:37.879Z"
     },
     {
       "name": "Angel Fire",
@@ -991,17 +991,17 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:16.096Z"
+      "last_updated": "2026-02-24T19:13:38.077Z"
     },
     {
       "name": "Whiteface Mountain",
       "lat": 44.3659,
       "lng": -73.9024,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.4,
+      "snowfall_48hr": 0.5,
       "snowfall_7day": 1,
-      "forecast_text": "0.4\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:16.302Z"
+      "forecast_text": "0.5\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:38.278Z"
     },
     {
       "name": "Bristol Mountain",
@@ -1009,9 +1009,9 @@
       "lng": -77.4016,
       "snowfall_24hr": 0.1,
       "snowfall_48hr": 0.6,
-      "snowfall_7day": 2.1,
+      "snowfall_7day": 1,
       "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:16.813Z"
+      "last_updated": "2026-02-24T19:13:38.753Z"
     },
     {
       "name": "Revelstoke Mountain Resort",
@@ -1019,9 +1019,9 @@
       "lng": -118.1958,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 9.3,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:17.016Z"
+      "snowfall_7day": 6.9,
+      "forecast_text": "6.9\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:38.949Z"
     },
     {
       "name": "Big White Ski Resort",
@@ -1029,9 +1029,9 @@
       "lng": -118.9357,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.4,
-      "forecast_text": "0.4\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:17.529Z"
+      "snowfall_7day": 1,
+      "forecast_text": "1.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:39.144Z"
     },
     {
       "name": "Sun Peaks Resort",
@@ -1039,19 +1039,19 @@
       "lng": -119.8892,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:17.734Z"
+      "snowfall_7day": 0.6,
+      "forecast_text": "0.6\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:39.340Z"
     },
     {
       "name": "Fernie Alpine Resort",
       "lat": 49.4651,
       "lng": -115.0764,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 2.2,
-      "forecast_text": "0.1\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:17.938Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.6,
+      "forecast_text": "2.6\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:39.536Z"
     },
     {
       "name": "Kicking Horse Mountain Resort",
@@ -1059,9 +1059,9 @@
       "lng": -116.955,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.1,
-      "forecast_text": "0.1\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:18.143Z"
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.2\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:39.732Z"
     },
     {
       "name": "Panorama Mountain Resort",
@@ -1069,9 +1069,9 @@
       "lng": -116.0972,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:18.347Z"
+      "snowfall_7day": 1.5,
+      "forecast_text": "1.5\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:39.927Z"
     },
     {
       "name": "RED Mountain Resort",
@@ -1079,9 +1079,9 @@
       "lng": -117.8197,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "forecast_text": "0.0\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:18.554Z"
+      "snowfall_7day": 0.1,
+      "forecast_text": "0.1\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:40.123Z"
     },
     {
       "name": "SilverStar Mountain Resort",
@@ -1089,9 +1089,9 @@
       "lng": -119.0833,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-02-24T13:26:18.758Z"
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.2\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:40.320Z"
     },
     {
       "name": "Lake Louise Ski Resort",
@@ -1099,9 +1099,9 @@
       "lng": -116.1773,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.2,
-      "forecast_text": "2.2\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:18.962Z"
+      "snowfall_7day": 2.7,
+      "forecast_text": "2.7\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:40.515Z"
     },
     {
       "name": "Sunshine Village",
@@ -1109,9 +1109,9 @@
       "lng": -115.7631,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.1,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:19.168Z"
+      "snowfall_7day": 2,
+      "forecast_text": "2.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:40.710Z"
     },
     {
       "name": "Mount Norquay",
@@ -1119,9 +1119,9 @@
       "lng": -115.5797,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2,
-      "forecast_text": "2.0\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:19.374Z"
+      "snowfall_7day": 1.8,
+      "forecast_text": "1.8\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:40.906Z"
     },
     {
       "name": "Nakiska Ski Area",
@@ -1129,29 +1129,29 @@
       "lng": -115.0856,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.3,
-      "forecast_text": "2.3\" expected in next 7 days",
-      "last_updated": "2026-02-24T13:26:19.889Z"
+      "snowfall_7day": 2,
+      "forecast_text": "2.0\" expected in next 7 days",
+      "last_updated": "2026-02-24T19:13:41.103Z"
     },
     {
       "name": "Le Massif de Charlevoix",
       "lat": 47.3389,
       "lng": -70.6375,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.9,
+      "snowfall_48hr": 1.2,
       "snowfall_7day": 2.5,
-      "forecast_text": "0.9\" expected in next 48 hours",
-      "last_updated": "2026-02-24T13:26:20.093Z"
+      "forecast_text": "1.2\" expected in next 48 hours",
+      "last_updated": "2026-02-24T19:13:41.299Z"
     },
     {
       "name": "Blue Mountain Resort",
       "lat": 44.5067,
       "lng": -80.3158,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 1,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-02-24T13:26:20.299Z"
+      "snowfall_24hr": 0.6,
+      "snowfall_48hr": 1.7,
+      "snowfall_7day": 2,
+      "forecast_text": "0.6\" expected in next 24 hours",
+      "last_updated": "2026-02-24T19:13:41.496Z"
     }
   ]
 }
