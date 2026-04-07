@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T03:23:08.205Z",
+  "generated_at": "2026-04-07T08:05:44.720Z",
   "total_resorts": 115,
   "data_source": "Open-Meteo",
   "resorts": [
@@ -10,8 +10,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:42.314Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:44:42.278Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Vail",
@@ -19,9 +20,10 @@
       "lng": -106.3742,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:42.536Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:44:45.902Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Park City",
@@ -30,8 +32,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:42.758Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:44:54.351Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Breckenridge",
@@ -39,9 +42,10 @@
       "lng": -106.0384,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:42.978Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:12.710Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Heavenly",
@@ -49,9 +53,10 @@
       "lng": -119.9403,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:43.200Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:17.190Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Aspen Snowmass",
@@ -59,9 +64,10 @@
       "lng": -106.8175,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "forecast_text": "1.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:43.421Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:22.791Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Jackson Hole",
@@ -70,18 +76,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:43.643Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:29.513Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Banff Sunshine",
       "lat": 51.1158,
       "lng": -115.7631,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.8\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:43.864Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:37.054Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Lake Louise",
@@ -90,8 +98,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:44.086Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:45.294Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Big Sky",
@@ -100,8 +109,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:44.307Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:50.746Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Steamboat",
@@ -110,8 +120,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:44.531Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:45:55.020Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mammoth Mountain",
@@ -119,9 +130,10 @@
       "lng": -119.0326,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.8,
-      "forecast_text": "1.8\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:44.752Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:46:03.580Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Squaw Valley",
@@ -129,9 +141,10 @@
       "lng": -120.2356,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.2,
-      "forecast_text": "1.2\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:44.973Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:46:07.785Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Telluride",
@@ -139,9 +152,10 @@
       "lng": -107.8123,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2,
-      "forecast_text": "2.0\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:45.193Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:12.901Z",
+      "error": "Open-Meteo API failed: 524"
     },
     {
       "name": "Sun Valley",
@@ -150,8 +164,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:45.414Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:19.468Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Deer Valley",
@@ -160,28 +175,31 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:45.634Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:28.566Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Killington",
       "lat": 43.6046,
       "lng": -72.822,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 2.1,
-      "snowfall_7day": 2.1,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:45.855Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:37.761Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Stowe",
       "lat": 44.5303,
       "lng": -72.7817,
-      "snowfall_24hr": 0.5,
-      "snowfall_48hr": 1.6,
-      "snowfall_7day": 1.7,
-      "forecast_text": "0.5\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:46.075Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:41.326Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Alta",
@@ -190,8 +208,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:46.294Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:47.427Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Snowbird",
@@ -200,18 +219,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:46.514Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:48:56.677Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Taos",
       "lat": 36.5924,
       "lng": -105.4467,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.7,
-      "snowfall_7day": 7,
-      "forecast_text": "0.7\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:46.734Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:49:00.508Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Copper Mountain",
@@ -219,9 +240,10 @@
       "lng": -106.1506,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.9\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:46.954Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:49:02.949Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Winter Park",
@@ -229,9 +251,10 @@
       "lng": -105.7625,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:47.173Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:49:07.989Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Keystone",
@@ -239,9 +262,10 @@
       "lng": -105.9347,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:47.394Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:49:17.645Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Arapahoe Basin",
@@ -249,9 +273,10 @@
       "lng": -105.8717,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1,
-      "forecast_text": "1.0\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:47.613Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:22.755Z",
+      "error": "Open-Meteo API failed: 524"
     },
     {
       "name": "Crested Butte",
@@ -259,9 +284,10 @@
       "lng": -106.9653,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 4.7,
-      "forecast_text": "4.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:47.833Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:29.124Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Loveland",
@@ -269,9 +295,10 @@
       "lng": -105.8978,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:48.054Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:32.521Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mt. Bachelor",
@@ -280,8 +307,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:48.277Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:39.903Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Crystal Mountain",
@@ -290,8 +318,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:48.497Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:45.499Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Stevens Pass",
@@ -300,8 +329,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:48.718Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:49.280Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mt. Baker",
@@ -310,8 +340,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:48.938Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:52.897Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Schweitzer",
@@ -320,8 +351,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:49.159Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:51:58.682Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Sun Peaks",
@@ -330,8 +362,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:49.379Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:07.274Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Revelstoke",
@@ -340,8 +373,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:49.604Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:16.500Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Fernie",
@@ -350,18 +384,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:49.860Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:22.340Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Big White",
       "lat": 49.7311,
       "lng": -118.935,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:50.083Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:31.386Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Kicking Horse",
@@ -370,138 +406,152 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:50.304Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:39.128Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mont Tremblant",
       "lat": 46.2094,
       "lng": -74.5847,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:50.529Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:52:48.162Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Blue Mountain",
       "lat": 44.5075,
       "lng": -80.3231,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:50.751Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:00.790Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Sugarloaf",
       "lat": 45.0314,
       "lng": -70.3139,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 2.4,
-      "snowfall_7day": 2.4,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:50.976Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:04.912Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Sunday River",
       "lat": 44.4697,
       "lng": -70.8561,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 0.8,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:51.224Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:10.131Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Sugarbush",
       "lat": 44.135,
       "lng": -72.9017,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:51.450Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:14.808Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Stratton",
       "lat": 43.1133,
       "lng": -72.9083,
-      "snowfall_24hr": 0.6,
-      "snowfall_48hr": 1.7,
-      "snowfall_7day": 1.7,
-      "forecast_text": "0.6\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:51.674Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:15.943Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Okemo",
       "lat": 43.4017,
       "lng": -72.7167,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:51.897Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:27.770Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Jay Peak",
       "lat": 44.9378,
       "lng": -72.5036,
-      "snowfall_24hr": 0.6,
-      "snowfall_48hr": 1.4,
-      "snowfall_7day": 1.4,
-      "forecast_text": "0.6\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:52.122Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:31.431Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Smugglers' Notch",
       "lat": 44.5458,
       "lng": -72.7872,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 1.8,
-      "snowfall_7day": 1.8,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:52.344Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:42.560Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Loon Mountain",
       "lat": 44.0369,
       "lng": -71.6206,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.9,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.9\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:52.568Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:48.490Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Cannon Mountain",
       "lat": 44.1572,
       "lng": -71.6978,
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 2.4,
-      "snowfall_7day": 2.5,
-      "forecast_text": "0.1\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:52.794Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:51.137Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Wildcat Mountain",
       "lat": 44.2636,
       "lng": -71.2328,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.6,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.6\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:22:53.019Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:53:57.228Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Bretton Woods",
       "lat": 44.2633,
       "lng": -71.4439,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.7,
-      "snowfall_7day": 1.8,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:22:53.244Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:54:04.735Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Snowbasin",
@@ -510,8 +560,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:53.465Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:54:13.296Z",
+      "error": "Open-Meteo API failed: 504"
     },
     {
       "name": "Powder Mountain",
@@ -520,8 +571,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:53.688Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:56:18.413Z",
+      "error": "Open-Meteo API failed: 524"
     },
     {
       "name": "Solitude",
@@ -530,8 +582,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:53.911Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:56:23.743Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Brighton",
@@ -540,8 +593,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:54.133Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:56:33.176Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Snowmass",
@@ -550,8 +604,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "0.0\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:54.356Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:56:38.150Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Aspen Highlands",
@@ -559,9 +614,10 @@
       "lng": -106.8553,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "forecast_text": "1.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:54.576Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:56:44.025Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Buttermilk",
@@ -569,9 +625,10 @@
       "lng": -106.8608,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "forecast_text": "1.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:54.802Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:58:50.114Z",
+      "error": "Open-Meteo API failed: 524"
     },
     {
       "name": "Beaver Creek",
@@ -579,9 +636,10 @@
       "lng": -106.5164,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:55.023Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:58:50.574Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Purgatory",
@@ -589,19 +647,19 @@
       "lng": -107.8139,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.5,
-      "forecast_text": "0.5\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:55.247Z"
+      "snowfall_7day": 4.3,
+      "forecast_text": "4.3\" expected in next 7 days",
+      "last_updated": "2026-04-07T07:58:55.028Z"
     },
     {
       "name": "Wolf Creek",
       "lat": 37.4722,
       "lng": -106.7931,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 2,
-      "forecast_text": "2.0\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:55.471Z"
+      "snowfall_24hr": 0.2,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 6.4,
+      "forecast_text": "0.2\" expected in next 24 hours",
+      "last_updated": "2026-04-07T07:58:59.054Z"
     },
     {
       "name": "Monarch Mountain",
@@ -609,9 +667,9 @@
       "lng": -106.3317,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "forecast_text": "1.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:55.695Z"
+      "snowfall_7day": 3.1,
+      "forecast_text": "3.1\" expected in next 7 days",
+      "last_updated": "2026-04-07T07:59:03.651Z"
     },
     {
       "name": "Eldora",
@@ -619,9 +677,9 @@
       "lng": -105.5828,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.1,
-      "forecast_text": "0.1\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:22:55.918Z"
+      "snowfall_7day": 2,
+      "forecast_text": "2.0\" expected in next 7 days",
+      "last_updated": "2026-04-07T07:59:10.079Z"
     },
     {
       "name": "Grand Targhee",
@@ -630,8 +688,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:56.140Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:10.543Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Snow King",
@@ -641,7 +700,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:56.363Z"
+      "last_updated": "2026-04-07T07:59:16.049Z"
     },
     {
       "name": "Bridger Bowl",
@@ -650,8 +709,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:56.586Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:16.325Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Big Mountain",
@@ -660,8 +720,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:56.810Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:16.779Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Snowbowl",
@@ -670,8 +731,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:57.032Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:17.235Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Bogus Basin",
@@ -680,8 +742,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:57.255Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:17.531Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Tamarack",
@@ -691,7 +754,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:57.480Z"
+      "last_updated": "2026-04-07T07:59:22.334Z"
     },
     {
       "name": "Silver Mountain",
@@ -701,7 +764,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:57.708Z"
+      "last_updated": "2026-04-07T07:59:27.297Z"
     },
     {
       "name": "Mt. Hood Meadows",
@@ -711,7 +774,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:57.929Z"
+      "last_updated": "2026-04-07T07:59:31.888Z"
     },
     {
       "name": "Timberline",
@@ -720,8 +783,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:58.153Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:32.170Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Willamette Pass",
@@ -729,9 +793,9 @@
       "lng": -122.0336,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:58.375Z"
+      "snowfall_7day": 0.1,
+      "forecast_text": "0.1\" expected in next 7 days",
+      "last_updated": "2026-04-07T07:59:36.754Z"
     },
     {
       "name": "Mission Ridge",
@@ -740,8 +804,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:58.600Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:37.042Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Snoqualmie",
@@ -750,8 +815,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:58.824Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:37.319Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Mt. Spokane",
@@ -761,7 +827,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:59.047Z"
+      "last_updated": "2026-04-07T07:59:42.481Z"
     },
     {
       "name": "White Pass",
@@ -771,7 +837,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:59.273Z"
+      "last_updated": "2026-04-07T07:59:46.917Z"
     },
     {
       "name": "49 Degrees North",
@@ -781,7 +847,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:59.496Z"
+      "last_updated": "2026-04-07T07:59:51.809Z"
     },
     {
       "name": "Red Mountain",
@@ -790,8 +856,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:59.720Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:52.309Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Whitewater",
@@ -800,18 +867,19 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:22:59.945Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:52.811Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Panorama",
       "lat": 50.8036,
       "lng": -116.0533,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 0.3,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.3\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:00.174Z"
+      "snowfall_24hr": 0.5,
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 0.5,
+      "forecast_text": "0.5\" expected in next 24 hours",
+      "last_updated": "2026-04-07T07:59:58.159Z"
     },
     {
       "name": "Marmot Basin",
@@ -819,19 +887,21 @@
       "lng": -118.0747,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.0\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:00.412Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:58.439Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Nakiska",
       "lat": 50.98,
       "lng": -115.0733,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 1.9,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:00.643Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:58.913Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Castle Mountain",
@@ -839,19 +909,20 @@
       "lng": -114.5169,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.3\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:00.867Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T07:59:59.521Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Norquay",
       "lat": 51.1967,
       "lng": -115.5531,
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 1.1,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:01.092Z"
+      "snowfall_24hr": 0.8,
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 1.5,
+      "forecast_text": "0.8\" expected in next 24 hours",
+      "last_updated": "2026-04-07T08:00:18.135Z"
     },
     {
       "name": "Le Massif",
@@ -859,19 +930,20 @@
       "lng": -70.6358,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.2,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:23:01.314Z"
+      "snowfall_7day": 0.2,
+      "forecast_text": "0.2\" expected in next 7 days",
+      "last_updated": "2026-04-07T08:00:39.515Z"
     },
     {
       "name": "Calabogie",
       "lat": 45.2906,
       "lng": -76.7019,
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.5,
-      "forecast_text": "0.2\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:23:01.538Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:00:40.131Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Sierra-at-Tahoe",
@@ -879,9 +951,9 @@
       "lng": -120.0828,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.9,
-      "forecast_text": "1.9\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:01.759Z"
+      "snowfall_7day": 8.5,
+      "forecast_text": "8.5\" expected in next 7 days",
+      "last_updated": "2026-04-07T08:01:03.431Z"
     },
     {
       "name": "Kirkwood",
@@ -889,9 +961,9 @@
       "lng": -120.0656,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2,
-      "forecast_text": "2.0\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:01.984Z"
+      "snowfall_7day": 9,
+      "forecast_text": "9.0\" expected in next 7 days",
+      "last_updated": "2026-04-07T08:01:26.151Z"
     },
     {
       "name": "Northstar",
@@ -899,9 +971,10 @@
       "lng": -120.1211,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "0.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:02.207Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:27.713Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Homewood",
@@ -909,9 +982,10 @@
       "lng": -120.1667,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.8,
-      "forecast_text": "0.8\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:02.432Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:37.325Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mt. Rose",
@@ -919,9 +993,10 @@
       "lng": -119.8894,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "0.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:02.653Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:42.725Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Diamond Peak",
@@ -929,9 +1004,10 @@
       "lng": -119.9169,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "0.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:02.876Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:45.672Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "June Mountain",
@@ -939,9 +1015,10 @@
       "lng": -119.0781,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.2,
-      "forecast_text": "2.2\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:03.099Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:46.150Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Bear Mountain",
@@ -949,9 +1026,10 @@
       "lng": -116.865,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.3\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:03.324Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:46.964Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Snow Summit",
@@ -959,9 +1037,10 @@
       "lng": -116.8886,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.3,
-      "forecast_text": "0.3\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:03.549Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:52.436Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Mountain High",
@@ -970,18 +1049,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:03.775Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:01:56.759Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Ski Santa Fe",
       "lat": 35.7869,
       "lng": -105.7961,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1,
-      "snowfall_7day": 1.2,
-      "forecast_text": "1.0\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:04.000Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:00.984Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Angel Fire",
@@ -989,29 +1070,32 @@
       "lng": -105.2886,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "forecast_text": "0.7\" expected in next 7 days",
-      "last_updated": "2026-04-07T03:23:04.224Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:05.927Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Whiteface Mountain",
       "lat": 44.3659,
       "lng": -73.9024,
-      "snowfall_24hr": 0.4,
-      "snowfall_48hr": 2.3,
-      "snowfall_7day": 2.4,
-      "forecast_text": "0.4\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:23:04.450Z"
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:07.788Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Bristol Mountain",
       "lat": 42.7455,
       "lng": -77.4016,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 1.2,
-      "snowfall_7day": 1.2,
-      "forecast_text": "1.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:05.028Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:08.371Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Revelstoke Mountain Resort",
@@ -1020,18 +1104,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:05.247Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:08.839Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Big White Ski Resort",
       "lat": 49.7308,
       "lng": -118.9357,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:05.466Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:02:22.287Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "Sun Peaks Resort",
@@ -1041,7 +1127,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:05.685Z"
+      "last_updated": "2026-04-07T08:02:59.752Z"
     },
     {
       "name": "Fernie Alpine Resort",
@@ -1050,8 +1136,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:05.904Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:03:00.339Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Kicking Horse Mountain Resort",
@@ -1060,18 +1147,20 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:06.124Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:03:00.674Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Panorama Mountain Resort",
       "lat": 50.9806,
       "lng": -116.0972,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 0.6,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:06.340Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:03:04.200Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "RED Mountain Resort",
@@ -1080,8 +1169,9 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:06.560Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:03:11.612Z",
+      "error": "Open-Meteo API failed: 502"
     },
     {
       "name": "SilverStar Mountain Resort",
@@ -1091,7 +1181,7 @@
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
       "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:06.779Z"
+      "last_updated": "2026-04-07T08:03:37.124Z"
     },
     {
       "name": "Lake Louise Ski Resort",
@@ -1100,38 +1190,42 @@
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "forecast_text": "No snow expected",
-      "last_updated": "2026-04-07T03:23:06.999Z"
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:42.430Z",
+      "error": "Open-Meteo API failed: 524"
     },
     {
       "name": "Sunshine Village",
       "lat": 51.1128,
       "lng": -115.7631,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.8,
-      "snowfall_7day": 0.9,
-      "forecast_text": "0.8\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:07.218Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:42.979Z",
+      "error": "Open-Meteo API failed: 525"
     },
     {
       "name": "Mount Norquay",
       "lat": 51.2094,
       "lng": -115.5797,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.5,
-      "snowfall_7day": 1,
-      "forecast_text": "0.5\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:07.440Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:43.491Z",
+      "error": "Open-Meteo API failed: 429"
     },
     {
       "name": "Nakiska Ski Area",
       "lat": 50.9042,
       "lng": -115.0856,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.4,
-      "snowfall_7day": 1.8,
-      "forecast_text": "0.4\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:07.662Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:43.896Z",
+      "error": "Open-Meteo API failed: 429"
     },
     {
       "name": "Le Massif de Charlevoix",
@@ -1139,19 +1233,21 @@
       "lng": -70.6375,
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.6,
-      "forecast_text": "0.0\" expected in next 24 hours",
-      "last_updated": "2026-04-07T03:23:07.883Z"
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:44.252Z",
+      "error": "Open-Meteo API failed: 429"
     },
     {
       "name": "Blue Mountain Resort",
       "lat": 44.5067,
       "lng": -80.3158,
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "forecast_text": "0.2\" expected in next 48 hours",
-      "last_updated": "2026-04-07T03:23:08.104Z"
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "forecast_text": "Data unavailable",
+      "last_updated": "2026-04-07T08:05:44.619Z",
+      "error": "Open-Meteo API failed: 429"
     }
   ]
 }
