@@ -1,3 +1,5 @@
+> Historical roadmap (December 2025). For implemented forecast/catalog behavior, see [README.md](README.md). Statements below about feature completion and resort counts are historical, not current guarantees.
+
 # SkiBum.com - Project Documentation
 
 ## Project Overview
