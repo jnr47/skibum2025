@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-23T00:30:06.481Z",
+  "generated_at": "2026-09-24T01:24:46.800Z",
   "total_resorts": 103,
   "data_source": "Open-Meteo",
   "units": "in",
@@ -18,16 +18,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
-      "snowfall_24hr": 0.1,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 5.8,
-      "last_updated": "2026-09-23T00:30:07.275Z",
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.9,
+      "last_updated": "2026-09-24T01:24:48.425Z",
       "model_location": {
         "lat": 50.07432,
         "lng": -122.91853,
@@ -42,16 +42,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 3.6,
-      "last_updated": "2026-09-23T00:30:07.511Z",
+      "snowfall_7day": 0.7,
+      "last_updated": "2026-09-24T01:24:48.666Z",
       "model_location": {
         "lat": 39.599964,
         "lng": -106.3422,
@@ -66,16 +66,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:07.749Z",
+      "last_updated": "2026-09-24T01:24:48.907Z",
       "model_location": {
         "lat": 40.650406,
         "lng": -111.56181,
@@ -90,16 +90,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.8,
-      "last_updated": "2026-09-23T00:30:07.983Z",
+      "snowfall_7day": 1.3,
+      "last_updated": "2026-09-24T01:24:49.158Z",
       "model_location": {
         "lat": 39.483547,
         "lng": -106.08192,
@@ -114,16 +114,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:08.224Z",
+      "last_updated": "2026-09-24T01:24:49.406Z",
       "model_location": {
         "lat": 38.919212,
         "lng": -119.919426,
@@ -138,16 +138,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1,
-      "last_updated": "2026-09-23T00:30:08.461Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:24:49.646Z",
       "model_location": {
         "lat": 39.13062,
         "lng": -106.808075,
@@ -162,16 +162,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:08.697Z",
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T01:24:49.888Z",
       "model_location": {
         "lat": 43.616154,
         "lng": -110.84001,
@@ -186,16 +186,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.4,
-      "last_updated": "2026-09-23T00:30:08.930Z",
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T01:24:50.134Z",
       "model_location": {
         "lat": 51.119774,
         "lng": -115.758026,
@@ -210,16 +210,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.7,
-      "last_updated": "2026-09-23T00:30:09.165Z",
+      "snowfall_7day": 1,
+      "last_updated": "2026-09-24T01:24:50.380Z",
       "model_location": {
         "lat": 51.448742,
         "lng": -116.12193,
@@ -234,16 +234,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:09.399Z",
+      "last_updated": "2026-09-24T01:24:50.628Z",
       "model_location": {
         "lat": 45.290604,
         "lng": -111.417946,
@@ -258,16 +258,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:09.717Z",
+      "last_updated": "2026-09-24T01:24:50.918Z",
       "model_location": {
         "lat": 40.461796,
         "lng": -106.77184,
@@ -282,16 +282,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:09.949Z",
+      "last_updated": "2026-09-24T01:24:51.166Z",
       "model_location": {
         "lat": 37.645466,
         "lng": -119.02926,
@@ -306,16 +306,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:10.182Z",
+      "last_updated": "2026-09-24T01:24:51.414Z",
       "model_location": {
         "lat": 39.18738,
         "lng": -120.2566,
@@ -330,16 +330,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:10.416Z",
+      "last_updated": "2026-09-24T01:24:51.651Z",
       "model_location": {
         "lat": 37.93012,
         "lng": -107.85748,
@@ -354,16 +354,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:10.650Z",
+      "last_updated": "2026-09-24T01:24:51.924Z",
       "model_location": {
         "lat": 43.64902,
         "lng": -114.4225,
@@ -378,16 +378,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:10.883Z",
+      "last_updated": "2026-09-24T01:24:52.167Z",
       "model_location": {
         "lat": 40.605297,
         "lng": -111.480804,
@@ -402,16 +402,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:11.116Z",
+      "last_updated": "2026-09-24T01:24:52.406Z",
       "model_location": {
         "lat": 43.59475,
         "lng": -72.79971,
@@ -426,16 +426,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:11.351Z",
+      "last_updated": "2026-09-24T01:24:52.647Z",
       "model_location": {
         "lat": 44.513096,
         "lng": -72.79699,
@@ -450,16 +450,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:11.584Z",
+      "last_updated": "2026-09-24T01:24:52.943Z",
       "model_location": {
         "lat": 40.588894,
         "lng": -111.621185,
@@ -474,16 +474,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:11.819Z",
+      "last_updated": "2026-09-24T01:24:53.185Z",
       "model_location": {
         "lat": 40.55813,
         "lng": -111.65083,
@@ -498,16 +498,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:12.056Z",
+      "last_updated": "2026-09-24T01:24:53.431Z",
       "model_location": {
         "lat": 36.576855,
         "lng": -105.440285,
@@ -522,16 +522,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.5,
-      "last_updated": "2026-09-23T00:30:12.287Z",
+      "snowfall_7day": 1.9,
+      "last_updated": "2026-09-24T01:24:53.673Z",
       "model_location": {
         "lat": 39.478497,
         "lng": -106.151505,
@@ -546,16 +546,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.1,
-      "last_updated": "2026-09-23T00:30:12.522Z",
+      "snowfall_7day": 0.6,
+      "last_updated": "2026-09-24T01:24:53.919Z",
       "model_location": {
         "lat": 39.857395,
         "lng": -105.77462,
@@ -570,16 +570,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.4,
-      "last_updated": "2026-09-23T00:30:12.772Z",
+      "snowfall_7day": 1.1,
+      "last_updated": "2026-09-24T01:24:54.160Z",
       "model_location": {
         "lat": 39.576565,
         "lng": -105.91747,
@@ -594,16 +594,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 1.8,
-      "last_updated": "2026-09-23T00:30:13.011Z",
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.9,
+      "last_updated": "2026-09-24T01:24:54.403Z",
       "model_location": {
         "lat": 39.635193,
         "lng": -105.85411,
@@ -618,16 +618,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.4,
-      "last_updated": "2026-09-23T00:30:13.245Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:24:54.647Z",
       "model_location": {
         "lat": 38.902206,
         "lng": -106.95252,
@@ -642,16 +642,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 2.5,
-      "last_updated": "2026-09-23T00:30:13.480Z",
+      "snowfall_7day": 1.2,
+      "last_updated": "2026-09-24T01:24:54.887Z",
       "model_location": {
         "lat": 39.686462,
         "lng": -105.89536,
@@ -666,16 +666,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "last_updated": "2026-09-23T00:30:13.713Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:24:55.125Z",
       "model_location": {
         "lat": 43.971092,
         "lng": -121.701515,
@@ -690,16 +690,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:13.945Z",
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T01:24:55.367Z",
       "model_location": {
         "lat": 46.921776,
         "lng": -121.4852,
@@ -714,16 +714,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0.1,
-      "last_updated": "2026-09-23T00:30:14.263Z",
+      "last_updated": "2026-09-24T01:24:55.616Z",
       "model_location": {
         "lat": 47.739815,
         "lng": -121.07224,
@@ -738,16 +738,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.4,
-      "last_updated": "2026-09-23T00:30:14.499Z",
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T01:24:55.862Z",
       "model_location": {
         "lat": 48.842342,
         "lng": -121.67723,
@@ -762,16 +762,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:14.732Z",
+      "last_updated": "2026-09-24T01:24:56.102Z",
       "model_location": {
         "lat": 48.359203,
         "lng": -116.63195,
@@ -786,16 +786,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:14.967Z",
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T01:24:56.345Z",
       "model_location": {
         "lat": 50.88907,
         "lng": -119.8732,
@@ -810,16 +810,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:15.201Z",
+      "snowfall_7day": 1.1,
+      "last_updated": "2026-09-24T01:24:56.593Z",
       "model_location": {
         "lat": 50.991146,
         "lng": -118.10964,
@@ -834,16 +834,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.6,
-      "last_updated": "2026-09-23T00:30:15.444Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:24:56.839Z",
       "model_location": {
         "lat": 49.453293,
         "lng": -115.11693,
@@ -858,16 +858,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
+      "snowfall_48hr": 0.1,
       "snowfall_7day": 0.2,
-      "last_updated": "2026-09-23T00:30:15.678Z",
+      "last_updated": "2026-09-24T01:24:57.089Z",
       "model_location": {
         "lat": 49.733494,
         "lng": -118.924446,
@@ -882,16 +882,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "last_updated": "2026-09-23T00:30:15.914Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:24:57.330Z",
       "model_location": {
         "lat": 51.298714,
         "lng": -117.059845,
@@ -906,16 +906,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:16.145Z",
+      "last_updated": "2026-09-24T01:24:57.580Z",
       "model_location": {
         "lat": 46.22551,
         "lng": -74.55689,
@@ -930,16 +930,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:16.379Z",
+      "last_updated": "2026-09-24T01:24:57.818Z",
       "model_location": {
         "lat": 44.490417,
         "lng": -80.334785,
@@ -954,16 +954,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:16.612Z",
+      "last_updated": "2026-09-24T01:24:58.066Z",
       "model_location": {
         "lat": 45.007713,
         "lng": -70.315056,
@@ -978,16 +978,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:16.847Z",
+      "last_updated": "2026-09-24T01:24:58.316Z",
       "model_location": {
         "lat": 44.48668,
         "lng": -70.890594,
@@ -1002,16 +1002,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:17.090Z",
+      "last_updated": "2026-09-24T01:24:58.565Z",
       "model_location": {
         "lat": 44.150784,
         "lng": -72.93589,
@@ -1026,16 +1026,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:17.322Z",
+      "last_updated": "2026-09-24T01:24:58.809Z",
       "model_location": {
         "lat": 43.087994,
         "lng": -72.914215,
@@ -1050,16 +1050,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:17.553Z",
+      "last_updated": "2026-09-24T01:24:59.053Z",
       "model_location": {
         "lat": 43.391975,
         "lng": -72.76137,
@@ -1074,16 +1074,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:17.784Z",
+      "last_updated": "2026-09-24T01:24:59.297Z",
       "model_location": {
         "lat": 44.93098,
         "lng": -72.51679,
@@ -1098,16 +1098,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:18.018Z",
+      "last_updated": "2026-09-24T01:24:59.542Z",
       "model_location": {
         "lat": 44.57193,
         "lng": -72.81333,
@@ -1122,16 +1122,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:18.252Z",
+      "last_updated": "2026-09-24T01:24:59.789Z",
       "model_location": {
         "lat": 44.058983,
         "lng": -71.65145,
@@ -1146,16 +1146,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:18.486Z",
+      "last_updated": "2026-09-24T01:25:00.031Z",
       "model_location": {
         "lat": 44.17704,
         "lng": -71.68187,
@@ -1170,16 +1170,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:18.715Z",
+      "last_updated": "2026-09-24T01:25:00.275Z",
       "model_location": {
         "lat": 44.256786,
         "lng": -71.259544,
@@ -1194,16 +1194,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:18.948Z",
+      "last_updated": "2026-09-24T01:25:00.513Z",
       "model_location": {
         "lat": 44.242867,
         "lng": -71.46037,
@@ -1218,16 +1218,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:19.178Z",
+      "last_updated": "2026-09-24T01:25:00.765Z",
       "model_location": {
         "lat": 41.18899,
         "lng": -111.853226,
@@ -1242,16 +1242,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:19.427Z",
+      "last_updated": "2026-09-24T01:25:01.008Z",
       "model_location": {
         "lat": 41.392025,
         "lng": -111.75035,
@@ -1266,16 +1266,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:19.659Z",
+      "last_updated": "2026-09-24T01:25:01.254Z",
       "model_location": {
         "lat": 40.619656,
         "lng": -111.59151,
@@ -1290,16 +1290,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:19.899Z",
+      "last_updated": "2026-09-24T01:25:01.498Z",
       "model_location": {
         "lat": 40.619656,
         "lng": -111.59151,
@@ -1314,16 +1314,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.5,
-      "last_updated": "2026-09-23T00:30:20.130Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:25:01.738Z",
       "model_location": {
         "lat": 39.176083,
         "lng": -106.91896,
@@ -1338,16 +1338,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "last_updated": "2026-09-23T00:30:20.364Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:25:01.979Z",
       "model_location": {
         "lat": 39.152,
         "lng": -106.880806,
@@ -1362,16 +1362,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:20.596Z",
+      "last_updated": "2026-09-24T01:25:02.221Z",
       "model_location": {
         "lat": 39.178825,
         "lng": -106.88435,
@@ -1386,16 +1386,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1.7,
-      "last_updated": "2026-09-23T00:30:20.828Z",
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T01:25:02.464Z",
       "model_location": {
         "lat": 39.611095,
         "lng": -106.554665,
@@ -1410,16 +1410,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
-      "snowfall_24hr": 0.2,
-      "snowfall_48hr": 0.2,
-      "snowfall_7day": 0.2,
-      "last_updated": "2026-09-23T00:30:21.062Z",
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T01:25:02.705Z",
       "model_location": {
         "lat": 37.632225,
         "lng": -107.84925,
@@ -1434,16 +1434,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.2,
-      "last_updated": "2026-09-23T00:30:21.300Z",
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:25:02.956Z",
       "model_location": {
         "lat": 37.45022,
         "lng": -106.79822,
@@ -1458,16 +1458,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
-      "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:21.564Z",
+      "snowfall_24hr": 0.1,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T01:25:03.198Z",
       "model_location": {
         "lat": 38.51552,
         "lng": -106.34718,
@@ -1482,16 +1482,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 1,
-      "last_updated": "2026-09-23T00:30:21.811Z",
+      "snowfall_7day": 0.6,
+      "last_updated": "2026-09-24T01:25:03.439Z",
       "model_location": {
         "lat": 39.925476,
         "lng": -105.57077,
@@ -1506,16 +1506,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:22.050Z",
+      "last_updated": "2026-09-24T01:25:03.679Z",
       "model_location": {
         "lat": 43.794422,
         "lng": -110.95127,
@@ -1530,16 +1530,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:22.287Z",
+      "last_updated": "2026-09-24T01:25:03.926Z",
       "model_location": {
         "lat": 43.46047,
         "lng": -110.77129,
@@ -1554,16 +1554,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:22.533Z",
+      "last_updated": "2026-09-24T01:25:04.536Z",
       "model_location": {
         "lat": 45.830463,
         "lng": -110.91481,
@@ -1578,16 +1578,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:22.773Z",
+      "last_updated": "2026-09-24T01:25:04.779Z",
       "model_location": {
         "lat": 48.47078,
         "lng": -114.34042,
@@ -1602,16 +1602,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:23.008Z",
+      "last_updated": "2026-09-24T01:25:05.018Z",
       "model_location": {
         "lat": 47.026333,
         "lng": -113.98739,
@@ -1626,16 +1626,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:23.245Z",
+      "last_updated": "2026-09-24T01:25:05.259Z",
       "model_location": {
         "lat": 42.55,
         "lng": 1.6599998,
@@ -1650,16 +1650,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:23.481Z",
+      "last_updated": "2026-09-24T01:25:05.502Z",
       "model_location": {
         "lat": 43.770355,
         "lng": -116.08357,
@@ -1674,16 +1674,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:23.713Z",
+      "last_updated": "2026-09-24T01:25:05.750Z",
       "model_location": {
         "lat": 44.691257,
         "lng": -116.15599,
@@ -1698,16 +1698,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:23.949Z",
+      "last_updated": "2026-09-24T01:25:05.998Z",
       "model_location": {
         "lat": 47.506413,
         "lng": -116.123886,
@@ -1722,16 +1722,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0.1,
-      "last_updated": "2026-09-23T00:30:24.188Z",
+      "snowfall_48hr": 1.5,
+      "snowfall_7day": 1.5,
+      "last_updated": "2026-09-24T01:25:06.235Z",
       "model_location": {
         "lat": 45.33758,
         "lng": -121.671715,
@@ -1746,16 +1746,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:24.423Z",
+      "snowfall_48hr": 1,
+      "snowfall_7day": 1,
+      "last_updated": "2026-09-24T01:25:06.473Z",
       "model_location": {
         "lat": 45.33063,
         "lng": -121.7085,
@@ -1770,16 +1770,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:24.656Z",
+      "last_updated": "2026-09-24T01:25:06.735Z",
       "model_location": {
         "lat": 43.601593,
         "lng": -122.025375,
@@ -1794,16 +1794,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:24.890Z",
+      "last_updated": "2026-09-24T01:25:06.973Z",
       "model_location": {
         "lat": 47.278145,
         "lng": -120.4073,
@@ -1818,16 +1818,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:25.123Z",
+      "last_updated": "2026-09-24T01:25:07.212Z",
       "model_location": {
         "lat": 47.426582,
         "lng": -121.43954,
@@ -1842,16 +1842,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:25.359Z",
+      "last_updated": "2026-09-24T01:25:07.451Z",
       "model_location": {
         "lat": 47.91205,
         "lng": -117.099724,
@@ -1866,16 +1866,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
+      "snowfall_48hr": 0.1,
       "snowfall_7day": 0.1,
-      "last_updated": "2026-09-23T00:30:25.598Z",
+      "last_updated": "2026-09-24T01:25:07.690Z",
       "model_location": {
         "lat": 46.605446,
         "lng": -121.40259,
@@ -1890,16 +1890,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:25.831Z",
+      "last_updated": "2026-09-24T01:25:07.929Z",
       "model_location": {
         "lat": 48.276337,
         "lng": -117.58585,
@@ -1914,16 +1914,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:26.065Z",
+      "last_updated": "2026-09-24T01:25:08.170Z",
       "model_location": {
         "lat": 49.07904,
         "lng": -117.85734,
@@ -1938,16 +1938,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0,
-      "snowfall_7day": 0.1,
-      "last_updated": "2026-09-23T00:30:26.299Z",
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.3,
+      "last_updated": "2026-09-24T01:25:08.411Z",
       "model_location": {
         "lat": 49.45178,
         "lng": -117.15243,
@@ -1962,16 +1962,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:26.538Z",
+      "last_updated": "2026-09-24T01:25:08.652Z",
       "model_location": {
         "lat": 50.442547,
         "lng": -116.21964,
@@ -1986,16 +1986,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.5,
-      "last_updated": "2026-09-23T00:30:26.787Z",
+      "snowfall_7day": 2.9,
+      "last_updated": "2026-09-24T01:25:08.891Z",
       "model_location": {
         "lat": 52.759224,
         "lng": -118.14606,
@@ -2010,16 +2010,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:27.022Z",
+      "last_updated": "2026-09-24T01:25:09.137Z",
       "model_location": {
         "lat": 50.92304,
         "lng": -115.18485,
@@ -2034,16 +2034,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
-      "snowfall_7day": 0.7,
-      "last_updated": "2026-09-23T00:30:27.269Z",
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T01:25:09.377Z",
       "model_location": {
         "lat": 49.319416,
         "lng": -114.45708,
@@ -2058,16 +2058,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:27.505Z",
+      "last_updated": "2026-09-24T01:25:09.614Z",
       "model_location": {
         "lat": 51.191925,
         "lng": -115.61015,
@@ -2082,16 +2082,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:27.738Z",
+      "last_updated": "2026-09-24T01:25:09.851Z",
       "model_location": {
         "lat": 47.276413,
         "lng": -70.614296,
@@ -2106,16 +2106,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:27.974Z",
+      "last_updated": "2026-09-24T01:25:10.113Z",
       "model_location": {
         "lat": 45.252846,
         "lng": -76.78692,
@@ -2130,16 +2130,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:28.205Z",
+      "last_updated": "2026-09-24T01:25:10.355Z",
       "model_location": {
         "lat": 38.80806,
         "lng": -120.06237,
@@ -2154,16 +2154,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:28.438Z",
+      "last_updated": "2026-09-24T01:25:10.595Z",
       "model_location": {
         "lat": 38.670647,
         "lng": -120.05397,
@@ -2178,16 +2178,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:28.671Z",
+      "last_updated": "2026-09-24T01:25:10.836Z",
       "model_location": {
         "lat": 39.239864,
         "lng": -120.130035,
@@ -2202,16 +2202,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:28.915Z",
+      "last_updated": "2026-09-24T01:25:11.074Z",
       "model_location": {
         "lat": 39.089325,
         "lng": -120.18887,
@@ -2226,16 +2226,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:29.159Z",
+      "last_updated": "2026-09-24T01:25:11.314Z",
       "model_location": {
         "lat": 39.337955,
         "lng": -119.91022,
@@ -2250,16 +2250,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:29.393Z",
+      "last_updated": "2026-09-24T01:25:11.560Z",
       "model_location": {
         "lat": 39.252907,
         "lng": -119.91882,
@@ -2274,16 +2274,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:29.625Z",
+      "last_updated": "2026-09-24T01:25:11.800Z",
       "model_location": {
         "lat": 37.75043,
         "lng": -119.06088,
@@ -2298,16 +2298,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:29.857Z",
+      "last_updated": "2026-09-24T01:25:12.040Z",
       "model_location": {
         "lat": 34.231365,
         "lng": -116.8485,
@@ -2322,16 +2322,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:30.099Z",
+      "last_updated": "2026-09-24T01:25:12.276Z",
       "model_location": {
         "lat": 34.22574,
         "lng": -116.88033,
@@ -2346,16 +2346,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:30.338Z",
+      "last_updated": "2026-09-24T01:25:12.515Z",
       "model_location": {
         "lat": 34.382915,
         "lng": -117.68872,
@@ -2370,16 +2370,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
-      "snowfall_48hr": 0.1,
-      "snowfall_7day": 0.1,
-      "last_updated": "2026-09-23T00:30:30.639Z",
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T01:25:12.752Z",
       "model_location": {
         "lat": 35.76731,
         "lng": -105.78745,
@@ -2394,16 +2394,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:30.874Z",
+      "last_updated": "2026-09-24T01:25:13.025Z",
       "model_location": {
         "lat": 36.37342,
         "lng": -105.25041,
@@ -2418,16 +2418,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:31.496Z",
+      "last_updated": "2026-09-24T01:25:13.680Z",
       "model_location": {
         "lat": 44.331387,
         "lng": -73.87677,
@@ -2442,16 +2442,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:31.730Z",
+      "last_updated": "2026-09-24T01:25:13.917Z",
       "model_location": {
         "lat": 42.740948,
         "lng": -77.42066,
@@ -2466,16 +2466,16 @@
       "status": "fresh",
       "units": "in",
       "data_source": "Open-Meteo",
-      "window_start": "2026-09-23T00:00:00.000Z",
+      "window_start": "2026-09-24T01:00:00.000Z",
       "window_ends": {
-        "snowfall_24hr": "2026-09-24T00:00:00.000Z",
-        "snowfall_48hr": "2026-09-25T00:00:00.000Z",
-        "snowfall_7day": "2026-09-30T00:00:00.000Z"
+        "snowfall_24hr": "2026-09-25T01:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T01:00:00.000Z",
+        "snowfall_7day": "2026-10-01T01:00:00.000Z"
       },
       "snowfall_24hr": 0,
       "snowfall_48hr": 0,
       "snowfall_7day": 0,
-      "last_updated": "2026-09-23T00:30:31.961Z",
+      "last_updated": "2026-09-24T01:25:14.231Z",
       "model_location": {
         "lat": 50.368195,
         "lng": -119.03262,
