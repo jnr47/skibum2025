@@ -1011,7 +1011,7 @@
             <!-- Left Sidebar - Control Panel -->
             <div class="control-panel">
                 <div class="panel-header">
-                    <h1 class="panel-title">Explore snowfall forecasts.</h1><div id="forecast-status" class="forecast-status" role="status">Loading forecasts…</div><p id="map-status" role="status"></p><div class="forecast-credit">Modeled snowfall, not resort-reported snow. <a href="/docs/data-sources.html">Data sources &amp; limitations</a>.</div>
+                    <h1 class="panel-title">Explore snowfall forecasts.</h1><div id="forecast-status" class="forecast-status" role="status" hidden></div><p id="map-status" role="status"></p>
                     <p class="panel-subtitle">Find your next snow day.</p>
                 </div>
                 
@@ -1239,7 +1239,8 @@
                     <p>&copy; 2025 Skibum.com. Built for skiers, riders, and vanlife travelers.</p>
                 </div>
             </div>
-        </footer>
+        <p class="forecast-credit"><a href="https://open-meteo.com/">Weather data: Open-Meteo</a> · <a href="/docs/data-sources.html">About the forecast</a></p>
+</footer>
     </div>
 
     <script>
@@ -1273,7 +1274,9 @@
             updateMarkers(data);
             updateHeatmapForPeriod(data, currentTimeframe);
             populateTrendingSection();
-            document.getElementById('forecast-status').textContent = F.overviewLabel(data);
+            const status = document.getElementById('forecast-status');
+            status.hidden = Object.values(data).every(v => v.status === 'fresh');
+            status.textContent = status.hidden ? '' : F.overviewLabel(data);
             document.querySelectorAll('[data-resort-count]').forEach(el => el.textContent = resorts.length);
             if (resultsTray.classList.contains('visible')) runRecommendationEngine();
         }

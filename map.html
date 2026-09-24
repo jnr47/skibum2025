@@ -597,11 +597,10 @@
                             </div>
                         </div>
 
-                        <div className="absolute bottom-0 left-0 right-0 z-10 bg-slate-900 text-white p-3 text-xs" role="status">
-                            <p>{F.overviewLabel(snowfallData)}</p>
-                            <p>{mapError}</p>
-                            <p>Modeled snowfall, not resort-reported snow.</p>
-                            <a href="/docs/data-sources.html">Data sources &amp; limitations</a>
+                        <div className="absolute bottom-0 left-0 right-0 z-10 bg-slate-900 text-white p-3 text-xs">
+                            <p role="status" hidden={loading || Object.values(snowfallData).every(v => v.status === 'fresh')}>{!loading && Object.values(snowfallData).some(v => v.status !== 'fresh') ? F.overviewLabel(snowfallData) : ''}</p>
+                            <p role="status">{mapError}</p>
+                            <a href="https://open-meteo.com/">Weather data: Open-Meteo</a> · <a href="/docs/data-sources.html">About the forecast</a>
                         </div>
 
                         {loading && (
@@ -679,7 +678,7 @@
                         </div>
                     </div>
 
-                    <p className="p-4" role="status">{F.freshnessLabel(snowfallData)}</p>
+                    {snowfallData.status !== 'fresh' && <p className="p-4" role="status">{F.freshnessLabel(snowfallData)}</p>}
                     {/* Content Sections */}
                     <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
