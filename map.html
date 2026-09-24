@@ -657,21 +657,21 @@
                                     <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{F.format(snowfallData.forecast24hr)}</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.status === 'stale' ? '—' : F.format(snowfallData.forecast24hr)}</div>
                                     <div className="text-sm md:text-base text-slate-400">24 Hour Forecast</div>
                                 </div>
                                 <div className="text-center">
                                     <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{F.format(snowfallData.forecast48hr)}</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.status === 'stale' ? '—' : F.format(snowfallData.forecast48hr)}</div>
                                     <div className="text-sm md:text-base text-slate-400">48 Hour Forecast</div>
                                 </div>
                                 <div className="text-center">
                                     <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" />
                                     </svg>
-                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{F.format(snowfallData.forecast7day)}</div>
+                                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{snowfallData.status === 'stale' ? '—' : F.format(snowfallData.forecast7day)}</div>
                                     <div className="text-sm md:text-base text-slate-400">7 Day Forecast</div>
                                 </div>
                             </div>

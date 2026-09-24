@@ -979,7 +979,7 @@
     <script src="/assets/forecast.js"></script>
     <script src="/assets/data-client.js"></script>
     <style>
-      .forecast-status { font-size: 13px; line-height: 1.5; padding: 12px; background: #10263b; color: #f1f5f9; border-radius: 8px; margin: 12px 0; }
+      .forecast-status { font-size: 13px; line-height: 1.5; padding: 0; color: #687787; margin: 6px 0; }
       .forecast-credit { font-size: 12px; line-height: 1.6; padding: 10px; }
       .forecast-credit a { text-decoration: underline; }
       .marker[data-availability="unavailable"], .marker[data-availability="stale"] { background: #202a38 !important; border: 2px dashed #e2e8f0; }
@@ -1011,8 +1011,8 @@
             <!-- Left Sidebar - Control Panel -->
             <div class="control-panel">
                 <div class="panel-header">
-                    <h1 class="panel-title">Explore snowfall forecasts.</h1><div id="forecast-status" class="forecast-status" role="status" hidden></div><p id="map-status" role="status"></p>
-                    <p class="panel-subtitle">Find your next snow day.</p>
+                    <h1 class="panel-title">See where the best snow is right now.</h1><div id="forecast-status" class="forecast-status" role="status" hidden></div><p id="map-status" role="status"></p>
+                    <p class="panel-subtitle">Snow forecasts across 100+ resorts. Find what's worth chasing.</p>
                 </div>
                 
                 <!-- Search Bar -->
@@ -1106,7 +1106,7 @@
                         </div>
                         
                         <div class="show-more">
-                            <button class="show-more-btn" id="showMoreBtn">Show 2 more options ↓</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -1395,9 +1395,9 @@
                                 popup.setHTML(`
                                     <div class="popup-resort-name">${resort.name}</div>
                                     <div class="popup-snow-data">
-                                        <strong>24h:</strong> ${F.format(data.forecast24hr)}<br>
-                                        <strong>48h:</strong> ${F.format(data.forecast48hr)}<br>
-                                        <strong>7 day:</strong> ${F.format(data.forecast7day)}<br>${F.freshnessLabel(data)}
+                                        <strong>24h:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast24hr)}<br>
+                                        <strong>48h:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast48hr)}<br>
+                                        <strong>7 day:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast7day)}<br>${F.freshnessLabel(data)}
                                     </div>
                                 `);
                             } else {
@@ -1545,7 +1545,7 @@
                         <p class="trending-note">${resort.snow48h > 0 ? 'Modeled snowfall' : 'No snowfall forecast'}</p>
                     </div>
                 `;
-            }).join('') || '<p>No fresh forecasts available for featured resorts.</p>';
+            }).join('') || '<p>Snow forecasts are refreshing.</p>';
         }
         
         // === TOGGLE BUTTON HANDLERS ===
@@ -1630,8 +1630,12 @@
                 return;
             }
             panelSearch.value = resort.name;
-            heroMap.flyTo({ center: [resort.lng, resort.lat], zoom: 9 });
-            document.getElementById('hero-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            resultsTray.classList.remove('visible');
+            document.getElementById('hero-map').scrollIntoView({ behavior: 'instant', block: 'center' });
+            // Finish layout and cancel any earlier camera transition before locating the resort.
+            heroMap.stop();
+            heroMap.resize();
+            heroMap.jumpTo({ center: [resort.lng, resort.lat], zoom: 9 });
             searchFeedback.textContent = 'Showing ' + resort.name + ' on the map.';
         }
         document.getElementById('resortSearchForm').addEventListener('submit', event => {
@@ -1665,7 +1669,7 @@
             const resultsList = document.getElementById('resultsList');
             const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
             
-            if (!results.length) { resultsList.innerHTML = '<p>No fresh forecasts available. Please try again later.</p>'; return; }
+            if (!results.length) { resultsList.innerHTML = '<p>Snow forecasts are refreshing.</p>'; return; }
             resultsList.innerHTML = results.map((resort, index) => {
                 const snow48h = resort.snow48h?.toFixed(1) || 0;
                 const snow7day = resort.snow7day?.toFixed(1) || 0;
@@ -1701,9 +1705,6 @@
             }).join('');
         }
         
-        document.getElementById('showMoreBtn')?.addEventListener('click', () => {
-            alert('Showing 2 more results (feature coming soon)');
-        });
         
         document.querySelectorAll('.pass-chip, .radius-chip, #prioritizeOvernight').forEach(el => {
             el.disabled = true;

@@ -15,7 +15,7 @@ async function page(name,state='fresh',map=true) {
   w.SKIBUM_CONFIG={mapboxPublicToken:'test-public-token'};
   w.setInterval=()=>0;
   w.AbortSignal={timeout:()=>undefined};
-  w.fetch=async()=>{if(state==='network-error')throw Error('offline');return{ok:true,json:async()=>snapshot(state)};};
+  w.fetch=async()=>{if(state==='network-error')throw Error('offline');return{ok:true,json:async()=>{const data=snapshot(state==='partial'?'fresh':state);if(state==='partial')data.resorts.slice(3).forEach(r=>r.status='stale');return data;}};};
   w.alert=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
   w.addEventListener('error',e=>errors.push(e.message));
   if(map)w.eval(mapboxStub);
@@ -39,7 +39,7 @@ for(const name of ['index.html','map.html','mammoth.html']){
     const d=dom.window.document;
     const status=[...d.querySelectorAll('[role="status"]')].map(el=>el.textContent).join(' ');
     if(state==='fresh')assert.equal(d.querySelector('[role="status"]').hidden,true);
-    if(state==='stale')assert.match(status,/Forecasts? need[s]? an update/);
+    if(state==='stale')assert.match(status,/Snow forecasts are refreshing/);
     if(state==='network-error')assert.match(status,/Forecast unavailable/);
     if(name==='mammoth.html')assert.equal(d.getElementById('snow-24hr').textContent,state==='fresh'?'0.0″':'Unavailable');
     else {
@@ -48,7 +48,7 @@ for(const name of ['index.html','map.html','mammoth.html']){
       if(name==='index.html'){
         d.getElementById('findResortsBtn').click();
         const result=d.getElementById('resultsList').textContent;
-        if(state==='fresh')assert.match(result,/0\.0/);else assert.match(result,/No fresh forecasts/);
+        if(state==='fresh')assert.match(result,/0\.0/);else assert.match(result,/Snow forecasts are refreshing/);
       }
     }
    }finally{dom.window.close();}
@@ -67,4 +67,14 @@ test('standalone map detail uses unavailable, not a zero fallback',async()=>{
   dom.window.document.querySelector('.marker').click();await new Promise(r=>setTimeout(r,10));
   assert.match(dom.window.document.querySelector('.resort-detail-container').textContent,/Unavailable/);
  }finally{dom.window.close();}
+});
+
+test('snowiest resorts shows only fresh results and no placeholder expansion',async()=>{
+ for(const [state,count] of [['fresh',5],['partial',3],['stale',0]]){
+  const dom=await page('index.html',state);try{
+   const d=dom.window.document;d.getElementById('showRecommendations').click();
+   assert.equal(d.querySelectorAll('.result-card').length,count);
+   assert.equal(d.getElementById('showMoreBtn'),null);
+  }finally{dom.window.close();}
+ }
 });

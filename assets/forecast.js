@@ -49,7 +49,7 @@
   // Consumer-facing copy only; validation and freshness rules stay unchanged.
   function freshnessLabel(v) {
     if (v?.status === 'fresh') return 'Updated recently.';
-    if (v?.status === 'stale') return 'Forecast needs an update. Check back soon.';
+    if (v?.status === 'stale') return 'Snow forecasts are refreshing.';
     return 'Forecast unavailable. Please try again later.';
   }
   function overviewLabel(data) {
@@ -57,7 +57,7 @@
     if (all.some(v => v.status === 'fresh')) {
       return all.every(v => v.status === 'fresh') ? 'Updated recently.' : 'Some forecasts are unavailable. Explore the latest available snow forecasts.';
     }
-    return all.some(v => v.status === 'stale') ? 'Forecasts need an update. Check back soon.' : 'Forecast unavailable. Please try again later.';
+    return all.some(v => v.status === 'stale') ? 'Snow forecasts are refreshing.' : 'Forecast unavailable. Please try again later.';
   }
   function description(v) {
     if (!v?.lastUpdated) return 'Forecast unavailable; no valid timestamped data.';

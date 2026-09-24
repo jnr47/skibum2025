@@ -18,7 +18,7 @@ window.mapboxgl = {
   on(event,fn){if(event==='load')setTimeout(fn,0);return this;}
   addSource(id,value){this.sources[id]={data:value.data,setData(data){this.data=data;}};}
   getSource(id){return this.sources[id];}
-  flyTo(options){this.lastFlight=options;return this;}
+  stop(){return this;} resize(){return this;} jumpTo(options){this.lastFlight=options;return this;}
   addLayer(){} getZoom(){return 7;} remove(){}
  },
  Marker: class {constructor(el){this.el=el;}setLngLat(){return this;}setPopup(p){this.popup=p;return this;}addTo(map){map.container.append(this.el);return this;}togglePopup(){return this;}},

@@ -26,11 +26,11 @@ for(const width of [390,1440])for(const name of ['index.html','map.html','mammot
   await page.goto('/'+name);
   const status=page.locator('[role="status"]').first();
   if(state==='fresh')await expect(status).toBeHidden();
-  else await expect(status).toContainText(state==='stale'?(/Forecasts? need[s]? an update/):(/Forecast unavailable/));
+  else await expect(status).toContainText(state==='stale'?(/Snow forecasts are refreshing/):(/Forecast unavailable/));
   if(name==='mammoth.html')await expect(page.locator('#snow-24hr')).toHaveText(state==='fresh'?'0.0″':'Unavailable');
   if(name==='index.html'){
     await page.locator('#showRecommendations').click();
-    await expect(page.locator('#resultsList')).toContainText(state==='fresh'?'0.0':'No fresh forecasts');
+    await expect(page.locator('#resultsList')).toContainText(state==='fresh'?'0.0':'Snow forecasts are refreshing');
     await expect(page.locator('.pass-chip').first()).toBeDisabled();
   }
   if(name!=='mammoth.html'){
@@ -52,12 +52,27 @@ for(const width of [390,1440])test(`resort search focuses canonical coordinates 
  await setup(page,'stale');await page.goto('/index.html');
  await expect(page.locator('.marker')).toHaveCount(103);
  await expect(page.locator('.toggle-btn.active')).toHaveText('48h');
- await page.locator('#panelSearch').fill('mammoth');
+ await page.locator('#panelSearch').fill('Whiteface Mountain');
  await page.locator('#panelSearch').press('Enter');
- await expect(page.locator('#searchFeedback')).toHaveText('Showing Mammoth Mountain on the map.');
+ await expect(page.locator('#searchFeedback')).toHaveText('Showing Whiteface Mountain on the map.');
  const flight=await page.evaluate(()=>window.__maps[0].lastFlight);
- const resort=require('../../data/resorts.json').resorts.find(r=>r.name==='Mammoth Mountain');
+ const resort=require('../../data/resorts.json').resorts.find(r=>r.name==='Whiteface Mountain');
  expect(flight.center).toEqual([resort.lng,resort.lat]);expect(flight.zoom).toBe(9);
  await page.locator('#panelSearch').fill('zzzz-no-resort');await page.locator('#panelSearch').press('Enter');
  await expect(page.locator('#searchFeedback')).toContainText('No resort found');
+});
+
+for(const width of [390,1440])test(`Whiteface real Mapbox camera ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:1000});await setup(page,'stale');
+ // Use the real camera/WebGL engine, with an empty style to avoid token and tile dependencies.
+ await page.route('**/mapbox-gl.js',route=>route.continue());
+ await page.route('**/mapbox-gl.css',route=>route.continue());
+ await page.route('https://api.mapbox.com/**',route=>route.fulfill({json:{version:8,sources:{},layers:[]}}));
+ await page.goto('/index.html');await expect(page.locator('.marker')).toHaveCount(103);
+ await page.locator('#panelSearch').fill('Whiteface Mountain');await page.locator('#panelSearch').press('Enter');
+ await expect(page.locator('#searchFeedback')).toContainText('Showing Whiteface Mountain');
+ const actual=await page.evaluate(()=>{const p=heroMap.project([-73.880076,44.362104]);const c=heroMap.getCenter();return {lng:c.lng,lat:c.lat,zoom:heroMap.getZoom(),x:p.x,y:p.y,w:heroMap.getContainer().clientWidth,h:heroMap.getContainer().clientHeight};});
+ expect(actual.lng).toBeCloseTo(-73.880076,4);expect(actual.lat).toBeCloseTo(44.362104,4);expect(actual.zoom).toBe(9);
+ expect(actual.w).toBeGreaterThan(0);expect(actual.h).toBeGreaterThan(0);
+ expect(actual.x).toBeCloseTo(actual.w/2,0);expect(actual.y).toBeCloseTo(actual.h/2,0);
 });
