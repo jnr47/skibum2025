@@ -1016,23 +1016,21 @@
                 </div>
                 
                 <!-- Search Bar -->
-                <div class="panel-search">
+                <form class="panel-search" id="resortSearchForm">
                     <input 
                         type="text" 
                         class="search-input-panel" 
                         placeholder="Search a resort or mountain..."
-                        id="panelSearch"
+                        id="panelSearch" list="resortOptions" aria-label="Search resorts" autocomplete="off"
                     >
-                </div>
-                
-                <!-- Divider -->
-                <div class="panel-divider">
-                    <span>or let us narrow it down</span>
-                </div>
+                    <datalist id="resortOptions"></datalist>
+                    <button type="submit" class="btn-small">Find on map</button>
+                    <p id="searchFeedback" aria-live="polite"></p>
+                </form>
                 
                 <!-- Primary CTA -->
                 <button class="cta-primary" id="showRecommendations">
-                    See top picks
+                    See snowiest resorts
                 </button>
                 
                 <!-- Progressive Disclosure - Filters (Hidden by Default) -->
@@ -1076,7 +1074,7 @@
                     </div>
                     
                     <button class="cta-primary" id="findResortsBtn" style="margin-top: 1rem;">
-                        Show my top picks
+                        See snowiest resorts
                     </button>
                 </div>
             </div>
@@ -1086,8 +1084,8 @@
                 <div class="map-box">
                     <!-- Snow Forecast Toggle Controls -->
                     <div class="snow-toggle-controls">
-                        <button class="toggle-btn active" data-timeframe="24hr">24h</button>
-                        <button class="toggle-btn" data-timeframe="48hr">48h</button>
+                        <button class="toggle-btn" data-timeframe="24hr">24h</button>
+                        <button class="toggle-btn active" data-timeframe="48hr">48h</button>
                         <button class="toggle-btn" data-timeframe="7day">7 day</button>
                     </div>
                     
@@ -1097,7 +1095,7 @@
                     <div class="results-tray" id="resultsTray">
                         <div class="results-header">
                             <div>
-                                <h2 class="results-title">Your Top Picks</h2>
+                                <h2 class="results-title">Snowiest resorts · 48h forecast</h2>
                                 <p class="results-subtitle">Ranked by fresh 48-hour forecast snowfall. Pass, distance, and parking filters are not yet connected.</p>
                             </div>
                             <button class="close-tray-btn" id="closeTrayBtn">✕</button>
@@ -1247,7 +1245,7 @@
         // === GLOBAL STATE ===
         let snowData = null;
         let heroMap = null;
-        let currentTimeframe = '24hr';
+        let currentTimeframe = '48hr';
         let markers = [];
         
         // Resort images mapping (from your GitHub repo)
@@ -1573,8 +1571,7 @@
         const closeTrayBtn = document.getElementById('closeTrayBtn');
         
         showRecommendationsBtn.addEventListener('click', () => {
-            filtersSection.classList.add('visible');
-            filtersSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            runRecommendationEngine();
         });
         
         if (findResortsBtn) {
@@ -1606,24 +1603,44 @@
         // === SEARCH FUNCTIONALITY ===
         const panelSearch = document.getElementById('panelSearch');
         
-        if (panelSearch) {
-            panelSearch.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && snowData) {
-                    e.preventDefault();
-                    const value = e.target.value.toLowerCase();
-                    const match = resorts.find(resort => 
-                        resort.name.toLowerCase().includes(value)
-                    );
-                    
-                    if (match) {
-                        alert(`Navigating to ${match.name} (resort page coming soon)`);
-                    } else {
-                        alert('Resort not found. Try: Jackson Hole, Vail, Palisades, etc.');
-                    }
-                }
-            });
+        const searchFeedback = document.getElementById('searchFeedback');
+        const normalizeSearch = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+        const options = document.getElementById('resortOptions');
+        resorts.forEach(resort => {
+            const option = document.createElement('option');
+            option.value = resort.name;
+            options.appendChild(option);
+        });
+        function searchMatches(value) {
+            const query = normalizeSearch(value);
+            if (!query) return [];
+            const names = resort => [resort.name, ...(resort.aliases || [])].map(normalizeSearch);
+            const exact = resorts.filter(resort => names(resort).includes(query));
+            return exact.length ? exact : resorts.filter(resort => names(resort).some(name => name.includes(query)));
         }
-        
+        function focusSearchResult() {
+            const matches = searchMatches(panelSearch.value);
+            if (matches.length !== 1) {
+                searchFeedback.textContent = matches.length ? 'Choose a resort from the suggestions, or enter a more specific name.' : 'No resort found. Try another name.';
+                return;
+            }
+            const resort = matches[0];
+            if (!heroMap || !resort.marker) {
+                searchFeedback.textContent = 'The map is not ready. Please try again in a moment.';
+                return;
+            }
+            panelSearch.value = resort.name;
+            heroMap.flyTo({ center: [resort.lng, resort.lat], zoom: 9 });
+            document.getElementById('hero-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            searchFeedback.textContent = 'Showing ' + resort.name + ' on the map.';
+        }
+        document.getElementById('resortSearchForm').addEventListener('submit', event => {
+            event.preventDefault(); focusSearchResult();
+        });
+        panelSearch.addEventListener('change', () => {
+            if (searchMatches(panelSearch.value).length === 1) focusSearchResult();
+        });
+
         // === RECOMMENDATION ENGINE ===
         function runRecommendationEngine() {
             if (!snowData) return;

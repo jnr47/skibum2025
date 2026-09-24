@@ -29,7 +29,7 @@ for(const width of [390,1440])for(const name of ['index.html','map.html','mammot
   else await expect(status).toContainText(state==='stale'?(/Forecasts? need[s]? an update/):(/Forecast unavailable/));
   if(name==='mammoth.html')await expect(page.locator('#snow-24hr')).toHaveText(state==='fresh'?'0.0″':'Unavailable');
   if(name==='index.html'){
-    await page.locator('#showRecommendations').click();await page.locator('#findResortsBtn').click();
+    await page.locator('#showRecommendations').click();
     await expect(page.locator('#resultsList')).toContainText(state==='fresh'?'0.0':'No fresh forecasts');
     await expect(page.locator('.pass-chip').first()).toBeDisabled();
   }
@@ -45,4 +45,19 @@ for(const name of ['index.html','map.html'])test(`${name} survives missing map l
  await setup(page,'fresh',false);await page.goto('/'+name);
  await expect(page.locator('[role="status"]').first()).toBeHidden();
  await expect(page.getByText(/Map unavailable/).first()).toBeVisible();
+});
+
+for(const width of [390,1440])test(`resort search focuses canonical coordinates and 48h is the default ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:1000});
+ await setup(page,'stale');await page.goto('/index.html');
+ await expect(page.locator('.marker')).toHaveCount(103);
+ await expect(page.locator('.toggle-btn.active')).toHaveText('48h');
+ await page.locator('#panelSearch').fill('mammoth');
+ await page.locator('#panelSearch').press('Enter');
+ await expect(page.locator('#searchFeedback')).toHaveText('Showing Mammoth Mountain on the map.');
+ const flight=await page.evaluate(()=>window.__maps[0].lastFlight);
+ const resort=require('../../data/resorts.json').resorts.find(r=>r.name==='Mammoth Mountain');
+ expect(flight.center).toEqual([resort.lng,resort.lat]);expect(flight.zoom).toBe(9);
+ await page.locator('#panelSearch').fill('zzzz-no-resort');await page.locator('#panelSearch').press('Enter');
+ await expect(page.locator('#searchFeedback')).toContainText('No resort found');
 });

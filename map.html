@@ -214,7 +214,7 @@
             const [mapReady, setMapReady] = useState(false);
             const [mapError, setMapError] = useState('');
             const [legendCollapsed, setLegendCollapsed] = useState(window.innerWidth <= 768); // Start collapsed on mobile
-            const [forecastPeriod, setForecastPeriod] = useState('24hr'); // Track which forecast period is active
+            const [forecastPeriod, setForecastPeriod] = useState('48hr'); // Track which forecast period is active
 
             // Update map when forecast period changes
             useEffect(() => {
