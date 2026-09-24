@@ -46,6 +46,19 @@
   }
   function format(value) { return Number.isFinite(value) ? `${value.toFixed(1)}″` : 'Unavailable'; }
   function utc(value) { return new Date(value).toISOString().replace('T', ' ').replace(':00.000Z', ' UTC'); }
+  // Consumer-facing copy only; validation and freshness rules stay unchanged.
+  function freshnessLabel(v) {
+    if (v?.status === 'fresh') return 'Updated recently.';
+    if (v?.status === 'stale') return 'Forecast needs an update. Check back soon.';
+    return 'Forecast unavailable. Please try again later.';
+  }
+  function overviewLabel(data) {
+    const all = Object.values(data);
+    if (all.some(v => v.status === 'fresh')) {
+      return all.every(v => v.status === 'fresh') ? 'Updated recently.' : 'Some forecasts are unavailable. Explore the latest available snow forecasts.';
+    }
+    return all.some(v => v.status === 'stale') ? 'Forecasts need an update. Check back soon.' : 'Forecast unavailable. Please try again later.';
+  }
   function description(v) {
     if (!v?.lastUpdated) return 'Forecast unavailable; no valid timestamped data.';
     return `${v.status === 'fresh' ? 'Forecast' : 'Stale forecast — excluded from snow totals and rankings'}. Retrieved ${utc(v.lastUpdated)}. Windows start ${utc(v.windowStart)} (24h / 48h / 168h).`;
@@ -58,5 +71,5 @@
       (updated ? `. Oldest retrieval ${utc(updated)}.` : '.') +
       (starts.length === 1 ? ` Windows start ${utc(starts[0])}; totals cover 24h, 48h, or 168h from that time.` : '');
   }
-  return { HOUR, FRESH_HOURS, fields, empty, validRecord, status, view, views, format, description, summary };
+  return { HOUR, FRESH_HOURS, fields, empty, validRecord, status, view, views, format, freshnessLabel, overviewLabel, description, summary };
 }));

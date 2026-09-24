@@ -25,7 +25,7 @@ for(const width of [390,1440])for(const name of ['index.html','map.html','mammot
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/'+name);
   const status=page.locator('[role="status"]').first();
-  await expect(status).toContainText(state==='fresh'?(/103\/103|Retrieved/):state==='stale'?(/103 stale|Stale forecast/):(/103 unavailable|Forecast unavailable/));
+  await expect(status).toContainText(state==='fresh'?(/Updated recently/):state==='stale'?(/Forecasts? need[s]? an update/):(/Forecast unavailable/));
   if(name==='mammoth.html')await expect(page.locator('#snow-24hr')).toHaveText(state==='fresh'?'0.0″':'Unavailable');
   if(name==='index.html'){
     await page.locator('#showRecommendations').click();await page.locator('#findResortsBtn').click();
@@ -42,5 +42,5 @@ for(const width of [390,1440])for(const name of ['index.html','map.html','mammot
 }
 for(const name of ['index.html','map.html'])test(`${name} survives missing map library`,async({page})=>{
  await setup(page,'fresh',false);await page.goto('/'+name);
- await expect(page.locator('[role="status"]').first()).toContainText('103/103');
+ await expect(page.locator('[role="status"]').first()).toContainText('Updated recently');
 });

@@ -8,13 +8,13 @@
     <meta name="google-site-verification" content="nkR5Pfzko7I93RIvy57tFWipkHdbt4gKZGdhstz6Pjg" />
     
     <!-- Primary Meta Tags -->
-    <title>Skibum - Modelled Ski Planning & Vanlife Guide</title>
-    <meta name="description" content="Modelled snow data, mountain cams, road conditions, and vanlife-friendly overnight parking for ski resorts across North America. Plan your perfect ski trip.">
+    <title>Skibum - Modeled Ski Planning & Vanlife Guide</title>
+    <meta name="description" content="Modeled snow data, mountain cams, road conditions, and vanlife-friendly overnight parking for ski resorts across North America. Plan your perfect ski trip.">
     <meta name="keywords" content="ski resorts, snow conditions, vanlife parking, mountain cams, ski trip planning, powder alerts, overnight parking">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Skibum - Where Should You Ski This Weekend?">
-    <meta property="og:description" content="Modelled snow, mountain cams, road conditions, and vanlife-friendly overnight options - all in one place.">
+    <meta property="og:description" content="Modeled snow, mountain cams, road conditions, and vanlife-friendly overnight options - all in one place.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skibum.com">
     <meta property="og:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Skibum - Ski Trip Planning Hub">
-    <meta name="twitter:description" content="Modelled snow, cams, road conditions & vanlife parking for North American ski resorts.">
+    <meta name="twitter:description" content="Modeled snow, cams, road conditions & vanlife parking for North American ski resorts.">
     <meta name="twitter:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
     
     <link rel="canonical" href="https://skibum.com">
@@ -1011,8 +1011,8 @@
             <!-- Left Sidebar - Control Panel -->
             <div class="control-panel">
                 <div class="panel-header">
-                    <h1 class="panel-title">Explore snowfall forecasts.</h1><div id="forecast-status" class="forecast-status" role="status">Loading timestamped forecasts…</div><p id="map-status" role="status"></p><div class="forecast-credit">Modelled snowfall, not observed snow or resort conditions. Forecasts are for a representative ski-area point; elevation and conditions vary across the mountain. <a href="https://open-meteo.com/">Weather: Open-Meteo</a> (cm converted to inches). <a href="/docs/data-sources.html">Location sources &amp; limitations</a>. Dashed markers mean stale/unavailable data.</div>
-                    <p class="panel-subtitle">Explore modelled snowfall forecasts. Pass and overnight planning are being verified.</p>
+                    <h1 class="panel-title">Explore snowfall forecasts.</h1><div id="forecast-status" class="forecast-status" role="status">Loading forecasts…</div><p id="map-status" role="status"></p><div class="forecast-credit">Modeled snowfall, not resort-reported snow. <a href="/docs/data-sources.html">Data sources &amp; limitations</a>.</div>
+                    <p class="panel-subtitle">Find your next snow day.</p>
                 </div>
                 
                 <!-- Search Bar -->
@@ -1273,7 +1273,7 @@
             updateMarkers(data);
             updateHeatmapForPeriod(data, currentTimeframe);
             populateTrendingSection();
-            document.getElementById('forecast-status').textContent = F.summary(data);
+            document.getElementById('forecast-status').textContent = F.overviewLabel(data);
             document.querySelectorAll('[data-resort-count]').forEach(el => el.textContent = resorts.length);
             if (resultsTray.classList.contains('visible')) runRecommendationEngine();
         }
@@ -1294,8 +1294,8 @@
                 heroMap = new mapboxgl.Map({
                     container: 'hero-map',
                     style: 'mapbox://styles/mapbox/dark-v11',
-                    center: [-106, 45],
-                    zoom: 3.5,
+                    center: [-113, 46],
+                    zoom: window.innerWidth <= 768 ? 2.2 : 2.8,
                     interactive: true
                 });
                 
@@ -1396,7 +1396,7 @@
                                     <div class="popup-snow-data">
                                         <strong>24h:</strong> ${F.format(data.forecast24hr)}<br>
                                         <strong>48h:</strong> ${F.format(data.forecast48hr)}<br>
-                                        <strong>7 day:</strong> ${F.format(data.forecast7day)}<br>${F.description(data)}
+                                        <strong>7 day:</strong> ${F.format(data.forecast7day)}<br>${F.freshnessLabel(data)}
                                     </div>
                                 `);
                             } else {
@@ -1480,7 +1480,7 @@
                     const color = getSnowfallColor(snowfall);
                     resort.markerEl.style.backgroundColor = color;
                         resort.markerEl.dataset.availability = data[resort.id].status;
-                        resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.description(data[resort.id])}`;
+                        resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.freshnessLabel(data[resort.id])}`;
                 }
             });
         };
@@ -1541,7 +1541,7 @@
                         }
                         <h3>${resort.name}</h3>
                         <p class="snow-badge">❄️ ${snow48h}" forecast / 48h</p>
-                        <p class="trending-note">${resort.snow48h > 0 ? 'Modelled snowfall' : 'No snowfall forecast'}</p>
+                        <p class="trending-note">${resort.snow48h > 0 ? 'Modeled snowfall' : 'No snowfall forecast'}</p>
                     </div>
                 `;
             }).join('') || '<p>No fresh forecasts available for featured resorts.</p>';

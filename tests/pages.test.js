@@ -38,9 +38,9 @@ for(const name of ['index.html','map.html','mammoth.html']){
    const dom=await page(name,state);try{
     const d=dom.window.document;
     const status=[...d.querySelectorAll('[role="status"]')].map(el=>el.textContent).join(' ');
-    if(state==='fresh')assert.match(status,/103\/103|Retrieved/);
-    if(state==='stale')assert.match(status,/103 stale|Stale forecast/);
-    if(state==='network-error')assert.match(status,/103 unavailable|Forecast unavailable/);
+    if(state==='fresh')assert.match(status,/Updated recently/);
+    if(state==='stale')assert.match(status,/Forecasts? need[s]? an update/);
+    if(state==='network-error')assert.match(status,/Forecast unavailable/);
     if(name==='mammoth.html')assert.equal(d.getElementById('snow-24hr').textContent,state==='fresh'?'0.0″':'Unavailable');
     else {
       assert.equal(d.querySelectorAll('.marker').length,103);
@@ -56,7 +56,7 @@ for(const name of ['index.html','map.html','mammoth.html']){
  }
  test(`${name}: map library failure does not block forecasts`,async()=>{
    const dom=await page(name,'fresh',false);try{
-     const text=dom.window.document.body.textContent;assert.match(text,/103\/103|Retrieved/);
+     const text=dom.window.document.body.textContent;assert.match(text,/Updated recently/);
    }finally{dom.window.close();}
  });
 }

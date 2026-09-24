@@ -8,9 +8,9 @@
     <meta name="google-site-verification" content="nkR5Pfzko7I93RIvy57tFWipkHdbt4gKZGdhstz6Pjg" />
     
     <!-- Primary Meta Tags -->
-    <title>SkiBum - Snowfall Forecasts for 100+ Ski Resorts | Modelled Snow Forecasts</title>
+    <title>SkiBum - Snowfall Forecasts for 100+ Ski Resorts | Modeled Snow Forecasts</title>
     <meta name="title" content="SkiBum - Snowfall Forecasts for 100+ Ski Resorts">
-    <meta name="description" content="Track live snowfall at 100+ ski resorts across North America. Modelled 24hr, 48hr, and 7-day snow forecasts with interactive maps. Find the best powder conditions for skiing and snowboarding.">
+    <meta name="description" content="Track live snowfall at 100+ ski resorts across North America. Modeled 24hr, 48hr, and 7-day snow forecasts with interactive maps. Find the best powder conditions for skiing and snowboarding.">
     <meta name="keywords" content="skibum, ski bum, snow forecast, ski resort snow, live snowfall, powder tracker, ski conditions, snowfall forecast, ski weather, snow report, powder alert, ski map">
     <meta name="author" content="SkiBum">
     
@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skibum.com/">
     <meta property="og:title" content="SkiBum - Snowfall Forecasts for Ski Resorts">
-    <meta property="og:description" content="Track live snowfall at 100+ ski resorts across North America. Modelled snow forecasts with interactive maps.">
+    <meta property="og:description" content="Track live snowfall at 100+ ski resorts across North America. Modeled snow forecasts with interactive maps.">
     <meta property="og:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://skibum.com/">
     <meta property="twitter:title" content="SkiBum - Snowfall Forecasts for Ski Resorts">
-    <meta property="twitter:description" content="Track live snowfall at 100+ ski resorts across North America. Modelled snow forecasts with interactive maps.">
+    <meta property="twitter:description" content="Track live snowfall at 100+ ski resorts across North America. Modeled snow forecasts with interactive maps.">
     <meta property="twitter:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
     
     <!-- Canonical URL -->
@@ -263,8 +263,8 @@
                 map.current = new mapboxgl.Map({
                     container: mapContainer.current,
                     style: 'mapbox://styles/mapbox/dark-v11',
-                    center: [-106, 45],
-                    zoom: window.innerWidth <= 768 ? 2.8 : 3.5, // Lower zoom on mobile to show full continent
+                    center: [-113, 46],
+                    zoom: window.innerWidth <= 768 ? 2.2 : 2.8, // Western ski regions in focus, with continental context
                     projection: 'globe',
                     minZoom: 2.5
                 });
@@ -438,7 +438,7 @@
                         const color = getSnowfallColor(snowfall);
                         resort.markerEl.style.backgroundColor = color;
                         resort.markerEl.dataset.availability = data[resort.id].status;
-                        resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.description(data[resort.id])}`;
+                        resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.freshnessLabel(data[resort.id])}`;
                         resort.markerEl.querySelector('.marker-glow').style.backgroundColor = color;
                     }
                 });
@@ -598,10 +598,10 @@
                         </div>
 
                         <div className="absolute bottom-0 left-0 right-0 z-10 bg-slate-900 text-white p-3 text-xs" role="status">
-                            <p>{resorts.length} resorts · {F.summary(snowfallData)}</p>
+                            <p>{F.overviewLabel(snowfallData)}</p>
                             <p>{mapError}</p>
-                            <p>Modelled snowfall, not observed snow. Dashed markers: unavailable/stale. Point forecasts vary across mountain elevations.</p>
-                            <a href="https://open-meteo.com/">Weather: Open-Meteo</a> · <a href="/docs/data-sources.html">Location sources &amp; limitations</a>
+                            <p>Modeled snowfall, not resort-reported snow.</p>
+                            <a href="/docs/data-sources.html">Data sources &amp; limitations</a>
                         </div>
 
                         {loading && (
@@ -679,7 +679,7 @@
                         </div>
                     </div>
 
-                    <p className="p-4" role="status">{F.description(snowfallData)} Modelled snowfall at a representative ski-area point.</p>
+                    <p className="p-4" role="status">{F.freshnessLabel(snowfallData)}</p>
                     {/* Content Sections */}
                     <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

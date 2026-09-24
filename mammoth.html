@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mammoth Mountain - Live Snow Conditions | SkiBum.com</title>
-    <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Modelled snowfall tracking, road conditions, and lodging deals.">
+    <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Modeled snowfall tracking, road conditions, and lodging deals.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -739,7 +739,7 @@
 
     <!-- Conditions Card -->
     <div class="container">
-        <div class="conditions-card"><p id="forecast-status" class="forecast-status" role="status">Loading timestamped forecasts…</p><div class="forecast-credit">Modelled snowfall, not observed snow or resort conditions. Forecasts are for a representative ski-area point; elevation and conditions vary across the mountain. <a href="https://open-meteo.com/">Weather: Open-Meteo</a> (cm converted to inches). <a href="/docs/data-sources.html">Location sources &amp; limitations</a>. Dashed markers mean stale/unavailable data.</div>
+        <div class="conditions-card"><p id="forecast-status" class="forecast-status" role="status">Loading forecasts…</p><div class="forecast-credit">Modeled snowfall, not resort-reported snow. <a href="/docs/data-sources.html">Data sources &amp; limitations</a>.</div>
             <div class="conditions-grid">
                 <div class="condition-item">
                     <span class="condition-value" id="snow-24hr">Unavailable</span>
@@ -775,7 +775,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Snowfall forecast</h2>
-                <span class="powder-badge">Modelled snowfall</span>
+                <span class="powder-badge">Modeled snowfall</span>
             </div>
             <div class="decision-grid">
                 <div class="decision-card">
@@ -824,7 +824,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Live Mountain & Road Cams</h2>
-                <p class="section-subtitle">Watch modelled footage from the slopes and nearby highway</p>
+                <p class="section-subtitle">Check webcams from the slopes and nearby highways</p>
             </div>
             <div class="cam-grid">
                 <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="cam-card">
@@ -1370,7 +1370,7 @@
                 document.getElementById('snow-' + period).textContent = F.format(forecast[key]);
                 document.getElementById('detail-' + period).textContent = F.format(forecast[key]);
             }
-            document.getElementById('forecast-status').textContent = F.description(forecast);
+            document.getElementById('forecast-status').textContent = F.freshnessLabel(forecast);
         }
         async function loadSnowData() {
             try { renderForecasts(await SkiBumData.load()); }
