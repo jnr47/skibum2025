@@ -67,7 +67,7 @@ for(const width of [390,1440])test(`Whiteface real Mapbox camera ${width}px`,asy
  // Use the real camera/WebGL engine, with an empty style to avoid token and tile dependencies.
  await page.route('**/mapbox-gl.js',route=>route.continue());
  await page.route('**/mapbox-gl.css',route=>route.continue());
- await page.route('https://api.mapbox.com/**',route=>route.fulfill({json:{version:8,sources:{},layers:[]}}));
+ await page.route('https://api.mapbox.com/styles/**',route=>route.fulfill({json:{version:8,sources:{},layers:[]}}));
  await page.goto('/index.html');await expect(page.locator('.marker')).toHaveCount(103);
  await page.locator('#panelSearch').fill('Whiteface Mountain');await page.locator('#panelSearch').press('Enter');
  await expect(page.locator('#searchFeedback')).toContainText('Showing Whiteface Mountain');
