@@ -1,0 +1,2486 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-09-24T14:34:02.225Z",
+  "total_resorts": 103,
+  "data_source": "Open-Meteo",
+  "units": "in",
+  "coverage": {
+    "fresh": 103,
+    "stale": 0,
+    "unavailable": 0
+  },
+  "resorts": [
+    {
+      "resort_id": "whistler-blackcomb",
+      "name": "Whistler Blackcomb",
+      "lat": 50.080743,
+      "lng": -122.931545,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 7.1,
+      "last_updated": "2026-09-24T14:34:02.984Z",
+      "model_location": {
+        "lat": 50.07432,
+        "lng": -122.91853,
+        "elevation_m": 1376
+      }
+    },
+    {
+      "resort_id": "vail",
+      "name": "Vail",
+      "lat": 39.602952,
+      "lng": -106.350729,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 4.1,
+      "last_updated": "2026-09-24T14:34:03.228Z",
+      "model_location": {
+        "lat": 39.599964,
+        "lng": -106.3422,
+        "elevation_m": 3324
+      }
+    },
+    {
+      "resort_id": "park-city",
+      "name": "Park City",
+      "lat": 40.652042,
+      "lng": -111.548735,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:03.463Z",
+      "model_location": {
+        "lat": 40.650406,
+        "lng": -111.56181,
+        "elevation_m": 2553
+      }
+    },
+    {
+      "resort_id": "breckenridge",
+      "name": "Breckenridge",
+      "lat": 39.479996,
+      "lng": -106.07823,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.6,
+      "last_updated": "2026-09-24T14:34:03.696Z",
+      "model_location": {
+        "lat": 39.483547,
+        "lng": -106.08192,
+        "elevation_m": 3196
+      }
+    },
+    {
+      "resort_id": "heavenly",
+      "name": "Heavenly",
+      "lat": 38.939719,
+      "lng": -119.91196,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:04.088Z",
+      "model_location": {
+        "lat": 38.919212,
+        "lng": -119.919426,
+        "elevation_m": 2786
+      }
+    },
+    {
+      "resort_id": "aspen-mountain",
+      "name": "Aspen Mountain",
+      "lat": 39.165344,
+      "lng": -106.81842,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0.3,
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 0.6,
+      "last_updated": "2026-09-24T14:34:04.320Z",
+      "model_location": {
+        "lat": 39.13062,
+        "lng": -106.808075,
+        "elevation_m": 3146
+      }
+    },
+    {
+      "resort_id": "jackson-hole",
+      "name": "Jackson Hole",
+      "lat": 43.594869,
+      "lng": -110.849454,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.3,
+      "last_updated": "2026-09-24T14:34:04.557Z",
+      "model_location": {
+        "lat": 43.616154,
+        "lng": -110.84001,
+        "elevation_m": 2454
+      }
+    },
+    {
+      "resort_id": "banff-sunshine",
+      "name": "Banff Sunshine",
+      "lat": 51.091987,
+      "lng": -115.770856,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.9,
+      "snowfall_7day": 3.5,
+      "last_updated": "2026-09-24T14:34:04.789Z",
+      "model_location": {
+        "lat": 51.119774,
+        "lng": -115.758026,
+        "elevation_m": 2057
+      }
+    },
+    {
+      "resort_id": "lake-louise",
+      "name": "Lake Louise",
+      "lat": 51.454644,
+      "lng": -116.13254,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 2.1,
+      "last_updated": "2026-09-24T14:34:05.112Z",
+      "model_location": {
+        "lat": 51.448742,
+        "lng": -116.12193,
+        "elevation_m": 2286
+      }
+    },
+    {
+      "resort_id": "big-sky",
+      "name": "Big Sky",
+      "lat": 45.284068,
+      "lng": -111.40869,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.5,
+      "last_updated": "2026-09-24T14:34:05.355Z",
+      "model_location": {
+        "lat": 45.290604,
+        "lng": -111.417946,
+        "elevation_m": 2397
+      }
+    },
+    {
+      "resort_id": "steamboat",
+      "name": "Steamboat",
+      "lat": 40.453879,
+      "lng": -106.775179,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:05.593Z",
+      "model_location": {
+        "lat": 40.461796,
+        "lng": -106.77184,
+        "elevation_m": 2697
+      }
+    },
+    {
+      "resort_id": "mammoth-mountain",
+      "name": "Mammoth Mountain",
+      "lat": 37.640185,
+      "lng": -119.020484,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:05.930Z",
+      "model_location": {
+        "lat": 37.645466,
+        "lng": -119.02926,
+        "elevation_m": 2876
+      }
+    },
+    {
+      "resort_id": "palisades-tahoe",
+      "name": "Palisades Tahoe",
+      "lat": 39.192425,
+      "lng": -120.250061,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:06.163Z",
+      "model_location": {
+        "lat": 39.18738,
+        "lng": -120.2566,
+        "elevation_m": 2184
+      }
+    },
+    {
+      "resort_id": "telluride",
+      "name": "Telluride",
+      "lat": 37.921239,
+      "lng": -107.846779,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:06.396Z",
+      "model_location": {
+        "lat": 37.93012,
+        "lng": -107.85748,
+        "elevation_m": 3083
+      }
+    },
+    {
+      "resort_id": "sun-valley",
+      "name": "Sun Valley",
+      "lat": 43.663211,
+      "lng": -114.389455,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:06.629Z",
+      "model_location": {
+        "lat": 43.64902,
+        "lng": -114.4225,
+        "elevation_m": 2370
+      }
+    },
+    {
+      "resort_id": "deer-valley",
+      "name": "Deer Valley",
+      "lat": 40.615013,
+      "lng": -111.484141,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:06.861Z",
+      "model_location": {
+        "lat": 40.605297,
+        "lng": -111.480804,
+        "elevation_m": 2617
+      }
+    },
+    {
+      "resort_id": "killington",
+      "name": "Killington",
+      "lat": 43.611293,
+      "lng": -72.788868,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:07.160Z",
+      "model_location": {
+        "lat": 43.59475,
+        "lng": -72.79971,
+        "elevation_m": 822
+      }
+    },
+    {
+      "resort_id": "stowe",
+      "name": "Stowe",
+      "lat": 44.529654,
+      "lng": -72.790229,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:07.390Z",
+      "model_location": {
+        "lat": 44.513096,
+        "lng": -72.79699,
+        "elevation_m": 520
+      }
+    },
+    {
+      "resort_id": "alta",
+      "name": "Alta",
+      "lat": 40.580039,
+      "lng": -111.624781,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:07.622Z",
+      "model_location": {
+        "lat": 40.588894,
+        "lng": -111.621185,
+        "elevation_m": 2793
+      }
+    },
+    {
+      "resort_id": "snowbird",
+      "name": "Snowbird",
+      "lat": 40.567151,
+      "lng": -111.652311,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:07.857Z",
+      "model_location": {
+        "lat": 40.55813,
+        "lng": -111.65083,
+        "elevation_m": 3082
+      }
+    },
+    {
+      "resort_id": "taos",
+      "name": "Taos",
+      "lat": 36.578903,
+      "lng": -105.450178,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0.1,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T14:34:08.088Z",
+      "model_location": {
+        "lat": 36.576855,
+        "lng": -105.440285,
+        "elevation_m": 3466
+      }
+    },
+    {
+      "resort_id": "copper-mountain",
+      "name": "Copper Mountain",
+      "lat": 39.47767,
+      "lng": -106.161249,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.3,
+      "last_updated": "2026-09-24T14:34:08.326Z",
+      "model_location": {
+        "lat": 39.478497,
+        "lng": -106.151505,
+        "elevation_m": 3405
+      }
+    },
+    {
+      "resort_id": "winter-park",
+      "name": "Winter Park",
+      "lat": 39.867586,
+      "lng": -105.775526,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 3.2,
+      "last_updated": "2026-09-24T14:34:08.561Z",
+      "model_location": {
+        "lat": 39.857395,
+        "lng": -105.77462,
+        "elevation_m": 3287
+      }
+    },
+    {
+      "resort_id": "keystone",
+      "name": "Keystone",
+      "lat": 39.5718,
+      "lng": -105.934358,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2,
+      "last_updated": "2026-09-24T14:34:08.792Z",
+      "model_location": {
+        "lat": 39.576565,
+        "lng": -105.91747,
+        "elevation_m": 3540
+      }
+    },
+    {
+      "resort_id": "arapahoe-basin",
+      "name": "Arapahoe Basin",
+      "lat": 39.626742,
+      "lng": -105.878795,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.5,
+      "last_updated": "2026-09-24T14:34:09.208Z",
+      "model_location": {
+        "lat": 39.635193,
+        "lng": -105.85411,
+        "elevation_m": 3662
+      }
+    },
+    {
+      "resort_id": "crested-butte",
+      "name": "Crested Butte",
+      "lat": 38.898783,
+      "lng": -106.943647,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:09.445Z",
+      "model_location": {
+        "lat": 38.902206,
+        "lng": -106.95252,
+        "elevation_m": 3113
+      }
+    },
+    {
+      "resort_id": "loveland",
+      "name": "Loveland",
+      "lat": 39.678271,
+      "lng": -105.910714,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 2.6,
+      "last_updated": "2026-09-24T14:34:09.674Z",
+      "model_location": {
+        "lat": 39.686462,
+        "lng": -105.89536,
+        "elevation_m": 3576
+      }
+    },
+    {
+      "resort_id": "mt-bachelor",
+      "name": "Mt. Bachelor",
+      "lat": 43.991531,
+      "lng": -121.685155,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 0.7,
+      "last_updated": "2026-09-24T14:34:09.920Z",
+      "model_location": {
+        "lat": 43.971092,
+        "lng": -121.701515,
+        "elevation_m": 2333
+      }
+    },
+    {
+      "resort_id": "crystal-mountain",
+      "name": "Crystal Mountain",
+      "lat": 46.933357,
+      "lng": -121.486135,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:10.160Z",
+      "model_location": {
+        "lat": 46.921776,
+        "lng": -121.4852,
+        "elevation_m": 1693
+      }
+    },
+    {
+      "resort_id": "stevens-pass",
+      "name": "Stevens Pass",
+      "lat": 47.734909,
+      "lng": -121.088263,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 0.6,
+      "last_updated": "2026-09-24T14:34:10.401Z",
+      "model_location": {
+        "lat": 47.739815,
+        "lng": -121.07224,
+        "elevation_m": 1373
+      }
+    },
+    {
+      "resort_id": "mt-baker",
+      "name": "Mt. Baker",
+      "lat": 48.855239,
+      "lng": -121.66648,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.5,
+      "last_updated": "2026-09-24T14:34:10.640Z",
+      "model_location": {
+        "lat": 48.842342,
+        "lng": -121.67723,
+        "elevation_m": 1253
+      }
+    },
+    {
+      "resort_id": "schweitzer",
+      "name": "Schweitzer",
+      "lat": 48.373419,
+      "lng": -116.617841,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T14:34:10.872Z",
+      "model_location": {
+        "lat": 48.359203,
+        "lng": -116.63195,
+        "elevation_m": 1617
+      }
+    },
+    {
+      "resort_id": "sun-peaks",
+      "name": "Sun Peaks",
+      "lat": 50.886492,
+      "lng": -119.884991,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.4,
+      "last_updated": "2026-09-24T14:34:11.111Z",
+      "model_location": {
+        "lat": 50.88907,
+        "lng": -119.8732,
+        "elevation_m": 1287
+      }
+    },
+    {
+      "resort_id": "revelstoke",
+      "name": "Revelstoke",
+      "lat": 50.968676,
+      "lng": -118.126407,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 3.8,
+      "last_updated": "2026-09-24T14:34:11.341Z",
+      "model_location": {
+        "lat": 50.991146,
+        "lng": -118.10964,
+        "elevation_m": 1680
+      }
+    },
+    {
+      "resort_id": "fernie",
+      "name": "Fernie",
+      "lat": 49.457033,
+      "lng": -115.106178,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.3,
+      "last_updated": "2026-09-24T14:34:11.579Z",
+      "model_location": {
+        "lat": 49.453293,
+        "lng": -115.11693,
+        "elevation_m": 1543
+      }
+    },
+    {
+      "resort_id": "big-white",
+      "name": "Big White",
+      "lat": 49.734059,
+      "lng": -118.931604,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0.1,
+      "snowfall_48hr": 6.9,
+      "snowfall_7day": 7,
+      "last_updated": "2026-09-24T14:34:11.853Z",
+      "model_location": {
+        "lat": 49.733494,
+        "lng": -118.924446,
+        "elevation_m": 2057
+      }
+    },
+    {
+      "resort_id": "kicking-horse",
+      "name": "Kicking Horse",
+      "lat": 51.28494,
+      "lng": -117.06816,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 1.3,
+      "last_updated": "2026-09-24T14:34:12.123Z",
+      "model_location": {
+        "lat": 51.298714,
+        "lng": -117.059845,
+        "elevation_m": 1948
+      }
+    },
+    {
+      "resort_id": "mont-tremblant",
+      "name": "Mont Tremblant",
+      "lat": 46.216467,
+      "lng": -74.556114,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:12.360Z",
+      "model_location": {
+        "lat": 46.22551,
+        "lng": -74.55689,
+        "elevation_m": 750
+      }
+    },
+    {
+      "resort_id": "blue-mountain",
+      "name": "Blue Mountain",
+      "lat": 44.499597,
+      "lng": -80.317762,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:12.596Z",
+      "model_location": {
+        "lat": 44.490417,
+        "lng": -80.334785,
+        "elevation_m": 367
+      }
+    },
+    {
+      "resort_id": "sugarloaf",
+      "name": "Sugarloaf",
+      "lat": 45.049036,
+      "lng": -70.315827,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:12.829Z",
+      "model_location": {
+        "lat": 45.007713,
+        "lng": -70.315056,
+        "elevation_m": 671
+      }
+    },
+    {
+      "resort_id": "sunday-river",
+      "name": "Sunday River",
+      "lat": 44.474721,
+      "lng": -70.877867,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:13.062Z",
+      "model_location": {
+        "lat": 44.48668,
+        "lng": -70.890594,
+        "elevation_m": 544
+      }
+    },
+    {
+      "resort_id": "sugarbush",
+      "name": "Sugarbush",
+      "lat": 44.152371,
+      "lng": -72.911269,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:13.307Z",
+      "model_location": {
+        "lat": 44.150784,
+        "lng": -72.93589,
+        "elevation_m": 852
+      }
+    },
+    {
+      "resort_id": "stratton",
+      "name": "Stratton",
+      "lat": 43.101071,
+      "lng": -72.902415,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:13.539Z",
+      "model_location": {
+        "lat": 43.087994,
+        "lng": -72.914215,
+        "elevation_m": 799
+      }
+    },
+    {
+      "resort_id": "okemo",
+      "name": "Okemo",
+      "lat": 43.407268,
+      "lng": -72.733283,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:13.779Z",
+      "model_location": {
+        "lat": 43.391975,
+        "lng": -72.76137,
+        "elevation_m": 722
+      }
+    },
+    {
+      "resort_id": "jay-peak",
+      "name": "Jay Peak",
+      "lat": 44.935604,
+      "lng": -72.512278,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:14.018Z",
+      "model_location": {
+        "lat": 44.93098,
+        "lng": -72.51679,
+        "elevation_m": 652
+      }
+    },
+    {
+      "resort_id": "smugglers-notch",
+      "name": "Smugglers' Notch",
+      "lat": 44.573259,
+      "lng": -72.770057,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:14.252Z",
+      "model_location": {
+        "lat": 44.57193,
+        "lng": -72.81333,
+        "elevation_m": 561
+      }
+    },
+    {
+      "resort_id": "loon-mountain",
+      "name": "Loon Mountain",
+      "lat": 44.04571,
+      "lng": -71.640018,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:14.486Z",
+      "model_location": {
+        "lat": 44.058983,
+        "lng": -71.65145,
+        "elevation_m": 542
+      }
+    },
+    {
+      "resort_id": "cannon-mountain",
+      "name": "Cannon Mountain",
+      "lat": 44.168512,
+      "lng": -71.702023,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:14.723Z",
+      "model_location": {
+        "lat": 44.17704,
+        "lng": -71.68187,
+        "elevation_m": 747
+      }
+    },
+    {
+      "resort_id": "wildcat-mountain",
+      "name": "Wildcat Mountain",
+      "lat": 44.257153,
+      "lng": -71.232299,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:14.954Z",
+      "model_location": {
+        "lat": 44.256786,
+        "lng": -71.259544,
+        "elevation_m": 817
+      }
+    },
+    {
+      "resort_id": "bretton-woods",
+      "name": "Bretton Woods",
+      "lat": 44.250932,
+      "lng": -71.468638,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:15.188Z",
+      "model_location": {
+        "lat": 44.242867,
+        "lng": -71.46037,
+        "elevation_m": 713
+      }
+    },
+    {
+      "resort_id": "snowbasin",
+      "name": "Snowbasin",
+      "lat": 41.20178,
+      "lng": -111.862624,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:15.420Z",
+      "model_location": {
+        "lat": 41.18899,
+        "lng": -111.853226,
+        "elevation_m": 2390
+      }
+    },
+    {
+      "resort_id": "powder-mountain",
+      "name": "Powder Mountain",
+      "lat": 41.383919,
+      "lng": -111.763635,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:15.651Z",
+      "model_location": {
+        "lat": 41.392025,
+        "lng": -111.75035,
+        "elevation_m": 2447
+      }
+    },
+    {
+      "resort_id": "solitude",
+      "name": "Solitude",
+      "lat": 40.612727,
+      "lng": -111.604068,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:15.888Z",
+      "model_location": {
+        "lat": 40.619656,
+        "lng": -111.59151,
+        "elevation_m": 2736
+      }
+    },
+    {
+      "resort_id": "brighton",
+      "name": "Brighton",
+      "lat": 40.598689,
+      "lng": -111.580807,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:16.120Z",
+      "model_location": {
+        "lat": 40.619656,
+        "lng": -111.59151,
+        "elevation_m": 2699
+      }
+    },
+    {
+      "resort_id": "snowmass",
+      "name": "Snowmass",
+      "lat": 39.186443,
+      "lng": -106.950206,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 1.1,
+      "snowfall_7day": 1.6,
+      "last_updated": "2026-09-24T14:34:16.356Z",
+      "model_location": {
+        "lat": 39.176083,
+        "lng": -106.91896,
+        "elevation_m": 3076
+      }
+    },
+    {
+      "resort_id": "aspen-highlands",
+      "name": "Aspen Highlands",
+      "lat": 39.162085,
+      "lng": -106.861281,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 0.7,
+      "last_updated": "2026-09-24T14:34:16.589Z",
+      "model_location": {
+        "lat": 39.152,
+        "lng": -106.880806,
+        "elevation_m": 2985
+      }
+    },
+    {
+      "resort_id": "buttermilk",
+      "name": "Buttermilk",
+      "lat": 39.192625,
+      "lng": -106.869985,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 1,
+      "snowfall_7day": 1,
+      "last_updated": "2026-09-24T14:34:16.822Z",
+      "model_location": {
+        "lat": 39.178825,
+        "lng": -106.88435,
+        "elevation_m": 2696
+      }
+    },
+    {
+      "resort_id": "beaver-creek",
+      "name": "Beaver Creek",
+      "lat": 39.599837,
+      "lng": -106.530502,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 3.9,
+      "last_updated": "2026-09-24T14:34:17.060Z",
+      "model_location": {
+        "lat": 39.611095,
+        "lng": -106.554665,
+        "elevation_m": 2757
+      }
+    },
+    {
+      "resort_id": "purgatory",
+      "name": "Purgatory",
+      "lat": 37.623252,
+      "lng": -107.8357,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.3,
+      "last_updated": "2026-09-24T14:34:17.307Z",
+      "model_location": {
+        "lat": 37.632225,
+        "lng": -107.84925,
+        "elevation_m": 3101
+      }
+    },
+    {
+      "resort_id": "wolf-creek",
+      "name": "Wolf Creek",
+      "lat": 37.464349,
+      "lng": -106.787175,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:17.548Z",
+      "model_location": {
+        "lat": 37.45022,
+        "lng": -106.79822,
+        "elevation_m": 3232
+      }
+    },
+    {
+      "resort_id": "monarch-mountain",
+      "name": "Monarch Mountain",
+      "lat": 38.512247,
+      "lng": -106.342678,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T14:34:17.781Z",
+      "model_location": {
+        "lat": 38.51552,
+        "lng": -106.34718,
+        "elevation_m": 3420
+      }
+    },
+    {
+      "resort_id": "eldora",
+      "name": "Eldora",
+      "lat": 39.932978,
+      "lng": -105.586401,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0.9,
+      "last_updated": "2026-09-24T14:34:18.014Z",
+      "model_location": {
+        "lat": 39.925476,
+        "lng": -105.57077,
+        "elevation_m": 2942
+      }
+    },
+    {
+      "resort_id": "grand-targhee",
+      "name": "Grand Targhee",
+      "lat": 43.78584,
+      "lng": -110.947184,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:18.246Z",
+      "model_location": {
+        "lat": 43.794422,
+        "lng": -110.95127,
+        "elevation_m": 2617
+      }
+    },
+    {
+      "resort_id": "snow-king",
+      "name": "Snow King",
+      "lat": 43.465674,
+      "lng": -110.758675,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:18.487Z",
+      "model_location": {
+        "lat": 43.46047,
+        "lng": -110.77129,
+        "elevation_m": 2179
+      }
+    },
+    {
+      "resort_id": "bridger-bowl",
+      "name": "Bridger Bowl",
+      "lat": 45.822542,
+      "lng": -110.908659,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:18.723Z",
+      "model_location": {
+        "lat": 45.830463,
+        "lng": -110.91481,
+        "elevation_m": 2035
+      }
+    },
+    {
+      "resort_id": "whitefish-mountain-resort",
+      "name": "Whitefish Mountain Resort",
+      "lat": 48.476418,
+      "lng": -114.324204,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:18.959Z",
+      "model_location": {
+        "lat": 48.47078,
+        "lng": -114.34042,
+        "elevation_m": 1384
+      }
+    },
+    {
+      "resort_id": "montana-snowbowl",
+      "name": "Montana Snowbowl",
+      "lat": 47.022946,
+      "lng": -114.006131,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:19.192Z",
+      "model_location": {
+        "lat": 47.026333,
+        "lng": -113.98739,
+        "elevation_m": 1948
+      }
+    },
+    {
+      "resort_id": "grandvalira",
+      "name": "Grandvalira",
+      "lat": 42.548541,
+      "lng": 1.660859,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:19.423Z",
+      "model_location": {
+        "lat": 42.55,
+        "lng": 1.6599998,
+        "elevation_m": 2397
+      }
+    },
+    {
+      "resort_id": "bogus-basin",
+      "name": "Bogus Basin",
+      "lat": 43.778412,
+      "lng": -116.093613,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:19.661Z",
+      "model_location": {
+        "lat": 43.770355,
+        "lng": -116.08357,
+        "elevation_m": 2012
+      }
+    },
+    {
+      "resort_id": "tamarack",
+      "name": "Tamarack",
+      "lat": 44.68512,
+      "lng": -116.142901,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:19.906Z",
+      "model_location": {
+        "lat": 44.691257,
+        "lng": -116.15599,
+        "elevation_m": 1917
+      }
+    },
+    {
+      "resort_id": "silver-mountain",
+      "name": "Silver Mountain",
+      "lat": 47.51308,
+      "lng": -116.132738,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:20.141Z",
+      "model_location": {
+        "lat": 47.506413,
+        "lng": -116.123886,
+        "elevation_m": 1257
+      }
+    },
+    {
+      "resort_id": "mt-hood-meadows",
+      "name": "Mt. Hood Meadows",
+      "lat": 45.337552,
+      "lng": -121.659361,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 5.9,
+      "snowfall_7day": 5.9,
+      "last_updated": "2026-09-24T14:34:20.379Z",
+      "model_location": {
+        "lat": 45.33758,
+        "lng": -121.671715,
+        "elevation_m": 1801
+      }
+    },
+    {
+      "resort_id": "timberline",
+      "name": "Timberline",
+      "lat": 45.33094,
+      "lng": -121.724086,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 3,
+      "snowfall_7day": 3,
+      "last_updated": "2026-09-24T14:34:20.626Z",
+      "model_location": {
+        "lat": 45.33063,
+        "lng": -121.7085,
+        "elevation_m": 1750
+      }
+    },
+    {
+      "resort_id": "willamette-pass",
+      "name": "Willamette Pass",
+      "lat": 43.612493,
+      "lng": -122.029486,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.7,
+      "snowfall_7day": 0.7,
+      "last_updated": "2026-09-24T14:34:20.861Z",
+      "model_location": {
+        "lat": 43.601593,
+        "lng": -122.025375,
+        "elevation_m": 1782
+      }
+    },
+    {
+      "resort_id": "mission-ridge",
+      "name": "Mission Ridge",
+      "lat": 47.283366,
+      "lng": -120.411714,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:21.096Z",
+      "model_location": {
+        "lat": 47.278145,
+        "lng": -120.4073,
+        "elevation_m": 1640
+      }
+    },
+    {
+      "resort_id": "the-summit-at-snoqualmie",
+      "name": "The Summit at Snoqualmie",
+      "lat": 47.420513,
+      "lng": -121.421831,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.6,
+      "snowfall_7day": 0.6,
+      "last_updated": "2026-09-24T14:34:21.330Z",
+      "model_location": {
+        "lat": 47.426582,
+        "lng": -121.43954,
+        "elevation_m": 1031
+      }
+    },
+    {
+      "resort_id": "mt-spokane",
+      "name": "Mt. Spokane",
+      "lat": 47.927868,
+      "lng": -117.112524,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:21.562Z",
+      "model_location": {
+        "lat": 47.91205,
+        "lng": -117.099724,
+        "elevation_m": 1667
+      }
+    },
+    {
+      "resort_id": "white-pass",
+      "name": "White Pass",
+      "lat": 46.621518,
+      "lng": -121.394163,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.8,
+      "snowfall_7day": 0.8,
+      "last_updated": "2026-09-24T14:34:21.817Z",
+      "model_location": {
+        "lat": 46.605446,
+        "lng": -121.40259,
+        "elevation_m": 1687
+      }
+    },
+    {
+      "resort_id": "49-degrees-north",
+      "name": "49 Degrees North",
+      "lat": 48.29232,
+      "lng": -117.561567,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:22.049Z",
+      "model_location": {
+        "lat": 48.276337,
+        "lng": -117.58585,
+        "elevation_m": 1459
+      }
+    },
+    {
+      "resort_id": "red-mountain",
+      "name": "Red Mountain",
+      "lat": 49.105427,
+      "lng": -117.841934,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.2,
+      "snowfall_7day": 0.2,
+      "last_updated": "2026-09-24T14:34:22.284Z",
+      "model_location": {
+        "lat": 49.07904,
+        "lng": -117.85734,
+        "elevation_m": 1666
+      }
+    },
+    {
+      "resort_id": "whitewater",
+      "name": "Whitewater",
+      "lat": 49.442118,
+      "lng": -117.15647,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.5,
+      "snowfall_7day": 0.5,
+      "last_updated": "2026-09-24T14:34:22.520Z",
+      "model_location": {
+        "lat": 49.45178,
+        "lng": -117.15243,
+        "elevation_m": 1851
+      }
+    },
+    {
+      "resort_id": "panorama",
+      "name": "Panorama",
+      "lat": 50.442751,
+      "lng": -116.219569,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:22.751Z",
+      "model_location": {
+        "lat": 50.442547,
+        "lng": -116.21964,
+        "elevation_m": 1674
+      }
+    },
+    {
+      "resort_id": "marmot-basin",
+      "name": "Marmot Basin",
+      "lat": 52.796986,
+      "lng": -118.104709,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.9,
+      "snowfall_7day": 2.9,
+      "last_updated": "2026-09-24T14:34:22.986Z",
+      "model_location": {
+        "lat": 52.759224,
+        "lng": -118.14606,
+        "elevation_m": 2011
+      }
+    },
+    {
+      "resort_id": "nakiska",
+      "name": "Nakiska",
+      "lat": 50.948417,
+      "lng": -115.169991,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:23.223Z",
+      "model_location": {
+        "lat": 50.92304,
+        "lng": -115.18485,
+        "elevation_m": 1827
+      }
+    },
+    {
+      "resort_id": "castle-mountain",
+      "name": "Castle Mountain",
+      "lat": 49.308858,
+      "lng": -114.426567,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0.3,
+      "snowfall_7day": 0.4,
+      "last_updated": "2026-09-24T14:34:23.470Z",
+      "model_location": {
+        "lat": 49.319416,
+        "lng": -114.45708,
+        "elevation_m": 1776
+      }
+    },
+    {
+      "resort_id": "mount-norquay",
+      "name": "Mount Norquay",
+      "lat": 51.201164,
+      "lng": -115.60373,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:23.705Z",
+      "model_location": {
+        "lat": 51.191925,
+        "lng": -115.61015,
+        "elevation_m": 1757
+      }
+    },
+    {
+      "resort_id": "le-massif",
+      "name": "Le Massif",
+      "lat": 47.279858,
+      "lng": -70.59321,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:23.939Z",
+      "model_location": {
+        "lat": 47.276413,
+        "lng": -70.614296,
+        "elevation_m": 481
+      }
+    },
+    {
+      "resort_id": "calabogie",
+      "name": "Calabogie",
+      "lat": 45.269461,
+      "lng": -76.7866,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:24.171Z",
+      "model_location": {
+        "lat": 45.252846,
+        "lng": -76.78692,
+        "elevation_m": 288
+      }
+    },
+    {
+      "resort_id": "sierra-at-tahoe",
+      "name": "Sierra-at-Tahoe",
+      "lat": 38.796151,
+      "lng": -120.078975,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:24.404Z",
+      "model_location": {
+        "lat": 38.80806,
+        "lng": -120.06237,
+        "elevation_m": 2326
+      }
+    },
+    {
+      "resort_id": "kirkwood",
+      "name": "Kirkwood",
+      "lat": 38.673846,
+      "lng": -120.064658,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:24.639Z",
+      "model_location": {
+        "lat": 38.670647,
+        "lng": -120.05397,
+        "elevation_m": 2597
+      }
+    },
+    {
+      "resort_id": "northstar",
+      "name": "Northstar",
+      "lat": 39.2588,
+      "lng": -120.137143,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:24.976Z",
+      "model_location": {
+        "lat": 39.239864,
+        "lng": -120.130035,
+        "elevation_m": 2336
+      }
+    },
+    {
+      "resort_id": "homewood",
+      "name": "Homewood",
+      "lat": 39.07741,
+      "lng": -120.173374,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:25.207Z",
+      "model_location": {
+        "lat": 39.089325,
+        "lng": -120.18887,
+        "elevation_m": 2160
+      }
+    },
+    {
+      "resort_id": "mt-rose",
+      "name": "Mt. Rose",
+      "lat": 39.319382,
+      "lng": -119.883963,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:25.446Z",
+      "model_location": {
+        "lat": 39.337955,
+        "lng": -119.91022,
+        "elevation_m": 2773
+      }
+    },
+    {
+      "resort_id": "diamond-peak",
+      "name": "Diamond Peak",
+      "lat": 39.254221,
+      "lng": -119.91413,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:25.679Z",
+      "model_location": {
+        "lat": 39.252907,
+        "lng": -119.91882,
+        "elevation_m": 2263
+      }
+    },
+    {
+      "resort_id": "june-mountain",
+      "name": "June Mountain",
+      "lat": 37.75502,
+      "lng": -119.074517,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:25.917Z",
+      "model_location": {
+        "lat": 37.75043,
+        "lng": -119.06088,
+        "elevation_m": 2774
+      }
+    },
+    {
+      "resort_id": "bear-mountain",
+      "name": "Bear Mountain",
+      "lat": 34.219488,
+      "lng": -116.859373,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:26.152Z",
+      "model_location": {
+        "lat": 34.231365,
+        "lng": -116.8485,
+        "elevation_m": 2332
+      }
+    },
+    {
+      "resort_id": "snow-summit",
+      "name": "Snow Summit",
+      "lat": 34.228595,
+      "lng": -116.891661,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:26.384Z",
+      "model_location": {
+        "lat": 34.22574,
+        "lng": -116.88033,
+        "elevation_m": 2298
+      }
+    },
+    {
+      "resort_id": "mountain-high",
+      "name": "Mountain High",
+      "lat": 34.372054,
+      "lng": -117.686325,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:26.622Z",
+      "model_location": {
+        "lat": 34.382915,
+        "lng": -117.68872,
+        "elevation_m": 2192
+      }
+    },
+    {
+      "resort_id": "ski-santa-fe",
+      "name": "Ski Santa Fe",
+      "lat": 35.791322,
+      "lng": -105.78955,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:26.867Z",
+      "model_location": {
+        "lat": 35.76731,
+        "lng": -105.78745,
+        "elevation_m": 3335
+      }
+    },
+    {
+      "resort_id": "angel-fire",
+      "name": "Angel Fire",
+      "lat": 36.379402,
+      "lng": -105.246831,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0.1,
+      "snowfall_48hr": 0.1,
+      "snowfall_7day": 0.1,
+      "last_updated": "2026-09-24T14:34:27.145Z",
+      "model_location": {
+        "lat": 36.37342,
+        "lng": -105.25041,
+        "elevation_m": 2976
+      }
+    },
+    {
+      "resort_id": "whiteface-mountain",
+      "name": "Whiteface Mountain",
+      "lat": 44.362104,
+      "lng": -73.880076,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:27.790Z",
+      "model_location": {
+        "lat": 44.331387,
+        "lng": -73.87677,
+        "elevation_m": 740
+      }
+    },
+    {
+      "resort_id": "bristol-mountain",
+      "name": "Bristol Mountain",
+      "lat": 42.742404,
+      "lng": -77.414649,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:28.025Z",
+      "model_location": {
+        "lat": 42.740948,
+        "lng": -77.42066,
+        "elevation_m": 580
+      }
+    },
+    {
+      "resort_id": "silverstar-mountain-resort",
+      "name": "SilverStar Mountain Resort",
+      "lat": 50.368896,
+      "lng": -119.045193,
+      "status": "fresh",
+      "units": "in",
+      "data_source": "Open-Meteo",
+      "window_start": "2026-09-24T14:00:00.000Z",
+      "window_ends": {
+        "snowfall_24hr": "2026-09-25T14:00:00.000Z",
+        "snowfall_48hr": "2026-09-26T14:00:00.000Z",
+        "snowfall_7day": "2026-10-01T14:00:00.000Z"
+      },
+      "snowfall_24hr": 0,
+      "snowfall_48hr": 0,
+      "snowfall_7day": 0,
+      "last_updated": "2026-09-24T14:34:28.256Z",
+      "model_location": {
+        "lat": 50.368195,
+        "lng": -119.03262,
+        "elevation_m": 1658
+      }
+    }
+  ]
+}

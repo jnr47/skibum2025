@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mammoth Mountain - Live Snow Conditions | SkiBum.com</title>
-    <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Real-time snowfall tracking, road conditions, and lodging deals.">
+    <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Modeled snowfall tracking, road conditions, and lodging deals.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,17 +123,19 @@
         
         .conditions-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 15px;
             margin-bottom: 20px;
             align-items: center;
         }
         
         .condition-item {
+            min-width: 0;
             text-align: center;
         }
         
         .condition-value {
+            overflow-wrap: anywhere;
             font-size: 2rem;
             font-weight: 700;
             color: var(--dark-navy);
@@ -679,7 +681,7 @@
             }
             
             .conditions-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             
             .pass-badge {
@@ -696,6 +698,15 @@
                 display: none;
             }
         }
+    </style>
+    <script src="/assets/resorts.js"></script>
+    <script src="/assets/forecast.js"></script>
+    <script src="/assets/data-client.js"></script>
+    <style>
+      .forecast-status { font-size: 13px; line-height: 1.5; padding: 0; color: #687787; margin: 6px 0; }
+      .forecast-credit { font-size: 12px; line-height: 1.6; padding: 10px; }
+      .forecast-credit a { text-decoration: underline; }
+      .marker[data-availability="unavailable"], .marker[data-availability="stale"] { background: #202a38 !important; border: 2px dashed #e2e8f0; }
     </style>
 </head>
 <body>
@@ -728,25 +739,25 @@
 
     <!-- Conditions Card -->
     <div class="container">
-        <div class="conditions-card">
+        <div class="conditions-card"><p id="forecast-status" class="forecast-status" role="status" hidden></p>
             <div class="conditions-grid">
                 <div class="condition-item">
-                    <span class="condition-value" id="snow-24hr">24"</span>
-                    <span class="condition-label">24hr Snowfall</span>
+                    <span class="condition-value" id="snow-24hr">Unavailable</span>
+                    <span class="condition-label">24-hour forecast</span>
                 </div>
                 <div class="condition-item">
-                    <span class="condition-value" id="snow-48hr">48°</span>
-                    <span class="condition-label">Temp High</span>
+                    <span class="condition-value" id="snow-48hr">Unavailable</span>
+                    <span class="condition-label">48-hour forecast</span>
                 </div>
                 <div class="condition-item" style="display: flex; justify-content: center;">
                     <div class="pass-badge">IKON</div>
                 </div>
                 <div class="condition-item">
-                    <span class="condition-value" id="snow-7day">7"❄</span>
-                    <span class="condition-label">Next Storm</span>
+                    <span class="condition-value" id="snow-7day">Unavailable</span>
+                    <span class="condition-label">7-day forecast</span>
                 </div>
                 <div class="condition-item">
-                    <span class="condition-value" id="base-depth">48"</span>
+                    <span class="condition-value" id="base-depth">Unavailable</span>
                     <span class="condition-label">Base Depth</span>
                 </div>
             </div>
@@ -763,24 +774,24 @@
     <section class="section" id="conditions">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Is It a Good Time to Go?</h2>
-                <span class="powder-badge">Powder Incoming</span>
+                <h2 class="section-title">Snowfall forecast</h2>
+                <span class="powder-badge">Modeled snowfall</span>
             </div>
             <div class="decision-grid">
                 <div class="decision-card">
                     <h3>📊 Snowfall Stats</h3>
                     <ul class="stats-list">
                         <li>
-                            <span class="stat-label">🎿 Last 24hr</span>
-                            <span class="stat-value">7 inches</span>
+                            <span class="stat-label">🎿 24-hour forecast</span>
+                            <span class="stat-value" id="detail-24hr">Unavailable</span>
                         </li>
                         <li>
-                            <span class="stat-label">📅 This Week</span>
-                            <span class="stat-value">17 inches</span>
+                            <span class="stat-label">📅 48-hour forecast</span>
+                            <span class="stat-value" id="detail-48hr">Unavailable</span>
                         </li>
                         <li>
-                            <span class="stat-label">⏰ 7-Day Total</span>
-                            <span class="stat-value">31 inches</span>
+                            <span class="stat-label">⏰ 7-day forecast</span>
+                            <span class="stat-value" id="detail-7day">Unavailable</span>
                         </li>
                     </ul>
                 </div>
@@ -789,15 +800,15 @@
                     <ul class="stats-list">
                         <li>
                             <span class="stat-label">Conditions</span>
-                            <span class="stat-value">Excellent</span>
+                            <span class="stat-value">Not reported</span>
                         </li>
                         <li>
                             <span class="stat-label">Weather</span>
-                            <span class="stat-value">Clear</span>
+                            <span class="stat-value">Not reported</span>
                         </li>
                         <li>
                             <span class="stat-label">Road Conditions</span>
-                            <span class="stat-value">Light (10 mph wind)</span>
+                            <span class="stat-value">Check Caltrans</span>
                         </li>
                     </ul>
                 </div>
@@ -813,7 +824,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Live Mountain & Road Cams</h2>
-                <p class="section-subtitle">Watch real-time footage from the slopes and nearby highway</p>
+                <p class="section-subtitle">Check webcams from the slopes and nearby highways</p>
             </div>
             <div class="cam-grid">
                 <a href="https://www.mammothmountain.com/the-mountain/mountain-conditions/webcams" target="_blank" class="cam-card">
@@ -1318,7 +1329,8 @@
                 © 2025 SkiBum.com · Live Snow Tracking · Vanlife Guides
             </p>
         </div>
-    </footer>
+    <p class="forecast-credit"><a href="https://open-meteo.com/">Weather data: Open-Meteo</a> · <a href="/docs/data-sources.html">About the forecast</a></p>
+</footer>
 
     <script>
         // FAQ Toggle
@@ -1347,32 +1359,35 @@
         // Email Form Submit
         function handleEmailSubmit(e) {
             e.preventDefault();
-            alert('Thanks for subscribing! You\'ll get Mammoth powder alerts soon.');
+            alert('Powder alerts are not yet available. No subscription has been created.');
             e.target.reset();
         }
 
         // Load snow data from API
-        async function loadSnowData() {
-            try {
-                const response = await fetch('snow-data.json');
-                const data = await response.json();
-                const mammoth = data.resorts.find(r => r.name.toLowerCase().includes('mammoth'));
-                
-                if (mammoth && mammoth.snowfall_7day) {
-                    // Update conditions with real data
-                    document.getElementById('snow-7day').textContent = Math.round(mammoth.snowfall_7day) + '"❄';
-                    console.log('Loaded Mammoth data:', mammoth);
-                }
-            } catch (error) {
-                console.log('Using static data - snow-data.json not found');
+        const F = window.SkiBumForecast;
+        function renderForecasts(data) {
+            const forecast = data['mammoth-mountain'] || F.empty();
+            for (const [period, key] of [['24hr', 'forecast24hr'], ['48hr', 'forecast48hr'], ['7day', 'forecast7day']]) {
+                document.getElementById('snow-' + period).textContent = F.format(forecast[key]);
+                document.getElementById('detail-' + period).textContent = F.format(forecast[key]);
             }
+            const status = document.getElementById('forecast-status');
+            status.hidden = forecast.status === 'fresh';
+            status.textContent = status.hidden ? '' : F.freshnessLabel(forecast);
         }
+        async function loadSnowData() {
+            try { renderForecasts(await SkiBumData.load()); }
+            catch { renderForecasts(SkiBumData.current()); }
+        }
+        setInterval(loadSnowData, 5 * 60 * 1000);
+        setInterval(() => renderForecasts(SkiBumData.current()), 60000);
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                const target = href === '#' ? null : document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }

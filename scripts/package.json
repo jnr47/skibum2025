@@ -1,12 +1,12 @@
 {
   "name": "skibum-data-fetcher",
   "version": "1.0.0",
-  "description": "Fetches NOAA snow data for ski resorts",
+  "description": "Fetches Open-Meteo snow data for ski resorts",
   "main": "fetch-snow-data.js",
   "scripts": {
     "fetch": "node fetch-snow-data.js"
   },
-  "keywords": ["snow", "ski", "noaa", "weather"],
+  "keywords": ["snow", "ski", "open-meteo", "weather"],
   "author": "SkiBum.com",
   "license": "MIT"
 }

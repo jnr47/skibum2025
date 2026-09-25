@@ -8,13 +8,13 @@
     <meta name="google-site-verification" content="nkR5Pfzko7I93RIvy57tFWipkHdbt4gKZGdhstz6Pjg" />
     
     <!-- Primary Meta Tags -->
-    <title>Skibum - Real-Time Ski Planning & Vanlife Guide</title>
-    <meta name="description" content="Real-time snow data, mountain cams, road conditions, and vanlife-friendly overnight parking for ski resorts across North America. Plan your perfect ski trip.">
+    <title>Skibum - Modeled Ski Planning & Vanlife Guide</title>
+    <meta name="description" content="Modeled snow data, mountain cams, road conditions, and vanlife-friendly overnight parking for ski resorts across North America. Plan your perfect ski trip.">
     <meta name="keywords" content="ski resorts, snow conditions, vanlife parking, mountain cams, ski trip planning, powder alerts, overnight parking">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Skibum - Where Should You Ski This Weekend?">
-    <meta property="og:description" content="Real-time snow, mountain cams, road conditions, and vanlife-friendly overnight options - all in one place.">
+    <meta property="og:description" content="Modeled snow, mountain cams, road conditions, and vanlife-friendly overnight options - all in one place.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skibum.com">
     <meta property="og:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Skibum - Ski Trip Planning Hub">
-    <meta name="twitter:description" content="Real-time snow, cams, road conditions & vanlife parking for North American ski resorts.">
+    <meta name="twitter:description" content="Modeled snow, cams, road conditions & vanlife parking for North American ski resorts.">
     <meta name="twitter:image" content="https://skibum.com/skibum_logo_blacktype_small.png">
     
     <link rel="canonical" href="https://skibum.com">
@@ -932,8 +932,13 @@
             }
             
             .map-container-hero {
+                flex: none;
                 height: 400px;
                 min-height: 400px;
+            }
+            .map-box {
+                height: 100%;
+                min-height: 300px;
             }
             
             .results-tray {
@@ -974,6 +979,16 @@
             }
         }
     </style>
+    <script src="/assets/runtime-config.js"></script>
+    <script src="/assets/resorts.js"></script>
+    <script src="/assets/forecast.js"></script>
+    <script src="/assets/data-client.js"></script>
+    <style>
+      .forecast-status { font-size: 13px; line-height: 1.5; padding: 0; color: #687787; margin: 6px 0; }
+      .forecast-credit { font-size: 12px; line-height: 1.6; padding: 10px; }
+      .forecast-credit a { text-decoration: underline; }
+      .marker[data-availability="unavailable"], .marker[data-availability="stale"] { background: #202a38 !important; border: 2px dashed #e2e8f0; }
+    </style>
 </head>
 <body>
     <div id="root">
@@ -1001,28 +1016,26 @@
             <!-- Left Sidebar - Control Panel -->
             <div class="control-panel">
                 <div class="panel-header">
-                    <h1 class="panel-title">See where the best skiing is right now.</h1>
-                    <p class="panel-subtitle">Live snow, pass coverage, and overnight options—all on one map.</p>
+                    <h1 class="panel-title">See where the best snow is right now.</h1><div id="forecast-status" class="forecast-status" role="status" hidden></div><p id="map-status" role="status"></p>
+                    <p class="panel-subtitle">Snow forecasts across 100+ resorts. Find what's worth chasing.</p>
                 </div>
                 
                 <!-- Search Bar -->
-                <div class="panel-search">
+                <form class="panel-search" id="resortSearchForm">
                     <input 
                         type="text" 
                         class="search-input-panel" 
                         placeholder="Search a resort or mountain..."
-                        id="panelSearch"
+                        id="panelSearch" list="resortOptions" aria-label="Search resorts" autocomplete="off"
                     >
-                </div>
-                
-                <!-- Divider -->
-                <div class="panel-divider">
-                    <span>or let us narrow it down</span>
-                </div>
+                    <datalist id="resortOptions"></datalist>
+                    <button type="submit" class="btn-small">Find on map</button>
+                    <p id="searchFeedback" aria-live="polite"></p>
+                </form>
                 
                 <!-- Primary CTA -->
                 <button class="cta-primary" id="showRecommendations">
-                    See top picks
+                    See snowiest resorts
                 </button>
                 
                 <!-- Progressive Disclosure - Filters (Hidden by Default) -->
@@ -1030,31 +1043,31 @@
                     <div class="filter-group">
                         <label class="filter-label">Trip distance</label>
                         <div class="radius-chips">
-                            <div class="radius-chip" data-radius="local">
+                            <button type="button" disabled class="radius-chip" data-radius="local">
                                 Local
                                 <span class="chip-subtext">1–2 hr</span>
-                            </div>
-                            <div class="radius-chip selected" data-radius="day">
+                            </button>
+                            <button type="button" disabled class="radius-chip selected" data-radius="day">
                                 Day/Weekend
                                 <span class="chip-subtext">2–4 hr</span>
-                            </div>
-                            <div class="radius-chip" data-radius="weekend">
+                            </button>
+                            <button type="button" disabled class="radius-chip" data-radius="weekend">
                                 Weekend+
                                 <span class="chip-subtext">4–6 hr</span>
-                            </div>
-                            <div class="radius-chip" data-radius="destination">
+                            </button>
+                            <button type="button" disabled class="radius-chip" data-radius="destination">
                                 Destination
                                 <span class="chip-subtext">Flying</span>
-                            </div>
+                            </button>
                         </div>
                     </div>
                     
                     <div class="filter-group">
                         <label class="filter-label">Pass coverage</label>
                         <div class="pass-chips">
-                            <div class="pass-chip" data-pass="Ikon">Ikon</div>
-                            <div class="pass-chip" data-pass="Epic">Epic</div>
-                            <div class="pass-chip" data-pass="Indy">Indy</div>
+                            <button type="button" disabled class="pass-chip" data-pass="Ikon">Ikon</button>
+                            <button type="button" disabled class="pass-chip" data-pass="Epic">Epic</button>
+                            <button type="button" disabled class="pass-chip" data-pass="Indy">Indy</button>
                         </div>
                     </div>
                     
@@ -1066,7 +1079,7 @@
                     </div>
                     
                     <button class="cta-primary" id="findResortsBtn" style="margin-top: 1rem;">
-                        Show my top picks
+                        See snowiest resorts
                     </button>
                 </div>
             </div>
@@ -1076,8 +1089,8 @@
                 <div class="map-box">
                     <!-- Snow Forecast Toggle Controls -->
                     <div class="snow-toggle-controls">
-                        <button class="toggle-btn active" data-timeframe="24hr">24h</button>
-                        <button class="toggle-btn" data-timeframe="48hr">48h</button>
+                        <button class="toggle-btn" data-timeframe="24hr">24h</button>
+                        <button class="toggle-btn active" data-timeframe="48hr">48h</button>
                         <button class="toggle-btn" data-timeframe="7day">7 day</button>
                     </div>
                     
@@ -1087,8 +1100,8 @@
                     <div class="results-tray" id="resultsTray">
                         <div class="results-header">
                             <div>
-                                <h2 class="results-title">Your Top Picks</h2>
-                                <p class="results-subtitle">Ranked by current snow, access, and overnight options</p>
+                                <h2 class="results-title">Snowiest resorts · 48h forecast</h2>
+                                <p class="results-subtitle">Ranked by fresh 48-hour forecast snowfall. Pass, distance, and parking filters are not yet connected.</p>
                             </div>
                             <button class="close-tray-btn" id="closeTrayBtn">✕</button>
                         </div>
@@ -1098,7 +1111,7 @@
                         </div>
                         
                         <div class="show-more">
-                            <button class="show-more-btn" id="showMoreBtn">Show 2 more options ↓</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -1108,8 +1121,8 @@
         <!-- Trending Resorts Section -->
         <section class="trending-section">
             <div class="container">
-                <h2 class="section-title">Where skiers are looking right now</h2>
-                <p class="section-subtitle">Based on snowfall, conditions, and seasonal patterns.</p>
+                <h2 class="section-title">Featured resort forecasts</h2>
+                <p class="section-subtitle">Featured resorts ordered by 48-hour forecast snowfall.</p>
                 
                 <div class="trending-grid" id="trendingGrid">
                     <!-- Will be populated with real snow data -->
@@ -1151,16 +1164,16 @@
         <section class="stats">
             <div class="stats-grid">
                 <div class="stat">
-                    <div class="stat-number">117+</div>
+                    <div class="stat-number" data-resort-count>—</div>
                     <div class="stat-label">Resorts Tracked</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">Live</div>
-                    <div class="stat-label">Real-Time Updates</div>
+                    <div class="stat-number">6-hour</div>
+                    <div class="stat-label">Scheduled Updates</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Snow Monitoring</div>
+                    <div class="stat-number">7-day</div>
+                    <div class="stat-label">Forecast Horizon</div>
                 </div>
             </div>
         </section>
@@ -1229,210 +1242,70 @@
                     <p>&copy; 2025 Skibum.com. Built for skiers, riders, and vanlife travelers.</p>
                 </div>
             </div>
-        </footer>
+        <p class="forecast-credit"><a href="https://open-meteo.com/">Weather data: Open-Meteo</a> · <a href="/docs/data-sources.html">About the forecast</a></p>
+</footer>
     </div>
 
     <script>
         // === GLOBAL STATE ===
         let snowData = null;
         let heroMap = null;
-        let currentTimeframe = '24hr';
+        let currentTimeframe = '48hr';
         let markers = [];
         
         // Resort images mapping (from your GitHub repo)
         const resortImages = {
-            'Palisades Tahoe': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/palisades.avif',
-            'Jackson Hole': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/jackson-hole.avif',
-            'Vail': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/vail.avif',
-            'Steamboat': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/steamboat.avif',
-            'Breckenridge': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/breckenridge.avif',
-            'Mammoth Mountain': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/mammoth.avif',
-            'Big Sky': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/big-sky.avif',
-            'Aspen Snowmass': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/aspen.avif',
-            'Park City': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/park-city.avif',
-            'Whistler Blackcomb': 'https://raw.githubusercontent.com/jnr47/skibum2025/main/images/resorts/whistler.avif'
+            'Palisades Tahoe': '/images/resorts/palisades.avif',
+            'Jackson Hole': '/images/resorts/jackson-hole.avif',
+            'Vail': '/images/resorts/vail.avif',
+            'Steamboat': '/images/resorts/steamboat.avif',
+            'Breckenridge': '/images/resorts/breckenridge.avif',
+            'Mammoth Mountain': '/images/resorts/mammoth.avif',
+            'Big Sky': '/images/resorts/big-sky.avif',
+            'Aspen Snowmass': '/images/resorts/aspen.avif',
+            'Park City': '/images/resorts/park-city.avif',
+            'Whistler Blackcomb': '/images/resorts/whistler.avif'
         };
         
         // === 117 RESORT DATA (from map.html) ===
-        const resorts = [
-            { id: 1, name: "Whistler Blackcomb", lat: 50.1163, lng: -122.9574, state: "British Columbia", country: "Canada" },
-            { id: 2, name: "Vail", lat: 39.6403, lng: -106.3742, state: "Colorado", country: "USA" },
-            { id: 3, name: "Park City", lat: 40.6514, lng: -111.5079, state: "Utah", country: "USA" },
-            { id: 4, name: "Breckenridge", lat: 39.4817, lng: -106.0384, state: "Colorado", country: "USA" },
-            { id: 5, name: "Heavenly", lat: 38.9350, lng: -119.9403, state: "California", country: "USA" },
-            { id: 6, name: "Aspen Snowmass", lat: 39.1911, lng: -106.8175, state: "Colorado", country: "USA" },
-            { id: 7, name: "Jackson Hole", lat: 43.5875, lng: -110.8278, state: "Wyoming", country: "USA" },
-            { id: 8, name: "Banff Sunshine", lat: 51.1158, lng: -115.7631, state: "Alberta", country: "Canada" },
-            { id: 9, name: "Lake Louise", lat: 51.4254, lng: -116.1773, state: "Alberta", country: "Canada" },
-            { id: 10, name: "Big Sky", lat: 45.2846, lng: -111.4008, state: "Montana", country: "USA" },
-            { id: 11, name: "Steamboat", lat: 40.4580, lng: -106.8047, state: "Colorado", country: "USA" },
-            { id: 12, name: "Mammoth Mountain", lat: 37.6308, lng: -119.0326, state: "California", country: "USA" },
-            { id: 13, name: "Squaw Valley", lat: 39.1970, lng: -120.2356, state: "California", country: "USA" },
-            { id: 14, name: "Telluride", lat: 37.9375, lng: -107.8123, state: "Colorado", country: "USA" },
-            { id: 15, name: "Sun Valley", lat: 43.6966, lng: -114.3553, state: "Idaho", country: "USA" },
-            { id: 16, name: "Deer Valley", lat: 40.6374, lng: -111.4783, state: "Utah", country: "USA" },
-            { id: 17, name: "Killington", lat: 43.6046, lng: -72.8220, state: "Vermont", country: "USA" },
-            { id: 18, name: "Stowe", lat: 44.5303, lng: -72.7817, state: "Vermont", country: "USA" },
-            { id: 19, name: "Alta", lat: 40.5885, lng: -111.6376, state: "Utah", country: "USA" },
-            { id: 20, name: "Snowbird", lat: 40.5803, lng: -111.6573, state: "Utah", country: "USA" },
-            { id: 21, name: "Taos", lat: 36.5924, lng: -105.4467, state: "New Mexico", country: "USA" },
-            { id: 22, name: "Copper Mountain", lat: 39.5022, lng: -106.1506, state: "Colorado", country: "USA" },
-            { id: 23, name: "Winter Park", lat: 39.8868, lng: -105.7625, state: "Colorado", country: "USA" },
-            { id: 24, name: "Keystone", lat: 39.6050, lng: -105.9347, state: "Colorado", country: "USA" },
-            { id: 25, name: "Arapahoe Basin", lat: 39.6426, lng: -105.8717, state: "Colorado", country: "USA" },
-            { id: 26, name: "Crested Butte", lat: 38.8997, lng: -106.9653, state: "Colorado", country: "USA" },
-            { id: 27, name: "Loveland", lat: 39.6803, lng: -105.8978, state: "Colorado", country: "USA" },
-            { id: 28, name: "Mt. Bachelor", lat: 43.9790, lng: -121.6880, state: "Oregon", country: "USA" },
-            { id: 29, name: "Crystal Mountain", lat: 46.9358, lng: -121.4742, state: "Washington", country: "USA" },
-            { id: 30, name: "Stevens Pass", lat: 47.7453, lng: -121.0892, state: "Washington", country: "USA" },
-            { id: 31, name: "Mt. Baker", lat: 48.8597, lng: -121.6686, state: "Washington", country: "USA" },
-            { id: 32, name: "Schweitzer", lat: 48.3642, lng: -116.6228, state: "Idaho", country: "USA" },
-            { id: 33, name: "Sun Peaks", lat: 50.8817, lng: -119.8847, state: "British Columbia", country: "Canada" },
-            { id: 34, name: "Revelstoke", lat: 50.9981, lng: -118.1956, state: "British Columbia", country: "Canada" },
-            { id: 35, name: "Fernie", lat: 49.4653, lng: -115.0636, state: "British Columbia", country: "Canada" },
-            { id: 36, name: "Big White", lat: 49.7311, lng: -118.9350, state: "British Columbia", country: "Canada" },
-            { id: 37, name: "Kicking Horse", lat: 51.2514, lng: -117.0492, state: "British Columbia", country: "Canada" },
-            { id: 38, name: "Mont Tremblant", lat: 46.2094, lng: -74.5847, state: "Quebec", country: "Canada" },
-            { id: 39, name: "Blue Mountain", lat: 44.5075, lng: -80.3231, state: "Ontario", country: "Canada" },
-            { id: 40, name: "Sugarloaf", lat: 45.0314, lng: -70.3139, state: "Maine", country: "USA" },
-            { id: 41, name: "Sunday River", lat: 44.4697, lng: -70.8561, state: "Maine", country: "USA" },
-            { id: 42, name: "Sugarbush", lat: 44.1350, lng: -72.9017, state: "Vermont", country: "USA" },
-            { id: 43, name: "Stratton", lat: 43.1133, lng: -72.9083, state: "Vermont", country: "USA" },
-            { id: 44, name: "Okemo", lat: 43.4017, lng: -72.7167, state: "Vermont", country: "USA" },
-            { id: 45, name: "Jay Peak", lat: 44.9378, lng: -72.5036, state: "Vermont", country: "USA" },
-            { id: 46, name: "Smugglers' Notch", lat: 44.5458, lng: -72.7872, state: "Vermont", country: "USA" },
-            { id: 47, name: "Loon Mountain", lat: 44.0369, lng: -71.6206, state: "New Hampshire", country: "USA" },
-            { id: 48, name: "Cannon Mountain", lat: 44.1572, lng: -71.6978, state: "New Hampshire", country: "USA" },
-            { id: 49, name: "Wildcat Mountain", lat: 44.2636, lng: -71.2328, state: "New Hampshire", country: "USA" },
-            { id: 50, name: "Bretton Woods", lat: 44.2633, lng: -71.4439, state: "New Hampshire", country: "USA" },
-            { id: 51, name: "Snowbasin", lat: 41.2156, lng: -111.8567, state: "Utah", country: "USA" },
-            { id: 52, name: "Powder Mountain", lat: 41.3814, lng: -111.7806, state: "Utah", country: "USA" },
-            { id: 53, name: "Solitude", lat: 40.6200, lng: -111.5917, state: "Utah", country: "USA" },
-            { id: 54, name: "Brighton", lat: 40.5981, lng: -111.5831, state: "Utah", country: "USA" },
-            { id: 55, name: "Snowmass", lat: 39.2133, lng: -106.9378, state: "Colorado", country: "USA" },
-            { id: 56, name: "Aspen Highlands", lat: 39.1825, lng: -106.8553, state: "Colorado", country: "USA" },
-            { id: 57, name: "Buttermilk", lat: 39.2078, lng: -106.8608, state: "Colorado", country: "USA" },
-            { id: 58, name: "Beaver Creek", lat: 39.6042, lng: -106.5164, state: "Colorado", country: "USA" },
-            { id: 59, name: "Purgatory", lat: 37.6303, lng: -107.8139, state: "Colorado", country: "USA" },
-            { id: 60, name: "Wolf Creek", lat: 37.4722, lng: -106.7931, state: "Colorado", country: "USA" },
-            { id: 61, name: "Monarch Mountain", lat: 38.5117, lng: -106.3317, state: "Colorado", country: "USA" },
-            { id: 62, name: "Eldora", lat: 39.9372, lng: -105.5828, state: "Colorado", country: "USA" },
-            { id: 63, name: "Grand Targhee", lat: 43.7886, lng: -110.9586, state: "Wyoming", country: "USA" },
-            { id: 64, name: "Snow King", lat: 43.4783, lng: -110.7628, state: "Wyoming", country: "USA" },
-            { id: 65, name: "Bridger Bowl", lat: 45.8167, lng: -110.8969, state: "Montana", country: "USA" },
-            { id: 66, name: "Big Mountain", lat: 48.4928, lng: -114.3483, state: "Montana", country: "USA" },
-            { id: 67, name: "Snowbowl", lat: 46.9417, lng: -113.9492, state: "Montana", country: "USA" },
-            { id: 68, name: "Grand Valira", lat: 42.5397, lng: 1.7350, state: "Andorra", country: "Andorra" },
-            { id: 69, name: "Bogus Basin", lat: 43.7725, lng: -116.0939, state: "Idaho", country: "USA" },
-            { id: 70, name: "Tamarack", lat: 44.6922, lng: -116.1344, state: "Idaho", country: "USA" },
-            { id: 71, name: "Silver Mountain", lat: 47.6764, lng: -116.0703, state: "Idaho", country: "USA" },
-            { id: 72, name: "Mt. Hood Meadows", lat: 45.3319, lng: -121.6653, state: "Oregon", country: "USA" },
-            { id: 73, name: "Timberline", lat: 45.3306, lng: -121.7108, state: "Oregon", country: "USA" },
-            { id: 74, name: "Willamette Pass", lat: 43.6006, lng: -122.0336, state: "Oregon", country: "USA" },
-            { id: 75, name: "Mission Ridge", lat: 47.2917, lng: -120.3997, state: "Washington", country: "USA" },
-            { id: 76, name: "Snoqualmie", lat: 47.4219, lng: -121.4136, state: "Washington", country: "USA" },
-            { id: 77, name: "Mt. Spokane", lat: 47.9208, lng: -117.0856, state: "Washington", country: "USA" },
-            { id: 78, name: "White Pass", lat: 46.6394, lng: -121.3908, state: "Washington", country: "USA" },
-            { id: 79, name: "49 Degrees North", lat: 48.7511, lng: -117.6369, state: "Washington", country: "USA" },
-            { id: 80, name: "Red Mountain", lat: 49.0917, lng: -117.8233, state: "British Columbia", country: "Canada" },
-            { id: 81, name: "Whitewater", lat: 49.5394, lng: -117.2717, state: "British Columbia", country: "Canada" },
-            { id: 82, name: "Panorama", lat: 50.8036, lng: -116.0533, state: "British Columbia", country: "Canada" },
-            { id: 83, name: "Marmot Basin", lat: 52.8236, lng: -118.0747, state: "Alberta", country: "Canada" },
-            { id: 84, name: "Nakiska", lat: 50.9800, lng: -115.0733, state: "Alberta", country: "Canada" },
-            { id: 85, name: "Castle Mountain", lat: 49.4058, lng: -114.5169, state: "Alberta", country: "Canada" },
-            { id: 86, name: "Norquay", lat: 51.1967, lng: -115.5531, state: "Alberta", country: "Canada" },
-            { id: 87, name: "Le Massif", lat: 47.3136, lng: -70.6358, state: "Quebec", country: "Canada" },
-            { id: 88, name: "Calabogie", lat: 45.2906, lng: -76.7019, state: "Ontario", country: "Canada" },
-            { id: 89, name: "Sierra-at-Tahoe", lat: 38.7986, lng: -120.0828, state: "California", country: "USA" },
-            { id: 90, name: "Kirkwood", lat: 38.6867, lng: -120.0656, state: "California", country: "USA" },
-            { id: 91, name: "Northstar", lat: 39.2733, lng: -120.1211, state: "California", country: "USA" },
-            { id: 92, name: "Homewood", lat: 39.0833, lng: -120.1667, state: "California", country: "USA" },
-            { id: 93, name: "Mt. Rose", lat: 39.3397, lng: -119.8894, state: "Nevada", country: "USA" },
-            { id: 94, name: "Diamond Peak", lat: 39.2525, lng: -119.9169, state: "Nevada", country: "USA" },
-            { id: 95, name: "June Mountain", lat: 37.7853, lng: -119.0781, state: "California", country: "USA" },
-            { id: 96, name: "Bear Mountain", lat: 34.2350, lng: -116.8650, state: "California", country: "USA" },
-            { id: 97, name: "Snow Summit", lat: 34.2306, lng: -116.8886, state: "California", country: "USA" },
-            { id: 98, name: "Mountain High", lat: 34.3811, lng: -117.6881, state: "California", country: "USA" },
-            { id: 99, name: "Ski Santa Fe", lat: 35.7869, lng: -105.7961, state: "New Mexico", country: "USA" },
-            { id: 100, name: "Angel Fire", lat: 36.3975, lng: -105.2886, state: "New Mexico", country: "USA" },
-            { id: 101, name: "Whiteface Mountain", lat: 44.3659, lng: -73.9024, state: "New York", country: "USA" },
-            { id: 102, name: "Bristol Mountain", lat: 42.7455, lng: -77.4016, state: "New York", country: "USA" }
-        ];
+        const resorts = window.SKIBUM_RESORTS.map(r => ({ ...r }));
+        const F = window.SkiBumForecast;
         
         // === FETCH SNOW DATA ===
-        async function loadSnowData() {
-            console.log('Fetching real snow data...');
-            const newData = {};
-            const heatmapFeatures = [];
-            
-            try {
-                const response = await fetch('/snow-data.json');
-                const snowDataResponse = await response.json();
-                
-                resorts.forEach((resort) => {
-                    const data = snowDataResponse.resorts.find(r => 
-                        Math.abs(r.lat - resort.lat) < 0.01 && 
-                        Math.abs(r.lng - resort.lng) < 0.01
-                    );
-                    
-                    if (data && !data.error) {
-                        newData[resort.id] = {
-                            forecast24hr: data.snowfall_24hr || 0,
-                            forecast48hr: data.snowfall_48hr || 0,
-                            forecast7day: data.snowfall_7day || 0
-                        };
-                        
-                        const snowfall = data.snowfall_24hr || 0;
-                        if (snowfall > 0) {
-                            heatmapFeatures.push({
-                                type: 'Feature',
-                                properties: { snowfall: snowfall },
-                                geometry: {
-                                    type: 'Point',
-                                    coordinates: [resort.lng, resort.lat]
-                                }
-                            });
-                        }
-                    } else {
-                        newData[resort.id] = {
-                            forecast24hr: 0,
-                            forecast48hr: 0,
-                            forecast7day: 0
-                        };
-                    }
-                });
-            } catch (error) {
-                console.error('Error fetching snow data:', error);
-            }
-
-            snowData = newData;
-            updateMarkers(newData);
+        function renderForecasts(data) {
+            snowData = data;
+            updateMarkers(data);
+            updateHeatmapForPeriod(data, currentTimeframe);
             populateTrendingSection();
-
-            if (heroMap && heroMap.getSource('snowfall-heat')) {
-                heroMap.getSource('snowfall-heat').setData({
-                    type: 'FeatureCollection',
-                    features: heatmapFeatures
-                });
-            }
+            const status = document.getElementById('forecast-status');
+            status.hidden = Object.values(data).every(v => v.status === 'fresh');
+            status.textContent = status.hidden ? '' : F.overviewLabel(data);
+            document.querySelectorAll('[data-resort-count]').forEach(el => el.textContent = resorts.length);
+            if (resultsTray.classList.contains('visible')) runRecommendationEngine();
         }
-        
+        async function loadSnowData() {
+            try { renderForecasts(await SkiBumData.load()); }
+            catch { renderForecasts(SkiBumData.current()); }
+        }
+
         // === MAP INITIALIZATION ===
         function initHeroMap() {
             const mapContainer = document.getElementById('hero-map');
             if (!mapContainer || heroMap) return;
             
-            mapboxgl.accessToken = 'pk.eyJ1Ijoiam5yNDciLCJhIjoiY200azAzNHo3MGs5MTJpcTRxejE1cmp0NSJ9.YpIGfQ1PZljzCJ7EhCjz4A';
+            if (!window.mapboxgl || !window.SKIBUM_CONFIG?.mapboxPublicToken) { document.getElementById('map-status').textContent = 'Map unavailable. Forecast totals are still available below.'; return; }
+            mapboxgl.accessToken = window.SKIBUM_CONFIG?.mapboxPublicToken || '';
             
             try {
                 heroMap = new mapboxgl.Map({
                     container: 'hero-map',
                     style: 'mapbox://styles/mapbox/dark-v11',
-                    center: [-106, 45],
-                    zoom: 3.5,
+                    center: [-113, 46],
+                    zoom: window.innerWidth <= 768 ? 2.2 : 2.8,
                     interactive: true
                 });
                 
+                heroMap.on('error', () => { document.getElementById('map-status').textContent = 'Some map resources failed to load. Forecast totals remain available below.'; });
                 heroMap.on('load', function() {
                     // Add heatmap source
                     heroMap.addSource('snowfall-heat', {
@@ -1501,14 +1374,15 @@
                         }
                     });
 
-                    loadSnowData();
+
                     
                     // Add markers (hidden by default at low zoom)
                     resorts.forEach(resort => {
-                        const color = getSnowfallColor(0);
+                        const color = getSnowfallColor(null);
                         
                         const el = document.createElement('div');
                         el.className = 'marker';
+                        el.dataset.availability = 'unavailable';
                         el.style.backgroundColor = color;
                         el.style.display = 'none'; // Start hidden
                         
@@ -1526,9 +1400,9 @@
                                 popup.setHTML(`
                                     <div class="popup-resort-name">${resort.name}</div>
                                     <div class="popup-snow-data">
-                                        <strong>24h:</strong> ${data.forecast24hr?.toFixed(1) || 0}"<br>
-                                        <strong>48h:</strong> ${data.forecast48hr?.toFixed(1) || 0}"<br>
-                                        <strong>7 day:</strong> ${data.forecast7day?.toFixed(1) || 0}"
+                                        <strong>24h:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast24hr)}<br>
+                                        <strong>48h:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast48hr)}<br>
+                                        <strong>7 day:</strong> ${data.status === 'stale' ? '—' : F.format(data.forecast7day)}<br>${F.freshnessLabel(data)}
                                     </div>
                                 `);
                             } else {
@@ -1580,14 +1454,16 @@
 
                     updateMarkerVisibility();
                     heroMap.on('zoom', updateMarkerVisibility);
+                    if (snowData) { updateMarkers(snowData); updateHeatmapForPeriod(snowData, currentTimeframe); }
                 });
             } catch (error) {
-                console.error('Error initializing hero map:', error);
+                document.getElementById('map-status').textContent = 'Map unavailable. Forecast totals remain available below.';
             }
         }
         
         // === COLOR CODING (from map.html) ===
         const getSnowfallColor = (inches) => {
+                if (!Number.isFinite(inches)) return '#202a38';
             if (inches >= 10) return '#ef4444'; // Red
             if (inches >= 6) return '#f97316';  // Orange
             if (inches >= 3) return '#eab308';  // Yellow
@@ -1606,9 +1482,11 @@
             
             resorts.forEach(resort => {
                 if (resort.markerEl && data[resort.id] !== undefined) {
-                    const snowfall = data[resort.id][periodKey] || 0;
+                    const snowfall = data[resort.id].status === 'fresh' ? data[resort.id][periodKey] : null;
                     const color = getSnowfallColor(snowfall);
                     resort.markerEl.style.backgroundColor = color;
+                        resort.markerEl.dataset.availability = data[resort.id].status;
+                        resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.freshnessLabel(data[resort.id])}`;
                 }
             });
         };
@@ -1619,7 +1497,7 @@
             
             resorts.forEach(resort => {
                 if (data[resort.id] !== undefined) {
-                    const snowfall = data[resort.id][periodKey] || 0;
+                    const snowfall = data[resort.id].status === 'fresh' ? data[resort.id][periodKey] : null;
                     if (snowfall > 0) {
                         heatmapFeatures.push({
                             type: 'Feature',
@@ -1649,12 +1527,12 @@
             
             // Only show resorts we have images for
             const featuredResortNames = ['Palisades Tahoe', 'Breckenridge', 'Whistler Blackcomb', 'Park City', 'Big Sky', 'Vail'];
-            const featuredResorts = resorts.filter(r => featuredResortNames.includes(r.name));
+            const featuredResorts = resorts.filter(r => featuredResortNames.includes(r.name) && snowData[r.id]?.status === 'fresh');
             
             // Sort by 48h snowfall
             const sortedResorts = featuredResorts.map(resort => ({
                 ...resort,
-                snow48h: snowData[resort.id]?.forecast48hr || 0
+                snow48h: snowData[resort.id].forecast48hr
             })).sort((a, b) => b.snow48h - a.snow48h);
             
             trendingGrid.innerHTML = sortedResorts.map(resort => {
@@ -1664,18 +1542,15 @@
                 return `
                     <div class="trending-card">
                         ${image ? 
-                            `<video class="trending-image" autoplay loop muted playsinline>
-                                <source src="${image}" type="video/mp4">
-                                <div class="trending-image-placeholder"></div>
-                            </video>` :
+                            `<img class="trending-image" src="${image}" alt="${resort.name}" loading="lazy">` :
                             `<div class="trending-image-placeholder"></div>`
                         }
                         <h3>${resort.name}</h3>
-                        <p class="snow-badge">❄️ ${snow48h}" last 48h</p>
-                        <p class="trending-note">${snow48h > 10 ? 'Epic conditions' : snow48h > 5 ? 'Great powder' : 'Fresh snow'}</p>
+                        <p class="snow-badge">❄️ ${snow48h}" forecast / 48h</p>
+                        <p class="trending-note">${resort.snow48h > 0 ? 'Modeled snowfall' : 'No snowfall forecast'}</p>
                     </div>
                 `;
-            }).join('');
+            }).join('') || '<p>Snow forecasts are refreshing.</p>';
         }
         
         // === TOGGLE BUTTON HANDLERS ===
@@ -1701,8 +1576,7 @@
         const closeTrayBtn = document.getElementById('closeTrayBtn');
         
         showRecommendationsBtn.addEventListener('click', () => {
-            filtersSection.classList.add('visible');
-            filtersSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            runRecommendationEngine();
         });
         
         if (findResortsBtn) {
@@ -1734,24 +1608,48 @@
         // === SEARCH FUNCTIONALITY ===
         const panelSearch = document.getElementById('panelSearch');
         
-        if (panelSearch) {
-            panelSearch.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && snowData) {
-                    e.preventDefault();
-                    const value = e.target.value.toLowerCase();
-                    const match = resorts.find(resort => 
-                        resort.name.toLowerCase().includes(value)
-                    );
-                    
-                    if (match) {
-                        alert(`Navigating to ${match.name} (resort page coming soon)`);
-                    } else {
-                        alert('Resort not found. Try: Jackson Hole, Vail, Palisades, etc.');
-                    }
-                }
-            });
+        const searchFeedback = document.getElementById('searchFeedback');
+        const normalizeSearch = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+        const options = document.getElementById('resortOptions');
+        resorts.forEach(resort => {
+            const option = document.createElement('option');
+            option.value = resort.name;
+            options.appendChild(option);
+        });
+        function searchMatches(value) {
+            const query = normalizeSearch(value);
+            if (!query) return [];
+            const names = resort => [resort.name, ...(resort.aliases || [])].map(normalizeSearch);
+            const exact = resorts.filter(resort => names(resort).includes(query));
+            return exact.length ? exact : resorts.filter(resort => names(resort).some(name => name.includes(query)));
         }
-        
+        function focusSearchResult() {
+            const matches = searchMatches(panelSearch.value);
+            if (matches.length !== 1) {
+                searchFeedback.textContent = matches.length ? 'Choose a resort from the suggestions, or enter a more specific name.' : 'No resort found. Try another name.';
+                return;
+            }
+            const resort = matches[0];
+            if (!heroMap || !resort.marker) {
+                searchFeedback.textContent = 'The map is not ready. Please try again in a moment.';
+                return;
+            }
+            panelSearch.value = resort.name;
+            resultsTray.classList.remove('visible');
+            document.getElementById('hero-map').scrollIntoView({ behavior: 'instant', block: 'center' });
+            // Finish layout and cancel any earlier camera transition before locating the resort.
+            heroMap.stop();
+            heroMap.resize();
+            heroMap.jumpTo({ center: [resort.lng, resort.lat], zoom: 9 });
+            searchFeedback.textContent = 'Showing ' + resort.name + ' on the map.';
+        }
+        document.getElementById('resortSearchForm').addEventListener('submit', event => {
+            event.preventDefault(); focusSearchResult();
+        });
+        panelSearch.addEventListener('change', () => {
+            if (searchMatches(panelSearch.value).length === 1) focusSearchResult();
+        });
+
         // === RECOMMENDATION ENGINE ===
         function runRecommendationEngine() {
             if (!snowData) return;
@@ -1762,10 +1660,10 @@
             const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
             
             // Sort by 48h snowfall
-            const results = resorts.map(resort => ({
+            const results = resorts.filter(resort => snowData[resort.id]?.status === 'fresh').map(resort => ({
                 ...resort,
-                snow48h: snowData[resort.id]?.forecast48hr || 0,
-                snow7day: snowData[resort.id]?.forecast7day || 0
+                snow48h: snowData[resort.id].forecast48hr,
+                snow7day: snowData[resort.id].forecast7day
             })).sort((a, b) => b.snow48h - a.snow48h).slice(0, 5);
             
             displayResults(results);
@@ -1776,6 +1674,7 @@
             const resultsList = document.getElementById('resultsList');
             const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
             
+            if (!results.length) { resultsList.innerHTML = '<p>Snow forecasts are refreshing.</p>'; return; }
             resultsList.innerHTML = results.map((resort, index) => {
                 const snow48h = resort.snow48h?.toFixed(1) || 0;
                 const snow7day = resort.snow7day?.toFixed(1) || 0;
@@ -1789,11 +1688,11 @@
                         
                         <div class="result-details">
                             <div class="result-detail">
-                                <span class="result-detail-label">❄️ 48H SNOW</span>
+                                <span class="result-detail-label">❄️ 48H FORECAST</span>
                                 <span class="result-detail-value">${snow48h}"</span>
                             </div>
                             <div class="result-detail">
-                                <span class="result-detail-label">📊 7 DAY</span>
+                                <span class="result-detail-label">📊 7 DAY FORECAST</span>
                                 <span class="result-detail-value">${snow7day}"</span>
                             </div>
                             <div class="result-detail">
@@ -1811,10 +1710,17 @@
             }).join('');
         }
         
-        document.getElementById('showMoreBtn')?.addEventListener('click', () => {
-            alert('Showing 2 more results (feature coming soon)');
-        });
         
+        document.querySelectorAll('.pass-chip, .radius-chip, #prioritizeOvernight').forEach(el => {
+            el.disabled = true;
+            el.title = 'Not yet connected to forecast ranking';
+        });
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSnowData();
+            setInterval(loadSnowData, 5 * 60 * 1000);
+            setInterval(() => renderForecasts(SkiBumData.current()), 60 * 1000);
+        });
+
         // === INITIALIZE ON PAGE LOAD ===
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initHeroMap);

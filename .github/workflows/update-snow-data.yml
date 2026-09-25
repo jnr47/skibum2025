@@ -1,44 +1,39 @@
 name: Update Snow Data
-
 on:
   schedule:
-    # Run every 6 hours (at 0:00, 6:00, 12:00, 18:00 UTC)
-    - cron: '0 0,6,12,18 * * *'
-  workflow_dispatch: # Allow manual trigger
-
+    - cron: '17 0,6,12,18 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: snow-data-publisher
+  cancel-in-progress: false
 jobs:
   update-data:
+    # Manual runs from a review branch must never publish to main.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 20
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          fetch-depth: 0  # Fetch all history
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies
+          node-version: '22'
+      - run: npm ci
+      - name: Validate catalog and forecast behavior
+        run: npm run check
+      - name: Collect validated forecasts
+        env:
+          OPEN_METEO_API_KEY: ${{ secrets.OPEN_METEO_API_KEY }}
+        run: npm run fetch:snow
+      - name: Commit snapshot
         run: |
-          cd scripts
-          npm install
-      
-      - name: Pull latest changes
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git pull origin main
-      
-      - name: Fetch snow data
-        run: |
-          cd scripts
-          node fetch-snow-data.js
-      
-      - name: Commit and push changes
-        run: |
-          git add snow-data.json
-          git diff --staged --quiet || git commit -m "Update snow data: $(date)"
-          git push
+          git config user.name 'GitHub Action'
+          git config user.email 'action@github.com'
+          git add forecast-data.json
+          git diff --staged --quiet || git commit -m "Update validated snow forecasts"
+          # Do not rebase generated data onto changed code/catalog; let a race fail safely.
+          git push origin HEAD:main
+      - name: Failure summary
+        if: failure()
+        run: echo 'Forecast refresh failed. The previously published snapshot remains in place and ages to stale. Inspect this run before retrying.' >> "$GITHUB_STEP_SUMMARY"
