@@ -47,15 +47,27 @@
   function format(value) { return Number.isFinite(value) ? `${value.toFixed(1)}″` : 'Unavailable'; }
   function utc(value) { return new Date(value).toISOString().replace('T', ' ').replace(':00.000Z', ' UTC'); }
   // Consumer-facing copy only; validation and freshness rules stay unchanged.
+  function updateLabel(value) {
+    const time = typeof value === 'string' && value.trim() ? Date.parse(value) : NaN;
+    if (!Number.isFinite(time)) return '';
+    const date = new Date(time);
+    const day = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' }).format(date);
+    const clock = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', hour12: true }).format(date);
+    return `Updated ${day}, ${clock} ET`;
+  }
   function freshnessLabel(v) {
-    if (v?.status === 'fresh') return 'Updated recently.';
+    if (v?.status === 'fresh') return updateLabel(v.lastUpdated);
     if (v?.status === 'stale') return 'Snow forecasts are refreshing.';
     return 'Forecast unavailable. Please try again later.';
   }
   function overviewLabel(data) {
     const all = Object.values(data);
     if (all.some(v => v.status === 'fresh')) {
-      return all.every(v => v.status === 'fresh') ? 'Updated recently.' : 'Some forecasts are unavailable. Explore the latest available snow forecasts.';
+      if (all.every(v => v.status === 'fresh')) {
+        if (all.some(v => !updateLabel(v.lastUpdated))) return '';
+        return updateLabel(all.reduce((oldest, v) => Date.parse(v.lastUpdated) < Date.parse(oldest) ? v.lastUpdated : oldest, all[0].lastUpdated));
+      }
+      return 'Some forecasts are unavailable. Explore the latest available snow forecasts.';
     }
     return all.some(v => v.status === 'stale') ? 'Snow forecasts are refreshing.' : 'Forecast unavailable. Please try again later.';
   }

@@ -113,3 +113,12 @@ test('known coordinate and identity regressions are corrected', () => {
   assert.ok(find('whitefish-mountain-resort').aliases.includes('Big Mountain'));
   assert.notDeepEqual([find('aspen-mountain').lat,find('aspen-mountain').lng],[find('snowmass').lat,find('snowmass').lng]);
 });
+
+test('consumer update labels use actual Eastern timestamps across daylight saving time', () => {
+  assert.equal(F.freshnessLabel({status:'fresh',lastUpdated:'2026-10-01T20:01:00Z'}),'Updated Oct 1, 4:01 PM ET');
+  assert.equal(F.freshnessLabel({status:'fresh',lastUpdated:'2026-12-01T20:01:00Z'}),'Updated Dec 1, 3:01 PM ET');
+  assert.equal(F.freshnessLabel({status:'fresh',lastUpdated:'2026-10-02T01:00:00Z'}),'Updated Oct 1, 9:00 PM ET');
+  for (const value of [null,undefined,'','invalid']) assert.equal(F.freshnessLabel({status:'fresh',lastUpdated:value}),'');
+  assert.equal(F.freshnessLabel({status:'stale',lastUpdated:'2026-10-01T20:01:00Z'}),'Snow forecasts are refreshing.');
+  assert.equal(F.overviewLabel({a:{status:'fresh',lastUpdated:'2026-10-01T20:01:00Z'},b:{status:'fresh',lastUpdated:'2026-10-01T20:02:00Z'}}),'Updated Oct 1, 4:01 PM ET');
+});

@@ -18,7 +18,7 @@ async function page(name,state='fresh',map=true) {
   w.fetch=async()=>{if(state==='network-error')throw Error('offline');return{ok:true,json:async()=>{const data=snapshot(state==='partial'?'fresh':state);if(state==='partial')data.resorts.slice(3).forEach(r=>r.status='stale');return data;}};};
   w.alert=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
   w.addEventListener('error',e=>errors.push(e.message));
-  if(map)w.eval(mapboxStub);
+  if(map){w.eval(mapboxStub);w.__popups=[];const Popup=w.mapboxgl.Popup;w.mapboxgl.Popup=class extends Popup {constructor(...args){super(...args);w.__popups.push(this);}};}
   for(const file of ['assets/resorts.js','assets/forecast.js','assets/data-client.js'])w.eval(read(file));
   if(name==='map.html'){
     w.eval(fs.readFileSync(path.join(path.dirname(require.resolve('react/package.json')),'umd/react.production.min.js'),'utf8'));
@@ -91,4 +91,16 @@ test('public pages contain no unfinished controls or dead in-page navigation',()
    }
   }finally{dom.window.close();}
  }
+});
+
+test('forecast refresh updates hover and popup timestamps without reopening the popup',async()=>{
+ const dom=await page('index.html','fresh');try{
+  const w=dom.window;
+  const next=w.SkiBumData.current();
+  const id=w.SKIBUM_RESORTS[0].id;
+  next[id]={...next[id],lastUpdated:'2026-10-01T20:02:00Z'};
+  w.renderForecasts(next);
+  assert.match(w.document.querySelector('.marker').title,/Updated Oct 1, 4:02 PM ET/);
+  assert.match(w.__popups[0].html,/Updated Oct 1, 4:02 PM ET/);
+ }finally{dom.window.close();}
 });

@@ -1298,6 +1298,7 @@
                         el.addEventListener('mouseleave', () => marker.togglePopup());
                         
                         resort.marker = marker;
+                        resort.popup = popup;
                         resort.markerEl = el;
                     });
 
@@ -1369,6 +1370,15 @@
                     resort.markerEl.style.backgroundColor = color;
                         resort.markerEl.dataset.availability = data[resort.id].status;
                         resort.markerEl.title = `${resort.name}: ${F.format(snowfall)}. ${F.freshnessLabel(data[resort.id])}`;
+                        // Refresh an already-open popup when the snapshot changes, too.
+                        const current = data[resort.id];
+                        resort.popup?.setHTML(`
+                            <div class="popup-resort-name">${resort.name}</div>
+                            <div class="popup-snow-data">
+                                <strong>24h:</strong> ${current.status === 'stale' ? '—' : F.format(current.forecast24hr)}<br>
+                                <strong>48h:</strong> ${current.status === 'stale' ? '—' : F.format(current.forecast48hr)}<br>
+                                <strong>7 day:</strong> ${current.status === 'stale' ? '—' : F.format(current.forecast7day)}<br>${F.freshnessLabel(current)}
+                            </div>`);
                 }
             });
         };
