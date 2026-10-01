@@ -1,0 +1,2208 @@
+{
+  "schema_version": 1,
+  "resorts": [
+    {
+      "id": "whistler-blackcomb",
+      "legacy_id": 1,
+      "name": "Whistler Blackcomb",
+      "aliases": [],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 50.080743,
+      "lng": -122.931545,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Whistler Blackcomb",
+        "sources": [
+          "https://www.openstreetmap.org/way/474288286",
+          "https://skimap.org/skiareas/view/28"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "vail",
+      "legacy_id": 2,
+      "name": "Vail",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.602952,
+      "lng": -106.350729,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Vail",
+        "sources": [
+          "https://www.openstreetmap.org/way/531009607",
+          "https://skimap.org/skiareas/view/507"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "park-city",
+      "legacy_id": 3,
+      "name": "Park City",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.652042,
+      "lng": -111.548735,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Park City Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/918681867",
+          "https://skimap.org/skiareas/view/229",
+          "https://skimap.org/skiareas/view/17628"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "breckenridge",
+      "legacy_id": 4,
+      "name": "Breckenridge",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.479996,
+      "lng": -106.07823,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Breckenridge",
+        "sources": [
+          "https://www.openstreetmap.org/way/531005985",
+          "https://skimap.org/skiareas/view/510"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "heavenly",
+      "legacy_id": 5,
+      "name": "Heavenly",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 38.939719,
+      "lng": -119.91196,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Heavenly Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/relation/12152028"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "aspen-mountain",
+      "legacy_id": 6,
+      "name": "Aspen Mountain",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.165344,
+      "lng": -106.81842,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Aspen Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/530531925",
+          "https://skimap.org/skiareas/view/1031"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "jackson-hole",
+      "legacy_id": 7,
+      "name": "Jackson Hole",
+      "aliases": [],
+      "state": "Wyoming",
+      "country": "USA",
+      "lat": 43.594869,
+      "lng": -110.849454,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Jackson Hole Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1074335726",
+          "https://skimap.org/skiareas/view/151"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "banff-sunshine",
+      "legacy_id": 8,
+      "name": "Banff Sunshine",
+      "aliases": [
+        "Sunshine Village",
+        "Banff Sunshine Village"
+      ],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 51.091987,
+      "lng": -115.770856,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Banff Sunshine Village",
+        "sources": [
+          "https://www.openstreetmap.org/way/739168515",
+          "https://skimap.org/skiareas/view/10"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "lake-louise",
+      "legacy_id": 9,
+      "name": "Lake Louise",
+      "aliases": [
+        "Lake Louise Ski Resort"
+      ],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 51.454644,
+      "lng": -116.13254,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Lake Louise Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/1388611703",
+          "https://skimap.org/skiareas/view/22"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "big-sky",
+      "legacy_id": 10,
+      "name": "Big Sky",
+      "aliases": [],
+      "state": "Montana",
+      "country": "USA",
+      "lat": 45.284068,
+      "lng": -111.40869,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Big Sky Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1254863688",
+          "https://skimap.org/skiareas/view/361"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "steamboat",
+      "legacy_id": 11,
+      "name": "Steamboat",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 40.453879,
+      "lng": -106.775179,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Steamboat Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/530998526",
+          "https://skimap.org/skiareas/view/500"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mammoth-mountain",
+      "legacy_id": 12,
+      "name": "Mammoth Mountain",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 37.640185,
+      "lng": -119.020484,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mammoth Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/682231907",
+          "https://skimap.org/skiareas/view/530"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "palisades-tahoe",
+      "legacy_id": 13,
+      "name": "Palisades Tahoe",
+      "aliases": [
+        "Squaw Valley"
+      ],
+      "state": "California",
+      "country": "USA",
+      "lat": 39.192425,
+      "lng": -120.250061,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Palisades Tahoe Olympic Valley",
+        "sources": [
+          "https://www.openstreetmap.org/relation/13336421",
+          "https://skimap.org/skiareas/view/538"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "telluride",
+      "legacy_id": 14,
+      "name": "Telluride",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 37.921239,
+      "lng": -107.846779,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Telluride Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/528965906",
+          "https://skimap.org/skiareas/view/517"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sun-valley",
+      "legacy_id": 15,
+      "name": "Sun Valley",
+      "aliases": [],
+      "state": "Idaho",
+      "country": "USA",
+      "lat": 43.663211,
+      "lng": -114.389455,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sun Valley - Bald Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/1244099443",
+          "https://skimap.org/skiareas/view/480"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "deer-valley",
+      "legacy_id": 16,
+      "name": "Deer Valley",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.615013,
+      "lng": -111.484141,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Deer Valley Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/682241434",
+          "https://skimap.org/skiareas/view/19228",
+          "https://skimap.org/skiareas/view/223"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "killington",
+      "legacy_id": 17,
+      "name": "Killington",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 43.611293,
+      "lng": -72.788868,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Killington Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1228774360",
+          "https://skimap.org/skiareas/view/211"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "stowe",
+      "legacy_id": 18,
+      "name": "Stowe",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 44.529654,
+      "lng": -72.790229,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Stowe Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/620836496",
+          "https://skimap.org/skiareas/view/212"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "alta",
+      "legacy_id": 19,
+      "name": "Alta",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.580039,
+      "lng": -111.624781,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Alta Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/1023308077",
+          "https://skimap.org/skiareas/view/224"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "snowbird",
+      "legacy_id": 20,
+      "name": "Snowbird",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.567151,
+      "lng": -111.652311,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Snowbird",
+        "sources": [
+          "https://www.openstreetmap.org/way/1023308078",
+          "https://skimap.org/skiareas/view/226"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "taos",
+      "legacy_id": 21,
+      "name": "Taos",
+      "aliases": [],
+      "state": "New Mexico",
+      "country": "USA",
+      "lat": 36.578903,
+      "lng": -105.450178,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Taos Ski Valley",
+        "sources": [
+          "https://www.openstreetmap.org/relation/13573224",
+          "https://skimap.org/skiareas/view/338"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "copper-mountain",
+      "legacy_id": 22,
+      "name": "Copper Mountain",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.47767,
+      "lng": -106.161249,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Copper Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/531005986",
+          "https://skimap.org/skiareas/view/509"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "winter-park",
+      "legacy_id": 23,
+      "name": "Winter Park",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.867586,
+      "lng": -105.775526,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Winter Park Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/460246666",
+          "https://skimap.org/skiareas/view/503"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "keystone",
+      "legacy_id": 24,
+      "name": "Keystone",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.5718,
+      "lng": -105.934358,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Keystone",
+        "sources": [
+          "https://www.openstreetmap.org/way/531000583",
+          "https://skimap.org/skiareas/view/519"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "arapahoe-basin",
+      "legacy_id": 25,
+      "name": "Arapahoe Basin",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.626742,
+      "lng": -105.878795,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Arapahoe Basin",
+        "sources": [
+          "https://www.openstreetmap.org/way/461239598",
+          "https://skimap.org/skiareas/view/513"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "crested-butte",
+      "legacy_id": 26,
+      "name": "Crested Butte",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 38.898783,
+      "lng": -106.943647,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Crested Butte Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/530521512",
+          "https://skimap.org/skiareas/view/514"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "loveland",
+      "legacy_id": 27,
+      "name": "Loveland",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.678271,
+      "lng": -105.910714,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Loveland Basin Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/184326673",
+          "https://skimap.org/skiareas/view/515"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mt-bachelor",
+      "legacy_id": 28,
+      "name": "Mt. Bachelor",
+      "aliases": [],
+      "state": "Oregon",
+      "country": "USA",
+      "lat": 43.991531,
+      "lng": -121.685155,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mt. Bachelor",
+        "sources": [
+          "https://www.openstreetmap.org/way/1306486693",
+          "https://skimap.org/skiareas/view/270"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "crystal-mountain",
+      "legacy_id": 29,
+      "name": "Crystal Mountain",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 46.933357,
+      "lng": -121.486135,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Crystal Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/relation/11518092",
+          "https://skimap.org/skiareas/view/193"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "stevens-pass",
+      "legacy_id": 30,
+      "name": "Stevens Pass",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 47.734909,
+      "lng": -121.088263,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Stevens Pass Ski Area",
+        "sources": [
+          "https://skimap.org/skiareas/view/190"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mt-baker",
+      "legacy_id": 31,
+      "name": "Mt. Baker",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 48.855239,
+      "lng": -121.66648,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mt Baker",
+        "sources": [
+          "https://www.openstreetmap.org/relation/19108017",
+          "https://skimap.org/skiareas/view/191"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "schweitzer",
+      "legacy_id": 32,
+      "name": "Schweitzer",
+      "aliases": [],
+      "state": "Idaho",
+      "country": "USA",
+      "lat": 48.373419,
+      "lng": -116.617841,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Schweitzer Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1388583977",
+          "https://skimap.org/skiareas/view/476"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sun-peaks",
+      "legacy_id": 33,
+      "name": "Sun Peaks",
+      "aliases": [
+        "Sun Peaks Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 50.886492,
+      "lng": -119.884991,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sun Peaks Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1138470815",
+          "https://skimap.org/skiareas/view/36"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "revelstoke",
+      "legacy_id": 34,
+      "name": "Revelstoke",
+      "aliases": [
+        "Revelstoke Mountain Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 50.968676,
+      "lng": -118.126407,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Revelstoke Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/475720359",
+          "https://skimap.org/skiareas/view/32"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "fernie",
+      "legacy_id": 35,
+      "name": "Fernie",
+      "aliases": [
+        "Fernie Alpine Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 49.457033,
+      "lng": -115.106178,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Fernie Alpine Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1388612283",
+          "https://skimap.org/skiareas/view/30"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "big-white",
+      "legacy_id": 36,
+      "name": "Big White",
+      "aliases": [
+        "Big White Ski Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 49.734059,
+      "lng": -118.931604,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Big White Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/476836855",
+          "https://skimap.org/skiareas/view/57"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "kicking-horse",
+      "legacy_id": 37,
+      "name": "Kicking Horse",
+      "aliases": [
+        "Kicking Horse Mountain Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 51.28494,
+      "lng": -117.06816,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Kicking Horse Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/476843455",
+          "https://skimap.org/skiareas/view/40"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mont-tremblant",
+      "legacy_id": 38,
+      "name": "Mont Tremblant",
+      "aliases": [],
+      "state": "Quebec",
+      "country": "Canada",
+      "lat": 46.216467,
+      "lng": -74.556114,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mont Tremblant Resort, Station Mont Tremblant",
+        "sources": [
+          "https://www.openstreetmap.org/way/671144531",
+          "https://skimap.org/skiareas/view/101"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "blue-mountain",
+      "legacy_id": 39,
+      "name": "Blue Mountain",
+      "aliases": [
+        "Blue Mountain Resort"
+      ],
+      "state": "Ontario",
+      "country": "Canada",
+      "lat": 44.499597,
+      "lng": -80.317762,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Blue Mountain Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1040649718",
+          "https://skimap.org/skiareas/view/113"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sugarloaf",
+      "legacy_id": 40,
+      "name": "Sugarloaf",
+      "aliases": [],
+      "state": "Maine",
+      "country": "USA",
+      "lat": 45.049036,
+      "lng": -70.315827,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sugarloaf",
+        "sources": [
+          "https://www.openstreetmap.org/relation/18484946",
+          "https://skimap.org/skiareas/view/448"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sunday-river",
+      "legacy_id": 41,
+      "name": "Sunday River",
+      "aliases": [],
+      "state": "Maine",
+      "country": "USA",
+      "lat": 44.474721,
+      "lng": -70.877867,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sunday River",
+        "sources": [
+          "https://www.openstreetmap.org/relation/10817722",
+          "https://skimap.org/skiareas/view/459"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sugarbush",
+      "legacy_id": 42,
+      "name": "Sugarbush",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 44.152371,
+      "lng": -72.911269,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sugarbush Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1094579154",
+          "https://skimap.org/skiareas/view/205"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "stratton",
+      "legacy_id": 43,
+      "name": "Stratton",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 43.101071,
+      "lng": -72.902415,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Stratton Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1367311040",
+          "https://skimap.org/skiareas/view/213"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "okemo",
+      "legacy_id": 44,
+      "name": "Okemo",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 43.407268,
+      "lng": -72.733283,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Okemo Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/1236284348",
+          "https://skimap.org/skiareas/view/204"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "jay-peak",
+      "legacy_id": 45,
+      "name": "Jay Peak",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 44.935604,
+      "lng": -72.512278,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Jay Peak Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1094522661",
+          "https://skimap.org/skiareas/view/202"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "smugglers-notch",
+      "legacy_id": 46,
+      "name": "Smugglers' Notch",
+      "aliases": [],
+      "state": "Vermont",
+      "country": "USA",
+      "lat": 44.573259,
+      "lng": -72.770057,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Smugglers' Notch Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1228354294",
+          "https://skimap.org/skiareas/view/209"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "loon-mountain",
+      "legacy_id": 47,
+      "name": "Loon Mountain",
+      "aliases": [],
+      "state": "New Hampshire",
+      "country": "USA",
+      "lat": 44.04571,
+      "lng": -71.640018,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Loon Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/334246239",
+          "https://skimap.org/skiareas/view/352"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "cannon-mountain",
+      "legacy_id": 48,
+      "name": "Cannon Mountain",
+      "aliases": [],
+      "state": "New Hampshire",
+      "country": "USA",
+      "lat": 44.168512,
+      "lng": -71.702023,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Cannon Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/334259037",
+          "https://skimap.org/skiareas/view/347"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "wildcat-mountain",
+      "legacy_id": 49,
+      "name": "Wildcat Mountain",
+      "aliases": [],
+      "state": "New Hampshire",
+      "country": "USA",
+      "lat": 44.257153,
+      "lng": -71.232299,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Wildcat Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/251260219",
+          "https://skimap.org/skiareas/view/356"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "bretton-woods",
+      "legacy_id": 50,
+      "name": "Bretton Woods",
+      "aliases": [],
+      "state": "New Hampshire",
+      "country": "USA",
+      "lat": 44.250932,
+      "lng": -71.468638,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Bretton Woods Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/334259249",
+          "https://skimap.org/skiareas/view/346"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "snowbasin",
+      "legacy_id": 51,
+      "name": "Snowbasin",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 41.20178,
+      "lng": -111.862624,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Snowbasin Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1201185853",
+          "https://skimap.org/skiareas/view/219"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "powder-mountain",
+      "legacy_id": 52,
+      "name": "Powder Mountain",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 41.383919,
+      "lng": -111.763635,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Powder Mountain Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1124250244",
+          "https://skimap.org/skiareas/view/228"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "solitude",
+      "legacy_id": 53,
+      "name": "Solitude",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.612727,
+      "lng": -111.604068,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Solitude Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/682230006",
+          "https://skimap.org/skiareas/view/225"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "brighton",
+      "legacy_id": 54,
+      "name": "Brighton",
+      "aliases": [],
+      "state": "Utah",
+      "country": "USA",
+      "lat": 40.598689,
+      "lng": -111.580807,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Brighton Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/682230007",
+          "https://skimap.org/skiareas/view/222"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "snowmass",
+      "legacy_id": 55,
+      "name": "Snowmass",
+      "aliases": [
+        "Aspen Snowmass"
+      ],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.186443,
+      "lng": -106.950206,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Aspen Snowmass",
+        "sources": [
+          "https://www.openstreetmap.org/way/1144096092",
+          "https://skimap.org/skiareas/view/1033",
+          "https://skimap.org/skiareas/view/15705"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "aspen-highlands",
+      "legacy_id": 56,
+      "name": "Aspen Highlands",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.162085,
+      "lng": -106.861281,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Aspen Highlands",
+        "sources": [
+          "https://www.openstreetmap.org/way/530531926",
+          "https://skimap.org/skiareas/view/1032"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "buttermilk",
+      "legacy_id": 57,
+      "name": "Buttermilk",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.192625,
+      "lng": -106.869985,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Buttermilk",
+        "sources": [
+          "https://www.openstreetmap.org/way/530538581",
+          "https://skimap.org/skiareas/view/504"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "beaver-creek",
+      "legacy_id": 58,
+      "name": "Beaver Creek",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.599837,
+      "lng": -106.530502,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Beaver Creek",
+        "sources": [
+          "https://www.openstreetmap.org/way/531009608",
+          "https://skimap.org/skiareas/view/497"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "purgatory",
+      "legacy_id": 59,
+      "name": "Purgatory",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 37.623252,
+      "lng": -107.8357,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Purgatory Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/529997955",
+          "https://skimap.org/skiareas/view/518"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "wolf-creek",
+      "legacy_id": 60,
+      "name": "Wolf Creek",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 37.464349,
+      "lng": -106.787175,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Wolf Creek Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/530503256",
+          "https://skimap.org/skiareas/view/505"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "monarch-mountain",
+      "legacy_id": 61,
+      "name": "Monarch Mountain",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 38.512247,
+      "lng": -106.342678,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Monarch Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/308152532",
+          "https://skimap.org/skiareas/view/511"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "eldora",
+      "legacy_id": 62,
+      "name": "Eldora",
+      "aliases": [],
+      "state": "Colorado",
+      "country": "USA",
+      "lat": 39.932978,
+      "lng": -105.586401,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Eldora",
+        "sources": [
+          "https://www.openstreetmap.org/way/427517284",
+          "https://skimap.org/skiareas/view/508"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "grand-targhee",
+      "legacy_id": 63,
+      "name": "Grand Targhee",
+      "aliases": [],
+      "state": "Wyoming",
+      "country": "USA",
+      "lat": 43.78584,
+      "lng": -110.947184,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Grand Targhee Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/952802401",
+          "https://skimap.org/skiareas/view/150"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "snow-king",
+      "legacy_id": 64,
+      "name": "Snow King",
+      "aliases": [],
+      "state": "Wyoming",
+      "country": "USA",
+      "lat": 43.465674,
+      "lng": -110.758675,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Snow King Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/way/1076348034",
+          "https://skimap.org/skiareas/view/156"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "bridger-bowl",
+      "legacy_id": 65,
+      "name": "Bridger Bowl",
+      "aliases": [],
+      "state": "Montana",
+      "country": "USA",
+      "lat": 45.822542,
+      "lng": -110.908659,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Bridger Bowl",
+        "sources": [
+          "https://www.openstreetmap.org/way/1228627171",
+          "https://skimap.org/skiareas/view/16957",
+          "https://skimap.org/skiareas/view/375"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "whitefish-mountain-resort",
+      "legacy_id": 66,
+      "name": "Whitefish Mountain Resort",
+      "aliases": [
+        "Big Mountain"
+      ],
+      "state": "Montana",
+      "country": "USA",
+      "lat": 48.476418,
+      "lng": -114.324204,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Whitefish Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1388573249",
+          "https://skimap.org/skiareas/view/367"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "montana-snowbowl",
+      "legacy_id": 67,
+      "name": "Montana Snowbowl",
+      "aliases": [
+        "Snowbowl"
+      ],
+      "state": "Montana",
+      "country": "USA",
+      "lat": 47.022946,
+      "lng": -114.006131,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Montana Snowbowl",
+        "sources": [
+          "https://www.openstreetmap.org/way/1335348646",
+          "https://skimap.org/skiareas/view/368"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "grandvalira",
+      "legacy_id": 68,
+      "name": "Grandvalira",
+      "aliases": [
+        "Grand Valira"
+      ],
+      "state": "Andorra",
+      "country": "Andorra",
+      "lat": 42.548541,
+      "lng": 1.660859,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "GrandValira",
+        "sources": [
+          "https://www.openstreetmap.org/relation/3445954",
+          "https://skimap.org/skiareas/view/1808"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "bogus-basin",
+      "legacy_id": 69,
+      "name": "Bogus Basin",
+      "aliases": [],
+      "state": "Idaho",
+      "country": "USA",
+      "lat": 43.778412,
+      "lng": -116.093613,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Bogus Basin Mountain Recreation Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/1470441271",
+          "https://skimap.org/skiareas/view/487"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "tamarack",
+      "legacy_id": 70,
+      "name": "Tamarack",
+      "aliases": [],
+      "state": "Idaho",
+      "country": "USA",
+      "lat": 44.68512,
+      "lng": -116.142901,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Tamarack Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1232164006",
+          "https://skimap.org/skiareas/view/488"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "silver-mountain",
+      "legacy_id": 71,
+      "name": "Silver Mountain",
+      "aliases": [],
+      "state": "Idaho",
+      "country": "USA",
+      "lat": 47.51308,
+      "lng": -116.132738,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Silver Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1263732068",
+          "https://skimap.org/skiareas/view/479"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mt-hood-meadows",
+      "legacy_id": 72,
+      "name": "Mt. Hood Meadows",
+      "aliases": [],
+      "state": "Oregon",
+      "country": "USA",
+      "lat": 45.337552,
+      "lng": -121.659361,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mt. Hood Meadows Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/866496711",
+          "https://skimap.org/skiareas/view/271"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "timberline",
+      "legacy_id": 73,
+      "name": "Timberline",
+      "aliases": [],
+      "state": "Oregon",
+      "country": "USA",
+      "lat": 45.33094,
+      "lng": -121.724086,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Timberline Lodge Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/679189584",
+          "https://skimap.org/skiareas/view/266"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "willamette-pass",
+      "legacy_id": 74,
+      "name": "Willamette Pass",
+      "aliases": [],
+      "state": "Oregon",
+      "country": "USA",
+      "lat": 43.612493,
+      "lng": -122.029486,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Willamette Pass",
+        "sources": [
+          "https://www.openstreetmap.org/way/1278124828",
+          "https://skimap.org/skiareas/view/267"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mission-ridge",
+      "legacy_id": 75,
+      "name": "Mission Ridge",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 47.283366,
+      "lng": -120.411714,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mission Ridge",
+        "sources": [
+          "https://www.openstreetmap.org/relation/15657511",
+          "https://skimap.org/skiareas/view/186"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "the-summit-at-snoqualmie",
+      "legacy_id": 76,
+      "name": "The Summit at Snoqualmie",
+      "aliases": [
+        "Snoqualmie"
+      ],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 47.420513,
+      "lng": -121.421831,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Summit West",
+        "sources": [
+          "https://www.openstreetmap.org/way/1499174311"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mt-spokane",
+      "legacy_id": 77,
+      "name": "Mt. Spokane",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 47.927868,
+      "lng": -117.112524,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mt. Spokane",
+        "sources": [
+          "https://www.openstreetmap.org/way/1263733813",
+          "https://skimap.org/skiareas/view/189"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "white-pass",
+      "legacy_id": 78,
+      "name": "White Pass",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 46.621518,
+      "lng": -121.394163,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "White Pass Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/way/1254864194",
+          "https://skimap.org/skiareas/view/184"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "49-degrees-north",
+      "legacy_id": 79,
+      "name": "49 Degrees North",
+      "aliases": [],
+      "state": "Washington",
+      "country": "USA",
+      "lat": 48.29232,
+      "lng": -117.561567,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "49° North Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/884007908",
+          "https://skimap.org/skiareas/view/195"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "red-mountain",
+      "legacy_id": 80,
+      "name": "Red Mountain",
+      "aliases": [
+        "RED Mountain Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 49.105427,
+      "lng": -117.841934,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Red Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/397735832",
+          "https://skimap.org/skiareas/view/41"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "whitewater",
+      "legacy_id": 81,
+      "name": "Whitewater",
+      "aliases": [],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 49.442118,
+      "lng": -117.15647,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Whitewater Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/475723205",
+          "https://skimap.org/skiareas/view/59"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "panorama",
+      "legacy_id": 82,
+      "name": "Panorama",
+      "aliases": [
+        "Panorama Mountain Resort"
+      ],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 50.442751,
+      "lng": -116.219569,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Panorama Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/476844342",
+          "https://skimap.org/skiareas/view/46"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "marmot-basin",
+      "legacy_id": 83,
+      "name": "Marmot Basin",
+      "aliases": [],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 52.796986,
+      "lng": -118.104709,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Marmot Basin",
+        "sources": [
+          "https://www.openstreetmap.org/way/1518302265",
+          "https://skimap.org/skiareas/view/8"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "nakiska",
+      "legacy_id": 84,
+      "name": "Nakiska",
+      "aliases": [
+        "Nakiska Ski Area"
+      ],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 50.948417,
+      "lng": -115.169991,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Nakiska",
+        "sources": [
+          "https://www.openstreetmap.org/relation/4080380",
+          "https://skimap.org/skiareas/view/9"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "castle-mountain",
+      "legacy_id": 85,
+      "name": "Castle Mountain",
+      "aliases": [],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 49.308858,
+      "lng": -114.426567,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Castle Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/766056081",
+          "https://skimap.org/skiareas/view/18"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mount-norquay",
+      "legacy_id": 86,
+      "name": "Mount Norquay",
+      "aliases": [
+        "Norquay"
+      ],
+      "state": "Alberta",
+      "country": "Canada",
+      "lat": 51.201164,
+      "lng": -115.60373,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mount Norquay",
+        "sources": [
+          "https://skimap.org/skiareas/view/16"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "le-massif",
+      "legacy_id": 87,
+      "name": "Le Massif",
+      "aliases": [
+        "Le Massif de Charlevoix"
+      ],
+      "state": "Quebec",
+      "country": "Canada",
+      "lat": 47.279858,
+      "lng": -70.59321,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Le Massif",
+        "sources": [
+          "https://www.openstreetmap.org/relation/8027590",
+          "https://skimap.org/skiareas/view/96"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "calabogie",
+      "legacy_id": 88,
+      "name": "Calabogie",
+      "aliases": [],
+      "state": "Ontario",
+      "country": "Canada",
+      "lat": 45.269461,
+      "lng": -76.7866,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Calabogie Peaks",
+        "sources": [
+          "https://www.openstreetmap.org/way/387979659",
+          "https://skimap.org/skiareas/view/111"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "sierra-at-tahoe",
+      "legacy_id": 89,
+      "name": "Sierra-at-Tahoe",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 38.796151,
+      "lng": -120.078975,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Sierra-at-Tahoe Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/relation/9963336",
+          "https://skimap.org/skiareas/view/525"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "kirkwood",
+      "legacy_id": 90,
+      "name": "Kirkwood",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 38.673846,
+      "lng": -120.064658,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Kirkwood Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/319472357",
+          "https://skimap.org/skiareas/view/537"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "northstar",
+      "legacy_id": 91,
+      "name": "Northstar",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 39.2588,
+      "lng": -120.137143,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Northstar at Tahoe Resort",
+        "sources": [
+          "https://www.openstreetmap.org/relation/7095958",
+          "https://skimap.org/skiareas/view/531"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "homewood",
+      "legacy_id": 92,
+      "name": "Homewood",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 39.07741,
+      "lng": -120.173374,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Homewood Ski Area",
+        "sources": [
+          "https://www.openstreetmap.org/relation/8391726",
+          "https://skimap.org/skiareas/view/545"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mt-rose",
+      "legacy_id": 93,
+      "name": "Mt. Rose",
+      "aliases": [],
+      "state": "Nevada",
+      "country": "USA",
+      "lat": 39.319382,
+      "lng": -119.883963,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mount Rose Ski Tahoe",
+        "sources": [
+          "https://www.openstreetmap.org/way/534160668",
+          "https://skimap.org/skiareas/view/358"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "diamond-peak",
+      "legacy_id": 94,
+      "name": "Diamond Peak",
+      "aliases": [],
+      "state": "Nevada",
+      "country": "USA",
+      "lat": 39.254221,
+      "lng": -119.91413,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Diamond Peak",
+        "sources": [
+          "https://www.openstreetmap.org/relation/4651545",
+          "https://skimap.org/skiareas/view/359"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "june-mountain",
+      "legacy_id": 95,
+      "name": "June Mountain",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 37.75502,
+      "lng": -119.074517,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "June Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/relation/4639999",
+          "https://skimap.org/skiareas/view/540"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "bear-mountain",
+      "legacy_id": 96,
+      "name": "Bear Mountain",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 34.219488,
+      "lng": -116.859373,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Bear Mountain",
+        "sources": [
+          "https://www.openstreetmap.org/relation/4642684",
+          "https://skimap.org/skiareas/view/536"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "snow-summit",
+      "legacy_id": 97,
+      "name": "Snow Summit",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 34.228595,
+      "lng": -116.891661,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Snow Summit",
+        "sources": [
+          "https://www.openstreetmap.org/relation/4642556",
+          "https://skimap.org/skiareas/view/546"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "mountain-high",
+      "legacy_id": 98,
+      "name": "Mountain High",
+      "aliases": [],
+      "state": "California",
+      "country": "USA",
+      "lat": 34.372054,
+      "lng": -117.686325,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Mountain High",
+        "sources": [
+          "https://www.openstreetmap.org/relation/3185646",
+          "https://skimap.org/skiareas/view/4061",
+          "https://skimap.org/skiareas/view/521"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "ski-santa-fe",
+      "legacy_id": 99,
+      "name": "Ski Santa Fe",
+      "aliases": [],
+      "state": "New Mexico",
+      "country": "USA",
+      "lat": 35.791322,
+      "lng": -105.78955,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Ski Santa Fe, Santa Fe, Q38555",
+        "sources": [
+          "https://www.openstreetmap.org/relation/14934032",
+          "https://skimap.org/skiareas/view/335"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "angel-fire",
+      "legacy_id": 100,
+      "name": "Angel Fire",
+      "aliases": [],
+      "state": "New Mexico",
+      "country": "USA",
+      "lat": 36.379402,
+      "lng": -105.246831,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Angel Fire Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/1263733614",
+          "https://skimap.org/skiareas/view/331"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "whiteface-mountain",
+      "legacy_id": 101,
+      "name": "Whiteface Mountain",
+      "aliases": [],
+      "state": "New York",
+      "country": "USA",
+      "lat": 44.362104,
+      "lng": -73.880076,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Whiteface Mountain Ski Center",
+        "sources": [
+          "https://www.openstreetmap.org/way/428125408",
+          "https://skimap.org/skiareas/view/295"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "bristol-mountain",
+      "legacy_id": 102,
+      "name": "Bristol Mountain",
+      "aliases": [],
+      "state": "New York",
+      "country": "USA",
+      "lat": 42.742404,
+      "lng": -77.414649,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Bristol Mountain Ski Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/320434895",
+          "https://skimap.org/skiareas/view/313"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    },
+    {
+      "id": "silverstar-mountain-resort",
+      "legacy_id": 103,
+      "name": "SilverStar Mountain Resort",
+      "aliases": [],
+      "state": "British Columbia",
+      "country": "Canada",
+      "lat": 50.368896,
+      "lng": -119.045193,
+      "location": {
+        "kind": "ski_area_reference",
+        "reference_name": "Silver Star Mountain Resort",
+        "sources": [
+          "https://www.openstreetmap.org/way/476840539",
+          "https://skimap.org/skiareas/view/44"
+        ],
+        "checked_on": "2026-09-22",
+        "note": "Representative ski-area map point; not a summit, base station, or observed snow sensor."
+      },
+      "forecast_enabled": true
+    }
+  ]
+}

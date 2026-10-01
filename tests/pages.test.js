@@ -1,0 +1,106 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { JSDOM, VirtualConsole } = require('jsdom');
+const Babel = require('@babel/standalone');
+const { snapshot, mapboxStub } = require('./page-fixtures.cjs');
+const root = path.join(__dirname,'..');
+const read = file => fs.readFileSync(path.join(root,file),'utf8');
+async function page(name,state='fresh',map=true) {
+  const errors=[];
+  const vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
+  const dom=new JSDOM(read(name),{runScripts:'outside-only',url:'https://local.test/'+name,virtualConsole:vc});
+  const w=dom.window;
+  w.SKIBUM_CONFIG={mapboxPublicToken:'test-public-token'};
+  w.setInterval=()=>0;
+  w.AbortSignal={timeout:()=>undefined};
+  w.fetch=async()=>{if(state==='network-error')throw Error('offline');return{ok:true,json:async()=>{const data=snapshot(state==='partial'?'fresh':state);if(state==='partial')data.resorts.slice(3).forEach(r=>r.status='stale');return data;}};};
+  w.alert=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
+  w.addEventListener('error',e=>errors.push(e.message));
+  if(map){w.eval(mapboxStub);w.__popups=[];const Popup=w.mapboxgl.Popup;w.mapboxgl.Popup=class extends Popup {constructor(...args){super(...args);w.__popups.push(this);}};}
+  for(const file of ['assets/resorts.js','assets/forecast.js','assets/data-client.js'])w.eval(read(file));
+  if(name==='map.html'){
+    w.eval(fs.readFileSync(path.join(path.dirname(require.resolve('react/package.json')),'umd/react.production.min.js'),'utf8'));
+    w.eval(fs.readFileSync(path.join(path.dirname(require.resolve('react-dom/package.json')),'umd/react-dom.production.min.js'),'utf8'));
+  }
+  for(const script of w.document.querySelectorAll('script:not([src])')){
+    if(script.textContent.includes('emrld.ltd'))continue;
+    w.eval(script.type==='text/babel'?Babel.transform(script.textContent,{presets:['react']}).code:script.textContent);
+  }
+  await new Promise(resolve=>setTimeout(resolve,100));
+  assert.deepEqual(errors,[]);
+  return dom;
+}
+for(const name of ['index.html','map.html','mammoth.html']){
+ for(const state of ['fresh','stale','network-error']){
+  test(`${name}: ${state} renders honest availability`,async()=>{
+   const dom=await page(name,state);try{
+    const d=dom.window.document;
+    const status=[...d.querySelectorAll('[role="status"]')].map(el=>el.textContent).join(' ');
+    if(state==='fresh')assert.equal(d.querySelector('[role="status"]').hidden,true);
+    if(state==='stale')assert.match(status,/Snow forecasts are refreshing/);
+    if(state==='network-error')assert.match(status,/Forecast unavailable/);
+    if(name==='mammoth.html')assert.equal(d.getElementById('snow-24hr').textContent,state==='fresh'?'0.0″':'Unavailable');
+    else {
+      assert.equal(d.querySelectorAll('.marker').length,103);
+      assert.equal(d.querySelector('.marker').dataset.availability,state==='network-error'?'unavailable':state);
+      if(name==='index.html'){
+        d.getElementById('showRecommendations').click();
+        const result=d.getElementById('resultsList').textContent;
+        if(state==='fresh')assert.match(result,/0\.0/);else assert.match(result,/Snow forecasts are refreshing/);
+      }
+    }
+   }finally{dom.window.close();}
+  });
+ }
+ test(`${name}: map library failure does not block forecasts`,async()=>{
+   const dom=await page(name,'fresh',false);try{
+     const d=dom.window.document;assert.equal(d.querySelector('[role="status"]').hidden,true);
+     if(name==='mammoth.html')assert.equal(d.getElementById('snow-24hr').textContent,'0.0″');
+     else assert.match(d.body.textContent,/Map unavailable/);
+   }finally{dom.window.close();}
+ });
+}
+test('standalone map detail uses unavailable, not a zero fallback',async()=>{
+ const dom=await page('map.html','network-error');try{
+  dom.window.document.querySelector('.marker').click();await new Promise(r=>setTimeout(r,10));
+  assert.match(dom.window.document.querySelector('.resort-detail-container').textContent,/Unavailable/);
+  assert.doesNotMatch(dom.window.document.querySelector('.resort-detail-container').textContent,/coming soon|Top 10 Ski Runs|Top 10 Restaurants|Top 10 Places to Stay/i);
+ }finally{dom.window.close();}
+});
+
+test('snowiest resorts shows only fresh results and no placeholder expansion',async()=>{
+ for(const [state,count] of [['fresh',5],['partial',3],['stale',0]]){
+  const dom=await page('index.html',state);try{
+   const d=dom.window.document;d.getElementById('showRecommendations').click();
+   assert.equal(d.querySelectorAll('.result-card').length,count);
+   assert.equal(d.getElementById('showMoreBtn'),null);
+  }finally{dom.window.close();}
+ }
+});
+
+test('public pages contain no unfinished controls or dead in-page navigation',()=>{
+ for(const name of ['index.html','map.html','mammoth.html','docs/data-sources.html']){
+  const dom=new JSDOM(read(name));try{
+   const d=dom.window.document;
+   assert.doesNotMatch(read(name),/Content coming soon|feature coming soon|btn-small btn-view|btn-small btn-plan/);
+   assert.equal(d.querySelectorAll('.email-form, .itinerary-tabs, .pass-chip, .radius-chip').length,0);
+   for(const a of d.querySelectorAll('a[href^="#"]')){
+    const target=a.getAttribute('href').slice(1);assert.ok(target && d.getElementById(target),name+': '+a.outerHTML);
+   }
+  }finally{dom.window.close();}
+ }
+});
+
+test('forecast refresh updates hover and popup timestamps without reopening the popup',async()=>{
+ const dom=await page('index.html','fresh');try{
+  const w=dom.window;
+  const next=w.SkiBumData.current();
+  const id=w.SKIBUM_RESORTS[0].id;
+  next[id]={...next[id],lastUpdated:'2026-10-01T20:02:00Z'};
+  w.renderForecasts(next);
+  assert.match(w.document.querySelector('.marker').title,/Updated Oct 1, 4:02 PM ET/);
+  assert.match(w.__popups[0].html,/Updated Oct 1, 4:02 PM ET/);
+ }finally{dom.window.close();}
+});

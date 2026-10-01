@@ -1,188 +1,123 @@
-/**
- * Fetch Open-Meteo snow data for all ski resorts and generate static JSON
- * This script runs in GitHub Actions every 6 hours
- * 
- * UPDATED: Now uses Open-Meteo API for accurate worldwide snow forecasts
- * Open-Meteo provides better accuracy and global coverage compared to NOAA
- */
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const catalog = require('../data/resorts.json');
+const { validateCatalog } = require('./build-catalog');
+const { HOUR, fields, validRecord } = require('../assets/forecast');
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-// Import resort data
-const RESORTS = require('./resorts-data.js');
+function aggregate(payload, windowStart) {
+  const h = payload.hourly;
+  if (payload.hourly_units?.snowfall !== 'cm' || payload.hourly_units?.time !== 'unixtime' ||
+      !Array.isArray(h?.time) || !Array.isArray(h?.snowfall) || h.time.length !== h.snowfall.length) {
+    throw new Error('Missing hourly data or unexpected units');
+  }
+  const byTime = new Map();
+  h.time.forEach((seconds, i) => {
+    if (!Number.isFinite(seconds) || seconds * 1000 % HOUR !== 0 || byTime.has(seconds * 1000)) throw new Error('Invalid/duplicate hourly timestamp');
+    byTime.set(seconds * 1000, h.snowfall[i]);
+  });
+  let sum = 0;
+  const result = {};
+  // Open-Meteo snowfall is the sum for the PRECEDING hour. The sample at
+  // start + 1h covers [start, start + 1h); never include the hour before start.
+  for (let hour = 1; hour <= 168; hour++) {
+    const cm = byTime.get(windowStart + hour * HOUR);
+    if (!Number.isFinite(cm) || cm < 0 || cm > 1000) throw new Error(`Missing/invalid snowfall at hour ${hour}`);
+    sum += cm;
+    const index = [24, 48, 168].indexOf(hour);
+    if (index >= 0) result[fields[index]] = Math.round(sum / 2.54 * 10) / 10;
+  }
+  return result;
+}
 
-/**
- * Fetch Open-Meteo 7-day forecast
- * Open-Meteo provides hourly snowfall data globally
- */
-async function fetchOpenMeteoForecast(lat, lng) {
-  try {
-    // Open-Meteo API endpoint
-    // Parameters:
-    // - latitude, longitude: resort coordinates
-    // - hourly=snowfall: get hourly snowfall amounts
-    // - forecast_days=7: get 7 days of forecast
-    // - timezone=auto: use local timezone for the location
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&hourly=snowfall&forecast_days=7&timezone=auto`;
-    
-    const response = await fetch(url);
-    
-    if (!response.ok) {
-      throw new Error(`Open-Meteo API failed: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    
-    // Check if we have snowfall data
-    if (!data.hourly || !data.hourly.snowfall) {
+async function fetchForecast(resort, windowStart, { fetchImpl = fetch, sleep = delay, clock = Date.now } = {}) {
+  const endpoint = process.env.OPEN_METEO_API_KEY ? 'https://customer-api.open-meteo.com/v1/forecast' : 'https://api.open-meteo.com/v1/forecast';
+  const url = new URL(endpoint);
+  const params = { latitude: resort.lat, longitude: resort.lng, hourly: 'snowfall', forecast_days: 8, timezone: 'GMT', timeformat: 'unixtime' };
+  if (process.env.OPEN_METEO_API_KEY) params.apikey = process.env.OPEN_METEO_API_KEY;
+  url.search = new URLSearchParams(params).toString();
+  let error;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const response = await fetchImpl(url, { signal: AbortSignal.timeout(15000) });
+      if (!response.ok) throw new Error(`Weather provider returned HTTP ${response.status}`);
+      const payload = await response.json();
+      const totals = aggregate(payload, windowStart);
+      if (![payload.latitude, payload.longitude, payload.elevation].every(Number.isFinite)) throw new Error('Missing model location metadata');
       return {
-        snowfall_24hr: 0,
-        snowfall_48hr: 0,
-        snowfall_7day: 0,
-        forecast_text: 'No forecast data available',
-        last_updated: new Date().toISOString()
+        resort_id: resort.id, name: resort.name, lat: resort.lat, lng: resort.lng,
+        status: 'fresh', units: 'in', data_source: 'Open-Meteo',
+        window_start: new Date(windowStart).toISOString(),
+        window_ends: Object.fromEntries(fields.map((key, i) => [key, new Date(windowStart + [24, 48, 168][i] * HOUR).toISOString()])),
+        ...totals, last_updated: new Date(clock()).toISOString(),
+        model_location: { lat: payload.latitude, lng: payload.longitude, elevation_m: payload.elevation }
       };
+    } catch (err) {
+      // Never include request URLs or provider bodies (which may include API keys).
+      error = err;
+      if (attempt < 2) await sleep(500 * 2 ** attempt);
     }
-    
-    // Open-Meteo returns hourly snowfall in cm
-    // We need to:
-    // 1. Sum the hourly values for 24hr, 48hr, and 7-day periods
-    // 2. Convert from cm to inches (1 cm = 0.393701 inches)
-    
-    const snowfallHourly = data.hourly.snowfall; // Array of hourly values in cm
-    const times = data.hourly.time; // Array of ISO timestamps
-    
-    // Calculate how many hours we need for each period
-    // Open-Meteo gives us 168 hours (7 days) of data
-    const hours24 = Math.min(24, snowfallHourly.length);
-    const hours48 = Math.min(48, snowfallHourly.length);
-    const hours168 = snowfallHourly.length; // Full 7 days
-    
-    // Sum snowfall for each period (values are in cm)
-    let snowCm24hr = 0;
-    let snowCm48hr = 0;
-    let snowCm7day = 0;
-    
-    for (let i = 0; i < snowfallHourly.length; i++) {
-      const snowfall = snowfallHourly[i] || 0; // Some values might be null
-      
-      if (i < hours24) {
-        snowCm24hr += snowfall;
-      }
-      if (i < hours48) {
-        snowCm48hr += snowfall;
-      }
-      snowCm7day += snowfall;
-    }
-    
-    // Convert cm to inches (1 cm = 0.393701 inches)
-    const snow24hr = snowCm24hr * 0.393701;
-    const snow48hr = snowCm48hr * 0.393701;
-    const snow7day = snowCm7day * 0.393701;
-    
-    // Create a simple forecast text based on the data
-    let forecastText = 'No snow expected';
-    if (snow24hr > 0) {
-      forecastText = `${snow24hr.toFixed(1)}" expected in next 24 hours`;
-    } else if (snow48hr > 0) {
-      forecastText = `${snow48hr.toFixed(1)}" expected in next 48 hours`;
-    } else if (snow7day > 0) {
-      forecastText = `${snow7day.toFixed(1)}" expected in next 7 days`;
-    }
-    
-    return {
-      snowfall_24hr: parseFloat(snow24hr.toFixed(1)),
-      snowfall_48hr: parseFloat(snow48hr.toFixed(1)),
-      snowfall_7day: parseFloat(snow7day.toFixed(1)),
-      forecast_text: forecastText,
-      last_updated: new Date().toISOString()
-    };
-    
-  } catch (error) {
-    console.error(`Error fetching Open-Meteo data for ${lat},${lng}:`, error.message);
-    return {
-      snowfall_24hr: 0,
-      snowfall_48hr: 0,
-      snowfall_7day: 0,
-      forecast_text: 'Data unavailable',
-      last_updated: new Date().toISOString(),
-      error: error.message
-    };
   }
+  throw new Error(error?.name === 'TimeoutError' ? 'Weather request timed out' : 'Weather fetch or validation failed');
 }
 
-/**
- * Add delay between requests to be respectful to Open-Meteo servers
- */
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function fallback(resort, previous, now) {
+  const candidates = previous?.schema_version === 2 && Array.isArray(previous.resorts) ? previous.resorts.filter(r => r.resort_id === resort.id) : [];
+  const old = candidates.length === 1 ? candidates[0] : null;
+  const age = now - Date.parse(old?.last_updated);
+  if (validRecord(old) && old.lat === resort.lat && old.lng === resort.lng && age >= 0 && age <= 72 * HOUR) {
+    return { ...old, status: 'stale', last_attempted_at: new Date(now).toISOString(), error: 'Refresh failed; retained previous forecast with its original time windows' };
+  }
+  return { resort_id: resort.id, name: resort.name, lat: resort.lat, lng: resort.lng,
+    status: 'unavailable', units: 'in', data_source: 'Open-Meteo',
+    snowfall_24hr: null, snowfall_48hr: null, snowfall_7day: null,
+    window_start: null, window_ends: null, last_updated: null,
+    last_attempted_at: new Date(now).toISOString(), error: 'No valid forecast available' };
 }
 
-/**
- * Main function to fetch all data
- */
-async function generateSnowData() {
-  console.log(`Starting Open-Meteo data fetch for ${RESORTS.length} resorts...`);
+async function generateSnowData({ resorts = catalog.resorts, previous = null, now = Date.now(), getForecast = fetchForecast, sleep = delay } = {}) {
+  const windowStart = Math.floor(now / HOUR) * HOUR;
   const results = [];
-  
-  for (let i = 0; i < RESORTS.length; i++) {
-    const resort = RESORTS[i];
-    console.log(`[${i + 1}/${RESORTS.length}] Fetching ${resort.name}...`);
-    
-    const data = await fetchOpenMeteoForecast(resort.lat, resort.lng);
-    
-    results.push({
-      name: resort.name,
-      lat: resort.lat,
-      lng: resort.lng,
-      ...data
-    });
-    
-    // Add a small delay to avoid overwhelming servers
-    // Open-Meteo is generous but we should still be respectful
-    await delay(100);
+  for (const resort of resorts.filter(r => r.forecast_enabled)) {
+    try {
+      const record = await getForecast(resort, windowStart);
+      if (!validRecord(record) || record.window_start !== new Date(windowStart).toISOString()) throw new Error('Invalid forecast record');
+      results.push(record);
+    } catch {
+      results.push(fallback(resort, previous, now));
+    }
+    await sleep(100);
   }
-  
-  const output = {
-    generated_at: new Date().toISOString(),
-    total_resorts: results.length,
-    data_source: 'Open-Meteo',
-    resorts: results
+  const coverage = {
+    fresh: results.filter(r => r.status === 'fresh').length,
+    stale: results.filter(r => r.status === 'stale').length,
+    unavailable: results.filter(r => r.status === 'unavailable').length
   };
-  
-  console.log(`\nData fetch complete!`);
-  console.log(`- Total resorts: ${results.length}`);
-  console.log(`- Successful: ${results.filter(r => !r.error).length}`);
-  console.log(`- Failed: ${results.filter(r => r.error).length}`);
-  
-  // Log some stats
-  const resortsWithSnow = results.filter(r => r.snowfall_7day > 0).length;
-  console.log(`- Resorts with snow in 7-day forecast: ${resortsWithSnow}`);
-  
-  return output;
+  // Keep the entire previous file intact during widespread provider failure.
+  if (!results.length || coverage.fresh / results.length < 0.8) throw new Error(`Publication refused: ${coverage.fresh}/${results.length} fresh forecasts (80% required)`);
+  return { schema_version: 2, generated_at: new Date(now).toISOString(), total_resorts: results.length,
+    data_source: 'Open-Meteo', units: 'in', coverage, resorts: results };
 }
-
-/**
- * Write the JSON file
- */
-async function main() {
+function writeSnapshot(target, data) {
+  const temporary = `${target}.tmp`;
   try {
-    const fs = require('fs');
-    const path = require('path');
-    
-    const data = await generateSnowData();
-    
-    // Write to the root directory
-    const outputPath = path.join(__dirname, '..', 'snow-data.json');
-    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
-    
-    console.log(`\n✅ Snow data written to: ${outputPath}`);
-    console.log(`📦 File size: ${(fs.statSync(outputPath).size / 1024).toFixed(2)} KB`);
-    console.log(`🌍 Data source: Open-Meteo API (https://open-meteo.com)`);
-    
-  } catch (error) {
-    console.error('❌ Error generating snow data:', error);
-    process.exit(1);
+    fs.writeFileSync(temporary, JSON.stringify(data, null, 2) + '\n');
+    fs.renameSync(temporary, target);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
   }
 }
-
-// Run the script
-main();
+async function main() {
+  validateCatalog(catalog);
+  const target = path.resolve(process.env.SNOW_OUTPUT_PATH || path.join(__dirname, '../forecast-data.json'));
+  let previous = null;
+  if (fs.existsSync(target)) {
+    try { previous = JSON.parse(fs.readFileSync(target, 'utf8')); } catch { /* Corrupt files cannot supply fallback data. */ }
+  }
+  const data = await generateSnowData({ previous });
+  writeSnapshot(target, data);
+  console.log(`Published ${data.total_resorts} forecasts: ${JSON.stringify(data.coverage)}`);
+}
+if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });
+module.exports = { aggregate, fetchForecast, fallback, generateSnowData, writeSnapshot };
