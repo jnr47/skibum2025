@@ -31,7 +31,7 @@ for(const width of [390,1440])for(const name of ['index.html','map.html','mammot
   if(name==='index.html'){
     await page.locator('#showRecommendations').click();
     await expect(page.locator('#resultsList')).toContainText(state==='fresh'?'0.0':'Snow forecasts are refreshing');
-    await expect(page.locator('.pass-chip').first()).toBeDisabled();
+    await expect(page.locator('.pass-chip, .radius-chip, .btn-view, .btn-plan')).toHaveCount(0);
   }
   if(name!=='mammoth.html'){
     await expect(page.locator('.marker')).toHaveCount(103);

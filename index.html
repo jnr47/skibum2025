@@ -995,7 +995,7 @@
         <!-- Navigation -->
         <nav>
             <div class="container">
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <img src="images/skibum-shield.png" alt="Skibum">
                     <div class="logo-text">
                         <span class="logo-title">Skibum</span>
@@ -1003,9 +1003,8 @@
                     </div>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#map">Map</a></li>
+                    <li><a href="#hero-map">Map</a></li>
                     <li><a href="resorts.html">Resorts</a></li>
-                    <li><a href="#vanlife">Vanlife</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
             </div>
@@ -1038,53 +1037,8 @@
                     See snowiest resorts
                 </button>
                 
-                <!-- Progressive Disclosure - Filters (Hidden by Default) -->
-                <div class="filters-section" id="filtersSection">
-                    <div class="filter-group">
-                        <label class="filter-label">Trip distance</label>
-                        <div class="radius-chips">
-                            <button type="button" disabled class="radius-chip" data-radius="local">
-                                Local
-                                <span class="chip-subtext">1–2 hr</span>
-                            </button>
-                            <button type="button" disabled class="radius-chip selected" data-radius="day">
-                                Day/Weekend
-                                <span class="chip-subtext">2–4 hr</span>
-                            </button>
-                            <button type="button" disabled class="radius-chip" data-radius="weekend">
-                                Weekend+
-                                <span class="chip-subtext">4–6 hr</span>
-                            </button>
-                            <button type="button" disabled class="radius-chip" data-radius="destination">
-                                Destination
-                                <span class="chip-subtext">Flying</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label class="filter-label">Pass coverage</label>
-                        <div class="pass-chips">
-                            <button type="button" disabled class="pass-chip" data-pass="Ikon">Ikon</button>
-                            <button type="button" disabled class="pass-chip" data-pass="Epic">Epic</button>
-                            <button type="button" disabled class="pass-chip" data-pass="Indy">Indy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label class="checkbox-container">
-                            <input type="checkbox" id="prioritizeOvernight">
-                            <span class="checkbox-label">Prioritize overnight parking</span>
-                        </label>
-                    </div>
-                    
-                    <button class="cta-primary" id="findResortsBtn" style="margin-top: 1rem;">
-                        See snowiest resorts
-                    </button>
-                </div>
             </div>
-            
-            <!-- Right Side - Interactive Map -->
+
             <div class="map-container-hero">
                 <div class="map-box">
                     <!-- Snow Forecast Toggle Controls -->
@@ -1109,10 +1063,6 @@
                         <div class="results-list" id="resultsList">
                             <!-- Results will be inserted here via JavaScript -->
                         </div>
-                        
-                        <div class="show-more">
-                            
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1126,36 +1076,6 @@
                 
                 <div class="trending-grid" id="trendingGrid">
                     <!-- Will be populated with real snow data -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Skibum Section -->
-        <section class="features">
-            <h2 class="section-title">Why Skibum?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🥽</div>
-                    <h3>Skip the planning chaos</h3>
-                    <p>Snow + parking + passes in one place.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏔️</div>
-                    <h3>Sleep legally near the mountain</h3>
-                    <p>Overnight parking rules + nearby Hipcamp/Harvest Hosts stays.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">❄️</div>
-                    <h3>Chase storms intelligently</h3>
-                    <p>Live snow overlays, cams, pass access, and road conditions integrated.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3>Plan your entire ski roadtrip</h3>
-                    <p>Multi-resort weekends, pass ROI tracking, and dream routes.</p>
                 </div>
             </div>
         </section>
@@ -1178,21 +1098,6 @@
             </div>
         </section>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter">
-            <div class="newsletter-content">
-                <h2>Never miss a powder day</h2>
-                <p>Get storm alerts, parking intel, and new resort guides delivered to your inbox.</p>
-                
-                <form class="email-form">
-                    <input type="email" class="email-input" placeholder="your@email.com" required>
-                    <button type="submit" class="btn cta-primary">Join Free</button>
-                </form>
-                
-                <p class="reassurance">No spam. Ever.</p>
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer id="about">
             <div class="container">
@@ -1210,30 +1115,7 @@
                     <div>
                         <h4 style="margin-bottom: 1rem;">Navigation</h4>
                         <ul class="footer-links">
-                            <li><a href="#map">Map</a></li>
-                            <li><a href="#resorts">Resorts</a></li>
-                            <li><a href="#vanlife">Vanlife</a></li>
-                            <li><a href="#guides">Guides</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: 1rem;">Resources</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Powder Alerts</a></li>
-                            <li><a href="#">Storm Tracker</a></li>
-                            <li><a href="#">Parking Guide</a></li>
-                            <li><a href="#">Pass Comparison</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: 1rem;">About</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">About Skibum</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
+                            <li><a href="#hero-map">Map</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1570,40 +1452,19 @@
         
         // === PROGRESSIVE DISCLOSURE ===
         const showRecommendationsBtn = document.getElementById('showRecommendations');
-        const filtersSection = document.getElementById('filtersSection');
         const resultsTray = document.getElementById('resultsTray');
-        const findResortsBtn = document.getElementById('findResortsBtn');
         const closeTrayBtn = document.getElementById('closeTrayBtn');
         
         showRecommendationsBtn.addEventListener('click', () => {
             runRecommendationEngine();
         });
         
-        if (findResortsBtn) {
-            findResortsBtn.addEventListener('click', () => {
-                runRecommendationEngine();
-            });
-        }
         
         if (closeTrayBtn) {
             closeTrayBtn.addEventListener('click', () => {
                 resultsTray.classList.remove('visible');
             });
         }
-        
-        // === CHIP INTERACTIONS ===
-        document.querySelectorAll('.radius-chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                document.querySelectorAll('.radius-chip').forEach(c => c.classList.remove('selected'));
-                chip.classList.add('selected');
-            });
-        });
-        
-        document.querySelectorAll('.pass-chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                chip.classList.toggle('selected');
-            });
-        });
         
         // === SEARCH FUNCTIONALITY ===
         const panelSearch = document.getElementById('panelSearch');
@@ -1654,11 +1515,6 @@
         function runRecommendationEngine() {
             if (!snowData) return;
             
-            const selectedPasses = Array.from(document.querySelectorAll('.pass-chip.selected'))
-                .map(chip => chip.dataset.pass);
-            const selectedRadius = document.querySelector('.radius-chip.selected')?.dataset.radius;
-            const prioritizeOvernight = document.getElementById('prioritizeOvernight').checked;
-            
             // Sort by 48h snowfall
             const results = resorts.filter(resort => snowData[resort.id]?.status === 'fresh').map(resort => ({
                 ...resort,
@@ -1700,21 +1556,12 @@
                                 <span class="result-detail-value">${resort.state}</span>
                             </div>
                         </div>
-                        
-                        <div class="result-actions">
-                            <button class="btn-small btn-view">View details</button>
-                            <button class="btn-small btn-plan">Plan trip</button>
-                        </div>
                     </div>
                 `;
             }).join('');
         }
         
         
-        document.querySelectorAll('.pass-chip, .radius-chip, #prioritizeOvernight').forEach(el => {
-            el.disabled = true;
-            el.title = 'Not yet connected to forecast ranking';
-        });
         window.addEventListener('DOMContentLoaded', () => {
             loadSnowData();
             setInterval(loadSnowData, 5 * 60 * 1000);
@@ -1747,16 +1594,6 @@
             });
         });
         
-        // Email form
-        document.addEventListener('DOMContentLoaded', function() {
-            const emailForm = document.querySelector('.email-form');
-            if (emailForm) {
-                emailForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Email signup functionality will be integrated with your email service provider.');
-                });
-            }
-        });
     </script>
 </body>
 </html>

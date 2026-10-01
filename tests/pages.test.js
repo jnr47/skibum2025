@@ -46,7 +46,7 @@ for(const name of ['index.html','map.html','mammoth.html']){
       assert.equal(d.querySelectorAll('.marker').length,103);
       assert.equal(d.querySelector('.marker').dataset.availability,state==='network-error'?'unavailable':state);
       if(name==='index.html'){
-        d.getElementById('findResortsBtn').click();
+        d.getElementById('showRecommendations').click();
         const result=d.getElementById('resultsList').textContent;
         if(state==='fresh')assert.match(result,/0\.0/);else assert.match(result,/Snow forecasts are refreshing/);
       }
@@ -66,6 +66,7 @@ test('standalone map detail uses unavailable, not a zero fallback',async()=>{
  const dom=await page('map.html','network-error');try{
   dom.window.document.querySelector('.marker').click();await new Promise(r=>setTimeout(r,10));
   assert.match(dom.window.document.querySelector('.resort-detail-container').textContent,/Unavailable/);
+  assert.doesNotMatch(dom.window.document.querySelector('.resort-detail-container').textContent,/coming soon|Top 10 Ski Runs|Top 10 Restaurants|Top 10 Places to Stay/i);
  }finally{dom.window.close();}
 });
 
@@ -75,6 +76,19 @@ test('snowiest resorts shows only fresh results and no placeholder expansion',as
    const d=dom.window.document;d.getElementById('showRecommendations').click();
    assert.equal(d.querySelectorAll('.result-card').length,count);
    assert.equal(d.getElementById('showMoreBtn'),null);
+  }finally{dom.window.close();}
+ }
+});
+
+test('public pages contain no unfinished controls or dead in-page navigation',()=>{
+ for(const name of ['index.html','map.html','mammoth.html','docs/data-sources.html']){
+  const dom=new JSDOM(read(name));try{
+   const d=dom.window.document;
+   assert.doesNotMatch(read(name),/Content coming soon|feature coming soon|btn-small btn-view|btn-small btn-plan/);
+   assert.equal(d.querySelectorAll('.email-form, .itinerary-tabs, .pass-chip, .radius-chip').length,0);
+   for(const a of d.querySelectorAll('a[href^="#"]')){
+    const target=a.getAttribute('href').slice(1);assert.ok(target && d.getElementById(target),name+': '+a.outerHTML);
+   }
   }finally{dom.window.close();}
  }
 });

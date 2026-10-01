@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mammoth Mountain - Live Snow Conditions | SkiBum.com</title>
     <meta name="description" content="Live snow conditions, weather forecast, and trip planning for Mammoth Mountain. Modeled snowfall tracking, road conditions, and lodging deals.">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --cream: #F5F1E8;
             --dark-navy: #0B1B2B;
@@ -26,14 +26,14 @@
             --forest-green: #2D5F3F;
             --gold: #F4A460;
         }
-        
+
         body {
             font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--cream);
             color: var(--dark-navy);
             line-height: 1.6;
         }
-        
+
         /* Header Navigation */
         .header {
             background: var(--dark-navy);
@@ -43,7 +43,7 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         .header-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -51,17 +51,17 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             height: 50px;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 30px;
             align-items: center;
         }
-        
+
         .nav-links a {
             color: var(--cream);
             text-decoration: none;
@@ -69,11 +69,11 @@
             font-size: 15px;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--burnt-orange);
         }
-        
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -87,12 +87,12 @@
             text-align: center;
             color: white;
         }
-        
+
         .hero-content {
             max-width: 900px;
             padding: 20px;
         }
-        
+
         .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(2.5rem, 7vw, 4.5rem);
@@ -100,14 +100,14 @@
             margin-bottom: 5px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
-        
+
         .hero-tagline {
             font-size: clamp(1rem, 2.5vw, 1.4rem);
             font-weight: 300;
             margin-bottom: 20px;
             font-style: italic;
         }
-        
+
         /* Conditions Card */
         .conditions-card {
             background: rgba(245, 241, 232, 0.95);
@@ -120,7 +120,7 @@
             z-index: 10;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
-        
+
         .conditions-grid {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -128,12 +128,12 @@
             margin-bottom: 20px;
             align-items: center;
         }
-        
+
         .condition-item {
             min-width: 0;
             text-align: center;
         }
-        
+
         .condition-value {
             overflow-wrap: anywhere;
             font-size: 2rem;
@@ -142,13 +142,13 @@
             display: block;
             line-height: 1;
         }
-        
+
         .condition-label {
             font-size: 0.85rem;
             color: #666;
             margin-top: 5px;
         }
-        
+
         .pass-badge {
             background: var(--dark-navy);
             color: white;
@@ -159,14 +159,14 @@
             letter-spacing: 2px;
             text-align: center;
         }
-        
+
         .quick-nav {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .btn {
             padding: 12px 24px;
             border-radius: 10px;
@@ -178,58 +178,58 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn-orange {
             background: var(--burnt-orange);
             color: white;
         }
-        
+
         .btn-orange:hover {
             background: #c23d1f;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(217, 81, 44, 0.3);
         }
-        
+
         .btn-navy {
             background: var(--dark-navy);
             color: white;
         }
-        
+
         .btn-navy:hover {
             background: #1a2f45;
             transform: translateY(-2px);
         }
-        
+
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Section Styling */
         .section {
             padding: 35px 0;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: 25px;
         }
-        
+
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(2rem, 5vw, 3rem);
             letter-spacing: 2px;
             margin-bottom: 10px;
         }
-        
+
         .section-subtitle {
             font-size: 1.1rem;
             color: #666;
             font-weight: 300;
         }
-        
+
         /* Good Time to Go Section */
         .decision-grid {
             display: grid;
@@ -237,14 +237,14 @@
             gap: 20px;
             margin-bottom: 20px;
         }
-        
+
         .decision-card {
             background: white;
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .decision-card h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -252,7 +252,7 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .powder-badge {
             display: inline-block;
             background: #4CAF50;
@@ -262,12 +262,12 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
-        
+
         .stats-list {
             list-style: none;
             padding: 0;
         }
-        
+
         .stats-list li {
             padding: 12px 0;
             border-bottom: 1px solid #eee;
@@ -275,22 +275,22 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .stats-list li:last-child {
             border-bottom: none;
         }
-        
+
         .stat-label {
             font-weight: 500;
             color: #666;
         }
-        
+
         .stat-value {
             font-weight: 700;
             color: var(--dark-navy);
             font-size: 1.1rem;
         }
-        
+
         /* Camera Grid */
         .cam-grid {
             display: grid;
@@ -298,7 +298,7 @@
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .cam-card {
             background: white;
             border-radius: 12px;
@@ -308,11 +308,11 @@
             color: inherit;
             transition: transform 0.3s;
         }
-        
+
         .cam-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .cam-image {
             width: 100%;
             height: 180px;
@@ -322,34 +322,34 @@
             justify-content: center;
             font-size: 3rem;
         }
-        
+
         .cam-info {
             padding: 15px;
         }
-        
+
         .cam-title {
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
-        
+
         .cam-description {
             font-size: 0.9rem;
             color: #666;
         }
-        
+
         /* Vanlife Section */
         .vanlife-section {
             background: linear-gradient(135deg, #2D5F3F 0%, #1a3828 100%);
             color: white;
         }
-        
+
         .vanlife-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .vanlife-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -357,7 +357,7 @@
             padding: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .vanlife-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -365,32 +365,32 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .vanlife-card ul {
             list-style: none;
             padding: 0;
         }
-        
+
         .vanlife-card li {
             padding: 8px 0;
             padding-left: 20px;
             position: relative;
         }
-        
+
         .vanlife-card li:before {
             content: "→";
             position: absolute;
             left: 0;
             color: var(--gold);
         }
-        
+
         /* Resort Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-        
+
         .stat-box {
             background: white;
             padding: 25px;
@@ -398,34 +398,34 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--burnt-orange);
             display: block;
         }
-        
+
         .stat-text {
             font-size: 0.95rem;
             color: #666;
             margin-top: 5px;
         }
-        
+
         /* Lodging Section */
         .lodging-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .lodging-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .lodging-image {
             width: 100%;
             height: 200px;
@@ -435,37 +435,37 @@
             justify-content: center;
             font-size: 3rem;
         }
-        
+
         .lodging-content {
             padding: 20px;
         }
-        
+
         .lodging-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .lodging-details {
             color: #666;
             font-size: 0.95rem;
             margin-bottom: 15px;
         }
-        
+
         .price {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--burnt-orange);
             margin-bottom: 15px;
         }
-        
+
         /* Gear Section */
         .gear-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 25px;
         }
-        
+
         .gear-card {
             background: white;
             border-radius: 12px;
@@ -474,28 +474,28 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        
+
         .gear-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .gear-icon {
             font-size: 4rem;
             margin-bottom: 15px;
         }
-        
+
         .gear-title {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .gear-links {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-        
+
         .gear-link {
             padding: 8px 16px;
             background: var(--cream);
@@ -506,12 +506,12 @@
             font-weight: 500;
             transition: background 0.3s;
         }
-        
+
         .gear-link:hover {
             background: var(--burnt-orange);
             color: white;
         }
-        
+
         /* Itinerary Section */
         .itinerary-tabs {
             display: flex;
@@ -519,7 +519,7 @@
             margin-bottom: 30px;
             border-bottom: 2px solid #ddd;
         }
-        
+
         .tab {
             padding: 12px 24px;
             background: none;
@@ -531,24 +531,24 @@
             border-bottom: 3px solid transparent;
             transition: all 0.3s;
         }
-        
+
         .tab.active {
             color: var(--burnt-orange);
             border-bottom-color: var(--burnt-orange);
         }
-        
+
         .itinerary-content {
             background: white;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .timeline {
             list-style: none;
             padding: 0;
         }
-        
+
         .timeline li {
             padding: 20px 0;
             border-left: 3px solid var(--burnt-orange);
@@ -556,7 +556,7 @@
             margin-left: 10px;
             position: relative;
         }
-        
+
         .timeline li:before {
             content: "";
             width: 15px;
@@ -567,20 +567,20 @@
             left: -9px;
             top: 25px;
         }
-        
+
         .time {
             font-weight: 700;
             color: var(--burnt-orange);
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
-        
+
         /* FAQ Section */
         .faq-list {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             background: white;
             margin-bottom: 15px;
@@ -588,7 +588,7 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .faq-question {
             padding: 20px;
             font-weight: 600;
@@ -598,32 +598,32 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .faq-question:hover {
             background: var(--cream);
         }
-        
+
         .faq-answer {
             padding: 0 20px 20px;
             color: #666;
             line-height: 1.8;
             display: none;
         }
-        
+
         /* Email Capture */
         .email-capture {
             background: linear-gradient(135deg, var(--burnt-orange) 0%, #c23d1f 100%);
             color: white;
             text-align: center;
         }
-        
+
         .email-form {
             max-width: 500px;
             margin: 30px auto 0;
             display: flex;
             gap: 10px;
         }
-        
+
         .email-input {
             flex: 1;
             padding: 15px 20px;
@@ -631,7 +631,7 @@
             border-radius: 10px;
             font-size: 1rem;
         }
-        
+
         .email-submit {
             padding: 15px 30px;
             background: var(--dark-navy);
@@ -642,12 +642,12 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
+
         .email-submit:hover {
             background: #1a2f45;
             transform: scale(1.05);
         }
-        
+
         /* Footer */
         .footer {
             background: var(--dark-navy);
@@ -655,7 +655,7 @@
             padding: 40px 20px 20px;
             text-align: center;
         }
-        
+
         .footer-links {
             display: flex;
             justify-content: center;
@@ -663,37 +663,37 @@
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-        
+
         .footer-links a {
             color: white;
             text-decoration: none;
             font-size: 0.95rem;
         }
-        
+
         .footer-links a:hover {
             color: var(--burnt-orange);
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .decision-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .conditions-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            
+
             .pass-badge {
                 position: static;
                 margin-bottom: 20px;
                 display: inline-block;
             }
-            
+
             .email-form {
                 flex-direction: column;
             }
-            
+
             .nav-links {
                 display: none;
             }
@@ -722,9 +722,9 @@
             </a>
             <nav class="nav-links">
                 <a href="map.html">Live Map</a>
-                <a href="#resorts">Resorts</a>
-                <a href="#guides">Guides</a>
-                <a href="#vanlife">Vanlife</a>
+
+
+
             </nav>
         </div>
     </header>
@@ -814,7 +814,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#email" class="btn btn-navy">Get Powder Alerts for Mammoth →</a>
+
             </div>
         </div>
     </section>
@@ -926,7 +926,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#" class="btn" style="background: white; color: var(--forest-green);">See All Vanlife Options Near Mammoth →</a>
+
             </div>
         </div>
     </section>
@@ -1193,12 +1193,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Plan Your Trip</h2>
-                <p class="section-subtitle">Sample itineraries for every type of trip</p>
-            </div>
-            <div class="itinerary-tabs">
-                <button class="tab active" data-day="1">1-Day</button>
-                <button class="tab" data-day="2">Weekend</button>
-                <button class="tab" data-day="3">3-Day</button>
+                <p class="section-subtitle">A sample Mammoth itinerary</p>
             </div>
             <div class="itinerary-content">
                 <ul class="timeline" id="timeline-1">
@@ -1302,28 +1297,16 @@
         </div>
     </section>
 
-    <!-- SECTION 13: Email Capture -->
-    <section class="section email-capture" id="email">
-        <div class="container">
-            <h2 class="section-title">Get Powder Alerts for Mammoth</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 10px;">Weekend storm picks, vanlife updates & gear deals</p>
-            <form class="email-form" onsubmit="handleEmailSubmit(event)">
-                <input type="email" class="email-input" placeholder="Enter your email" required>
-                <button type="submit" class="email-submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="map.html">Live Map</a>
-                <a href="#resorts">Top 10 Resorts</a>
-                <a href="#guides">Guides</a>
-                <a href="#vanlife">Vanlife</a>
-                <a href="#about">About</a>
+
+
+
+
             </div>
             <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 20px;">
                 © 2025 SkiBum.com · Live Snow Tracking · Vanlife Guides
@@ -1338,30 +1321,14 @@
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isOpen = answer.style.display === 'block';
-                
+
                 // Close all other answers
                 document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-                
+
                 // Toggle current answer
                 answer.style.display = isOpen ? 'none' : 'block';
             });
         });
-
-        // Itinerary Tabs
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // In production, you'd swap timeline content here
-            });
-        });
-
-        // Email Form Submit
-        function handleEmailSubmit(e) {
-            e.preventDefault();
-            alert('Powder alerts are not yet available. No subscription has been created.');
-            e.target.reset();
-        }
 
         // Load snow data from API
         const F = window.SkiBumForecast;
